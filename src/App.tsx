@@ -11,6 +11,8 @@ import { TechStackSection } from './components/sections/TechStackSection';
 import { ContactSection } from './components/sections/ContactSection';
 import { OverlayHUD } from './components/ui/OverlayHUD';
 import { LoadingScreen } from './components/ui/LoadingScreen';
+import { CustomCursor } from './components/ui/CustomCursor';
+import { DevTerminal } from './components/ui/DevTerminal';
 import { audioManager } from './utils/audioSystem';
 
 export const App: React.FC = () => {
@@ -19,6 +21,37 @@ export const App: React.FC = () => {
   const [activeSectionId, setActiveSectionId] = useState<string>('hero');
   const [scrollProgress, setScrollProgress] = useState<number>(0);
   const lenisRef = useRef<Lenis | null>(null);
+  const [theme, setTheme] = useState<'dark' | 'light'>(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('theme') === 'light' ? 'light' : 'dark';
+    }
+    return 'dark';
+  });
+
+  useEffect(() => {
+    const root = document.documentElement;
+    if (theme === 'light') {
+      root.classList.remove('dark');
+      root.classList.add('light');
+    } else {
+      root.classList.remove('light');
+      root.classList.add('dark');
+    }
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const handleToggleTheme = () => {
+    audioManager.playClickSound();
+    setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
+  };
+
+  // Scroll Restoration Control & Reset to Top on Page Load / Refresh
+  useEffect(() => {
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, []);
 
   // Smooth scroll to target section ID using Lenis momentum engine
   const handleNavigate = (sectionId: string) => {
@@ -63,6 +96,7 @@ export const App: React.FC = () => {
     });
 
     lenisRef.current = lenis;
+    lenis.scrollTo(0, { immediate: true });
 
     let rafId: number;
     function raf(time: number) {
@@ -113,12 +147,15 @@ export const App: React.FC = () => {
   }, []);
 
   return (
-    <div className="w-full min-h-screen bg-[#080808] text-slate-100 relative selection:bg-purple-500 selection:text-white">
+    <div className={`w-full min-h-screen relative selection:bg-purple-500 selection:text-white transition-colors duration-500 ${theme === 'light' ? 'bg-[#f8fafc] text-zinc-900' : 'bg-[#080808] text-slate-100'}`}>
+      {/* Interactive Custom Cyberpunk Cursor */}
+      <CustomCursor />
+
       {/* Initialization Loading Splash Screen */}
       {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
 
       {/* Single Fixed Full-Screen Background 3D Scene Canvas (Z-Index 0) */}
-      <GlobalSceneCanvas scrollProgress={scrollProgress} />
+      <GlobalSceneCanvas scrollProgress={scrollProgress} theme={theme} />
 
       {/* Global Fixed Minimalist HUD */}
       <OverlayHUD
@@ -126,6 +163,17 @@ export const App: React.FC = () => {
         onNavigate={handleNavigate}
         isMuted={isMuted}
         onToggleAudio={handleToggleAudio}
+        theme={theme}
+        onToggleTheme={handleToggleTheme}
+      />
+
+      {/* Interactive Dev Terminal Console Drawer */}
+      <DevTerminal
+        theme={theme}
+        onToggleTheme={handleToggleTheme}
+        isMuted={isMuted}
+        onToggleAudio={handleToggleAudio}
+        onNavigate={handleNavigate}
       />
 
       {/* Continuous Vertical Scroll Sections Container */}
@@ -141,7 +189,7 @@ export const App: React.FC = () => {
         {/* SECTION 2: ABOUT ME */}
         <section
           id="about"
-          className="w-full min-h-screen relative py-24 sm:py-28 px-6 sm:px-12 md:px-16 lg:px-24 flex flex-col justify-center max-w-7xl mx-auto pointer-events-auto"
+          className="w-full min-h-screen relative py-16 sm:py-20 px-4 sm:px-6 lg:px-10 flex flex-col justify-center max-w-[1440px] mx-auto pointer-events-auto"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -157,7 +205,7 @@ export const App: React.FC = () => {
         {/* SECTION 3: WHAT I DO / SERVICES */}
         <section
           id="what-i-do"
-          className="w-full min-h-screen relative py-24 sm:py-28 px-6 sm:px-12 md:px-16 lg:px-24 flex flex-col justify-center max-w-7xl mx-auto pointer-events-auto"
+          className="w-full min-h-screen relative py-16 sm:py-20 px-4 sm:px-6 lg:px-10 flex flex-col justify-center max-w-[1440px] mx-auto pointer-events-auto"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -173,7 +221,7 @@ export const App: React.FC = () => {
         {/* SECTION 4: CAREER & EXPERIENCE TIMELINE */}
         <section
           id="experience"
-          className="w-full min-h-screen relative py-24 sm:py-28 px-6 sm:px-12 md:px-16 lg:px-24 flex flex-col justify-center max-w-7xl mx-auto pointer-events-auto"
+          className="w-full min-h-screen relative py-16 sm:py-20 px-4 sm:px-6 lg:px-10 flex flex-col justify-center max-w-[1440px] mx-auto pointer-events-auto"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -189,7 +237,7 @@ export const App: React.FC = () => {
         {/* SECTION 5: FEATURED WORK & PROJECTS */}
         <section
           id="work"
-          className="w-full min-h-screen relative py-24 sm:py-28 px-6 sm:px-12 md:px-16 lg:px-24 flex flex-col justify-center max-w-7xl mx-auto pointer-events-auto"
+          className="w-full min-h-screen relative py-16 sm:py-20 px-4 sm:px-6 lg:px-10 flex flex-col justify-center max-w-[1440px] mx-auto pointer-events-auto"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -205,7 +253,7 @@ export const App: React.FC = () => {
         {/* SECTION 6: INTERACTIVE TECH STACK */}
         <section
           id="tech-stack"
-          className="w-full min-h-screen relative py-24 sm:py-28 px-6 sm:px-12 md:px-16 lg:px-24 flex flex-col justify-center max-w-7xl mx-auto pointer-events-auto"
+          className="w-full min-h-screen relative py-16 sm:py-20 px-4 sm:px-6 lg:px-10 flex flex-col justify-center max-w-[1440px] mx-auto pointer-events-auto"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -221,7 +269,7 @@ export const App: React.FC = () => {
         {/* SECTION 7: CONTACT & LET'S BUILD TOGETHER */}
         <section
           id="contact"
-          className="w-full min-h-screen relative py-24 sm:py-28 px-6 sm:px-12 md:px-16 lg:px-24 flex flex-col justify-center max-w-7xl mx-auto pointer-events-auto"
+          className="w-full min-h-screen relative py-12 sm:py-16 px-4 sm:px-6 lg:px-10 flex flex-col justify-center max-w-[1440px] mx-auto pointer-events-auto"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}

@@ -362,32 +362,32 @@ export const WhatIDoSection: React.FC = () => {
   const designGrid = designCapabilities.filter((c) => c.id !== 'design-arch');
 
   return (
-    <div className="space-y-6 select-none pointer-events-auto">
+    <div className="w-full max-w-[1400px] mx-auto space-y-6 select-none pointer-events-auto px-4 sm:px-8 lg:px-12">
       {/* Header & Mode Selector Pills */}
-      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-4 border-b border-white/10">
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-4 border-b border-zinc-200 dark:border-white/10">
         <div>
           <div className="flex items-center gap-2 mb-1">
-            <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-purple-500/10 border border-purple-500/30 text-[11px] font-mono text-purple-300 tracking-widest uppercase">
+            <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-purple-500/10 border border-purple-500/30 text-[11px] font-mono text-purple-600 dark:text-purple-300 tracking-widest uppercase">
               <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
               <span>[ 03 // WHAT I DO ]</span>
             </div>
           </div>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight uppercase">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-zinc-900 dark:text-white tracking-tight uppercase">
             WHAT I DO
           </h2>
-          <p className="text-xs sm:text-sm text-slate-400 font-sans mt-1">
+          <p className="text-xs sm:text-sm text-zinc-600 dark:text-slate-400 font-sans mt-1">
             Bridging robust full-stack architecture with cutting-edge 3D creative design. Click any card for detailed specification dossier.
           </p>
         </div>
 
         {/* Interactive Mode Selector Pills: [DEVELOP] and [DESIGN] */}
-        <div className="flex items-center gap-2 bg-[#111118] p-1.5 rounded-xl border border-white/10 shrink-0">
+        <div className="flex items-center gap-2 bg-zinc-100 dark:bg-[#111118] p-1.5 rounded-xl border border-zinc-200 dark:border-white/10 shrink-0 shadow-sm">
           <button
             onClick={() => setActiveMode('develop')}
             className={`px-4 py-1.5 rounded-lg font-mono font-bold text-xs tracking-wider transition-all flex items-center gap-2 cursor-pointer ${
               activeMode === 'develop'
-                ? 'bg-cyan-400 text-slate-950 shadow-md shadow-cyan-400/20'
-                : 'text-slate-400 hover:text-cyan-300 hover:bg-white/5'
+                ? 'bg-cyan-500 text-white dark:bg-cyan-400 dark:text-slate-950 shadow-md shadow-cyan-400/20'
+                : 'text-zinc-600 dark:text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-300 hover:bg-zinc-200/60 dark:hover:bg-white/5'
             }`}
           >
             <Code className="w-3.5 h-3.5" />
@@ -398,8 +398,8 @@ export const WhatIDoSection: React.FC = () => {
             onClick={() => setActiveMode('design')}
             className={`px-4 py-1.5 rounded-lg font-mono font-bold text-xs tracking-wider transition-all flex items-center gap-2 cursor-pointer ${
               activeMode === 'design'
-                ? 'bg-pink-500 text-slate-950 shadow-md shadow-pink-500/20'
-                : 'text-slate-400 hover:text-pink-300 hover:bg-white/5'
+                ? 'bg-pink-500 text-white dark:text-slate-950 shadow-md shadow-pink-500/20'
+                : 'text-zinc-600 dark:text-slate-400 hover:text-pink-600 dark:hover:text-pink-300 hover:bg-zinc-200/60 dark:hover:bg-white/5'
             }`}
           >
             <Palette className="w-3.5 h-3.5" />
@@ -424,24 +424,24 @@ export const WhatIDoSection: React.FC = () => {
               {/* Clickable Hero Capability Card */}
               <div
                 onClick={() => setSelectedCapability(devHero)}
-                className="p-5 rounded-2xl bg-[#0e0e16]/90 border border-cyan-500/30 space-y-3 backdrop-blur-md cursor-pointer group hover:border-cyan-400/70 hover:shadow-cyan-500/10 shadow-xl transition-all"
+                className="p-5 rounded-2xl bg-white/90 dark:bg-[#0e0e16]/90 border border-zinc-200 dark:border-cyan-500/30 space-y-3 backdrop-blur-md cursor-pointer group hover:border-cyan-500/70 hover:shadow-cyan-500/10 shadow-lg shadow-zinc-200/40 dark:shadow-xl transition-all"
               >
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2 text-xs font-mono text-cyan-400 uppercase tracking-wider">
+                  <div className="flex items-center gap-2 text-xs font-mono text-cyan-600 dark:text-cyan-400 uppercase tracking-wider">
                     <Terminal className="w-4 h-4" />
                     <span>Frontend Engineering & System Architecture</span>
                   </div>
-                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/30">
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-600 dark:text-cyan-300 border border-cyan-500/30">
                     CORE SYSTEM
                   </span>
                 </div>
-                <h3 className="font-bold text-lg sm:text-xl text-white group-hover:text-cyan-300 transition-colors">
+                <h3 className="font-bold text-lg sm:text-xl text-zinc-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-colors">
                   High-Performance Web Platforms & Reactive Architectures
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
+                <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed font-sans">
                   Constructing responsive React applications, modular state architectures, REST APIs, and real-time Socket.io data pipelines built for speed and production reliability.
                 </p>
-                <div className="flex items-center justify-between pt-2 border-t border-white/5 text-[11px] font-mono text-cyan-400 group-hover:text-cyan-300">
+                <div className="flex items-center justify-between pt-2 border-t border-zinc-200 dark:border-white/5 text-[11px] font-mono text-cyan-600 dark:text-cyan-400 group-hover:text-cyan-700 dark:group-hover:text-cyan-300">
                   <span>EXPLORE SPECIFICATION</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1.5 transition-transform duration-200" />
                 </div>
@@ -453,23 +453,23 @@ export const WhatIDoSection: React.FC = () => {
                   <div
                     key={cap.id}
                     onClick={() => setSelectedCapability(cap)}
-                    className="p-3.5 rounded-xl bg-[#0e0e16]/80 border border-white/10 space-y-2 hover:border-cyan-400/50 transition-all cursor-pointer group hover:bg-[#11111e]/90 shadow-md"
+                    className="p-3.5 rounded-xl bg-white/90 dark:bg-[#0e0e16]/80 border border-zinc-200 dark:border-white/10 space-y-2 hover:border-cyan-500/50 transition-all cursor-pointer group hover:bg-zinc-50 dark:hover:bg-[#11111e]/90 shadow-md shadow-zinc-200/40 dark:shadow-md"
                   >
-                    <div className="flex items-center justify-between text-cyan-400">
+                    <div className="flex items-center justify-between text-cyan-600 dark:text-cyan-400">
                       <div className="flex items-center gap-2">
                         {cap.id === 'react-vite' && <Server className="w-4 h-4" />}
                         {cap.id === 'websockets' && <Zap className="w-4 h-4" />}
                         {cap.id === 'state-persistence' && <Database className="w-4 h-4" />}
                         {cap.id === 'responsive-ux' && <Smartphone className="w-4 h-4" />}
-                        <h4 className="font-mono font-bold text-xs tracking-wider text-white group-hover:text-cyan-300 transition-colors uppercase">
+                        <h4 className="font-mono font-bold text-xs tracking-wider text-zinc-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-colors uppercase">
                           {cap.title}
                         </h4>
                       </div>
                     </div>
-                    <p className="text-xs text-slate-400 font-sans line-clamp-2">
+                    <p className="text-xs text-zinc-600 dark:text-zinc-400 font-sans line-clamp-2">
                       {cap.overview}
                     </p>
-                    <div className="flex items-center justify-between pt-1 text-[10px] font-mono text-cyan-400/80 group-hover:text-cyan-300">
+                    <div className="flex items-center justify-between pt-1 text-[10px] font-mono text-cyan-600 dark:text-cyan-400/80 group-hover:text-cyan-700 dark:group-hover:text-cyan-300">
                       <span>VIEW DEEP DIVE</span>
                       <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                     </div>
@@ -483,15 +483,15 @@ export const WhatIDoSection: React.FC = () => {
               {/* Ambient Outer Glow */}
               <div className="absolute -inset-1 bg-gradient-to-r from-purple-600/30 via-pink-600/20 to-cyan-600/30 rounded-3xl blur-xl opacity-40 group-hover:opacity-80 transition-opacity duration-700 pointer-events-none" />
 
-              <div className="relative rounded-2xl overflow-hidden bg-[#0a0c14] border border-white/10 group-hover:border-purple-500/40 shadow-2xl transition-all duration-500 flex flex-col justify-between">
+              <div className="relative rounded-2xl overflow-hidden bg-white/90 dark:bg-[#0a0c14] border border-zinc-200 dark:border-white/10 group-hover:border-purple-500/40 shadow-xl shadow-zinc-200/50 dark:shadow-2xl transition-all duration-500 flex flex-col justify-between">
                 {/* Top Header Label */}
                 <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-20 pointer-events-none">
-                  <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/10 text-[10px] font-mono text-cyan-300">
+                  <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/80 dark:bg-black/70 backdrop-blur-md border border-zinc-200 dark:border-white/10 text-[10px] font-mono text-cyan-600 dark:text-cyan-300 shadow-sm">
                     <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
                     <span>HARDWARE WORKSTATION // LAB</span>
                   </div>
 
-                  <span className="text-[10px] font-mono px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/10 text-slate-300">
+                  <span className="text-[10px] font-mono px-2.5 py-1 rounded-full bg-white/80 dark:bg-black/70 backdrop-blur-md border border-zinc-200 dark:border-white/10 text-zinc-700 dark:text-slate-300 shadow-sm">
                     4K DUAL DISPLAY
                   </span>
                 </div>
@@ -504,18 +504,18 @@ export const WhatIDoSection: React.FC = () => {
                     className="w-full h-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-700 select-none"
                   />
                   {/* Dark Vignette Bottom Gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
                 </div>
 
                 {/* Bottom Glass Pill Overlay */}
-                <div className="absolute bottom-3 left-3 right-3 p-3 rounded-xl bg-zinc-950/85 backdrop-blur-md border border-white/10 flex items-center justify-between z-20">
+                <div className="absolute bottom-3 left-3 right-3 p-3 rounded-xl bg-white/90 dark:bg-zinc-950/85 backdrop-blur-md border border-zinc-200 dark:border-white/10 flex items-center justify-between z-20 shadow-md">
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-                    <span className="text-[11px] font-mono font-bold text-white tracking-wider">
+                    <span className="text-[11px] font-mono font-bold text-zinc-900 dark:text-white tracking-wider">
                       HARDWARE WORKSTATION // DUAL SETUP
                     </span>
                   </div>
-                  <span className="text-[10px] font-mono text-purple-300 font-semibold">
+                  <span className="text-[10px] font-mono text-purple-600 dark:text-purple-300 font-semibold">
                     60 FPS ULTRA-HD
                   </span>
                 </div>
@@ -536,24 +536,24 @@ export const WhatIDoSection: React.FC = () => {
               {/* Clickable Hero Capability Card */}
               <div
                 onClick={() => setSelectedCapability(designHero)}
-                className="p-5 rounded-2xl bg-[#0e0e16]/90 border border-pink-500/30 space-y-3 backdrop-blur-md cursor-pointer group hover:border-pink-400/70 hover:shadow-pink-500/10 shadow-xl transition-all"
+                className="p-5 rounded-2xl bg-white/90 dark:bg-[#0e0e16]/90 border border-zinc-200 dark:border-pink-500/30 space-y-3 backdrop-blur-md cursor-pointer group hover:border-pink-500/70 hover:shadow-pink-500/10 shadow-lg shadow-zinc-200/40 dark:shadow-xl transition-all"
               >
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2 text-xs font-mono text-pink-400 uppercase tracking-wider">
+                  <div className="flex items-center gap-2 text-xs font-mono text-pink-600 dark:text-pink-400 uppercase tracking-wider">
                     <Box className="w-4 h-4" />
                     <span>3D WebGL & Motion Architecture</span>
                   </div>
-                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-pink-500/10 text-pink-300 border border-pink-500/30">
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-pink-500/10 text-pink-600 dark:text-pink-300 border border-pink-500/30">
                     CREATIVE TECH
                   </span>
                 </div>
-                <h3 className="font-bold text-lg sm:text-xl text-white group-hover:text-pink-300 transition-colors">
+                <h3 className="font-bold text-lg sm:text-xl text-zinc-900 dark:text-white group-hover:text-pink-600 dark:group-hover:text-pink-300 transition-colors">
                   Interactive Spatial Interfaces & Micro-Interactions
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
+                <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed font-sans">
                   Crafting memorable, interactive 3D web spaces with Three.js, React Three Fiber, physics simulations, dark glassmorphism, and fluid Framer Motion spring transitions.
                 </p>
-                <div className="flex items-center justify-between pt-2 border-t border-white/5 text-[11px] font-mono text-pink-400 group-hover:text-pink-300">
+                <div className="flex items-center justify-between pt-2 border-t border-zinc-200 dark:border-white/5 text-[11px] font-mono text-pink-600 dark:text-pink-400 group-hover:text-pink-700 dark:group-hover:text-pink-300">
                   <span>EXPLORE SPECIFICATION</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1.5 transition-transform duration-200" />
                 </div>
@@ -565,23 +565,23 @@ export const WhatIDoSection: React.FC = () => {
                   <div
                     key={cap.id}
                     onClick={() => setSelectedCapability(cap)}
-                    className="p-3.5 rounded-xl bg-[#0e0e16]/80 border border-white/10 space-y-2 hover:border-pink-400/50 transition-all cursor-pointer group hover:bg-[#11111e]/90 shadow-md"
+                    className="p-3.5 rounded-xl bg-white/90 dark:bg-[#0e0e16]/80 border border-zinc-200 dark:border-white/10 space-y-2 hover:border-pink-500/50 transition-all cursor-pointer group hover:bg-zinc-50 dark:hover:bg-[#11111e]/90 shadow-md shadow-zinc-200/40 dark:shadow-md"
                   >
-                    <div className="flex items-center justify-between text-pink-400">
+                    <div className="flex items-center justify-between text-pink-600 dark:text-pink-400">
                       <div className="flex items-center gap-2">
                         {cap.id === 'threejs' && <Box className="w-4 h-4" />}
                         {cap.id === 'motion-physics' && <Sparkles className="w-4 h-4" />}
                         {cap.id === 'glassmorphism' && <Layers className="w-4 h-4" />}
                         {cap.id === 'audio-ux' && <Zap className="w-4 h-4" />}
-                        <h4 className="font-mono font-bold text-xs tracking-wider text-white group-hover:text-pink-300 transition-colors uppercase">
+                        <h4 className="font-mono font-bold text-xs tracking-wider text-zinc-900 dark:text-white group-hover:text-pink-600 dark:group-hover:text-pink-300 transition-colors uppercase">
                           {cap.title}
                         </h4>
                       </div>
                     </div>
-                    <p className="text-xs text-slate-400 font-sans line-clamp-2">
+                    <p className="text-xs text-zinc-600 dark:text-zinc-400 font-sans line-clamp-2">
                       {cap.overview}
                     </p>
-                    <div className="flex items-center justify-between pt-1 text-[10px] font-mono text-pink-400/80 group-hover:text-pink-300">
+                    <div className="flex items-center justify-between pt-1 text-[10px] font-mono text-pink-600 dark:text-pink-400/80 group-hover:text-pink-700 dark:group-hover:text-pink-300">
                       <span>VIEW DEEP DIVE</span>
                       <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                     </div>
@@ -595,15 +595,15 @@ export const WhatIDoSection: React.FC = () => {
               {/* Ambient Outer Glow */}
               <div className="absolute -inset-1 bg-gradient-to-r from-pink-600/30 via-purple-600/20 to-cyan-600/30 rounded-3xl blur-xl opacity-40 group-hover:opacity-80 transition-opacity duration-700 pointer-events-none" />
 
-              <div className="relative rounded-2xl overflow-hidden bg-[#0a0c14] border border-white/10 group-hover:border-pink-500/40 shadow-2xl transition-all duration-500 flex flex-col justify-between">
+              <div className="relative rounded-2xl overflow-hidden bg-white/90 dark:bg-[#0a0c14] border border-zinc-200 dark:border-white/10 group-hover:border-pink-500/40 shadow-xl shadow-zinc-200/50 dark:shadow-2xl transition-all duration-500 flex flex-col justify-between">
                 {/* Top Header Label */}
                 <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-20 pointer-events-none">
-                  <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/10 text-[10px] font-mono text-pink-300">
+                  <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/80 dark:bg-black/70 backdrop-blur-md border border-zinc-200 dark:border-white/10 text-[10px] font-mono text-pink-600 dark:text-pink-300 shadow-sm">
                     <span className="w-2 h-2 rounded-full bg-pink-400 animate-pulse" />
                     <span>3D SPATIAL LAB // WORKSTATION</span>
                   </div>
 
-                  <span className="text-[10px] font-mono px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/10 text-slate-300">
+                  <span className="text-[10px] font-mono px-2.5 py-1 rounded-full bg-white/80 dark:bg-black/70 backdrop-blur-md border border-zinc-200 dark:border-white/10 text-zinc-700 dark:text-slate-300 shadow-sm">
                     STUDIO DISPLAY
                   </span>
                 </div>
@@ -616,18 +616,18 @@ export const WhatIDoSection: React.FC = () => {
                     className="w-full h-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-700 select-none"
                   />
                   {/* Dark Vignette Bottom Gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
                 </div>
 
                 {/* Bottom Glass Pill Overlay */}
-                <div className="absolute bottom-3 left-3 right-3 p-3 rounded-xl bg-zinc-950/85 backdrop-blur-md border border-white/10 flex items-center justify-between z-20">
+                <div className="absolute bottom-3 left-3 right-3 p-3 rounded-xl bg-white/90 dark:bg-zinc-950/85 backdrop-blur-md border border-zinc-200 dark:border-white/10 flex items-center justify-between z-20 shadow-md">
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-                    <span className="text-[11px] font-mono font-bold text-white tracking-wider">
+                    <span className="text-[11px] font-mono font-bold text-zinc-900 dark:text-white tracking-wider">
                       CREATIVE STUDIO // DUAL RIG
                     </span>
                   </div>
-                  <span className="text-[10px] font-mono text-pink-300 font-semibold">
+                  <span className="text-[10px] font-mono text-pink-600 dark:text-pink-300 font-semibold">
                     GPU ACCELERATED
                   </span>
                 </div>
@@ -655,12 +655,12 @@ export const WhatIDoSection: React.FC = () => {
               exit={{ opacity: 0, scale: 0.94, y: 15 }}
               transition={{ duration: 0.25, ease: 'easeOut' }}
               onClick={(e) => e.stopPropagation()}
-              className="max-w-2xl w-full max-h-[85vh] overflow-y-auto rounded-3xl p-6 sm:p-8 bg-zinc-950/95 border border-purple-500/30 shadow-[0_20px_60px_rgba(0,0,0,0.9)] relative text-white space-y-6"
+              className="max-w-2xl w-full max-h-[85vh] overflow-y-auto rounded-3xl p-6 sm:p-8 bg-white/95 dark:bg-zinc-950/95 border border-zinc-200 dark:border-purple-500/30 shadow-2xl relative text-zinc-900 dark:text-white space-y-6 backdrop-blur-xl"
             >
               {/* Floating Close Button */}
               <button
                 onClick={() => setSelectedCapability(null)}
-                className="absolute top-5 right-5 p-2 rounded-full bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white border border-white/10 transition-colors cursor-pointer"
+                className="absolute top-5 right-5 p-2 rounded-full bg-zinc-100 hover:bg-zinc-200 text-zinc-600 dark:bg-white/5 dark:hover:bg-white/10 dark:text-zinc-400 dark:hover:text-white border border-zinc-200 dark:border-white/10 transition-colors cursor-pointer"
                 title="Close Specification"
                 aria-label="Close"
               >
@@ -670,7 +670,7 @@ export const WhatIDoSection: React.FC = () => {
               {/* Top Studio Header & Chip */}
               <div className="space-y-2 pr-8">
                 <div className="flex flex-wrap items-center gap-2">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/30 text-[11px] font-mono text-purple-300 tracking-widest uppercase">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/30 text-[11px] font-mono text-purple-600 dark:text-purple-300 tracking-widest uppercase">
                     <span
                       className={`w-1.5 h-1.5 rounded-full animate-pulse ${
                         selectedCapability.accent === 'cyan' ? 'bg-cyan-400' : 'bg-pink-400'
@@ -681,20 +681,20 @@ export const WhatIDoSection: React.FC = () => {
                   <span
                     className={`text-xs font-mono px-2.5 py-0.5 rounded-full border ${
                       selectedCapability.accent === 'cyan'
-                        ? 'bg-cyan-500/10 text-cyan-300 border-cyan-500/30'
-                        : 'bg-pink-500/10 text-pink-300 border-pink-500/30'
+                        ? 'bg-cyan-500/10 text-cyan-600 dark:text-cyan-300 border-cyan-500/30'
+                        : 'bg-pink-500/10 text-pink-600 dark:text-pink-300 border-pink-500/30'
                     }`}
                   >
                     {selectedCapability.badge}
                   </span>
                 </div>
 
-                <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight pt-1">
+                <h3 className="text-2xl sm:text-3xl font-black text-zinc-900 dark:text-white tracking-tight pt-1">
                   {selectedCapability.title}
                 </h3>
                 <p
                   className={`text-xs sm:text-sm font-mono ${
-                    selectedCapability.accent === 'cyan' ? 'text-cyan-300' : 'text-pink-300'
+                    selectedCapability.accent === 'cyan' ? 'text-cyan-600 dark:text-cyan-300' : 'text-pink-600 dark:text-pink-300'
                   }`}
                 >
                   {selectedCapability.tagline}
@@ -702,25 +702,25 @@ export const WhatIDoSection: React.FC = () => {
               </div>
 
               {/* Comprehensive Overview */}
-              <div className="space-y-2 p-4 rounded-2xl bg-white/[0.03] border border-white/5">
-                <h4 className="text-xs font-mono text-zinc-400 uppercase tracking-wider flex items-center gap-1.5">
-                  <Layers className="w-3.5 h-3.5 text-purple-400" />
+              <div className="space-y-2 p-4 rounded-2xl bg-zinc-50 dark:bg-white/[0.03] border border-zinc-200 dark:border-white/5">
+                <h4 className="text-xs font-mono text-zinc-600 dark:text-zinc-400 uppercase tracking-wider flex items-center gap-1.5">
+                  <Layers className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400" />
                   <span>Engineering Methodology & Execution</span>
                 </h4>
-                <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-sans">
+                <p className="text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed font-sans">
                   {selectedCapability.overview}
                 </p>
               </div>
 
               {/* Architectural Workflow Steps */}
               <div className="space-y-2">
-                <h4 className="text-xs font-mono text-zinc-400 uppercase tracking-wider">
+                <h4 className="text-xs font-mono text-zinc-600 dark:text-zinc-400 uppercase tracking-wider">
                   Technical Workflow:
                 </h4>
                 <ul className="space-y-1.5">
                   {selectedCapability.workflow.map((step, sIdx) => (
-                    <li key={sIdx} className="flex items-start gap-2 text-xs text-zinc-300 font-sans">
-                      <span className="font-mono text-purple-400 font-bold mt-0.5">0{sIdx + 1}.</span>
+                    <li key={sIdx} className="flex items-start gap-2 text-xs text-zinc-700 dark:text-zinc-300 font-sans">
+                      <span className="font-mono text-purple-600 dark:text-purple-400 font-bold mt-0.5">0{sIdx + 1}.</span>
                       <span>{step}</span>
                     </li>
                   ))}
@@ -729,10 +729,10 @@ export const WhatIDoSection: React.FC = () => {
 
               {/* Deliverables Grid */}
               <div className="space-y-3">
-                <h4 className="text-xs font-mono text-zinc-400 uppercase tracking-wider flex items-center gap-1.5">
+                <h4 className="text-xs font-mono text-zinc-600 dark:text-zinc-400 uppercase tracking-wider flex items-center gap-1.5">
                   <Zap
                     className={`w-3.5 h-3.5 ${
-                      selectedCapability.accent === 'cyan' ? 'text-cyan-400' : 'text-pink-400'
+                      selectedCapability.accent === 'cyan' ? 'text-cyan-600 dark:text-cyan-400' : 'text-pink-600 dark:text-pink-400'
                     }`}
                   />
                   <span>Engineered Deliverables & Production Impact</span>
@@ -742,17 +742,17 @@ export const WhatIDoSection: React.FC = () => {
                   {selectedCapability.deliverables.map((item, dIdx) => (
                     <div
                       key={dIdx}
-                      className="p-3.5 rounded-xl bg-zinc-900/60 border border-white/5 space-y-1 hover:border-purple-500/30 transition-colors"
+                      className="p-3.5 rounded-xl bg-zinc-50 dark:bg-zinc-900/60 border border-zinc-200 dark:border-white/5 space-y-1 hover:border-purple-500/30 transition-colors"
                     >
-                      <div className="flex items-center gap-2 text-xs font-semibold text-white">
+                      <div className="flex items-center gap-2 text-xs font-semibold text-zinc-900 dark:text-white">
                         <CheckCircle2
                           className={`w-4 h-4 shrink-0 ${
-                            selectedCapability.accent === 'cyan' ? 'text-cyan-400' : 'text-pink-400'
+                            selectedCapability.accent === 'cyan' ? 'text-cyan-500 dark:text-cyan-400' : 'text-pink-500 dark:text-pink-400'
                           }`}
                         />
                         <span>{item.title}</span>
                       </div>
-                      <p className="text-xs text-zinc-400 font-sans pl-6 leading-relaxed">
+                      <p className="text-xs text-zinc-600 dark:text-zinc-400 font-sans pl-6 leading-relaxed">
                         {item.desc}
                       </p>
                     </div>
@@ -761,21 +761,21 @@ export const WhatIDoSection: React.FC = () => {
               </div>
 
               {/* Performance Metric */}
-              <div className="p-3.5 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center gap-2.5 text-xs font-mono text-emerald-300">
-                <Activity className="w-4 h-4 text-emerald-400 shrink-0 animate-pulse" />
+              <div className="p-3.5 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center gap-2.5 text-xs font-mono text-emerald-700 dark:text-emerald-300">
+                <Activity className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0 animate-pulse" />
                 <span>Performance Metric: {selectedCapability.metrics}</span>
               </div>
 
               {/* Core Technologies & Tooling */}
-              <div className="space-y-2.5 pt-2 border-t border-white/5">
-                <h4 className="text-xs font-mono text-zinc-400 uppercase tracking-wider">
+              <div className="space-y-2.5 pt-2 border-t border-zinc-200 dark:border-white/5">
+                <h4 className="text-xs font-mono text-zinc-600 dark:text-zinc-400 uppercase tracking-wider">
                   Technology Stack & Tooling:
                 </h4>
                 <div className="flex flex-wrap gap-1.5">
                   {selectedCapability.tools.map((tool, tIdx) => (
                     <span
                       key={tIdx}
-                      className="text-xs font-mono px-3 py-1 rounded-lg bg-purple-500/10 text-purple-200 border border-purple-500/20"
+                      className="text-xs font-mono px-3 py-1 rounded-lg bg-purple-500/10 text-purple-700 dark:text-purple-200 border border-purple-500/20"
                     >
                       {tool}
                     </span>
@@ -784,11 +784,11 @@ export const WhatIDoSection: React.FC = () => {
               </div>
 
               {/* Modal Footer Close Action */}
-              <div className="pt-4 border-t border-white/5 flex items-center justify-between text-xs font-mono text-zinc-500">
+              <div className="pt-4 border-t border-zinc-200 dark:border-white/5 flex items-center justify-between text-xs font-mono text-zinc-500">
                 <span>[ESC] OR CLICK OUTSIDE TO CLOSE</span>
                 <button
                   onClick={() => setSelectedCapability(null)}
-                  className="px-5 py-2.5 rounded-xl bg-white hover:bg-zinc-200 text-zinc-950 font-mono font-bold text-xs tracking-wider uppercase transition-colors cursor-pointer"
+                  className="px-5 py-2.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-white dark:bg-white dark:hover:bg-zinc-200 dark:text-zinc-950 font-mono font-bold text-xs tracking-wider uppercase transition-colors cursor-pointer shadow-md"
                 >
                   DISMISS
                 </button>

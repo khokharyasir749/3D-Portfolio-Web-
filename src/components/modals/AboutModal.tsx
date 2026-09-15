@@ -1,6 +1,7 @@
 import React from 'react';
 import { ModalBackdrop } from './ModalBackdrop';
 import { portfolioData } from '../../data/portfolioData';
+import profilePic from '../../assets/profile.jpg';
 import { Terminal, Shield, Zap } from 'lucide-react';
 
 interface AboutModalProps {
@@ -20,9 +21,13 @@ export const AboutModal: React.FC<AboutModalProps> = ({ onClose }) => {
       {/* Top Profile Card */}
       <div className="p-5 rounded-sm bg-[#101424] border border-cyan-500/30 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         <div className="flex items-center gap-4">
-          <div className="w-14 h-14 rounded-sm bg-gradient-to-br from-cyan-500 to-pink-500 p-0.5 shadow-neon-cyan">
-            <div className="w-full h-full bg-[#0d101d] rounded-sm flex items-center justify-center font-cyber font-bold text-2xl text-cyan-300">
-              AC
+          <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-500 to-pink-500 p-0.5 shadow-neon-cyan shrink-0">
+            <div className="w-full h-full bg-[#0d101d] rounded-2xl overflow-hidden flex items-center justify-center font-cyber font-bold text-2xl text-cyan-300">
+              <img
+                src={profilePic}
+                alt="YK"
+                className="w-full h-full object-cover rounded-2xl"
+              />
             </div>
           </div>
           <div>

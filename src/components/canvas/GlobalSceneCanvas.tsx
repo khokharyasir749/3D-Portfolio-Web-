@@ -6,9 +6,13 @@ import { GlobalCameraController } from './GlobalCameraController';
 
 interface GlobalSceneCanvasProps {
   scrollProgress: number;
+  theme?: 'dark' | 'light';
 }
 
-export const GlobalSceneCanvas: React.FC<GlobalSceneCanvasProps> = ({ scrollProgress }) => {
+export const GlobalSceneCanvas: React.FC<GlobalSceneCanvasProps> = ({
+  scrollProgress,
+  theme = 'dark',
+}) => {
   return (
     <div
       className="fixed inset-0 w-full h-full pointer-events-none z-0 overflow-hidden select-none"
@@ -38,15 +42,15 @@ export const GlobalSceneCanvas: React.FC<GlobalSceneCanvasProps> = ({ scrollProg
         }}
         className="w-full h-full pointer-events-auto"
       >
-        {/* Pure Deep Dark Pitch Black Studio Background: #080808 */}
-        <color attach="background" args={["#080808"]} />
+        {/* Dynamic Studio Background: #080808 (Dark) or #f8fafc (Light) */}
+        <color attach="background" args={[theme === 'light' ? '#f8fafc' : '#080808']} />
 
         <Suspense fallback={null}>
           {/* Subtle Ambient City Studio Reflections */}
-          <Environment preset="city" environmentIntensity={0.15} />
+          <Environment preset="city" environmentIntensity={theme === 'light' ? 0.35 : 0.15} />
 
           {/* Balanced 3-Point Studio Lighting */}
-          <Lighting />
+          <Lighting theme={theme} />
 
           {/* Dynamic Scroll-Interpolated Camera Spline */}
           <GlobalCameraController scrollProgress={scrollProgress} />

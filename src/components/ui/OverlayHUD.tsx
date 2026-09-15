@@ -7,6 +7,8 @@ interface OverlayHUDProps {
   onNavigate: (sectionId: string) => void;
   isMuted: boolean;
   onToggleAudio: () => void;
+  theme?: 'dark' | 'light';
+  onToggleTheme?: () => void;
 }
 
 export const OverlayHUD: React.FC<OverlayHUDProps> = ({
@@ -14,6 +16,8 @@ export const OverlayHUD: React.FC<OverlayHUDProps> = ({
   onNavigate,
   isMuted,
   onToggleAudio,
+  theme = 'dark',
+  onToggleTheme,
 }) => {
   return (
     <div
@@ -30,6 +34,8 @@ export const OverlayHUD: React.FC<OverlayHUDProps> = ({
       <LeftControlBar
         isMuted={isMuted}
         onToggleAudio={onToggleAudio}
+        theme={theme}
+        onToggleTheme={onToggleTheme}
       />
     </div>
   );

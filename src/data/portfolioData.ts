@@ -67,19 +67,19 @@ export const portfolioData = {
   about: {
     name: "Yasir Khokhar",
     handle: "khokharyasir749",
-    role: "Frontend Developer & Creative Technologist",
-    tagline: "Building digital experiences with React & modern web technologies.",
+    role: "Full-Stack Developer & Creative Technologist",
+    tagline: "Building digital experiences with React, Node.js & modern web technologies.",
     status: "AVAILABLE FOR WORK",
     location: "Lahore, Pakistan // Remote Worldwide",
     bio: [
-      "A frontend developer & creative technologist specializing in crafting high-performance, visually stunning web applications and interactive digital experiences with React, modern CSS systems, and 3D WebGL.",
-      "Experienced across modern frontend engineering, single-page application state persistence, real-time WebSocket pipelines, and interactive 3D interfaces with Three.js and React Three Fiber.",
+      "A full-stack developer & creative technologist specializing in crafting high-performance, visually stunning web applications and interactive digital experiences with React, Node.js, modern CSS systems, and 3D WebGL.",
+      "Experienced across modern full-stack engineering, single-page application state persistence, real-time WebSocket pipelines, and interactive 3D interfaces with Three.js and React Three Fiber.",
       "Committed to clean architecture, intuitive micro-animations, and fluid 60 FPS performance across desktop and mobile devices."
     ],
     timeline: [
       {
         year: "2024",
-        title: "Frontend & Web Application Developer",
+        title: "Full-Stack Web Developer",
         subtitle: "React • Vite • Tailwind CSS • Enterprise Catalog UI",
         description: "Engineered high-conversion e-commerce catalogs (Lonetex Pakistan), food ordering platforms (Bite-Hub), and real estate investment portals with interactive calculators.",
         tags: ["React", "Vite", "Tailwind CSS", "JavaScript", "REST APIs", "LocalStorage"]
@@ -101,7 +101,7 @@ export const portfolioData = {
       }
     ],
     stats: [
-      { label: "EXPERIENCE", value: "Frontend", sub: "Web & Creative 3D" },
+      { label: "EXPERIENCE", value: "Full-Stack", sub: "Web & Creative 3D" },
       { label: "PROJECTS DELIVERED", value: "08+", sub: "Production Apps" },
       { label: "PERFORMANCE", value: "60 FPS", sub: "Fluid Micro-Interactions" },
       { label: "STATUS", value: "Available", sub: "Open for Contracts" }

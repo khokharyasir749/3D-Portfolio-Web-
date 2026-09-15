@@ -22,6 +22,7 @@ import {
   portfolioData,
   type SectionType,
 } from '../../data/portfolioData';
+import profilePic from '../../assets/profile.jpg';
 import { WorkShowcase } from './WorkShowcase';
 import { TechSpheresCanvas } from '../canvas/TechSpheresCanvas';
 import { WhatIDoSection } from './WhatIDoSection';
@@ -244,9 +245,13 @@ export const SectionShowcase: React.FC<SectionShowcaseProps> = ({
                 {/* Header Profile Card */}
                 <div className="p-5 rounded-sm bg-[#0f1320] border border-yellow-500/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                   <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 rounded-sm bg-gradient-to-br from-yellow-400 via-cyan-500 to-pink-500 p-0.5 shadow-lg">
-                      <div className="w-full h-full bg-[#0a0d17] rounded-sm flex items-center justify-center font-cyber font-bold text-xl text-yellow-400">
-                        YK
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-yellow-400 via-cyan-500 to-pink-500 p-0.5 shadow-lg shrink-0">
+                      <div className="w-full h-full bg-[#0a0d17] rounded-2xl overflow-hidden flex items-center justify-center font-cyber font-bold text-xl text-yellow-400">
+                        <img
+                          src={profilePic}
+                          alt="YK"
+                          className="w-full h-full object-cover rounded-2xl"
+                        />
                       </div>
                     </div>
                     <div>

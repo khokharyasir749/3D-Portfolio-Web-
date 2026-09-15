@@ -85,6 +85,65 @@ export const InteractivePortrait: React.FC = () => {
           {/* Vignette Rim Shadow */}
           <div className="absolute inset-0 rounded-full shadow-[inset_0_0_35px_rgba(0,0,0,0.8)] pointer-events-none" />
         </div>
+
+        {/* Orbiting Tech Stack Badges Ring */}
+        <motion.div
+          animate={{ rotate: 360 }}
+          transition={{ repeat: Infinity, duration: 24, ease: 'linear' }}
+          className="absolute inset-[-10px] sm:inset-[-16px] md:inset-[-20px] pointer-events-none rounded-full [transform-style:preserve-3d]"
+        >
+          {/* Top (0°): React */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-auto">
+            <motion.div
+              animate={{ rotate: -360 }}
+              transition={{ repeat: Infinity, duration: 24, ease: 'linear' }}
+              whileHover={{ scale: 1.1 }}
+              className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 dark:bg-zinc-950/80 border border-zinc-200 dark:border-white/15 backdrop-blur-md shadow-lg shadow-zinc-200/50 dark:shadow-xl text-xs font-mono text-zinc-900 dark:text-zinc-200 tracking-wide select-none [transform:translateZ(30px)] cursor-pointer"
+            >
+              <span className="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.8)] animate-pulse" />
+              <span>React</span>
+            </motion.div>
+          </div>
+
+          {/* Right (90°): TypeScript */}
+          <div className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 pointer-events-auto">
+            <motion.div
+              animate={{ rotate: -360 }}
+              transition={{ repeat: Infinity, duration: 24, ease: 'linear' }}
+              whileHover={{ scale: 1.1 }}
+              className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 dark:bg-zinc-950/80 border border-zinc-200 dark:border-white/15 backdrop-blur-md shadow-lg shadow-zinc-200/50 dark:shadow-xl text-xs font-mono text-zinc-900 dark:text-zinc-200 tracking-wide select-none [transform:translateZ(30px)] cursor-pointer"
+            >
+              <span className="w-2 h-2 rounded-full bg-blue-400 shadow-[0_0_8px_rgba(96,165,250,0.8)] animate-pulse" />
+              <span>TypeScript</span>
+            </motion.div>
+          </div>
+
+          {/* Bottom (180°): Three.js */}
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 pointer-events-auto">
+            <motion.div
+              animate={{ rotate: -360 }}
+              transition={{ repeat: Infinity, duration: 24, ease: 'linear' }}
+              whileHover={{ scale: 1.1 }}
+              className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 dark:bg-zinc-950/80 border border-zinc-200 dark:border-white/15 backdrop-blur-md shadow-lg shadow-zinc-200/50 dark:shadow-xl text-xs font-mono text-zinc-900 dark:text-zinc-200 tracking-wide select-none [transform:translateZ(30px)] cursor-pointer"
+            >
+              <span className="w-2 h-2 rounded-full bg-purple-400 shadow-[0_0_8px_rgba(192,132,252,0.8)] animate-pulse" />
+              <span>Three.js</span>
+            </motion.div>
+          </div>
+
+          {/* Left (270°): Node.js */}
+          <div className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 pointer-events-auto">
+            <motion.div
+              animate={{ rotate: -360 }}
+              transition={{ repeat: Infinity, duration: 24, ease: 'linear' }}
+              whileHover={{ scale: 1.1 }}
+              className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 dark:bg-zinc-950/80 border border-zinc-200 dark:border-white/15 backdrop-blur-md shadow-lg shadow-zinc-200/50 dark:shadow-xl text-xs font-mono text-zinc-900 dark:text-zinc-200 tracking-wide select-none [transform:translateZ(30px)] cursor-pointer"
+            >
+              <span className="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)] animate-pulse" />
+              <span>Node.js</span>
+            </motion.div>
+          </div>
+        </motion.div>
       </motion.div>
     </div>
   );

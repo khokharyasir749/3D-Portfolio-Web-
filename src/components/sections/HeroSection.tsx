@@ -9,7 +9,7 @@ export interface HeroSectionProps {
 
 export const HeroSection: React.FC<HeroSectionProps> = () => {
   return (
-    <div className="w-full min-h-screen relative flex flex-col justify-between px-6 sm:px-10 md:px-14 lg:px-20 py-16 sm:py-20 select-none z-20 max-w-7xl mx-auto">
+    <div className="w-full min-h-screen relative flex flex-col justify-between px-6 sm:px-10 lg:px-12 py-16 sm:py-20 select-none z-20 max-w-[1400px] mx-auto">
       {/* Top spacer for TopNav */}
       <div className="h-4 sm:h-6" />
 
@@ -27,12 +27,12 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-zinc-300 text-xs sm:text-sm font-sans tracking-[0.25em] uppercase font-semibold"
+            className="text-zinc-600 dark:text-zinc-300 text-xs sm:text-sm font-sans tracking-[0.25em] uppercase font-semibold"
           >
             A CREATIVE
           </motion.span>
 
-          {/* 2. Headline with Pure White Outline FULL-STACK & Crisp Gradient DEVELOPER */}
+          {/* 2. Headline with Pure Outline FULL-STACK & Crisp Gradient DEVELOPER */}
           <div className="relative w-full overflow-visible">
             <motion.h1
               initial={{ opacity: 0, y: 18 }}
@@ -40,19 +40,15 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-[clamp(2.4rem,5.2vw,5.0rem)] font-black uppercase tracking-tight leading-[0.92] select-none space-y-1"
             >
-              {/* Line 1: Pure White Hollow Outline Stroke "FULL-STACK" */}
+              {/* Line 1: Hollow Outline Stroke "FULL-STACK" */}
               <span
-                className="block whitespace-nowrap opacity-90"
-                style={{
-                  WebkitTextStroke: '1.5px #ffffff',
-                  color: 'transparent',
-                }}
+                className="hero-outline-text block whitespace-nowrap [-webkit-text-stroke:1.5px_#18181b] dark:[-webkit-text-stroke:1.5px_#ffffff] text-transparent dark:drop-shadow-[0_0_15px_rgba(255,255,255,0.35)] opacity-95"
               >
                 FULL-STACK
               </span>
 
               {/* Line 2: Solid vibrant purple-to-cyan gradient "DEVELOPER" */}
-              <span className="block whitespace-nowrap bg-gradient-to-r from-purple-400 via-violet-300 to-cyan-400 bg-clip-text text-transparent drop-shadow-sm">
+              <span className="block whitespace-nowrap bg-gradient-to-r from-purple-600 via-violet-600 to-cyan-600 dark:from-purple-400 dark:via-violet-300 dark:to-cyan-400 bg-clip-text text-transparent dark:drop-shadow-[0_0_25px_rgba(168,85,247,0.45)]">
                 DEVELOPER
               </span>
             </motion.h1>
@@ -63,7 +59,7 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xs sm:text-sm md:text-base text-zinc-300 font-sans leading-relaxed max-w-lg pt-1"
+            className="text-xs sm:text-sm md:text-base text-zinc-700 dark:text-zinc-300 font-sans leading-relaxed max-w-lg pt-1"
           >
             {portfolioData.about.bio[0]}
           </motion.p>
@@ -71,16 +67,16 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
       </div>
 
       {/* Bottom Row: Minimalist Status & Resume Link */}
-      <div className="w-full flex items-center justify-between pointer-events-auto pt-4 text-xs font-mono text-zinc-400">
+      <div className="w-full flex items-center justify-between pointer-events-auto pt-4 text-xs font-mono text-zinc-500 dark:text-zinc-400">
         <span className="tracking-[0.2em] uppercase font-medium">
           LAHORE, PAKISTAN // 2026
         </span>
         <a
           href="mailto:khokharyasir749@gmail.com?subject=Resume%20Request%20-%20Yasir%20Khokhar"
-          className="group flex items-center gap-1.5 tracking-[0.2em] text-zinc-400 hover:text-white transition-colors uppercase cursor-pointer"
+          className="group flex items-center gap-1.5 tracking-[0.2em] text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white transition-colors uppercase cursor-pointer"
         >
           <span>RESUME</span>
-          <span className="text-purple-400 group-hover:translate-y-0.5 transition-transform">↓</span>
+          <span className="text-purple-500 dark:text-purple-400 group-hover:translate-y-0.5 transition-transform">↓</span>
         </a>
       </div>
     </div>

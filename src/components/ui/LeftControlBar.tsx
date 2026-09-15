@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Volume2, VolumeX, Linkedin, Github, Moon, Sun } from 'lucide-react';
 import { portfolioData } from '../../data/portfolioData';
 
 interface LeftControlBarProps {
   isMuted: boolean;
   onToggleAudio: () => void;
+  theme?: 'dark' | 'light';
+  onToggleTheme?: () => void;
 }
 
 // Minimalist X (Twitter) Vector Icon
@@ -22,16 +24,12 @@ const XTwitterIcon: React.FC<{ className?: string }> = ({ className = 'w-3.5 h-3
 export const LeftControlBar: React.FC<LeftControlBarProps> = ({
   isMuted,
   onToggleAudio,
+  theme = 'dark',
+  onToggleTheme,
 }) => {
-  const [isDarkMode, setIsDarkMode] = useState(true);
-
   const linkedinUrl = portfolioData.contacts.find((c) => c.type === 'linkedin')?.link || 'https://linkedin.com/in/yasirkhokhar';
   const githubUrl = portfolioData.contacts.find((c) => c.type === 'github')?.link || 'https://github.com/khokharyasir749';
   const twitterUrl = 'https://x.com/yasirkhokhar';
-
-  const handleToggleTheme = () => {
-    setIsDarkMode((prev) => !prev);
-  };
 
   return (
     <aside
@@ -103,17 +101,17 @@ export const LeftControlBar: React.FC<LeftControlBarProps> = ({
 
         {/* 5. Theme Toggle */}
         <button
-          onClick={handleToggleTheme}
+          onClick={onToggleTheme}
           className="group relative p-1.5 text-white/50 hover:text-white transition-all duration-200 cursor-pointer"
           aria-label="Toggle Theme"
         >
-          {isDarkMode ? (
-            <Moon className="w-3.5 h-3.5 group-hover:scale-110 transition-transform" />
+          {theme === 'dark' ? (
+            <Moon className="w-3.5 h-3.5 text-purple-300 group-hover:scale-110 transition-transform" />
           ) : (
             <Sun className="w-3.5 h-3.5 text-amber-400 group-hover:scale-110 transition-transform" />
           )}
           <span className="absolute left-full ml-3 px-2 py-0.5 rounded bg-[#111116] border border-white/10 text-[10px] font-mono text-slate-300 whitespace-nowrap opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all pointer-events-none shadow-2xl z-50">
-            Theme
+            {theme === 'dark' ? 'Dark Mode' : 'Light Mode'}
           </span>
         </button>
       </div>

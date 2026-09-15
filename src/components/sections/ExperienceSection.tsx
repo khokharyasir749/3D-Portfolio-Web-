@@ -184,25 +184,25 @@ export const ExperienceSection: React.FC = () => {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="w-full max-w-[1400px] mx-auto space-y-6 px-4 sm:px-8 lg:px-12 select-none pointer-events-auto">
       {/* Top Header */}
-      <div className="pb-4 border-b border-white/10 flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+      <div className="pb-4 border-b border-zinc-200 dark:border-white/10 flex flex-col sm:flex-row sm:items-end justify-between gap-3">
         <div>
           <div className="flex items-center gap-2 mb-1">
-            <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-[11px] font-mono text-emerald-300 tracking-widest uppercase">
+            <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-[11px] font-mono text-emerald-600 dark:text-emerald-300 tracking-widest uppercase">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
               <span>[ 05 // CAREER & IMPACT ]</span>
             </div>
           </div>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight uppercase">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-zinc-900 dark:text-white tracking-tight uppercase">
             EXPERIENCE & CAREER
           </h2>
-          <p className="text-xs sm:text-sm text-slate-400 font-sans mt-1">
+          <p className="text-xs sm:text-sm text-zinc-600 dark:text-slate-400 font-sans mt-1">
             A chronological timeline of engineering scalable web applications, mobile architectures, and 3D spatial experiences.
           </p>
         </div>
 
-        <div className="flex items-center gap-1.5 px-3 py-1 rounded bg-emerald-500/10 border border-emerald-500/30 text-xs font-code text-emerald-400 shrink-0">
+        <div className="flex items-center gap-1.5 px-3 py-1 rounded bg-emerald-500/10 border border-emerald-500/30 text-xs font-code text-emerald-600 dark:text-emerald-400 shrink-0">
           <Sparkles className="w-3.5 h-3.5" />
           <span>CONTINUOUS GROWTH</span>
         </div>
@@ -215,10 +215,10 @@ export const ExperienceSection: React.FC = () => {
             key={idx}
             whileHover={{ y: -4 }}
             onClick={() => setSelectedExperience(exp)}
-            className={`p-5 rounded-2xl bg-zinc-950/80 border transition-all duration-300 flex flex-col justify-between space-y-4 shadow-xl cursor-pointer group hover:border-purple-400/50 hover:shadow-purple-500/10 ${
+            className={`p-5 rounded-2xl bg-white/90 dark:bg-zinc-950/80 border transition-all duration-300 flex flex-col justify-between space-y-4 shadow-xl shadow-zinc-200/50 dark:shadow-xl cursor-pointer group hover:border-purple-400/50 hover:shadow-purple-500/10 ${
               exp.current
                 ? 'border-emerald-500/40 shadow-emerald-500/10 hover:border-emerald-400'
-                : 'border-white/10'
+                : 'border-zinc-200 dark:border-white/10'
             }`}
           >
             <div className="space-y-3.5">
@@ -232,7 +232,7 @@ export const ExperienceSection: React.FC = () => {
                 </span>
 
                 {exp.current && (
-                  <span className="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 flex items-center gap-1.5">
+                  <span className="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 border border-emerald-500/40 flex items-center gap-1.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                     <span>CURRENT FOCUS</span>
                   </span>
@@ -243,32 +243,32 @@ export const ExperienceSection: React.FC = () => {
               <div>
                 <div className="flex items-center gap-2">
                   {renderIcon(exp.icon)}
-                  <h3 className="font-bold text-base text-white tracking-wide group-hover:text-purple-300 transition-colors">
+                  <h3 className="font-bold text-base text-zinc-900 dark:text-white tracking-wide group-hover:text-purple-600 dark:group-hover:text-purple-300 transition-colors">
                     {exp.role}
                   </h3>
                 </div>
-                <p className="font-mono text-xs text-slate-400 mt-1">
+                <p className="font-mono text-xs text-zinc-600 dark:text-slate-400 mt-1">
                   {exp.subtitle}
                 </p>
               </div>
 
               {/* Summary Description */}
-              <p className="text-xs text-slate-300 font-sans leading-relaxed">
+              <p className="text-xs text-zinc-600 dark:text-slate-300 font-sans leading-relaxed">
                 {exp.summary}
               </p>
 
               {/* Key Highlights */}
-              <div className="space-y-1.5 pt-2 border-t border-white/5">
-                <h4 className="text-[10px] font-mono text-slate-400 uppercase tracking-wider">
+              <div className="space-y-1.5 pt-2 border-t border-zinc-200 dark:border-white/5">
+                <h4 className="text-[10px] font-mono text-zinc-500 dark:text-slate-400 uppercase tracking-wider">
                   Key Accomplishments:
                 </h4>
                 <ul className="space-y-1">
                   {exp.highlights.slice(0, 3).map((item, hIdx) => (
                     <li
                       key={hIdx}
-                      className="flex items-start gap-1.5 text-xs text-slate-300 font-sans"
+                      className="flex items-start gap-1.5 text-xs text-zinc-700 dark:text-slate-300 font-sans"
                     >
-                      <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400 shrink-0 mt-0.5" />
                       <span className="line-clamp-1">{item}</span>
                     </li>
                   ))}
@@ -277,25 +277,25 @@ export const ExperienceSection: React.FC = () => {
             </div>
 
             {/* Bottom Tag Pills & Interactive Affordance Badge */}
-            <div className="space-y-3 pt-3 border-t border-white/5">
+            <div className="space-y-3 pt-3 border-t border-zinc-200 dark:border-white/5">
               <div className="flex flex-wrap gap-1">
                 {exp.tags.slice(0, 4).map((tag, tIdx) => (
                   <span
                     key={tIdx}
-                    className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 text-slate-400 border border-white/5"
+                    className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-zinc-100 text-zinc-700 border border-zinc-200 dark:bg-white/5 dark:text-slate-400 dark:border-white/5"
                   >
                     {tag}
                   </span>
                 ))}
                 {exp.tags.length > 4 && (
-                  <span className="text-[10px] font-mono px-1.5 py-0.5 text-slate-500">
+                  <span className="text-[10px] font-mono px-1.5 py-0.5 text-zinc-400 dark:text-slate-500">
                     +{exp.tags.length - 4}
                   </span>
                 )}
               </div>
 
               {/* Click to View Dossier CTA Badge */}
-              <div className="flex items-center justify-between text-[11px] font-mono text-purple-400 group-hover:text-purple-300 pt-1">
+              <div className="flex items-center justify-between text-[11px] font-mono text-purple-600 dark:text-purple-400 group-hover:text-purple-700 dark:group-hover:text-purple-300 pt-1">
                 <span>VIEW FULL DOSSIER</span>
                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1.5 transition-transform duration-200" />
               </div>
@@ -322,12 +322,12 @@ export const ExperienceSection: React.FC = () => {
               exit={{ opacity: 0, scale: 0.94, y: 15 }}
               transition={{ duration: 0.25, ease: 'easeOut' }}
               onClick={(e) => e.stopPropagation()}
-              className="max-w-2xl w-full max-h-[85vh] overflow-y-auto rounded-3xl p-6 sm:p-8 bg-zinc-950/95 border border-purple-500/30 shadow-[0_20px_60px_rgba(0,0,0,0.9)] relative text-white space-y-6"
+              className="max-w-2xl w-full max-h-[85vh] overflow-y-auto rounded-3xl p-6 sm:p-8 bg-white/95 dark:bg-zinc-950/95 border border-zinc-200 dark:border-purple-500/30 shadow-2xl relative text-zinc-900 dark:text-white space-y-6 backdrop-blur-xl"
             >
               {/* Floating Close Button */}
               <button
                 onClick={() => setSelectedExperience(null)}
-                className="absolute top-5 right-5 p-2 rounded-full bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white border border-white/10 transition-colors cursor-pointer"
+                className="absolute top-5 right-5 p-2 rounded-full bg-zinc-100 hover:bg-zinc-200 text-zinc-600 dark:bg-white/5 dark:hover:bg-white/10 dark:text-zinc-400 dark:hover:text-white border border-zinc-200 dark:border-white/10 transition-colors cursor-pointer"
                 title="Close Dossier"
                 aria-label="Close"
               >
@@ -336,13 +336,13 @@ export const ExperienceSection: React.FC = () => {
 
               {/* Top Studio Dossier Chip & Header */}
               <div className="space-y-2 pr-8">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/30 text-[11px] font-mono text-purple-300 tracking-widest uppercase">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/30 text-[11px] font-mono text-purple-600 dark:text-purple-300 tracking-widest uppercase">
                   <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
                   <span>[ EXPERIENCE DOSSIER // DEEP DIVE ]</span>
                 </div>
 
                 <div className="flex flex-wrap items-center gap-3 pt-1">
-                  <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight">
+                  <h3 className="text-xl sm:text-2xl font-black text-zinc-900 dark:text-white tracking-tight">
                     {selectedExperience.role}
                   </h3>
                   <span
@@ -352,29 +352,29 @@ export const ExperienceSection: React.FC = () => {
                   </span>
                 </div>
 
-                <p className="text-xs sm:text-sm font-mono text-purple-300">
+                <p className="text-xs sm:text-sm font-mono text-purple-600 dark:text-purple-300">
                   {selectedExperience.subtitle}
                 </p>
-                <p className="text-xs text-zinc-400 font-sans">
+                <p className="text-xs text-zinc-600 dark:text-zinc-400 font-sans">
                   🏢 {selectedExperience.company}
                 </p>
               </div>
 
               {/* Comprehensive Overview */}
-              <div className="space-y-2 p-4 rounded-2xl bg-white/[0.03] border border-white/5">
-                <h4 className="text-xs font-mono text-zinc-400 uppercase tracking-wider flex items-center gap-1.5">
-                  <Layers className="w-3.5 h-3.5 text-purple-400" />
+              <div className="space-y-2 p-4 rounded-2xl bg-zinc-50 dark:bg-white/[0.03] border border-zinc-200 dark:border-white/5">
+                <h4 className="text-xs font-mono text-zinc-600 dark:text-zinc-400 uppercase tracking-wider flex items-center gap-1.5">
+                  <Layers className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400" />
                   <span>Executive Overview</span>
                 </h4>
-                <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-sans">
+                <p className="text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed font-sans">
                   {selectedExperience.detailedOverview}
                 </p>
               </div>
 
               {/* Key Technical Deliverables Grid */}
               <div className="space-y-3">
-                <h4 className="text-xs font-mono text-zinc-400 uppercase tracking-wider flex items-center gap-1.5">
-                  <Zap className="w-3.5 h-3.5 text-cyan-400" />
+                <h4 className="text-xs font-mono text-zinc-600 dark:text-zinc-400 uppercase tracking-wider flex items-center gap-1.5">
+                  <Zap className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400" />
                   <span>Key Architectural Deliverables & Impact</span>
                 </h4>
 
@@ -382,13 +382,13 @@ export const ExperienceSection: React.FC = () => {
                   {selectedExperience.deliverables.map((item, dIdx) => (
                     <div
                       key={dIdx}
-                      className="p-3.5 rounded-xl bg-zinc-900/60 border border-white/5 space-y-1 hover:border-purple-500/30 transition-colors"
+                      className="p-3.5 rounded-xl bg-zinc-50 dark:bg-zinc-900/60 border border-zinc-200 dark:border-white/5 space-y-1 hover:border-purple-500/30 transition-colors"
                     >
-                      <div className="flex items-center gap-2 text-xs font-semibold text-white">
-                        <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0" />
+                      <div className="flex items-center gap-2 text-xs font-semibold text-zinc-900 dark:text-white">
+                        <CheckCircle2 className="w-4 h-4 text-cyan-600 dark:text-cyan-400 shrink-0" />
                         <span>{item.title}</span>
                       </div>
-                      <p className="text-xs text-zinc-400 font-sans pl-6 leading-relaxed">
+                      <p className="text-xs text-zinc-600 dark:text-zinc-400 font-sans pl-6 leading-relaxed">
                         {item.description}
                       </p>
                     </div>
@@ -397,15 +397,15 @@ export const ExperienceSection: React.FC = () => {
               </div>
 
               {/* Core Technologies Badges */}
-              <div className="space-y-2.5 pt-3 border-t border-white/5">
-                <h4 className="text-xs font-mono text-zinc-400 uppercase tracking-wider">
+              <div className="space-y-2.5 pt-3 border-t border-zinc-200 dark:border-white/5">
+                <h4 className="text-xs font-mono text-zinc-600 dark:text-zinc-400 uppercase tracking-wider">
                   Core Technologies & Ecosystem:
                 </h4>
                 <div className="flex flex-wrap gap-1.5">
                   {selectedExperience.tags.map((tag, tIdx) => (
                     <span
                       key={tIdx}
-                      className="text-xs font-mono px-3 py-1 rounded-lg bg-purple-500/10 text-purple-200 border border-purple-500/20"
+                      className="text-xs font-mono px-3 py-1 rounded-lg bg-purple-500/10 text-purple-700 dark:text-purple-200 border border-purple-500/20"
                     >
                       {tag}
                     </span>
@@ -414,11 +414,11 @@ export const ExperienceSection: React.FC = () => {
               </div>
 
               {/* Bottom Footer Close Action */}
-              <div className="pt-4 border-t border-white/5 flex items-center justify-between text-xs font-mono text-zinc-500">
+              <div className="pt-4 border-t border-zinc-200 dark:border-white/5 flex items-center justify-between text-xs font-mono text-zinc-500">
                 <span>[ESC] OR CLICK OUTSIDE TO CLOSE</span>
                 <button
                   onClick={() => setSelectedExperience(null)}
-                  className="px-4 py-2 rounded-xl bg-white hover:bg-zinc-200 text-zinc-950 font-bold tracking-wider uppercase transition-colors cursor-pointer"
+                  className="px-5 py-2.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-white dark:bg-white dark:hover:bg-zinc-200 dark:text-zinc-950 font-bold tracking-wider uppercase transition-colors cursor-pointer shadow-md text-xs font-mono"
                 >
                   DISMISS
                 </button>

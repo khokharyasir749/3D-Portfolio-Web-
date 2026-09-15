@@ -13,20 +13,30 @@
 }
 
 html {
-  background-color: #080808;
-  color: #f8fafc;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
+/* Dark Mode Defaults */
 html,
-body {
+html.dark,
+body,
+html.dark body {
   width: 100%;
   min-height: 100%;
   margin: 0;
   padding: 0;
   background-color: #080808;
+  color: #f8fafc;
   overflow-x: hidden;
+}
+
+/* Light Mode Comprehensive Theme */
+html.light,
+html.light body {
+  color-scheme: light;
+  background-color: #f8fafc;
+  color: #0f172a;
 }
 
 /* Lenis Smooth Scroll Styles */
@@ -59,7 +69,7 @@ html.lenis body {
   font-family: 'JetBrains Mono', monospace;
 }
 
-/* Sleek Minimalist Studio Dark Glass */
+/* Studio Glass Dark Glass */
 .studio-glass {
   background: rgba(13, 14, 20, 0.75);
   backdrop-filter: blur(16px);
@@ -72,7 +82,182 @@ html.lenis body {
   box-shadow: 0 0 25px rgba(109, 40, 217, 0.15);
 }
 
-/* Custom Minimalist Dark Scrollbar */
+/* ------------------------------------------------------------- */
+/* LIGHT MODE STYLES & OVERRIDES                                 */
+/* ------------------------------------------------------------- */
+
+html.light header {
+  background-color: rgba(255, 255, 255, 0.82) !important;
+  border-bottom-color: rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+html.light header span.text-white,
+html.light header button.text-white {
+  color: #0f172a !important;
+}
+
+html.light header button.text-zinc-400 {
+  color: #64748b !important;
+}
+
+html.light header button.text-zinc-400:hover {
+  color: #0f172a !important;
+}
+
+/* Left Control Bar */
+html.light aside button,
+html.light aside a {
+  color: rgba(15, 23, 42, 0.6) !important;
+}
+
+html.light aside button:hover,
+html.light aside a:hover {
+  color: #0f172a !important;
+}
+
+html.light aside div.bg-gradient-to-b {
+  opacity: 0.25 !important;
+  background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3), transparent) !important;
+}
+
+html.light aside span.bg-\[\#111116\] {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Typography & Headings in Light Mode */
+html.light .text-white {
+  color: #0f172a !important;
+}
+
+html.light .text-zinc-100,
+html.light .text-slate-100 {
+  color: #0f172a !important;
+}
+
+html.light .text-zinc-200,
+html.light .text-slate-200,
+html.light .text-zinc-300,
+html.light .text-slate-300 {
+  color: #334155 !important;
+}
+
+html.light .text-zinc-400,
+html.light .text-slate-400 {
+  color: #475569 !important;
+}
+
+html.light .text-zinc-500 {
+  color: #64748b !important;
+}
+
+html.light .text-zinc-600 {
+  color: #475569 !important;
+}
+
+/* Hero Section Hollow Outline Text in Both Themes */
+.hero-outline-text {
+  color: transparent !important;
+  -webkit-text-stroke: 1.5px #18181b;
+}
+
+html.dark .hero-outline-text,
+body.dark .hero-outline-text {
+  color: transparent !important;
+  -webkit-text-stroke: 1.5px #ffffff !important;
+  -webkit-text-stroke-color: #ffffff !important;
+}
+
+html.light .hero-outline-text,
+body.light .hero-outline-text {
+  color: transparent !important;
+  -webkit-text-stroke: 1.5px #18181b !important;
+  -webkit-text-stroke-color: #18181b !important;
+}
+
+/* Cards, Panels, & Surfaces */
+html.light .studio-glass,
+html.light .bg-zinc-950\/80,
+html.light .bg-zinc-950\/85,
+html.light .bg-zinc-950\/90,
+html.light .bg-zinc-950\/70,
+html.light .bg-zinc-950\/60,
+html.light .bg-zinc-950,
+html.light .bg-\[\#08080a\],
+html.light .bg-\[\#111118\],
+html.light .bg-\[\#09090e\],
+html.light .bg-\[\#0d0e14\],
+html.light .bg-\[\#0a0a0f\],
+html.light .bg-\[\#0e0e16\],
+html.light .bg-\[\#0e0e16\]\/90,
+html.light .bg-\[\#0e0e16\]\/80,
+html.light .bg-\[\#101017\],
+html.light .bg-\[\#101017\]\/80 {
+  background-color: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+}
+
+html.light .text-zinc-700 {
+  color: #334155 !important;
+}
+
+html.light .bg-zinc-900\/80,
+html.light .bg-zinc-900 {
+  background-color: rgba(241, 245, 249, 0.9) !important;
+}
+
+html.light .hover\:bg-zinc-900\/80:hover {
+  background-color: rgba(241, 245, 249, 0.95) !important;
+}
+
+html.light .bg-white\/5,
+html.light .bg-white\/\[0\.03\],
+html.light .bg-white\/\[0\.06\] {
+  background-color: rgba(0, 0, 0, 0.04) !important;
+}
+
+html.light .hover\:bg-white\/10:hover {
+  background-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Borders */
+html.light .border-white\/10,
+html.light .border-white\/5,
+html.light .border-white\/15,
+html.light .border-white\/20,
+html.light .border-white\/30 {
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Inputs & Form Controls */
+html.light input,
+html.light textarea {
+  background-color: rgba(248, 250, 252, 0.95) !important;
+  color: #0f172a !important;
+  border-color: rgba(0, 0, 0, 0.12) !important;
+}
+
+html.light input::placeholder,
+html.light textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* Modals & Popups in Light Mode */
+html.light .bg-\[\#090b12\]\/95,
+html.light .bg-\[\#0a0b10\]\/95,
+html.light .bg-\[\#0c0d14\],
+html.light .bg-\[\#12131a\] {
+  background-color: rgba(255, 255, 255, 0.96) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  color: #0f172a !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 5px;
   height: 5px;
@@ -90,3 +275,52 @@ html.lenis body {
 ::-webkit-scrollbar-thumb:hover {
   background: #333348;
 }
+
+html.light ::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+
+html.light ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+}
+
+html.light ::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Custom Cyberpunk Slim Scrollbar */
+.cyber-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(168, 85, 247, 0.5) rgba(255, 255, 255, 0.04);
+}
+
+.cyber-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.cyber-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 9999px;
+}
+
+.cyber-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, rgba(168, 85, 247, 0.5), rgba(6, 182, 212, 0.5));
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cyber-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, rgba(168, 85, 247, 0.8), rgba(6, 182, 212, 0.8));
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+}
+
+html.light .cyber-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+html.light .cyber-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, rgba(147, 51, 234, 0.5), rgba(8, 145, 178, 0.5));
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
