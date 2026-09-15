@@ -11,7 +11,6 @@ import { TechStackSection } from './components/sections/TechStackSection';
 import { ContactSection } from './components/sections/ContactSection';
 import { OverlayHUD } from './components/ui/OverlayHUD';
 import { LoadingScreen } from './components/ui/LoadingScreen';
-import { CustomCursor } from './components/ui/CustomCursor';
 import { DevTerminal } from './components/ui/DevTerminal';
 import { audioManager } from './utils/audioSystem';
 
@@ -148,9 +147,6 @@ export const App: React.FC = () => {
 
   return (
     <div className={`w-full min-h-screen relative selection:bg-purple-500 selection:text-white transition-colors duration-500 ${theme === 'light' ? 'bg-[#f8fafc] text-zinc-900' : 'bg-[#080808] text-slate-100'}`}>
-      {/* Interactive Custom Cyberpunk Cursor */}
-      <CustomCursor />
-
       {/* Initialization Loading Splash Screen */}
       {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
 
