@@ -167,7 +167,7 @@ export const AboutSection: React.FC = () => {
   }, [selectedFocus]);
 
   return (
-    <div className="w-full h-full flex flex-col justify-center max-w-none select-none pointer-events-auto">
+    <div className="w-full h-full flex flex-col justify-center select-none pointer-events-auto">
       {/* Section Header */}
       <div className="mb-4 sm:mb-6">
         <span className="text-sm uppercase tracking-widest text-zinc-400 font-bold mb-3 block">

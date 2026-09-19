@@ -362,7 +362,7 @@ export const WhatIDoSection: React.FC = () => {
   const designGrid = designCapabilities.filter((c) => c.id !== 'design-arch');
 
   return (
-    <div className="w-full max-w-none space-y-6 select-none pointer-events-auto">
+    <div className="w-full space-y-6 select-none pointer-events-auto">
       {/* Header & Mode Selector Pills */}
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-4 border-b border-zinc-200 dark:border-white/10">
         <div>
@@ -372,7 +372,7 @@ export const WhatIDoSection: React.FC = () => {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-zinc-900 dark:text-white tracking-tight uppercase">
             WHAT I DO
           </h2>
-          <p className="text-sm sm:text-base text-zinc-600 dark:text-slate-400 font-sans mt-1">
+          <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-300 font-sans mt-2 leading-relaxed">
             Bridging robust full-stack architecture with cutting-edge 3D creative design. Click any card for detailed specification dossier.
           </p>
         </div>
@@ -431,16 +431,15 @@ export const WhatIDoSection: React.FC = () => {
                   <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-600 dark:text-cyan-300 border border-cyan-500/30">
                     CORE SYSTEM
                   </span>
-                </div>
-                <h3 className="font-bold text-lg sm:text-xl text-zinc-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-colors">
+                </div>                <h3 className="font-bold text-lg sm:text-xl text-zinc-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-colors">
                   High-Performance Web Platforms & Reactive Architectures
                 </h3>
-                <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed font-sans">
+                <p className="text-sm sm:text-base text-zinc-700 dark:text-zinc-300 leading-relaxed font-sans">
                   Constructing responsive React applications, modular state architectures, REST APIs, and real-time Socket.io data pipelines built for speed and production reliability.
                 </p>
-                <div className="flex items-center justify-between pt-2 border-t border-zinc-200 dark:border-white/5 text-[11px] font-mono text-cyan-600 dark:text-cyan-400 group-hover:text-cyan-700 dark:group-hover:text-cyan-300">
+                <div className="flex items-center justify-between pt-2 border-t border-zinc-200 dark:border-white/5 text-xs font-mono text-cyan-600 dark:text-cyan-400 group-hover:text-cyan-700 dark:group-hover:text-cyan-300 font-semibold">
                   <span>EXPLORE SPECIFICATION</span>
-                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1.5 transition-transform duration-200" />
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-200" />
                 </div>
               </div>
 
@@ -458,17 +457,17 @@ export const WhatIDoSection: React.FC = () => {
                         {cap.id === 'websockets' && <Zap className="w-4 h-4" />}
                         {cap.id === 'state-persistence' && <Database className="w-4 h-4" />}
                         {cap.id === 'responsive-ux' && <Smartphone className="w-4 h-4" />}
-                        <h4 className="font-mono font-bold text-xs tracking-wider text-zinc-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-colors uppercase">
+                        <h4 className="font-mono font-bold text-xs sm:text-sm tracking-wider text-zinc-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-colors uppercase">
                           {cap.title}
                         </h4>
                       </div>
                     </div>
-                    <p className="text-xs text-zinc-600 dark:text-zinc-400 font-sans line-clamp-2">
+                    <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 font-sans line-clamp-2">
                       {cap.overview}
                     </p>
-                    <div className="flex items-center justify-between pt-1 text-[10px] font-mono text-cyan-600 dark:text-cyan-400/80 group-hover:text-cyan-700 dark:group-hover:text-cyan-300">
+                    <div className="flex items-center justify-between pt-1 text-xs font-mono text-cyan-600 dark:text-cyan-400/80 group-hover:text-cyan-700 dark:group-hover:text-cyan-300">
                       <span>VIEW DEEP DIVE</span>
-                      <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </div>
                 ))}
@@ -483,12 +482,12 @@ export const WhatIDoSection: React.FC = () => {
               <div className="relative rounded-2xl overflow-hidden bg-white/90 dark:bg-[#0a0c14] border border-zinc-200 dark:border-white/10 group-hover:border-purple-500/40 shadow-xl shadow-zinc-200/50 dark:shadow-2xl transition-all duration-500 flex flex-col justify-between">
                 {/* Top Header Label */}
                 <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-20 pointer-events-none">
-                  <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/80 dark:bg-black/70 backdrop-blur-md border border-zinc-200 dark:border-white/10 text-[10px] font-mono text-cyan-600 dark:text-cyan-300 shadow-sm">
+                  <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/80 dark:bg-black/70 backdrop-blur-md border border-zinc-200 dark:border-white/10 text-xs font-mono text-cyan-600 dark:text-cyan-300 shadow-sm font-semibold">
                     <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-                    <span>HARDWARE WORKSTATION // LAB</span>
+                    <span>HARDWARE WORKSTATION</span>
                   </div>
 
-                  <span className="text-[10px] font-mono px-2.5 py-1 rounded-full bg-white/80 dark:bg-black/70 backdrop-blur-md border border-zinc-200 dark:border-white/10 text-zinc-700 dark:text-slate-300 shadow-sm">
+                  <span className="text-xs font-mono px-2.5 py-1 rounded-full bg-white/80 dark:bg-black/70 backdrop-blur-md border border-zinc-200 dark:border-white/10 text-zinc-700 dark:text-slate-300 shadow-sm">
                     4K DUAL DISPLAY
                   </span>
                 </div>
@@ -508,11 +507,11 @@ export const WhatIDoSection: React.FC = () => {
                 <div className="absolute bottom-3 left-3 right-3 p-3 rounded-xl bg-white/90 dark:bg-zinc-950/85 backdrop-blur-md border border-zinc-200 dark:border-white/10 flex items-center justify-between z-20 shadow-md">
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-                    <span className="text-[11px] font-mono font-bold text-zinc-900 dark:text-white tracking-wider">
-                      HARDWARE WORKSTATION // DUAL SETUP
+                    <span className="text-xs font-mono font-bold text-zinc-900 dark:text-white tracking-wider">
+                      WORKSTATION & LAB SETUP
                     </span>
                   </div>
-                  <span className="text-[10px] font-mono text-purple-600 dark:text-purple-300 font-semibold">
+                  <span className="text-xs font-mono text-purple-600 dark:text-purple-300 font-semibold">
                     60 FPS ULTRA-HD
                   </span>
                 </div>
@@ -540,19 +539,19 @@ export const WhatIDoSection: React.FC = () => {
                     <Box className="w-4 h-4" />
                     <span>3D WebGL & Motion Architecture</span>
                   </div>
-                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-pink-500/10 text-pink-600 dark:text-pink-300 border border-pink-500/30">
+                  <span className="text-xs font-mono px-2 py-0.5 rounded bg-pink-500/10 text-pink-600 dark:text-pink-300 border border-pink-500/30">
                     CREATIVE TECH
                   </span>
                 </div>
                 <h3 className="font-bold text-lg sm:text-xl text-zinc-900 dark:text-white group-hover:text-pink-600 dark:group-hover:text-pink-300 transition-colors">
                   Interactive Spatial Interfaces & Micro-Interactions
                 </h3>
-                <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed font-sans">
+                <p className="text-sm sm:text-base text-zinc-700 dark:text-zinc-300 leading-relaxed font-sans">
                   Crafting memorable, interactive 3D web spaces with Three.js, React Three Fiber, physics simulations, dark glassmorphism, and fluid Framer Motion spring transitions.
                 </p>
-                <div className="flex items-center justify-between pt-2 border-t border-zinc-200 dark:border-white/5 text-[11px] font-mono text-pink-600 dark:text-pink-400 group-hover:text-pink-700 dark:group-hover:text-pink-300">
+                <div className="flex items-center justify-between pt-2 border-t border-zinc-200 dark:border-white/5 text-xs font-mono text-pink-600 dark:text-pink-400 group-hover:text-pink-700 dark:group-hover:text-pink-300 font-semibold">
                   <span>EXPLORE SPECIFICATION</span>
-                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1.5 transition-transform duration-200" />
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-200" />
                 </div>
               </div>
 
@@ -570,17 +569,17 @@ export const WhatIDoSection: React.FC = () => {
                         {cap.id === 'motion-physics' && <Sparkles className="w-4 h-4" />}
                         {cap.id === 'glassmorphism' && <Layers className="w-4 h-4" />}
                         {cap.id === 'audio-ux' && <Zap className="w-4 h-4" />}
-                        <h4 className="font-mono font-bold text-xs tracking-wider text-zinc-900 dark:text-white group-hover:text-pink-600 dark:group-hover:text-pink-300 transition-colors uppercase">
+                        <h4 className="font-mono font-bold text-xs sm:text-sm tracking-wider text-zinc-900 dark:text-white group-hover:text-pink-600 dark:group-hover:text-pink-300 transition-colors uppercase">
                           {cap.title}
                         </h4>
                       </div>
                     </div>
-                    <p className="text-xs text-zinc-600 dark:text-zinc-400 font-sans line-clamp-2">
+                    <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 font-sans line-clamp-2">
                       {cap.overview}
                     </p>
-                    <div className="flex items-center justify-between pt-1 text-[10px] font-mono text-pink-600 dark:text-pink-400/80 group-hover:text-pink-700 dark:group-hover:text-pink-300">
+                    <div className="flex items-center justify-between pt-1 text-xs font-mono text-pink-600 dark:text-pink-400/80 group-hover:text-pink-700 dark:group-hover:text-pink-300">
                       <span>VIEW DEEP DIVE</span>
-                      <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </div>
                 ))}
@@ -595,12 +594,12 @@ export const WhatIDoSection: React.FC = () => {
               <div className="relative rounded-2xl overflow-hidden bg-white/90 dark:bg-[#0a0c14] border border-zinc-200 dark:border-white/10 group-hover:border-pink-500/40 shadow-xl shadow-zinc-200/50 dark:shadow-2xl transition-all duration-500 flex flex-col justify-between">
                 {/* Top Header Label */}
                 <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-20 pointer-events-none">
-                  <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/80 dark:bg-black/70 backdrop-blur-md border border-zinc-200 dark:border-white/10 text-[10px] font-mono text-pink-600 dark:text-pink-300 shadow-sm">
+                  <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/80 dark:bg-black/70 backdrop-blur-md border border-zinc-200 dark:border-white/10 text-xs font-mono text-pink-600 dark:text-pink-300 shadow-sm font-semibold">
                     <span className="w-2 h-2 rounded-full bg-pink-400 animate-pulse" />
-                    <span>3D SPATIAL LAB // WORKSTATION</span>
+                    <span>3D SPATIAL LAB</span>
                   </div>
 
-                  <span className="text-[10px] font-mono px-2.5 py-1 rounded-full bg-white/80 dark:bg-black/70 backdrop-blur-md border border-zinc-200 dark:border-white/10 text-zinc-700 dark:text-slate-300 shadow-sm">
+                  <span className="text-xs font-mono px-2.5 py-1 rounded-full bg-white/80 dark:bg-black/70 backdrop-blur-md border border-zinc-200 dark:border-white/10 text-zinc-700 dark:text-slate-300 shadow-sm">
                     STUDIO DISPLAY
                   </span>
                 </div>
@@ -620,11 +619,11 @@ export const WhatIDoSection: React.FC = () => {
                 <div className="absolute bottom-3 left-3 right-3 p-3 rounded-xl bg-white/90 dark:bg-zinc-950/85 backdrop-blur-md border border-zinc-200 dark:border-white/10 flex items-center justify-between z-20 shadow-md">
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-                    <span className="text-[11px] font-mono font-bold text-zinc-900 dark:text-white tracking-wider">
-                      CREATIVE STUDIO // DUAL RIG
+                    <span className="text-xs font-mono font-bold text-zinc-900 dark:text-white tracking-wider">
+                      CREATIVE STUDIO SETUP
                     </span>
                   </div>
-                  <span className="text-[10px] font-mono text-pink-600 dark:text-pink-300 font-semibold">
+                  <span className="text-xs font-mono text-pink-600 dark:text-pink-300 font-semibold">
                     GPU ACCELERATED
                   </span>
                 </div>

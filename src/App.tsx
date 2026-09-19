@@ -180,20 +180,22 @@ export const App: React.FC = () => {
           id="hero"
           className="w-full min-h-screen relative flex items-center justify-center pointer-events-none"
         >
-          <HeroSection />
+          <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
+            <HeroSection />
+          </div>
         </section>
 
         {/* SECTION 2: ABOUT ME */}
         <section
           id="about"
-          className="w-full min-h-screen relative py-16 sm:py-20 px-4 sm:px-8 md:px-12 lg:px-16 flex flex-col justify-center w-full max-w-none pointer-events-auto"
+          className="w-full min-h-screen relative py-16 sm:py-20 flex flex-col justify-center pointer-events-auto"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.15 }}
             transition={{ duration: 0.4, ease: 'easeOut' }}
-            className="w-full h-full flex items-center justify-center"
+            className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-12"
           >
             <AboutSection />
           </motion.div>
@@ -202,14 +204,14 @@ export const App: React.FC = () => {
         {/* SECTION 3: WHAT I DO / SERVICES */}
         <section
           id="what-i-do"
-          className="w-full min-h-screen relative py-16 sm:py-20 px-4 sm:px-8 md:px-12 lg:px-16 flex flex-col justify-center w-full max-w-none pointer-events-auto"
+          className="w-full min-h-screen relative py-16 sm:py-20 flex flex-col justify-center pointer-events-auto"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.15 }}
             transition={{ duration: 0.4, ease: 'easeOut' }}
-            className="w-full"
+            className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-12"
           >
             <WhatIDoSection />
           </motion.div>
@@ -218,14 +220,14 @@ export const App: React.FC = () => {
         {/* SECTION 4: CAREER & EXPERIENCE TIMELINE */}
         <section
           id="experience"
-          className="w-full min-h-screen relative py-16 sm:py-20 px-4 sm:px-8 md:px-12 lg:px-16 flex flex-col justify-center w-full max-w-none pointer-events-auto"
+          className="w-full min-h-screen relative py-16 sm:py-20 flex flex-col justify-center pointer-events-auto"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.15 }}
             transition={{ duration: 0.4, ease: 'easeOut' }}
-            className="w-full"
+            className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-12"
           >
             <ExperienceSection />
           </motion.div>
@@ -234,14 +236,14 @@ export const App: React.FC = () => {
         {/* SECTION 5: FEATURED WORK & PROJECTS */}
         <section
           id="work"
-          className="w-full min-h-screen relative py-16 sm:py-20 px-4 sm:px-8 md:px-12 lg:px-16 flex flex-col justify-center w-full max-w-none pointer-events-auto"
+          className="w-full min-h-screen relative py-16 sm:py-20 flex flex-col justify-center pointer-events-auto"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.15 }}
             transition={{ duration: 0.4, ease: 'easeOut' }}
-            className="w-full"
+            className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-12"
           >
             <WorkShowcase />
           </motion.div>
@@ -250,14 +252,14 @@ export const App: React.FC = () => {
         {/* SECTION 6: INTERACTIVE TECH STACK */}
         <section
           id="tech-stack"
-          className="w-full min-h-screen relative py-16 sm:py-20 px-4 sm:px-8 md:px-12 lg:px-16 flex flex-col justify-center w-full max-w-none pointer-events-auto"
+          className="w-full min-h-screen relative py-16 sm:py-20 flex flex-col justify-center pointer-events-auto"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.15 }}
             transition={{ duration: 0.4, ease: 'easeOut' }}
-            className="w-full"
+            className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-12"
           >
             <TechStackSection />
           </motion.div>
@@ -266,14 +268,14 @@ export const App: React.FC = () => {
         {/* SECTION 7: CONTACT & LET'S BUILD TOGETHER */}
         <section
           id="contact"
-          className="w-full min-h-screen relative py-12 sm:py-16 px-4 sm:px-8 md:px-12 lg:px-16 flex flex-col justify-center w-full max-w-none pointer-events-auto"
+          className="w-full min-h-screen relative py-12 sm:py-16 flex flex-col justify-center pointer-events-auto"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.15 }}
             transition={{ duration: 0.4, ease: 'easeOut' }}
-            className="w-full h-full flex items-center justify-center"
+            className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-12"
           >
             <ContactSection />
           </motion.div>

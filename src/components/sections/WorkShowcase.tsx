@@ -50,7 +50,7 @@ export const WorkShowcase: React.FC = () => {
   };
 
   return (
-    <div className="w-full max-w-none space-y-6 select-none pointer-events-auto">
+    <div className="w-full space-y-6 select-none pointer-events-auto">
       {/* Top Header & Horizontal Controls */}
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-4 border-b border-zinc-200 dark:border-white/10">
         <div>
@@ -60,7 +60,7 @@ export const WorkShowcase: React.FC = () => {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-zinc-900 dark:text-white tracking-tight uppercase">
             MY WORK
           </h2>
-          <p className="text-sm sm:text-base text-zinc-600 dark:text-slate-400 font-sans mt-1">
+          <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-300 font-sans mt-2 leading-relaxed">
             Featured production web applications, enterprise portals, and real-time interactive systems. Click any card for full case study & screenshots.
           </p>
         </div>

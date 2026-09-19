@@ -73,7 +73,7 @@ export const ContactSection: React.FC = () => {
   };
 
   return (
-    <div className="w-full h-full flex flex-col justify-between py-6 sm:py-8 max-w-none select-none pointer-events-auto relative">
+    <div className="w-full h-full flex flex-col justify-between py-6 sm:py-8 select-none pointer-events-auto relative">
       {/* 1. Ambient Background Glowing Spheres */}
       <div className="absolute -left-28 top-1/4 w-80 sm:w-96 h-80 sm:h-96 rounded-full bg-purple-600/10 blur-[130px] pointer-events-none -z-10" />
       <div className="absolute -right-28 bottom-1/4 w-80 sm:w-96 h-80 sm:h-96 rounded-full bg-cyan-600/10 blur-[130px] pointer-events-none -z-10" />

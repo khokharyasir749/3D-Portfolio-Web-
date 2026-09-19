@@ -45,21 +45,21 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
       className="relative z-20 w-full bg-zinc-950/80 backdrop-blur-xl border-t border-white/10 text-zinc-400 py-16 px-6 md:px-16 pointer-events-auto select-none"
       aria-label="Developer Portfolio Footer"
     >
-      <div className="w-full max-w-none">
+      <div className="w-full max-w-7xl mx-auto">
         {/* Main 4-Column Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
           {/* COLUMN 1: Developer Brand & Availability */}
           <div className="flex flex-col space-y-4">
             <div>
-              <span className="font-bold text-xl tracking-wide text-white block">
+              <span className="font-bold text-2xl tracking-wide text-white block">
                 YASIR KHOKHAR
               </span>
-              <span className="text-xs font-mono text-zinc-400 uppercase tracking-wider block mt-1">
+              <span className="text-xs sm:text-sm font-mono text-zinc-400 uppercase tracking-wider block mt-1">
                 Full-Stack & 3D Creative Developer
               </span>
             </div>
 
-            <p className="text-sm text-zinc-400 leading-relaxed font-normal">
+            <p className="text-base text-zinc-300 leading-relaxed font-normal">
               Building high-performance web applications, interactive 3D WebGL experiences, and scalable full-stack architectures.
             </p>
 
@@ -69,7 +69,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500 shadow-sm shadow-emerald-500/50" />
               </span>
-              <span className="text-xs font-mono font-medium text-emerald-400 tracking-wide">
+              <span className="text-xs sm:text-sm font-mono font-medium text-emerald-400 tracking-wide">
                 Available for Freelance & Full-time Roles
               </span>
             </div>
@@ -77,10 +77,10 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
           {/* COLUMN 2: Portfolio Navigation */}
           <div className="flex flex-col space-y-4">
-            <h3 className="text-xs uppercase tracking-widest text-zinc-300 font-semibold mb-1">
+            <h3 className="text-xs sm:text-sm uppercase tracking-widest text-zinc-200 font-bold mb-1">
               NAVIGATION
             </h3>
-            <ul className="flex flex-col space-y-2.5 text-sm">
+            <ul className="flex flex-col space-y-2.5 text-sm sm:text-base">
               <li>
                 <button
                   type="button"
@@ -140,14 +140,14 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
           {/* COLUMN 3: Direct Contact & Connect */}
           <div className="flex flex-col space-y-4">
-            <h3 className="text-xs uppercase tracking-widest text-zinc-300 font-semibold mb-1">
+            <h3 className="text-xs sm:text-sm uppercase tracking-widest text-zinc-200 font-bold mb-1">
               GET IN TOUCH
             </h3>
-            <div className="flex flex-col space-y-3.5 text-sm">
+            <div className="flex flex-col space-y-3.5 text-sm sm:text-base">
               {/* Email */}
               <a
                 href="mailto:khokharyasir749@gmail.com"
-                className="group flex items-center gap-3 text-zinc-400 hover:text-amber-400 transition-colors duration-200"
+                className="group flex items-center gap-3 text-zinc-300 hover:text-amber-400 transition-colors duration-200"
                 title="Send an email to Yasir"
               >
                 <div className="p-2 rounded-lg bg-white/5 border border-white/10 group-hover:border-amber-400/30 group-hover:bg-amber-400/10 transition-colors flex-shrink-0">
@@ -161,7 +161,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 href="https://wa.me/923280790704"
                 target="_blank"
                 rel="noreferrer"
-                className="group flex items-center gap-3 text-zinc-400 hover:text-amber-400 transition-colors duration-200"
+                className="group flex items-center gap-3 text-zinc-300 hover:text-amber-400 transition-colors duration-200"
                 title="Direct WhatsApp"
               >
                 <div className="p-2 rounded-lg bg-white/5 border border-white/10 group-hover:border-amber-400/30 group-hover:bg-amber-400/10 transition-colors flex-shrink-0">
@@ -171,7 +171,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               </a>
 
               {/* Location */}
-              <div className="flex items-center gap-3 text-xs leading-relaxed text-zinc-400">
+              <div className="flex items-center gap-3 text-xs sm:text-sm leading-relaxed text-zinc-300">
                 <div className="p-2 rounded-lg bg-white/5 border border-white/10 flex-shrink-0">
                   <MapPin className="w-4 h-4 text-zinc-300" />
                 </div>
@@ -179,21 +179,21 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               </div>
 
               {/* Response Time */}
-              <div className="flex items-center gap-3 text-xs text-zinc-400 pt-0.5">
+              <div className="flex items-center gap-3 text-xs sm:text-sm text-zinc-400 pt-0.5">
                 <div className="p-2 rounded-lg bg-white/5 border border-white/10 flex-shrink-0">
                   <Zap className="w-4 h-4 text-amber-400" />
                 </div>
-                <span className="text-zinc-400 font-mono">Average response time: &lt; 24 hours</span>
+                <span className="text-zinc-300 font-mono">Average response time: &lt; 24 hours</span>
               </div>
             </div>
           </div>
 
           {/* COLUMN 4: Quick Message / Connect & Socials */}
           <div className="flex flex-col space-y-4">
-            <h3 className="text-xs uppercase tracking-widest text-zinc-300 font-semibold mb-1">
+            <h3 className="text-xs sm:text-sm uppercase tracking-widest text-zinc-200 font-bold mb-1">
               LET'S COLLABORATE
             </h3>
-            <p className="text-sm text-zinc-400 leading-relaxed font-normal">
+            <p className="text-base text-zinc-300 leading-relaxed font-normal">
               Have an ambitious project or idea? Let's turn it into reality.
             </p>
 
@@ -201,7 +201,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             <div className="pt-1">
               <a
                 href="mailto:khokharyasir749@gmail.com?subject=Project%20Inquiry%20-%20Let's%20Collaborate"
-                className="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-amber-500 hover:bg-amber-400 text-black font-semibold px-5 py-2.5 rounded-xl text-sm transition-all duration-200 cursor-pointer shadow-lg shadow-amber-500/20 active:scale-95"
+                className="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-amber-500 hover:bg-amber-400 text-black font-semibold px-6 py-3 rounded-xl text-sm sm:text-base transition-all duration-200 cursor-pointer shadow-lg shadow-amber-500/20 active:scale-95"
               >
                 <span>Send Email / Inquire</span>
                 <ExternalLink className="w-4 h-4" />
@@ -267,12 +267,12 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
         </div>
 
         {/* BOTTOM SUB-FOOTER BAR */}
-        <div className="border-t border-white/5 pt-8 mt-12 flex flex-col md:flex-row justify-between items-center text-xs text-zinc-500 gap-4">
+        <div className="border-t border-white/5 pt-8 mt-12 flex flex-col md:flex-row justify-between items-center text-xs sm:text-sm text-zinc-400 gap-4">
           <div className="flex items-center gap-2">
             <span>© 2026 Yasir Khokhar. Crafted with React, Three.js & Tailwind CSS.</span>
           </div>
 
-          <div className="text-zinc-500 font-mono text-[11px]">
+          <div className="text-zinc-400 font-mono text-xs sm:text-sm">
             Designed for seamless interactive digital experiences.
           </div>
         </div>

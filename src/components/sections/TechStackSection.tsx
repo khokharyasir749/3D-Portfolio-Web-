@@ -3,7 +3,7 @@ import { TechSpheresGroup } from '../canvas/TechSpheresGroup';
 
 export const TechStackSection: React.FC = () => {
   return (
-    <div className="w-full min-h-screen flex flex-col justify-between pt-20 sm:pt-24 pb-10 select-none max-w-none relative pointer-events-auto">
+    <div className="w-full min-h-screen flex flex-col justify-between pt-20 sm:pt-24 pb-10 select-none relative pointer-events-auto">
       {/* Ambient Side Accents & Radial Lighting */}
       <div className="absolute -left-28 top-1/3 w-80 sm:w-96 h-80 sm:h-96 rounded-full bg-cyan-600/10 blur-[130px] pointer-events-none -z-10" />
       <div className="absolute -right-28 bottom-1/3 w-80 sm:w-96 h-80 sm:h-96 rounded-full bg-purple-600/10 blur-[130px] pointer-events-none -z-10" />
@@ -18,13 +18,13 @@ export const TechStackSection: React.FC = () => {
           MY TECHSTACK
         </h2>
 
-        <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 max-w-md mx-auto font-sans tracking-wide">
+        <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-300 max-w-lg mx-auto font-sans tracking-wide mt-2 leading-relaxed">
           Hover and drag across the floating spheres to inspect technologies.
         </p>
       </div>
 
-      {/* Expanded Canvas Container: Full Widescreen Interactive Physics Matrix */}
-      <div className="h-[65vh] w-full max-w-none relative flex items-center justify-center my-auto z-10">
+      {/* Expanded Canvas Container: Interactive Physics Matrix */}
+      <div className="h-[65vh] w-full relative flex items-center justify-center my-auto z-10">
         <TechSpheresGroup />
       </div>
 

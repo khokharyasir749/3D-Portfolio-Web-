@@ -184,7 +184,7 @@ export const ExperienceSection: React.FC = () => {
   };
 
   return (
-    <div className="w-full max-w-none space-y-6 select-none pointer-events-auto">
+    <div className="w-full space-y-6 select-none pointer-events-auto">
       {/* Top Header */}
       <div className="pb-4 border-b border-zinc-200 dark:border-white/10 flex flex-col sm:flex-row sm:items-end justify-between gap-3">
         <div>
@@ -194,13 +194,13 @@ export const ExperienceSection: React.FC = () => {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-zinc-900 dark:text-white tracking-tight uppercase">
             EXPERIENCE & CAREER
           </h2>
-          <p className="text-sm sm:text-base text-zinc-600 dark:text-slate-400 font-sans mt-1">
+          <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-300 font-sans mt-2 leading-relaxed">
             A chronological timeline of engineering scalable web applications, mobile architectures, and 3D spatial experiences.
           </p>
         </div>
 
-        <div className="flex items-center gap-1.5 px-3 py-1 rounded bg-emerald-500/10 border border-emerald-500/30 text-xs font-code text-emerald-600 dark:text-emerald-400 shrink-0">
-          <Sparkles className="w-3.5 h-3.5" />
+        <div className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-xs sm:text-sm font-mono text-emerald-600 dark:text-emerald-400 shrink-0 font-medium">
+          <Sparkles className="w-4 h-4" />
           <span>CONTINUOUS GROWTH</span>
         </div>
       </div>
@@ -212,7 +212,7 @@ export const ExperienceSection: React.FC = () => {
             key={idx}
             whileHover={{ y: -4 }}
             onClick={() => setSelectedExperience(exp)}
-            className={`p-5 rounded-2xl bg-white/90 dark:bg-zinc-950/80 border transition-all duration-300 flex flex-col justify-between space-y-4 shadow-xl shadow-zinc-200/50 dark:shadow-xl cursor-pointer group hover:border-purple-400/50 hover:shadow-purple-500/10 ${
+            className={`p-6 rounded-2xl bg-white/90 dark:bg-zinc-950/80 border transition-all duration-300 flex flex-col justify-between space-y-4 shadow-xl shadow-zinc-200/50 dark:shadow-xl cursor-pointer group hover:border-purple-400/50 hover:shadow-purple-500/10 ${
               exp.current
                 ? 'border-emerald-500/40 shadow-emerald-500/10 hover:border-emerald-400'
                 : 'border-zinc-200 dark:border-white/10'
@@ -222,14 +222,14 @@ export const ExperienceSection: React.FC = () => {
               {/* Top Year Badge & Role Icon */}
               <div className="flex items-center justify-between">
                 <span
-                  className={`font-mono font-bold text-xs px-2.5 py-1 rounded-full border flex items-center gap-1.5 ${exp.color}`}
+                  className={`font-mono font-bold text-xs sm:text-sm px-3 py-1 rounded-full border flex items-center gap-1.5 ${exp.color}`}
                 >
-                  <Calendar className="w-3 h-3" />
+                  <Calendar className="w-3.5 h-3.5" />
                   <span>{exp.year}</span>
                 </span>
 
                 {exp.current && (
-                  <span className="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 border border-emerald-500/40 flex items-center gap-1.5">
+                  <span className="text-xs font-mono px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 border border-emerald-500/40 flex items-center gap-1.5 font-medium">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                     <span>CURRENT FOCUS</span>
                   </span>
@@ -240,32 +240,32 @@ export const ExperienceSection: React.FC = () => {
               <div>
                 <div className="flex items-center gap-2">
                   {renderIcon(exp.icon)}
-                  <h3 className="font-bold text-base text-zinc-900 dark:text-white tracking-wide group-hover:text-purple-600 dark:group-hover:text-purple-300 transition-colors">
+                  <h3 className="font-bold text-lg sm:text-xl text-zinc-900 dark:text-white tracking-wide group-hover:text-purple-600 dark:group-hover:text-purple-300 transition-colors">
                     {exp.role}
                   </h3>
                 </div>
-                <p className="font-mono text-xs text-zinc-600 dark:text-slate-400 mt-1">
+                <p className="font-mono text-xs sm:text-sm text-zinc-600 dark:text-slate-400 mt-1">
                   {exp.subtitle}
                 </p>
               </div>
 
               {/* Summary Description */}
-              <p className="text-xs text-zinc-600 dark:text-slate-300 font-sans leading-relaxed">
+              <p className="text-sm sm:text-base text-zinc-600 dark:text-slate-300 font-sans leading-relaxed">
                 {exp.summary}
               </p>
 
               {/* Key Highlights */}
               <div className="space-y-1.5 pt-2 border-t border-zinc-200 dark:border-white/5">
-                <h4 className="text-[10px] font-mono text-zinc-500 dark:text-slate-400 uppercase tracking-wider">
+                <h4 className="text-xs font-mono text-zinc-500 dark:text-slate-400 uppercase tracking-wider font-semibold">
                   Key Accomplishments:
                 </h4>
                 <ul className="space-y-1">
                   {exp.highlights.slice(0, 3).map((item, hIdx) => (
                     <li
                       key={hIdx}
-                      className="flex items-start gap-1.5 text-xs text-zinc-700 dark:text-slate-300 font-sans"
+                      className="flex items-start gap-1.5 text-xs sm:text-sm text-zinc-700 dark:text-slate-300 font-sans"
                     >
-                      <CheckCircle2 className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400 shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-4 h-4 text-cyan-600 dark:text-cyan-400 shrink-0 mt-0.5" />
                       <span className="line-clamp-1">{item}</span>
                     </li>
                   ))}
@@ -275,11 +275,11 @@ export const ExperienceSection: React.FC = () => {
 
             {/* Bottom Tag Pills & Interactive Affordance Badge */}
             <div className="space-y-3 pt-3 border-t border-zinc-200 dark:border-white/5">
-              <div className="flex flex-wrap gap-1">
+              <div className="flex flex-wrap gap-1.5">
                 {exp.tags.slice(0, 4).map((tag, tIdx) => (
                   <span
                     key={tIdx}
-                    className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-zinc-100 text-zinc-700 border border-zinc-200 dark:bg-white/5 dark:text-slate-400 dark:border-white/5"
+                    className="text-xs font-mono px-2.5 py-1 rounded-md bg-zinc-100 text-zinc-700 border border-zinc-200 dark:bg-white/5 dark:text-slate-300 dark:border-white/5"
                   >
                     {tag}
                   </span>
