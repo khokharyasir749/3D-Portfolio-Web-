@@ -95,11 +95,11 @@ export const WorkShowcase: React.FC = () => {
             key={project.id}
             whileHover={{ y: -4 }}
             onClick={() => setSelectedProject(project)}
-            className="group relative w-[320px] sm:w-[380px] lg:w-[420px] xl:w-[460px] shrink-0 p-5 rounded-2xl bg-white dark:bg-[#0e0e16]/90 border border-zinc-200 dark:border-white/10 hover:border-purple-500/50 shadow-xl shadow-zinc-200/50 dark:shadow-2xl dark:hover:shadow-purple-500/10 transition-all flex flex-col justify-between space-y-4 overflow-hidden cursor-pointer"
+            className="group relative w-[320px] sm:w-[380px] lg:w-[420px] xl:w-[460px] shrink-0 p-6 sm:p-7 rounded-2xl bg-white dark:bg-[#0e0e16]/90 border border-zinc-200 dark:border-white/10 hover:border-purple-500/50 shadow-xl shadow-zinc-200/50 dark:shadow-2xl dark:hover:shadow-purple-500/10 transition-all flex flex-col justify-between space-y-4 overflow-hidden cursor-pointer"
             style={{ scrollSnapAlign: 'start' }}
           >
-            {/* Giant Background Number Watermark */}
-            <div className="absolute -top-4 -right-2 font-black text-8xl text-zinc-300/40 dark:text-white/[0.03] group-hover:text-purple-500/10 dark:group-hover:text-purple-400/[0.08] transition-colors pointer-events-none select-none">
+            {/* Background Number Watermark (Cleanly Contained Without Top Clipping) */}
+            <div className="absolute top-4 right-6 font-black text-6xl sm:text-7xl text-zinc-900/[0.05] dark:text-white/[0.04] group-hover:text-purple-500/15 dark:group-hover:text-purple-400/10 transition-colors pointer-events-none select-none leading-none z-0">
               {project.number}
             </div>
 
