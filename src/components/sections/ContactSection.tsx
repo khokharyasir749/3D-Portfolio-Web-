@@ -148,10 +148,7 @@ export const ContactSection: React.FC = () => {
           </div>
 
           <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-zinc-900 dark:text-white tracking-tight uppercase leading-tight">
-            LET'S BUILD SOMETHING{' '}
-            <span className="bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 dark:from-purple-400 dark:via-pink-400 dark:to-cyan-400 bg-clip-text text-transparent">
-              EXTRAORDINARY
-            </span>
+            LET'S BUILD SOMETHING EXTRAORDINARY
           </h2>
 
           <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 font-sans mt-1.5 max-w-2xl leading-relaxed">

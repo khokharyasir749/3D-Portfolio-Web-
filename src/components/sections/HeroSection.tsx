@@ -32,23 +32,18 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
             A CREATIVE
           </motion.span>
 
-          {/* 2. Headline with Pure Outline FULL-STACK & Crisp Gradient DEVELOPER */}
+          {/* 2. Headline with Clean Solid Typography */}
           <div className="relative w-full overflow-visible">
             <motion.h1
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-[clamp(2.4rem,5.2vw,5.0rem)] font-black uppercase tracking-tight leading-[0.92] select-none space-y-1"
+              className="text-[clamp(2.4rem,5.2vw,5.0rem)] font-black uppercase tracking-tight leading-[0.92] select-none space-y-1 text-zinc-900 dark:text-white"
             >
-              {/* Line 1: Hollow Outline Stroke "FULL-STACK" */}
-              <span
-                className="hero-outline-text block whitespace-nowrap [-webkit-text-stroke:1.5px_#18181b] dark:[-webkit-text-stroke:1.5px_#ffffff] text-transparent dark:drop-shadow-[0_0_15px_rgba(255,255,255,0.35)] opacity-95"
-              >
+              <span className="block whitespace-nowrap">
                 FULL-STACK
               </span>
-
-              {/* Line 2: Solid vibrant purple-to-cyan gradient "DEVELOPER" */}
-              <span className="block whitespace-nowrap bg-gradient-to-r from-purple-600 via-violet-600 to-cyan-600 dark:from-purple-400 dark:via-violet-300 dark:to-cyan-400 bg-clip-text text-transparent dark:drop-shadow-[0_0_25px_rgba(168,85,247,0.45)]">
+              <span className="block whitespace-nowrap">
                 DEVELOPER
               </span>
             </motion.h1>

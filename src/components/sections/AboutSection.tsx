@@ -180,10 +180,7 @@ export const AboutSection: React.FC = () => {
         {/* Left Column: Headline & Bio Paragraphs */}
         <div className="lg:col-span-6 space-y-5 text-left">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-zinc-900 dark:text-white tracking-tight leading-tight">
-            Engineering digital experiences with{' '}
-            <span className="bg-gradient-to-r from-purple-500 to-cyan-500 dark:from-purple-400 dark:to-cyan-400 bg-clip-text text-transparent">
-              technical precision.
-            </span>
+            Engineering digital experiences with technical precision.
           </h2>
 
           <div className="space-y-3.5 text-zinc-600 dark:text-zinc-400 text-xs sm:text-sm md:text-base leading-relaxed font-sans">

@@ -102,7 +102,7 @@ export const portfolioData = {
     ],
     stats: [
       { label: "EXPERIENCE", value: "Full-Stack", sub: "Web & Creative 3D" },
-      { label: "PROJECTS DELIVERED", value: "08+", sub: "Production Apps" },
+      { label: "PROJECTS DELIVERED", value: "10+", sub: "Production Apps" },
       { label: "PERFORMANCE", value: "60 FPS", sub: "Fluid Micro-Interactions" },
       { label: "STATUS", value: "Available", sub: "Open for Contracts" }
     ],
@@ -305,6 +305,54 @@ export const portfolioData = {
       gallery: [
         "/projects/modern-calculator-1.png",
         "/projects/modern-calculator-2.png"
+      ]
+    },
+    {
+      number: "09",
+      id: "netflix-clone",
+      title: "Netflix Clone",
+      tagline: "Video Streaming Platform UI & Dynamic Catalog",
+      description: "A full-featured Netflix web interface clone built with modern frontend architecture, movie categorization, dynamic search, and responsive streaming media layouts.",
+      tags: ["React", "Tailwind CSS", "JavaScript", "REST APIs", "Vite"],
+      features: [
+        "Dynamic movie & TV show catalog categorization with horizontal scrolling carousels",
+        "Instant real-time search query filtering and genre browsing engine",
+        "Responsive video media player interface with interactive preview trailers",
+        "Pixel-perfect dark streaming layout with fluid micro-interactions and modal overlays"
+      ],
+      metrics: "Sub-50ms catalog interaction latency with optimized responsive media grids",
+      githubUrl: "https://github.com/khokharyasir749",
+      featured: true,
+      image: "/NETFLIX CLONE1.png",
+      gallery: [
+        "/NETFLIX CLONE1.png",
+        "/NETFLIX CLONE 2.png",
+        "/NETFLIX CLONE 3.png",
+        "/NETFLIX CLONE 4.png",
+        "/NETFLIX CLONE 5.png"
+      ]
+    },
+    {
+      number: "10",
+      id: "inventory-system",
+      title: "Inventory System",
+      tagline: "Enterprise Inventory & Stock Management Platform",
+      description: "An enterprise-grade SaaS inventory management dashboard featuring stock movement tracking, automated ledger logging, catalog controls, and analytics grids.",
+      tags: ["React", "Node.js", "MongoDB", "Express", "Tailwind CSS"],
+      features: [
+        "Real-time stock movement tracking and automated inventory ledger logging",
+        "Multi-warehouse catalog controls with category sorting and SKU management",
+        "Interactive analytics dashboard with restock warnings and supply chain KPIs",
+        "Audit trail logs and fast exportable transaction records"
+      ],
+      metrics: "Real-time ledger updates with persistent database synchronization",
+      githubUrl: "https://github.com/khokharyasir749/Lonetex-inventory",
+      featured: true,
+      image: "/INVENTORY SYSTEM 1.png",
+      gallery: [
+        "/INVENTORY SYSTEM 1.png",
+        "/INVENTORY SYSTEM 2.png",
+        "/INVENTORY SYSTEM 3.png"
       ]
     }
   ] as Project[],

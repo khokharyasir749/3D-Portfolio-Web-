@@ -51,7 +51,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           {/* COLUMN 1: Developer Brand & Availability */}
           <div className="flex flex-col space-y-4">
             <div>
-              <span className="font-bold text-xl tracking-wide bg-gradient-to-r from-amber-200 via-amber-400 to-yellow-500 bg-clip-text text-transparent block">
+              <span className="font-bold text-xl tracking-wide text-white block">
                 YASIR KHOKHAR
               </span>
               <span className="text-xs font-mono text-zinc-400 uppercase tracking-wider block mt-1">
