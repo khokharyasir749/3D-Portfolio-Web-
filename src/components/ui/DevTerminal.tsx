@@ -99,7 +99,7 @@ export const DevTerminal: React.FC<DevTerminalProps> = ({
     }
   }, [isOpen]);
 
-  // Global Keyboard shortcuts: `~` or `Ctrl+\`` to toggle terminal, `Escape` to close
+  // Global Keyboard shortcuts: `~` or `Ctrl+\`` to toggle terminal, `Escape` to close, plus custom event
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === '`' && (e.ctrlKey || e.metaKey)) {
@@ -110,8 +110,14 @@ export const DevTerminal: React.FC<DevTerminalProps> = ({
         closeTerminal();
       }
     };
+    const handleCustomToggle = () => toggleTerminal();
+
     window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    window.addEventListener('toggle-dev-terminal', handleCustomToggle);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('toggle-dev-terminal', handleCustomToggle);
+    };
   }, [isOpen]);
 
   const toggleTerminal = () => {

@@ -12,6 +12,7 @@ import { ContactSection } from './components/sections/ContactSection';
 import { OverlayHUD } from './components/ui/OverlayHUD';
 import { LoadingScreen } from './components/ui/LoadingScreen';
 import { DevTerminal } from './components/ui/DevTerminal';
+import { Footer } from './components/ui/Footer';
 import { audioManager } from './utils/audioSystem';
 
 export const App: React.FC = () => {
@@ -278,6 +279,9 @@ export const App: React.FC = () => {
           </motion.div>
         </section>
       </main>
+
+      {/* Comprehensive Luxury Professional Footer */}
+      <Footer onNavigate={handleNavigate} />
     </div>
   );
 };
