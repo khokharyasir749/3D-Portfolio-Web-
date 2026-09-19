@@ -234,7 +234,7 @@ export const App: React.FC = () => {
         {/* SECTION 5: FEATURED WORK & PROJECTS */}
         <section
           id="work"
-          className="w-full min-h-screen relative py-16 sm:py-20 px-4 sm:px-6 lg:px-10 flex flex-col justify-center max-w-[1440px] mx-auto pointer-events-auto"
+          className="w-full min-h-screen relative py-16 sm:py-20 px-4 md:px-8 lg:px-12 flex flex-col justify-center max-w-[1600px] mx-auto pointer-events-auto"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}

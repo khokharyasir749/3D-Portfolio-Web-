@@ -117,198 +117,6 @@ export const portfolioData = {
   projects: [
     {
       number: "01",
-      id: "lonetex-pakistan",
-      title: "Lonetex Pakistan",
-      tagline: "Commercial Cleaning Equipment E-Commerce & Wholesale Catalog",
-      description: "A comprehensive digital commerce & industrial equipment catalog built for high-volume wholesale distribution. Features multi-category product filtering, instant WhatsApp inquiry dispatch, and persistent cart state via LocalStorage v30.",
-      tags: ["React", "Vite", "Tailwind CSS", "LocalStorage v30", "JavaScript"],
-      features: [
-        "Dynamic equipment catalog with category & brand filtering",
-        "Persistent cart drawer with LocalStorage v30 state synchronization",
-        "Instant one-click WhatsApp quotation generator with pre-filled SKU details",
-        "High-definition product visual showcase and responsive specification tabs"
-      ],
-      metrics: "Streamlined wholesale buyer inquiries with instant WhatsApp order generation",
-      demoUrl: "https://lonetexpakistan.com",
-      githubUrl: "https://github.com/khokharyasir749/lonetex-pakistan",
-      featured: true,
-      image: "/projects/lonetex-1.png",
-      gallery: [
-        "/projects/lonetex-1.png",
-        "/projects/lonetex-2.png",
-        "/projects/lonetex-3.png",
-        "/projects/lonetex-4.png"
-      ]
-    },
-    {
-      number: "02",
-      id: "bite-hub",
-      title: "Bite-Hub",
-      tagline: "Cyberpunk-themed fast-food ordering web app with state persistence & admin dashboard",
-      description: "An immersive, futuristic cyber-themed food ordering application featuring interactive neon food menus, live cart calculations, item customization options, and an administrative order management dashboard.",
-      tags: ["React", "Vite", "Tailwind CSS", "LocalStorage", "Context API"],
-      features: [
-        "Vibrant cyberpunk neon dark UI with fluid motion design",
-        "Real-time food customization (modifiers, combos, and spice level selection)",
-        "Persistent order cart with live discount code & tax calculation engine",
-        "Dedicated admin portal for menu adjustments and live order tracking"
-      ],
-      metrics: "Zero-latency local state persistence with smooth 60 FPS transitions",
-      demoUrl: "https://bite-hub-demo.netlify.app",
-      githubUrl: "https://github.com/khokharyasir749/bite-hub",
-      featured: true,
-      image: "/projects/bite-hub-1.png",
-      gallery: [
-        "/projects/bite-hub-1.png",
-        "/projects/bite-hub-2.png",
-        "/projects/bite-hub-3.png"
-      ]
-    },
-    {
-      number: "03",
-      id: "shopsphere-ecommerce",
-      title: "ShopSphere E-Commerce",
-      tagline: "Modern digital commerce platform with dynamic filters & shopping cart",
-      description: "A feature-rich digital storefront crafted with responsive product grids, real-time search queries, multi-filter attributes, and checkout state persistence.",
-      tags: ["React", "Tailwind CSS", "Vite", "Context API", "JavaScript"],
-      features: [
-        "Dynamic multi-attribute catalog filtering by category, price, and ratings",
-        "Persistent sliding shopping cart drawer with live subtotal calculation",
-        "Product quick-view modals with high-resolution image galleries",
-        "Responsive checkout workflow with form validation and instant feedback"
-      ],
-      metrics: "Instantaneous product search indexing with sub-100ms client state updates",
-      demoUrl: "https://shopsphere-store.netlify.app",
-      githubUrl: "https://github.com/khokharyasir749/shopsphere-ecommerce",
-      featured: true,
-      image: "/projects/ecommerce-ui-1.png",
-      gallery: [
-        "/projects/ecommerce-ui-1.png",
-        "/projects/ecommerce-ui-2.png",
-        "/projects/ecommerce-ui-3.png"
-      ]
-    },
-    {
-      number: "04",
-      id: "sync-space",
-      title: "Sync-Space Chat Hub",
-      tagline: "Real-time full-stack chat application with Socket.io & live presence",
-      description: "A lightning-fast real-time messaging application engineered with WebSockets. Features bi-directional channels, direct 1-on-1 private messaging, live typing indicators, and Instagram-style 'Seen' read receipts.",
-      tags: ["React", "Node.js", "Socket.io", "Express", "MongoDB"],
-      features: [
-        "Bi-directional WebSocket streaming with sub-30ms message delivery",
-        "Instagram-style 'Seen' read receipts and real-time typing indicators",
-        "Channel switcher, private DMs, and multimedia attachment previews",
-        "Dark glassmorphic workspace aesthetic with customizable chat themes"
-      ],
-      metrics: "Engineered for 500+ simultaneous connections with zero packet loss",
-      demoUrl: "https://sync-space-chat.herokuapp.com",
-      githubUrl: "https://github.com/khokharyasir749/sync-space",
-      featured: true,
-      image: "/projects/sync-space-1.png",
-      gallery: [
-        "/projects/sync-space-1.png",
-        "/projects/sync-space-2.png"
-      ]
-    },
-    {
-      number: "05",
-      id: "smartlearn-lms",
-      title: "SmartLearn LMS",
-      tagline: "Modern learning management frontend with course discovery & progress filters",
-      description: "A comprehensive education and course streaming frontend featuring video curriculum navigation, category-based course discovery filters, interactive quiz modules, and student dashboard analytics.",
-      tags: ["React", "TypeScript", "Tailwind CSS", "Vite", "Framer Motion"],
-      features: [
-        "Course catalog with multi-tag filtering, search, and difficulty ratings",
-        "Interactive video player interface with lesson bookmarking and notes",
-        "Student progress dashboard with completion percentage rings and certificates",
-        "Module quiz assessment engine with instant grade calculations"
-      ],
-      metrics: "Instantaneous page transitions with modular TypeScript component architecture",
-      demoUrl: "https://smartlearn-lms.vercel.app",
-      githubUrl: "https://github.com/khokharyasir749/smartlearn-lms",
-      featured: true,
-      image: "/projects/smartlearn-1.png",
-      gallery: [
-        "/projects/smartlearn-1.png",
-        "/projects/smartlearn-2.png",
-        "/projects/smartlearn-3.png",
-        "/projects/smartlearn-4.png"
-      ]
-    },
-    {
-      number: "06",
-      id: "lonetex-inventory",
-      title: "Lonetex Inventory ERP",
-      tagline: "Industrial stock operations dashboard with rack allocations & supply metrics",
-      description: "An enterprise warehouse inventory control platform tailored for supply chains. Features dense sticky data tables, real-time rack/zone allocation indicators, low-stock warnings, and audit logging.",
-      tags: ["React", "TypeScript", "Tailwind CSS", "Node.js", "REST APIs"],
-      features: [
-        "Dense sticky data tables with multi-column sorting, filtering, and pagination",
-        "Visual warehouse zone & rack allocation indicators",
-        "Automated low-stock threshold triggers and audit event trail logs",
-        "Instant CSV export engine and SKU movement analytics graphs"
-      ],
-      metrics: "Monitored 50,000+ daily inventory SKU events with sub-50ms render latency",
-      demoUrl: "https://lonetex-inventory.vercel.app",
-      githubUrl: "https://github.com/khokharyasir749/lonetex-inventory",
-      featured: true,
-      image: "/projects/lonetex-inventory-1.png",
-      gallery: [
-        "/projects/lonetex-inventory-1.png",
-        "/projects/lonetex-inventory-2.png",
-        "/projects/lonetex-inventory-3.png"
-      ]
-    },
-    {
-      number: "07",
-      id: "weather-dashboard",
-      title: "Cyber Weather Dashboard",
-      tagline: "Real-time global meteorological monitor with forecast telemetry",
-      description: "A precision weather monitoring application featuring 7-day forecasts, atmospheric pressure graphs, satellite telemetry radar maps, and geolocation search.",
-      tags: ["React", "Weather API", "Tailwind CSS", "Charts.js", "TypeScript"],
-      features: [
-        "Real-time geo-coordinates meteorological telemetry with live radar updates",
-        "Interactive 7-day hourly temperature and precipitation graphs",
-        "UV index, humidity, wind velocity, and air quality barometer dials",
-        "City bookmarking with LocalStorage persistence"
-      ],
-      metrics: "Sub-200ms meteorological API data parsing with responsive radar charts",
-      demoUrl: "https://weather-cyber-dashboard.vercel.app",
-      githubUrl: "https://github.com/khokharyasir749/weather-dashboard",
-      featured: false,
-      image: "/projects/weather-dashboard-1.png",
-      gallery: [
-        "/projects/weather-dashboard-1.png",
-        "/projects/weather-dashboard-2.png",
-        "/projects/weather-dashboard-3.png"
-      ]
-    },
-    {
-      number: "08",
-      id: "modern-calculator",
-      title: "Modern Glass Calculator",
-      tagline: "Precision financial and scientific calculation engine with dark UI",
-      description: "A sleek, responsive dark glassmorphic calculator with history logging, keyboard event listeners, memory recall registers, and scientific arithmetic modes.",
-      tags: ["React", "JavaScript", "Tailwind CSS", "Framer Motion"],
-      features: [
-        "Instant arithmetic computation engine with float precision formatting",
-        "Calculation history tape with one-click past result insertion",
-        "Full keyboard numpad bindings and tactile sound feedback",
-        "Sleek frosted glass neumorphic button matrix with active animations"
-      ],
-      metrics: "Zero-latency arithmetic evaluation with full keyboard shortcut bindings",
-      demoUrl: "https://modern-glass-calculator.vercel.app",
-      githubUrl: "https://github.com/khokharyasir749/modern-calculator",
-      featured: false,
-      image: "/projects/modern-calculator-1.png",
-      gallery: [
-        "/projects/modern-calculator-1.png",
-        "/projects/modern-calculator-2.png"
-      ]
-    },
-    {
-      number: "09",
       id: "netflix-clone",
       title: "Netflix Clone",
       tagline: "Video Streaming Platform UI & Dynamic Catalog",
@@ -333,7 +141,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "10",
+      number: "02",
       id: "inventory-system",
       title: "Inventory System",
       tagline: "Enterprise Inventory & Stock Management Platform",
@@ -353,6 +161,198 @@ export const portfolioData = {
         "/INVENTORY SYSTEM 1.png",
         "/INVENTORY SYSTEM 2.png",
         "/INVENTORY SYSTEM 3.png"
+      ]
+    },
+    {
+      number: "03",
+      id: "lonetex-pakistan",
+      title: "Lonetex Pakistan",
+      tagline: "Commercial Cleaning Equipment E-Commerce & Wholesale Catalog",
+      description: "A comprehensive digital commerce & industrial equipment catalog built for high-volume wholesale distribution. Features multi-category product filtering, instant WhatsApp inquiry dispatch, and persistent cart state via LocalStorage v30.",
+      tags: ["React", "Vite", "Tailwind CSS", "LocalStorage v30", "JavaScript"],
+      features: [
+        "Dynamic equipment catalog with category & brand filtering",
+        "Persistent cart drawer with LocalStorage v30 state synchronization",
+        "Instant one-click WhatsApp quotation generator with pre-filled SKU details",
+        "High-definition product visual showcase and responsive specification tabs"
+      ],
+      metrics: "Streamlined wholesale buyer inquiries with instant WhatsApp order generation",
+      demoUrl: "https://lonetexpakistan.com",
+      githubUrl: "https://github.com/khokharyasir749/lonetex-pakistan",
+      featured: true,
+      image: "/projects/lonetex-1.png",
+      gallery: [
+        "/projects/lonetex-1.png",
+        "/projects/lonetex-2.png",
+        "/projects/lonetex-3.png",
+        "/projects/lonetex-4.png"
+      ]
+    },
+    {
+      number: "04",
+      id: "bite-hub",
+      title: "Bite-Hub",
+      tagline: "Cyberpunk-themed fast-food ordering web app with state persistence & admin dashboard",
+      description: "An immersive, futuristic cyber-themed food ordering application featuring interactive neon food menus, live cart calculations, item customization options, and an administrative order management dashboard.",
+      tags: ["React", "Vite", "Tailwind CSS", "LocalStorage", "Context API"],
+      features: [
+        "Vibrant cyberpunk neon dark UI with fluid motion design",
+        "Real-time food customization (modifiers, combos, and spice level selection)",
+        "Persistent order cart with live discount code & tax calculation engine",
+        "Dedicated admin portal for menu adjustments and live order tracking"
+      ],
+      metrics: "Zero-latency local state persistence with smooth 60 FPS transitions",
+      demoUrl: "https://bite-hub-demo.netlify.app",
+      githubUrl: "https://github.com/khokharyasir749/bite-hub",
+      featured: true,
+      image: "/projects/bite-hub-1.png",
+      gallery: [
+        "/projects/bite-hub-1.png",
+        "/projects/bite-hub-2.png",
+        "/projects/bite-hub-3.png"
+      ]
+    },
+    {
+      number: "05",
+      id: "shopsphere-ecommerce",
+      title: "ShopSphere E-Commerce",
+      tagline: "Modern digital commerce platform with dynamic filters & shopping cart",
+      description: "A feature-rich digital storefront crafted with responsive product grids, real-time search queries, multi-filter attributes, and checkout state persistence.",
+      tags: ["React", "Tailwind CSS", "Vite", "Context API", "JavaScript"],
+      features: [
+        "Dynamic multi-attribute catalog filtering by category, price, and ratings",
+        "Persistent sliding shopping cart drawer with live subtotal calculation",
+        "Product quick-view modals with high-resolution image galleries",
+        "Responsive checkout workflow with form validation and instant feedback"
+      ],
+      metrics: "Instantaneous product search indexing with sub-100ms client state updates",
+      demoUrl: "https://shopsphere-store.netlify.app",
+      githubUrl: "https://github.com/khokharyasir749/shopsphere-ecommerce",
+      featured: true,
+      image: "/projects/ecommerce-ui-1.png",
+      gallery: [
+        "/projects/ecommerce-ui-1.png",
+        "/projects/ecommerce-ui-2.png",
+        "/projects/ecommerce-ui-3.png"
+      ]
+    },
+    {
+      number: "06",
+      id: "sync-space",
+      title: "Sync-Space Chat Hub",
+      tagline: "Real-time full-stack chat application with Socket.io & live presence",
+      description: "A lightning-fast real-time messaging application engineered with WebSockets. Features bi-directional channels, direct 1-on-1 private messaging, live typing indicators, and Instagram-style 'Seen' read receipts.",
+      tags: ["React", "Node.js", "Socket.io", "Express", "MongoDB"],
+      features: [
+        "Bi-directional WebSocket streaming with sub-30ms message delivery",
+        "Instagram-style 'Seen' read receipts and real-time typing indicators",
+        "Channel switcher, private DMs, and multimedia attachment previews",
+        "Dark glassmorphic workspace aesthetic with customizable chat themes"
+      ],
+      metrics: "Engineered for 500+ simultaneous connections with zero packet loss",
+      demoUrl: "https://sync-space-chat.herokuapp.com",
+      githubUrl: "https://github.com/khokharyasir749/sync-space",
+      featured: true,
+      image: "/projects/sync-space-1.png",
+      gallery: [
+        "/projects/sync-space-1.png",
+        "/projects/sync-space-2.png"
+      ]
+    },
+    {
+      number: "07",
+      id: "smartlearn-lms",
+      title: "SmartLearn LMS",
+      tagline: "Modern learning management frontend with course discovery & progress filters",
+      description: "A comprehensive education and course streaming frontend featuring video curriculum navigation, category-based course discovery filters, interactive quiz modules, and student dashboard analytics.",
+      tags: ["React", "TypeScript", "Tailwind CSS", "Vite", "Framer Motion"],
+      features: [
+        "Course catalog with multi-tag filtering, search, and difficulty ratings",
+        "Interactive video player interface with lesson bookmarking and notes",
+        "Student progress dashboard with completion percentage rings and certificates",
+        "Module quiz assessment engine with instant grade calculations"
+      ],
+      metrics: "Instantaneous page transitions with modular TypeScript component architecture",
+      demoUrl: "https://smartlearn-lms.vercel.app",
+      githubUrl: "https://github.com/khokharyasir749/smartlearn-lms",
+      featured: true,
+      image: "/projects/smartlearn-1.png",
+      gallery: [
+        "/projects/smartlearn-1.png",
+        "/projects/smartlearn-2.png",
+        "/projects/smartlearn-3.png",
+        "/projects/smartlearn-4.png"
+      ]
+    },
+    {
+      number: "08",
+      id: "lonetex-inventory",
+      title: "Lonetex Inventory ERP",
+      tagline: "Industrial stock operations dashboard with rack allocations & supply metrics",
+      description: "An enterprise warehouse inventory control platform tailored for supply chains. Features dense sticky data tables, real-time rack/zone allocation indicators, low-stock warnings, and audit logging.",
+      tags: ["React", "TypeScript", "Tailwind CSS", "Node.js", "REST APIs"],
+      features: [
+        "Dense sticky data tables with multi-column sorting, filtering, and pagination",
+        "Visual warehouse zone & rack allocation indicators",
+        "Automated low-stock threshold triggers and audit event trail logs",
+        "Instant CSV export engine and SKU movement analytics graphs"
+      ],
+      metrics: "Monitored 50,000+ daily inventory SKU events with sub-50ms render latency",
+      demoUrl: "https://lonetex-inventory.vercel.app",
+      githubUrl: "https://github.com/khokharyasir749/lonetex-inventory",
+      featured: true,
+      image: "/projects/lonetex-inventory-1.png",
+      gallery: [
+        "/projects/lonetex-inventory-1.png",
+        "/projects/lonetex-inventory-2.png",
+        "/projects/lonetex-inventory-3.png"
+      ]
+    },
+    {
+      number: "09",
+      id: "weather-dashboard",
+      title: "Cyber Weather Dashboard",
+      tagline: "Real-time global meteorological monitor with forecast telemetry",
+      description: "A precision weather monitoring application featuring 7-day forecasts, atmospheric pressure graphs, satellite telemetry radar maps, and geolocation search.",
+      tags: ["React", "Weather API", "Tailwind CSS", "Charts.js", "TypeScript"],
+      features: [
+        "Real-time geo-coordinates meteorological telemetry with live radar updates",
+        "Interactive 7-day hourly temperature and precipitation graphs",
+        "UV index, humidity, wind velocity, and air quality barometer dials",
+        "City bookmarking with LocalStorage persistence"
+      ],
+      metrics: "Sub-200ms meteorological API data parsing with responsive radar charts",
+      demoUrl: "https://weather-cyber-dashboard.vercel.app",
+      githubUrl: "https://github.com/khokharyasir749/weather-dashboard",
+      featured: false,
+      image: "/projects/weather-dashboard-1.png",
+      gallery: [
+        "/projects/weather-dashboard-1.png",
+        "/projects/weather-dashboard-2.png",
+        "/projects/weather-dashboard-3.png"
+      ]
+    },
+    {
+      number: "10",
+      id: "modern-calculator",
+      title: "Modern Glass Calculator",
+      tagline: "Precision financial and scientific calculation engine with dark UI",
+      description: "A sleek, responsive dark glassmorphic calculator with history logging, keyboard event listeners, memory recall registers, and scientific arithmetic modes.",
+      tags: ["React", "JavaScript", "Tailwind CSS", "Framer Motion"],
+      features: [
+        "Instant arithmetic computation engine with float precision formatting",
+        "Calculation history tape with one-click past result insertion",
+        "Full keyboard numpad bindings and tactile sound feedback",
+        "Sleek frosted glass neumorphic button matrix with active animations"
+      ],
+      metrics: "Zero-latency arithmetic evaluation with full keyboard shortcut bindings",
+      demoUrl: "https://modern-glass-calculator.vercel.app",
+      githubUrl: "https://github.com/khokharyasir749/modern-calculator",
+      featured: false,
+      image: "/projects/modern-calculator-1.png",
+      gallery: [
+        "/projects/modern-calculator-1.png",
+        "/projects/modern-calculator-2.png"
       ]
     }
   ] as Project[],

@@ -50,16 +50,13 @@ export const WorkShowcase: React.FC = () => {
   };
 
   return (
-    <div className="w-full max-w-[1400px] mx-auto space-y-6 select-none pointer-events-auto px-4 sm:px-8 lg:px-12">
+    <div className="w-full max-w-[1600px] mx-auto space-y-6 select-none pointer-events-auto px-4 md:px-8 lg:px-12">
       {/* Top Header & Horizontal Controls */}
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-4 border-b border-zinc-200 dark:border-white/10">
         <div>
-          <div className="flex items-center gap-2 mb-1">
-            <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-purple-500/10 border border-purple-500/30 text-[11px] font-mono text-purple-600 dark:text-purple-300 tracking-widest uppercase">
-              <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
-              <span>[ 04 // SELECTED WORK ]</span>
-            </div>
-          </div>
+          <span className="text-xs uppercase tracking-widest text-zinc-400 font-semibold mb-2 block">
+            FEATURED PROJECTS
+          </span>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-zinc-900 dark:text-white tracking-tight uppercase">
             MY WORK
           </h2>
@@ -98,7 +95,7 @@ export const WorkShowcase: React.FC = () => {
             key={project.id}
             whileHover={{ y: -4 }}
             onClick={() => setSelectedProject(project)}
-            className="group relative w-[320px] sm:w-[380px] lg:w-[420px] shrink-0 p-5 rounded-2xl bg-white dark:bg-[#0e0e16]/90 border border-zinc-200 dark:border-white/10 hover:border-purple-500/50 shadow-xl shadow-zinc-200/50 dark:shadow-2xl dark:hover:shadow-purple-500/10 transition-all flex flex-col justify-between space-y-4 overflow-hidden cursor-pointer"
+            className="group relative w-[320px] sm:w-[380px] lg:w-[420px] xl:w-[460px] shrink-0 p-5 rounded-2xl bg-white dark:bg-[#0e0e16]/90 border border-zinc-200 dark:border-white/10 hover:border-purple-500/50 shadow-xl shadow-zinc-200/50 dark:shadow-2xl dark:hover:shadow-purple-500/10 transition-all flex flex-col justify-between space-y-4 overflow-hidden cursor-pointer"
             style={{ scrollSnapAlign: 'start' }}
           >
             {/* Giant Background Number Watermark */}
