@@ -10,16 +10,15 @@ export const TechStackSection: React.FC = () => {
 
       {/* Title, Section Index Chip & Subtitle */}
       <div className="text-center space-y-2 relative z-10">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/30 text-[11px] font-mono text-purple-600 dark:text-purple-300 tracking-widest uppercase">
-          <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
-          <span>[ 06 // TECHSTACK ]</span>
-        </div>
+        <span className="text-xs sm:text-sm uppercase tracking-widest text-zinc-400 font-bold mb-2 block">
+          SKILLS & TECHNOLOGIES
+        </span>
 
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-zinc-900 dark:text-white tracking-tight uppercase">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-zinc-900 dark:text-white tracking-tight uppercase">
           MY TECHSTACK
         </h2>
 
-        <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 max-w-md mx-auto font-sans tracking-wide">
+        <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 max-w-md mx-auto font-sans tracking-wide">
           Hover and drag across the floating spheres to inspect technologies.
         </p>
       </div>
@@ -30,10 +29,10 @@ export const TechStackSection: React.FC = () => {
       </div>
 
       {/* Bottom Status Tag */}
-      <div className="text-center text-[11px] font-mono text-zinc-500 dark:text-zinc-400 tracking-widest uppercase flex items-center justify-center gap-2 relative z-10">
-        <span className="w-1 h-1 rounded-full bg-cyan-400" />
+      <div className="text-center text-xs sm:text-sm font-mono text-zinc-500 dark:text-zinc-400 tracking-widest uppercase flex items-center justify-center gap-2 relative z-10">
+        <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
         <span>PHYSICS ENGINE • INTERACTIVE WEBGL MATRIX</span>
-        <span className="w-1 h-1 rounded-full bg-purple-400" />
+        <span className="w-1.5 h-1.5 rounded-full bg-purple-400" />
       </div>
     </div>
   );

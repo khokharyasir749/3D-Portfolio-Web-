@@ -366,44 +366,41 @@ export const WhatIDoSection: React.FC = () => {
       {/* Header & Mode Selector Pills */}
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-4 border-b border-zinc-200 dark:border-white/10">
         <div>
-          <div className="flex items-center gap-2 mb-1">
-            <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-purple-500/10 border border-purple-500/30 text-[11px] font-mono text-purple-600 dark:text-purple-300 tracking-widest uppercase">
-              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-              <span>[ 03 // WHAT I DO ]</span>
-            </div>
-          </div>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-zinc-900 dark:text-white tracking-tight uppercase">
+          <span className="text-xs sm:text-sm uppercase tracking-widest text-zinc-400 font-bold mb-2 block">
+            SERVICES & EXPERTISE
+          </span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-zinc-900 dark:text-white tracking-tight uppercase">
             WHAT I DO
           </h2>
-          <p className="text-xs sm:text-sm text-zinc-600 dark:text-slate-400 font-sans mt-1">
+          <p className="text-sm sm:text-base text-zinc-600 dark:text-slate-400 font-sans mt-1">
             Bridging robust full-stack architecture with cutting-edge 3D creative design. Click any card for detailed specification dossier.
           </p>
         </div>
 
-        {/* Interactive Mode Selector Pills: [DEVELOP] and [DESIGN] */}
+        {/* Interactive Mode Selector: DEVELOP and DESIGN */}
         <div className="flex items-center gap-2 bg-zinc-100 dark:bg-[#111118] p-1.5 rounded-xl border border-zinc-200 dark:border-white/10 shrink-0 shadow-sm">
           <button
             onClick={() => setActiveMode('develop')}
-            className={`px-4 py-1.5 rounded-lg font-mono font-bold text-xs tracking-wider transition-all flex items-center gap-2 cursor-pointer ${
+            className={`px-4 py-2 rounded-lg font-mono font-bold text-xs sm:text-sm tracking-wider transition-all flex items-center gap-2 cursor-pointer ${
               activeMode === 'develop'
                 ? 'bg-cyan-500 text-white dark:bg-cyan-400 dark:text-slate-950 shadow-md shadow-cyan-400/20'
                 : 'text-zinc-600 dark:text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-300 hover:bg-zinc-200/60 dark:hover:bg-white/5'
             }`}
           >
-            <Code className="w-3.5 h-3.5" />
-            <span>[DEVELOP]</span>
+            <Code className="w-4 h-4" />
+            <span>DEVELOP</span>
           </button>
 
           <button
             onClick={() => setActiveMode('design')}
-            className={`px-4 py-1.5 rounded-lg font-mono font-bold text-xs tracking-wider transition-all flex items-center gap-2 cursor-pointer ${
+            className={`px-4 py-2 rounded-lg font-mono font-bold text-xs sm:text-sm tracking-wider transition-all flex items-center gap-2 cursor-pointer ${
               activeMode === 'design'
                 ? 'bg-pink-500 text-white dark:text-slate-950 shadow-md shadow-pink-500/20'
                 : 'text-zinc-600 dark:text-slate-400 hover:text-pink-600 dark:hover:text-pink-300 hover:bg-zinc-200/60 dark:hover:bg-white/5'
             }`}
           >
-            <Palette className="w-3.5 h-3.5" />
-            <span>[DESIGN]</span>
+            <Palette className="w-4 h-4" />
+            <span>DESIGN</span>
           </button>
         </div>
       </div>
@@ -670,13 +667,13 @@ export const WhatIDoSection: React.FC = () => {
               {/* Top Studio Header & Chip */}
               <div className="space-y-2 pr-8">
                 <div className="flex flex-wrap items-center gap-2">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/30 text-[11px] font-mono text-purple-600 dark:text-purple-300 tracking-widest uppercase">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/30 text-xs font-mono text-purple-600 dark:text-purple-300 tracking-widest uppercase">
                     <span
                       className={`w-1.5 h-1.5 rounded-full animate-pulse ${
                         selectedCapability.accent === 'cyan' ? 'bg-cyan-400' : 'bg-pink-400'
                       }`}
                     />
-                    <span>[ CAPABILITY SPECIFICATION // DEEP DIVE ]</span>
+                    <span>CAPABILITY SPECIFICATION</span>
                   </div>
                   <span
                     className={`text-xs font-mono px-2.5 py-0.5 rounded-full border ${
@@ -785,7 +782,7 @@ export const WhatIDoSection: React.FC = () => {
 
               {/* Modal Footer Close Action */}
               <div className="pt-4 border-t border-zinc-200 dark:border-white/5 flex items-center justify-between text-xs font-mono text-zinc-500">
-                <span>[ESC] OR CLICK OUTSIDE TO CLOSE</span>
+                <span>ESC OR CLICK OUTSIDE TO CLOSE</span>
                 <button
                   onClick={() => setSelectedCapability(null)}
                   className="px-5 py-2.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-white dark:bg-white dark:hover:bg-zinc-200 dark:text-zinc-950 font-mono font-bold text-xs tracking-wider uppercase transition-colors cursor-pointer shadow-md"

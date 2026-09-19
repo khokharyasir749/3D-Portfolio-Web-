@@ -27,7 +27,7 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-zinc-600 dark:text-zinc-300 text-xs sm:text-sm font-sans tracking-[0.25em] uppercase font-semibold"
+            className="text-zinc-600 dark:text-zinc-300 text-xs sm:text-sm md:text-base font-sans tracking-[0.25em] uppercase font-semibold"
           >
             A CREATIVE
           </motion.span>
@@ -54,7 +54,7 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xs sm:text-sm md:text-base text-zinc-700 dark:text-zinc-300 font-sans leading-relaxed max-w-lg pt-1"
+            className="text-sm sm:text-base md:text-lg text-zinc-700 dark:text-zinc-300 font-sans leading-relaxed max-w-lg pt-1"
           >
             {portfolioData.about.bio[0]}
           </motion.p>
@@ -62,9 +62,9 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
       </div>
 
       {/* Bottom Row: Minimalist Status & Resume Link */}
-      <div className="w-full flex items-center justify-between pointer-events-auto pt-4 text-xs font-mono text-zinc-500 dark:text-zinc-400">
+      <div className="w-full flex items-center justify-between pointer-events-auto pt-4 text-xs sm:text-sm font-mono text-zinc-500 dark:text-zinc-400">
         <span className="tracking-[0.2em] uppercase font-medium">
-          LAHORE, PAKISTAN // 2026
+          LAHORE, PAKISTAN • 2026
         </span>
         <a
           href="mailto:khokharyasir749@gmail.com?subject=Resume%20Request%20-%20Yasir%20Khokhar"

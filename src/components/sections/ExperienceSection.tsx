@@ -188,16 +188,13 @@ export const ExperienceSection: React.FC = () => {
       {/* Top Header */}
       <div className="pb-4 border-b border-zinc-200 dark:border-white/10 flex flex-col sm:flex-row sm:items-end justify-between gap-3">
         <div>
-          <div className="flex items-center gap-2 mb-1">
-            <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-[11px] font-mono text-emerald-600 dark:text-emerald-300 tracking-widest uppercase">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              <span>[ 05 // CAREER & IMPACT ]</span>
-            </div>
-          </div>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-zinc-900 dark:text-white tracking-tight uppercase">
+          <span className="text-xs sm:text-sm uppercase tracking-widest text-zinc-400 font-bold mb-2 block">
+            CAREER & IMPACT
+          </span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-zinc-900 dark:text-white tracking-tight uppercase">
             EXPERIENCE & CAREER
           </h2>
-          <p className="text-xs sm:text-sm text-zinc-600 dark:text-slate-400 font-sans mt-1">
+          <p className="text-sm sm:text-base text-zinc-600 dark:text-slate-400 font-sans mt-1">
             A chronological timeline of engineering scalable web applications, mobile architectures, and 3D spatial experiences.
           </p>
         </div>
@@ -336,9 +333,9 @@ export const ExperienceSection: React.FC = () => {
 
               {/* Top Studio Dossier Chip & Header */}
               <div className="space-y-2 pr-8">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/30 text-[11px] font-mono text-purple-600 dark:text-purple-300 tracking-widest uppercase">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/30 text-xs font-mono text-purple-600 dark:text-purple-300 tracking-widest uppercase">
                   <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-                  <span>[ EXPERIENCE DOSSIER // DEEP DIVE ]</span>
+                  <span>EXPERIENCE DOSSIER</span>
                 </div>
 
                 <div className="flex flex-wrap items-center gap-3 pt-1">
@@ -415,7 +412,7 @@ export const ExperienceSection: React.FC = () => {
 
               {/* Bottom Footer Close Action */}
               <div className="pt-4 border-t border-zinc-200 dark:border-white/5 flex items-center justify-between text-xs font-mono text-zinc-500">
-                <span>[ESC] OR CLICK OUTSIDE TO CLOSE</span>
+                <span>ESC OR CLICK OUTSIDE TO CLOSE</span>
                 <button
                   onClick={() => setSelectedExperience(null)}
                   className="px-5 py-2.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-white dark:bg-white dark:hover:bg-zinc-200 dark:text-zinc-950 font-bold tracking-wider uppercase transition-colors cursor-pointer shadow-md text-xs font-mono"

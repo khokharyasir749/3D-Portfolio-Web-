@@ -54,13 +54,13 @@ export const WorkShowcase: React.FC = () => {
       {/* Top Header & Horizontal Controls */}
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-4 border-b border-zinc-200 dark:border-white/10">
         <div>
-          <span className="text-xs uppercase tracking-widest text-zinc-400 font-semibold mb-2 block">
+          <span className="text-xs sm:text-sm uppercase tracking-widest text-zinc-400 font-bold mb-2 block">
             FEATURED PROJECTS
           </span>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-zinc-900 dark:text-white tracking-tight uppercase">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-zinc-900 dark:text-white tracking-tight uppercase">
             MY WORK
           </h2>
-          <p className="text-xs sm:text-sm text-zinc-600 dark:text-slate-400 font-sans mt-1">
+          <p className="text-sm sm:text-base text-zinc-600 dark:text-slate-400 font-sans mt-1">
             Featured production web applications, enterprise portals, and real-time interactive systems. Click any card for full case study & screenshots.
           </p>
         </div>
@@ -119,10 +119,10 @@ export const WorkShowcase: React.FC = () => {
 
               {/* Title & Tagline */}
               <div>
-                <h3 className="font-bold text-lg sm:text-xl text-zinc-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-300 transition-colors tracking-wide">
+                <h3 className="font-bold text-xl sm:text-2xl text-zinc-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-300 transition-colors tracking-wide">
                   {project.title}
                 </h3>
-                <p className="text-xs text-zinc-700 dark:text-zinc-400 font-sans mt-0.5 line-clamp-2">
+                <p className="text-xs sm:text-sm text-zinc-700 dark:text-zinc-400 font-sans mt-0.5 line-clamp-2">
                   {project.tagline}
                 </p>
               </div>
@@ -137,12 +137,12 @@ export const WorkShowcase: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent pointer-events-none" />
 
-                <div className="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between text-[10px] font-mono text-white/90">
-                  <span className="px-2 py-0.5 rounded-md bg-black/60 backdrop-blur-md border border-white/10">
+                <div className="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between text-[11px] font-mono text-white/90">
+                  <span className="px-2 py-0.5 rounded-md bg-black/60 backdrop-blur-md border border-white/10 font-medium">
                     GUI PREVIEW
                   </span>
                   {project.gallery && project.gallery.length > 1 && (
-                    <span className="px-2 py-0.5 rounded-md bg-purple-500/30 backdrop-blur-md border border-purple-400/40 text-purple-200">
+                    <span className="px-2 py-0.5 rounded-md bg-purple-500/30 backdrop-blur-md border border-purple-400/40 text-purple-200 font-medium">
                       +{project.gallery.length} VIEWS
                     </span>
                   )}
@@ -150,7 +150,7 @@ export const WorkShowcase: React.FC = () => {
               </div>
 
               {/* Description Snippet */}
-              <p className="text-xs text-zinc-700 dark:text-zinc-400 leading-relaxed font-sans line-clamp-2">
+              <p className="text-base text-zinc-700 dark:text-zinc-300 leading-relaxed font-sans line-clamp-2">
                 {project.description}
               </p>
 
@@ -159,13 +159,13 @@ export const WorkShowcase: React.FC = () => {
                 {project.tags.slice(0, 4).map((tag, idx) => (
                   <span
                     key={idx}
-                    className="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-zinc-100 text-zinc-700 border border-zinc-200 dark:bg-zinc-800/80 dark:text-zinc-300 dark:border-white/10 group-hover:border-purple-500/30 transition-colors"
+                    className="text-xs sm:text-sm px-3 py-1 font-medium font-mono rounded-full bg-zinc-100 text-zinc-700 border border-zinc-200 dark:bg-zinc-800/80 dark:text-zinc-300 dark:border-white/10 group-hover:border-purple-500/30 transition-colors"
                   >
                     {tag}
                   </span>
                 ))}
                 {project.tags.length > 4 && (
-                  <span className="text-[10px] font-mono px-1.5 py-0.5 text-zinc-500 dark:text-slate-500">
+                  <span className="text-xs sm:text-sm font-mono px-2 py-1 text-zinc-500 dark:text-slate-400 font-medium">
                     +{project.tags.length - 4}
                   </span>
                 )}
@@ -174,9 +174,9 @@ export const WorkShowcase: React.FC = () => {
 
             {/* Bottom Card Affordance & Direct Action Buttons */}
             <div className="space-y-2.5 pt-3 border-t border-zinc-200 dark:border-white/5 relative z-10">
-              <div className="flex items-center justify-between text-[11px] font-mono text-purple-600 dark:text-purple-400 group-hover:text-purple-700 dark:group-hover:text-purple-300">
+              <div className="flex items-center justify-between text-xs sm:text-sm font-semibold tracking-wider font-mono text-purple-600 dark:text-purple-400 group-hover:text-purple-700 dark:group-hover:text-purple-300">
                 <span>EXPLORE CASE STUDY</span>
-                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1.5 transition-transform duration-200" />
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-200" />
               </div>
 
               <div className="flex items-center gap-2">
@@ -243,9 +243,9 @@ export const WorkShowcase: React.FC = () => {
               {/* Top Studio Dossier Chip & Header */}
               <div className="space-y-2 pr-8">
                 <div className="flex flex-wrap items-center gap-2">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/30 text-[11px] font-mono text-purple-600 dark:text-purple-300 tracking-widest uppercase">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/30 text-xs font-mono text-purple-600 dark:text-purple-300 tracking-widest uppercase">
                     <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-                    <span>[ PROJECT DOSSIER // CASE STUDY ]</span>
+                    <span>PROJECT CASE STUDY</span>
                   </div>
                   <span className="text-xs font-mono px-2.5 py-0.5 rounded-full bg-cyan-500/10 text-cyan-600 dark:text-cyan-300 border border-cyan-500/30">
                     PROJECT {selectedProject.number}
