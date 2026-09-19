@@ -16,8 +16,9 @@ import {
   Image as ImageIcon,
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { ErrorBoundary } from '../ui/ErrorBoundary';
 
-export const WorkShowcase: React.FC = () => {
+const WorkShowcaseInner: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [activeModalImage, setActiveModalImage] = useState<string>('');
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -25,7 +26,7 @@ export const WorkShowcase: React.FC = () => {
   // Sync active modal image when selected project changes
   useEffect(() => {
     if (selectedProject) {
-      setActiveModalImage(selectedProject.image);
+      setActiveModalImage(selectedProject.image || (selectedProject.gallery?.[0] ?? ''));
       document.body.style.overflow = 'hidden';
       const handleKeyDown = (e: KeyboardEvent) => {
         if (e.key === 'Escape') {
@@ -48,6 +49,8 @@ export const WorkShowcase: React.FC = () => {
       scrollRef.current.scrollBy({ left: offset, behavior: 'smooth' });
     }
   };
+
+  const projects = portfolioData?.projects ?? [];
 
   return (
     <div className="w-full space-y-6 select-none pointer-events-auto">
@@ -90,124 +93,133 @@ export const WorkShowcase: React.FC = () => {
         className="flex items-stretch gap-5 overflow-x-auto pb-6 pt-2 scroll-smooth no-scrollbar"
         style={{ scrollSnapType: 'x mandatory' }}
       >
-        {portfolioData.projects.map((project) => (
-          <motion.div
-            key={project.id}
-            whileHover={{ y: -4 }}
-            onClick={() => setSelectedProject(project)}
-            className="group relative w-[320px] sm:w-[380px] lg:w-[420px] xl:w-[460px] shrink-0 p-6 sm:p-7 rounded-2xl bg-white dark:bg-[#0e0e16]/90 border border-zinc-200 dark:border-white/10 hover:border-purple-500/50 shadow-xl shadow-zinc-200/50 dark:shadow-2xl dark:hover:shadow-purple-500/10 transition-all flex flex-col justify-between space-y-4 overflow-hidden cursor-pointer"
-            style={{ scrollSnapAlign: 'start' }}
-          >
-            {/* Background Number Watermark (Cleanly Contained Without Top Clipping) */}
-            <div className="absolute top-4 right-6 font-black text-6xl sm:text-7xl text-zinc-900/[0.05] dark:text-white/[0.04] group-hover:text-purple-500/15 dark:group-hover:text-purple-400/10 transition-colors pointer-events-none select-none leading-none z-0">
-              {project.number}
-            </div>
+        {projects.map((project) => {
+          const projectTags = project?.tags ?? [];
+          const projectGallery = project?.gallery ?? [];
 
-            {/* Top Card Header & Tagline */}
-            <div className="space-y-3 relative z-10">
-              <div className="flex items-center justify-between">
-                <span className="font-mono font-bold text-xs px-2.5 py-1 rounded-lg bg-purple-100 text-purple-700 border border-purple-200 dark:bg-purple-500/10 dark:text-purple-300 dark:border-purple-500/30">
-                  PROJECT {project.number}
-                </span>
-                {project.featured && (
-                  <span className="text-[11px] font-mono px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-700 dark:text-cyan-400 border border-cyan-500/30 flex items-center gap-1">
-                    <Sparkles className="w-3 h-3" />
-                    <span>FEATURED</span>
-                  </span>
-                )}
+          return (
+            <motion.div
+              key={project.id || project.number}
+              whileHover={{ y: -4 }}
+              onClick={() => setSelectedProject(project)}
+              className="group relative w-[320px] sm:w-[380px] lg:w-[420px] xl:w-[460px] shrink-0 p-6 sm:p-7 rounded-2xl bg-white dark:bg-[#0e0e16]/90 border border-zinc-200 dark:border-white/10 hover:border-purple-500/50 shadow-xl shadow-zinc-200/50 dark:shadow-2xl dark:hover:shadow-purple-500/10 transition-all flex flex-col justify-between space-y-4 overflow-hidden cursor-pointer"
+              style={{ scrollSnapAlign: 'start' }}
+            >
+              {/* Background Number Watermark (Cleanly Contained Without Top Clipping) */}
+              <div className="absolute top-4 right-6 font-black text-6xl sm:text-7xl text-zinc-900/[0.05] dark:text-white/[0.04] group-hover:text-purple-500/15 dark:group-hover:text-purple-400/10 transition-colors pointer-events-none select-none leading-none z-0">
+                {project.number}
               </div>
 
-              {/* Title & Tagline */}
-              <div>
-                <h3 className="font-bold text-xl sm:text-2xl text-zinc-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-300 transition-colors tracking-wide">
-                  {project.title}
-                </h3>
-                <p className="text-xs sm:text-sm text-zinc-700 dark:text-zinc-400 font-sans mt-0.5 line-clamp-2">
-                  {project.tagline}
+              {/* Top Card Header & Tagline */}
+              <div className="space-y-3 relative z-10">
+                <div className="flex items-center justify-between">
+                  <span className="font-mono font-bold text-xs px-2.5 py-1 rounded-lg bg-purple-100 text-purple-700 border border-purple-200 dark:bg-purple-500/10 dark:text-purple-300 dark:border-purple-500/30">
+                    PROJECT {project.number}
+                  </span>
+                  {project.featured && (
+                    <span className="text-[11px] font-mono px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-700 dark:text-cyan-400 border border-cyan-500/30 flex items-center gap-1">
+                      <Sparkles className="w-3 h-3" />
+                      <span>FEATURED</span>
+                    </span>
+                  )}
+                </div>
+
+                {/* Title & Tagline */}
+                <div>
+                  <h3 className="font-bold text-xl sm:text-2xl text-zinc-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-300 transition-colors tracking-wide">
+                    {project.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-zinc-700 dark:text-zinc-400 font-sans mt-0.5 line-clamp-2">
+                    {project.tagline}
+                  </p>
+                </div>
+
+                {/* Authentic High-Resolution Project Screenshot Preview */}
+                <div className="relative w-full h-48 sm:h-52 rounded-xl overflow-hidden bg-zinc-100 dark:bg-slate-950/80 border border-zinc-200 dark:border-white/10 group-hover:border-purple-500/40 shadow-inner transition-colors">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 select-none"
+                    loading="lazy"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src =
+                        'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="250" viewBox="0 0 400 250"><rect fill="%23181825" width="400" height="250"/><text fill="%23888" x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif">Project Preview</text></svg>';
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent pointer-events-none" />
+
+                  <div className="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between text-[11px] font-mono text-white/90">
+                    <span className="px-2 py-0.5 rounded-md bg-black/60 backdrop-blur-md border border-white/10 font-medium">
+                      GUI PREVIEW
+                    </span>
+                    {projectGallery.length > 1 && (
+                      <span className="px-2 py-0.5 rounded-md bg-purple-500/30 backdrop-blur-md border border-purple-400/40 text-purple-200 font-medium">
+                        +{projectGallery.length} VIEWS
+                      </span>
+                    )}
+                  </div>
+                </div>
+
+                {/* Description Snippet */}
+                <p className="text-base text-zinc-700 dark:text-zinc-300 leading-relaxed font-sans line-clamp-2">
+                  {project.description}
                 </p>
-              </div>
 
-              {/* Authentic High-Resolution Project Screenshot Preview */}
-              <div className="relative w-full h-48 sm:h-52 rounded-xl overflow-hidden bg-zinc-100 dark:bg-slate-950/80 border border-zinc-200 dark:border-white/10 group-hover:border-purple-500/40 shadow-inner transition-colors">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 select-none"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent pointer-events-none" />
-
-                <div className="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between text-[11px] font-mono text-white/90">
-                  <span className="px-2 py-0.5 rounded-md bg-black/60 backdrop-blur-md border border-white/10 font-medium">
-                    GUI PREVIEW
-                  </span>
-                  {project.gallery && project.gallery.length > 1 && (
-                    <span className="px-2 py-0.5 rounded-md bg-purple-500/30 backdrop-blur-md border border-purple-400/40 text-purple-200 font-medium">
-                      +{project.gallery.length} VIEWS
+                {/* Tech Stack Badges */}
+                <div className="flex flex-wrap gap-1.5 pt-1">
+                  {projectTags.slice(0, 4).map((tag, idx) => (
+                    <span
+                      key={idx}
+                      className="text-xs sm:text-sm px-3 py-1 font-medium font-mono rounded-full bg-zinc-100 text-zinc-700 border border-zinc-200 dark:bg-zinc-800/80 dark:text-zinc-300 dark:border-white/10 group-hover:border-purple-500/30 transition-colors"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                  {projectTags.length > 4 && (
+                    <span className="text-xs sm:text-sm font-mono px-2 py-1 text-zinc-500 dark:text-slate-400 font-medium">
+                      +{projectTags.length - 4}
                     </span>
                   )}
                 </div>
               </div>
 
-              {/* Description Snippet */}
-              <p className="text-base text-zinc-700 dark:text-zinc-300 leading-relaxed font-sans line-clamp-2">
-                {project.description}
-              </p>
+              {/* Bottom Card Affordance & Direct Action Buttons */}
+              <div className="space-y-2.5 pt-3 border-t border-zinc-200 dark:border-white/5 relative z-10">
+                <div className="flex items-center justify-between text-xs sm:text-sm font-semibold tracking-wider font-mono text-purple-600 dark:text-purple-400 group-hover:text-purple-700 dark:group-hover:text-purple-300">
+                  <span>EXPLORE CASE STUDY</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-200" />
+                </div>
 
-              {/* Tech Stack Badges */}
-              <div className="flex flex-wrap gap-1.5 pt-1">
-                {project.tags.slice(0, 4).map((tag, idx) => (
-                  <span
-                    key={idx}
-                    className="text-xs sm:text-sm px-3 py-1 font-medium font-mono rounded-full bg-zinc-100 text-zinc-700 border border-zinc-200 dark:bg-zinc-800/80 dark:text-zinc-300 dark:border-white/10 group-hover:border-purple-500/30 transition-colors"
-                  >
-                    {tag}
-                  </span>
-                ))}
-                {project.tags.length > 4 && (
-                  <span className="text-xs sm:text-sm font-mono px-2 py-1 text-zinc-500 dark:text-slate-400 font-medium">
-                    +{project.tags.length - 4}
-                  </span>
-                )}
+                <div className="flex items-center gap-2">
+                  {project.demoUrl && (
+                    <a
+                      href={project.demoUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="flex-1 py-1.5 px-3 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-white dark:bg-white/10 dark:hover:bg-white dark:text-slate-200 dark:hover:text-zinc-950 font-mono text-[11px] flex items-center justify-center gap-1.5 border border-zinc-900 dark:border-white/10 transition-all uppercase shadow-sm"
+                    >
+                      <span>LIVE LINK</span>
+                      <ArrowUpRight className="w-3 h-3" />
+                    </a>
+                  )}
+                  {project.githubUrl && (
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="py-1.5 px-3 rounded-lg bg-zinc-100 hover:bg-zinc-200 text-zinc-800 dark:bg-[#111118] dark:hover:bg-[#181824] dark:text-slate-300 dark:hover:text-white font-mono text-[11px] flex items-center justify-center gap-1.5 border border-zinc-200 dark:border-white/10 hover:border-purple-500/40 transition-all uppercase shadow-sm"
+                    >
+                      <Github className="w-3 h-3" />
+                      <span>SOURCE</span>
+                    </a>
+                  )}
+                </div>
               </div>
-            </div>
-
-            {/* Bottom Card Affordance & Direct Action Buttons */}
-            <div className="space-y-2.5 pt-3 border-t border-zinc-200 dark:border-white/5 relative z-10">
-              <div className="flex items-center justify-between text-xs sm:text-sm font-semibold tracking-wider font-mono text-purple-600 dark:text-purple-400 group-hover:text-purple-700 dark:group-hover:text-purple-300">
-                <span>EXPLORE CASE STUDY</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-200" />
-              </div>
-
-              <div className="flex items-center gap-2">
-                {project.demoUrl && (
-                  <a
-                    href={project.demoUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                    className="flex-1 py-1.5 px-3 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-white dark:bg-white/10 dark:hover:bg-white dark:text-slate-200 dark:hover:text-zinc-950 font-mono text-[11px] flex items-center justify-center gap-1.5 border border-zinc-900 dark:border-white/10 transition-all uppercase shadow-sm"
-                  >
-                    <span>LIVE LINK</span>
-                    <ArrowUpRight className="w-3 h-3" />
-                  </a>
-                )}
-                {project.githubUrl && (
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                    className="py-1.5 px-3 rounded-lg bg-zinc-100 hover:bg-zinc-200 text-zinc-800 dark:bg-[#111118] dark:hover:bg-[#181824] dark:text-slate-300 dark:hover:text-white font-mono text-[11px] flex items-center justify-center gap-1.5 border border-zinc-200 dark:border-white/10 hover:border-purple-500/40 transition-all uppercase shadow-sm"
-                  >
-                    <Github className="w-3 h-3" />
-                    <span>SOURCE</span>
-                  </a>
-                )}
-              </div>
-            </div>
-          </motion.div>
-        ))}
+            </motion.div>
+          );
+        })}
       </div>
 
       {/* Interactive Project Glass Dossier Modal with Multi-Screenshot Gallery */}
@@ -267,6 +279,10 @@ export const WorkShowcase: React.FC = () => {
                     src={activeModalImage || selectedProject.image}
                     alt={selectedProject.title}
                     className="w-full h-full object-cover object-top transition-all duration-300 select-none"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src =
+                        'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400"><rect fill="%23181825" width="600" height="400"/><text fill="%23888" x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif">Preview Image</text></svg>';
+                    }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none" />
 
@@ -279,13 +295,13 @@ export const WorkShowcase: React.FC = () => {
                 </div>
 
                 {/* Multi-Screenshot Gallery Selector Strip */}
-                {selectedProject.gallery && selectedProject.gallery.length > 1 && (
+                {(selectedProject?.gallery ?? []).length > 1 && (
                   <div className="space-y-1.5">
                     <div className="text-[11px] font-mono text-zinc-600 dark:text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
                       <span>Interactive Interface Views:</span>
                     </div>
                     <div className="flex items-center gap-2.5 overflow-x-auto pb-1.5 no-scrollbar">
-                      {selectedProject.gallery.map((imgUrl, gIdx) => {
+                      {(selectedProject.gallery ?? []).map((imgUrl, gIdx) => {
                         const isCurrent = activeModalImage === imgUrl;
                         return (
                           <button
@@ -301,6 +317,10 @@ export const WorkShowcase: React.FC = () => {
                               src={imgUrl}
                               alt={`View ${gIdx + 1}`}
                               className="w-full h-full object-cover object-top"
+                              onError={(e) => {
+                                (e.target as HTMLImageElement).src =
+                                  'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="60" viewBox="0 0 100 60"><rect fill="%23181825" width="100" height="60"/></svg>';
+                              }}
                             />
                             <span className="absolute bottom-1 right-1 text-[9px] font-mono px-1 py-0.2 rounded bg-black/70 text-white">
                               0{gIdx + 1}
@@ -332,7 +352,7 @@ export const WorkShowcase: React.FC = () => {
                 </h4>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                  {selectedProject.features.map((feat, idx) => (
+                  {(selectedProject?.features ?? []).map((feat, idx) => (
                     <div
                       key={idx}
                       className="p-3.5 rounded-xl bg-zinc-50 dark:bg-zinc-900/60 border border-zinc-200 dark:border-white/5 flex items-start gap-2.5 hover:border-purple-500/30 transition-colors"
@@ -360,7 +380,7 @@ export const WorkShowcase: React.FC = () => {
                   Tech Stack & Integrated Libraries:
                 </h4>
                 <div className="flex flex-wrap gap-1.5">
-                  {selectedProject.tags.map((tag, idx) => (
+                  {(selectedProject?.tags ?? []).map((tag, idx) => (
                     <span
                       key={idx}
                       className="text-xs font-mono px-3 py-1 rounded-lg bg-purple-500/10 text-purple-700 dark:text-purple-200 border border-purple-500/20"
@@ -413,5 +433,12 @@ export const WorkShowcase: React.FC = () => {
   );
 };
 
-export default WorkShowcase;
+export const WorkShowcase: React.FC = () => {
+  return (
+    <ErrorBoundary name="WorkShowcase">
+      <WorkShowcaseInner />
+    </ErrorBoundary>
+  );
+};
 
+export default WorkShowcase;

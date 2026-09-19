@@ -13,6 +13,7 @@ import { OverlayHUD } from './components/ui/OverlayHUD';
 import { LoadingScreen } from './components/ui/LoadingScreen';
 import { DevTerminal } from './components/ui/DevTerminal';
 import { Footer } from './components/ui/Footer';
+import { ErrorBoundary } from './components/ui/ErrorBoundary';
 import { audioManager } from './utils/audioSystem';
 
 export const App: React.FC = () => {
@@ -27,6 +28,14 @@ export const App: React.FC = () => {
     }
     return 'dark';
   });
+
+  // Safety timer to guarantee loading screen always dismisses
+  useEffect(() => {
+    const safetyTimer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2500);
+    return () => clearTimeout(safetyTimer);
+  }, []);
 
   useEffect(() => {
     const root = document.documentElement;
@@ -84,207 +93,241 @@ export const App: React.FC = () => {
       'contact',
     ];
 
-    const lenis = new Lenis({
-      duration: 0.9,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      orientation: 'vertical',
-      gestureOrientation: 'vertical',
-      smoothWheel: true,
-      wheelMultiplier: 1.0,
-      touchMultiplier: 1.5,
-      lerp: 0.1,
-    });
+    let lenis: Lenis | null = null;
+    let rafId: number | null = null;
 
-    lenisRef.current = lenis;
-    lenis.scrollTo(0, { immediate: true });
+    try {
+      lenis = new Lenis({
+        duration: 0.9,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        orientation: 'vertical',
+        gestureOrientation: 'vertical',
+        smoothWheel: true,
+        wheelMultiplier: 1.0,
+        touchMultiplier: 1.5,
+        lerp: 0.1,
+      });
 
-    let rafId: number;
-    function raf(time: number) {
-      lenis.raf(time);
+      lenisRef.current = lenis;
+      lenis.scrollTo(0, { immediate: true });
+
+      function raf(time: number) {
+        lenis?.raf(time);
+        rafId = requestAnimationFrame(raf);
+      }
       rafId = requestAnimationFrame(raf);
-    }
-    rafId = requestAnimationFrame(raf);
 
-    let lastProgress = 0;
-    let lastActiveSection = 'hero';
-    let ticking = false;
+      let lastProgress = 0;
+      let lastActiveSection = 'hero';
+      let ticking = false;
 
-    // Throttled scroll listener to prevent redundant React re-renders on every sub-pixel
-    lenis.on('scroll', (e: { scroll: number; limit: number; progress: number }) => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          if (Math.abs(e.progress - lastProgress) > 0.003) {
-            lastProgress = e.progress;
-            setScrollProgress(e.progress);
-          }
+      // Throttled scroll listener to prevent redundant React re-renders on every sub-pixel
+      lenis.on('scroll', (e: { scroll: number; limit: number; progress: number }) => {
+        if (!ticking) {
+          requestAnimationFrame(() => {
+            if (Math.abs(e.progress - lastProgress) > 0.003) {
+              lastProgress = e.progress;
+              setScrollProgress(e.progress);
+            }
 
-          const scrollPosition = e.scroll + window.innerHeight * 0.35;
-          for (const id of sectionIds) {
-            const el = document.getElementById(id);
-            if (el) {
-              const top = el.offsetTop;
-              const height = el.offsetHeight;
-              if (scrollPosition >= top && scrollPosition < top + height) {
-                if (lastActiveSection !== id) {
-                  lastActiveSection = id;
-                  setActiveSectionId(id);
+            const scrollPosition = e.scroll + window.innerHeight * 0.35;
+            for (const id of sectionIds) {
+              const el = document.getElementById(id);
+              if (el) {
+                const top = el.offsetTop;
+                const height = el.offsetHeight;
+                if (scrollPosition >= top && scrollPosition < top + height) {
+                  if (lastActiveSection !== id) {
+                    lastActiveSection = id;
+                    setActiveSectionId(id);
+                  }
+                  break;
                 }
-                break;
               }
             }
-          }
-          ticking = false;
-        });
-        ticking = true;
-      }
-    });
+            ticking = false;
+          });
+          ticking = true;
+        }
+      });
+    } catch (err) {
+      console.warn('Lenis smooth scroll initialization warning:', err);
+    }
 
     return () => {
-      cancelAnimationFrame(rafId);
-      lenis.destroy();
+      if (rafId) cancelAnimationFrame(rafId);
+      if (lenis) lenis.destroy();
       lenisRef.current = null;
     };
   }, []);
 
   return (
-    <div className={`w-full min-h-screen relative selection:bg-purple-500 selection:text-white transition-colors duration-500 ${theme === 'light' ? 'bg-[#f8fafc] text-zinc-900' : 'bg-[#080808] text-slate-100'}`}>
-      {/* Initialization Loading Splash Screen */}
-      {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
+    <ErrorBoundary name="RootApplication">
+      <div className={`w-full min-h-screen relative selection:bg-purple-500 selection:text-white transition-colors duration-500 ${theme === 'light' ? 'bg-[#f8fafc] text-zinc-900' : 'bg-[#080808] text-slate-100'}`}>
+        {/* Initialization Loading Splash Screen */}
+        {isLoading && (
+          <ErrorBoundary name="LoadingScreen" fallback={null}>
+            <LoadingScreen onComplete={() => setIsLoading(false)} />
+          </ErrorBoundary>
+        )}
 
-      {/* Single Fixed Full-Screen Background 3D Scene Canvas (Z-Index 0) */}
-      <GlobalSceneCanvas scrollProgress={scrollProgress} theme={theme} />
+        {/* Single Fixed Full-Screen Background 3D Scene Canvas (Z-Index 0) */}
+        <ErrorBoundary name="GlobalSceneCanvas" fallback={null}>
+          <GlobalSceneCanvas scrollProgress={scrollProgress} theme={theme} />
+        </ErrorBoundary>
 
-      {/* Global Fixed Minimalist HUD */}
-      <OverlayHUD
-        activeSectionId={activeSectionId}
-        onNavigate={handleNavigate}
-        isMuted={isMuted}
-        onToggleAudio={handleToggleAudio}
-        theme={theme}
-        onToggleTheme={handleToggleTheme}
-      />
+        {/* Global Fixed Minimalist HUD */}
+        <ErrorBoundary name="OverlayHUD">
+          <OverlayHUD
+            activeSectionId={activeSectionId}
+            onNavigate={handleNavigate}
+            isMuted={isMuted}
+            onToggleAudio={handleToggleAudio}
+            theme={theme}
+            onToggleTheme={handleToggleTheme}
+          />
+        </ErrorBoundary>
 
-      {/* Interactive Dev Terminal Console Drawer */}
-      <DevTerminal
-        theme={theme}
-        onToggleTheme={handleToggleTheme}
-        isMuted={isMuted}
-        onToggleAudio={handleToggleAudio}
-        onNavigate={handleNavigate}
-      />
+        {/* Interactive Dev Terminal Console Drawer */}
+        <ErrorBoundary name="DevTerminal">
+          <DevTerminal
+            theme={theme}
+            onToggleTheme={handleToggleTheme}
+            isMuted={isMuted}
+            onToggleAudio={handleToggleAudio}
+            onNavigate={handleNavigate}
+          />
+        </ErrorBoundary>
 
-      {/* Continuous Vertical Scroll Sections Container */}
-      <main className="w-full relative z-10 flex flex-col pointer-events-none">
-        {/* SECTION 1: HERO */}
-        <section
-          id="hero"
-          className="w-full min-h-screen relative flex items-center justify-center pointer-events-none"
-        >
-          <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
-            <HeroSection />
-          </div>
-        </section>
-
-        {/* SECTION 2: ABOUT ME */}
-        <section
-          id="about"
-          className="w-full min-h-screen relative py-16 sm:py-20 flex flex-col justify-center pointer-events-auto"
-        >
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.15 }}
-            transition={{ duration: 0.4, ease: 'easeOut' }}
-            className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-12"
+        {/* Continuous Vertical Scroll Sections Container */}
+        <main className="w-full relative z-10 flex flex-col pointer-events-none">
+          {/* SECTION 1: HERO */}
+          <section
+            id="hero"
+            className="w-full min-h-screen relative flex items-center justify-center pointer-events-none"
           >
-            <AboutSection />
-          </motion.div>
-        </section>
+            <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
+              <ErrorBoundary name="HeroSection">
+                <HeroSection />
+              </ErrorBoundary>
+            </div>
+          </section>
 
-        {/* SECTION 3: WHAT I DO / SERVICES */}
-        <section
-          id="what-i-do"
-          className="w-full min-h-screen relative py-16 sm:py-20 flex flex-col justify-center pointer-events-auto"
-        >
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.15 }}
-            transition={{ duration: 0.4, ease: 'easeOut' }}
-            className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-12"
+          {/* SECTION 2: ABOUT ME */}
+          <section
+            id="about"
+            className="w-full min-h-screen relative py-16 sm:py-20 flex flex-col justify-center pointer-events-auto"
           >
-            <WhatIDoSection />
-          </motion.div>
-        </section>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.4, ease: 'easeOut' }}
+              className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-12"
+            >
+              <ErrorBoundary name="AboutSection">
+                <AboutSection />
+              </ErrorBoundary>
+            </motion.div>
+          </section>
 
-        {/* SECTION 4: CAREER & EXPERIENCE TIMELINE */}
-        <section
-          id="experience"
-          className="w-full min-h-screen relative py-16 sm:py-20 flex flex-col justify-center pointer-events-auto"
-        >
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.15 }}
-            transition={{ duration: 0.4, ease: 'easeOut' }}
-            className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-12"
+          {/* SECTION 3: WHAT I DO / SERVICES */}
+          <section
+            id="what-i-do"
+            className="w-full min-h-screen relative py-16 sm:py-20 flex flex-col justify-center pointer-events-auto"
           >
-            <ExperienceSection />
-          </motion.div>
-        </section>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.4, ease: 'easeOut' }}
+              className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-12"
+            >
+              <ErrorBoundary name="WhatIDoSection">
+                <WhatIDoSection />
+              </ErrorBoundary>
+            </motion.div>
+          </section>
 
-        {/* SECTION 5: FEATURED WORK & PROJECTS */}
-        <section
-          id="work"
-          className="w-full min-h-screen relative py-16 sm:py-20 flex flex-col justify-center pointer-events-auto"
-        >
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.15 }}
-            transition={{ duration: 0.4, ease: 'easeOut' }}
-            className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-12"
+          {/* SECTION 4: CAREER & EXPERIENCE TIMELINE */}
+          <section
+            id="experience"
+            className="w-full min-h-screen relative py-16 sm:py-20 flex flex-col justify-center pointer-events-auto"
           >
-            <WorkShowcase />
-          </motion.div>
-        </section>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.4, ease: 'easeOut' }}
+              className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-12"
+            >
+              <ErrorBoundary name="ExperienceSection">
+                <ExperienceSection />
+              </ErrorBoundary>
+            </motion.div>
+          </section>
 
-        {/* SECTION 6: INTERACTIVE TECH STACK */}
-        <section
-          id="tech-stack"
-          className="w-full min-h-screen relative py-16 sm:py-20 flex flex-col justify-center pointer-events-auto"
-        >
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.15 }}
-            transition={{ duration: 0.4, ease: 'easeOut' }}
-            className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-12"
+          {/* SECTION 5: FEATURED WORK & PROJECTS */}
+          <section
+            id="work"
+            className="w-full min-h-screen relative py-16 sm:py-20 flex flex-col justify-center pointer-events-auto"
           >
-            <TechStackSection />
-          </motion.div>
-        </section>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.4, ease: 'easeOut' }}
+              className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-12"
+            >
+              <ErrorBoundary name="WorkShowcase">
+                <WorkShowcase />
+              </ErrorBoundary>
+            </motion.div>
+          </section>
 
-        {/* SECTION 7: CONTACT & LET'S BUILD TOGETHER */}
-        <section
-          id="contact"
-          className="w-full min-h-screen relative py-12 sm:py-16 flex flex-col justify-center pointer-events-auto"
-        >
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.15 }}
-            transition={{ duration: 0.4, ease: 'easeOut' }}
-            className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-12"
+          {/* SECTION 6: INTERACTIVE TECH STACK */}
+          <section
+            id="tech-stack"
+            className="w-full min-h-screen relative py-16 sm:py-20 flex flex-col justify-center pointer-events-auto"
           >
-            <ContactSection />
-          </motion.div>
-        </section>
-      </main>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.4, ease: 'easeOut' }}
+              className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-12"
+            >
+              <ErrorBoundary name="TechStackSection">
+                <TechStackSection />
+              </ErrorBoundary>
+            </motion.div>
+          </section>
 
-      {/* Comprehensive Luxury Professional Footer */}
-      <Footer onNavigate={handleNavigate} />
-    </div>
+          {/* SECTION 7: CONTACT & LET'S BUILD TOGETHER */}
+          <section
+            id="contact"
+            className="w-full min-h-screen relative py-12 sm:py-16 flex flex-col justify-center pointer-events-auto"
+          >
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.4, ease: 'easeOut' }}
+              className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-12"
+            >
+              <ErrorBoundary name="ContactSection">
+                <ContactSection />
+              </ErrorBoundary>
+            </motion.div>
+          </section>
+        </main>
+
+        {/* Comprehensive Luxury Professional Footer */}
+        <ErrorBoundary name="Footer">
+          <Footer onNavigate={handleNavigate} />
+        </ErrorBoundary>
+      </div>
+    </ErrorBoundary>
   );
 };
 

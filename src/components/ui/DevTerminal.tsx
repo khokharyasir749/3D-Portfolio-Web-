@@ -248,7 +248,7 @@ export const DevTerminal: React.FC<DevTerminalProps> = ({
                 === FEATURED DEPLOYED PROJECTS ===
               </div>
               <div className="space-y-2">
-                {portfolioData.projects.map((proj) => (
+                {(portfolioData?.projects ?? []).map((proj) => (
                   <div
                     key={proj.id}
                     className="p-2.5 rounded bg-white/5 border border-white/10 hover:border-cyan-400/50 transition-all space-y-1"
@@ -282,7 +282,7 @@ export const DevTerminal: React.FC<DevTerminalProps> = ({
                     </div>
                     <p className="text-slate-400 text-[11px]">{proj.tagline}</p>
                     <div className="flex flex-wrap gap-1 pt-0.5">
-                      {proj.tags.map((t) => (
+                      {(proj?.tags ?? []).map((t) => (
                         <span
                           key={t}
                           className="px-1.5 py-0.2 rounded bg-purple-500/10 text-purple-300 text-[10px] border border-purple-500/20"
