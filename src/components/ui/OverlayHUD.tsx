@@ -1,6 +1,5 @@
 import React from 'react';
 import { TopNav } from './TopNav';
-import { LeftControlBar } from './LeftControlBar';
 
 interface OverlayHUDProps {
   activeSectionId: string;
@@ -24,14 +23,10 @@ export const OverlayHUD: React.FC<OverlayHUDProps> = ({
       className="pointer-events-none fixed inset-0 z-30 flex flex-col justify-between select-none"
       style={{ pointerEvents: 'none' }}
     >
-      {/* Ultra-Minimal Edge-to-Edge Top Navigation */}
+      {/* Edge-to-Edge Top Navigation with Controls & Socials */}
       <TopNav
         activeSectionId={activeSectionId}
         onNavigate={onNavigate}
-      />
-
-      {/* Persistent Left Control Bar (Sound, LinkedIn, X, GitHub, Theme) */}
-      <LeftControlBar
         isMuted={isMuted}
         onToggleAudio={onToggleAudio}
         theme={theme}
