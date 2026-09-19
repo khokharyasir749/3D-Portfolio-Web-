@@ -174,7 +174,7 @@ export const App: React.FC = () => {
       />
 
       {/* Continuous Vertical Scroll Sections Container */}
-      <main className="w-full relative z-10 flex flex-col items-center pointer-events-none">
+      <main className="w-full relative z-10 flex flex-col pointer-events-none">
         {/* SECTION 1: HERO */}
         <section
           id="hero"
@@ -186,7 +186,7 @@ export const App: React.FC = () => {
         {/* SECTION 2: ABOUT ME */}
         <section
           id="about"
-          className="w-full min-h-screen relative py-16 sm:py-20 px-4 sm:px-6 lg:px-10 flex flex-col justify-center max-w-[1440px] mx-auto pointer-events-auto"
+          className="w-full min-h-screen relative py-16 sm:py-20 px-4 sm:px-8 md:px-12 lg:px-16 flex flex-col justify-center w-full max-w-none pointer-events-auto"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -202,7 +202,7 @@ export const App: React.FC = () => {
         {/* SECTION 3: WHAT I DO / SERVICES */}
         <section
           id="what-i-do"
-          className="w-full min-h-screen relative py-16 sm:py-20 px-4 sm:px-6 lg:px-10 flex flex-col justify-center max-w-[1440px] mx-auto pointer-events-auto"
+          className="w-full min-h-screen relative py-16 sm:py-20 px-4 sm:px-8 md:px-12 lg:px-16 flex flex-col justify-center w-full max-w-none pointer-events-auto"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -218,7 +218,7 @@ export const App: React.FC = () => {
         {/* SECTION 4: CAREER & EXPERIENCE TIMELINE */}
         <section
           id="experience"
-          className="w-full min-h-screen relative py-16 sm:py-20 px-4 sm:px-6 lg:px-10 flex flex-col justify-center max-w-[1440px] mx-auto pointer-events-auto"
+          className="w-full min-h-screen relative py-16 sm:py-20 px-4 sm:px-8 md:px-12 lg:px-16 flex flex-col justify-center w-full max-w-none pointer-events-auto"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -234,7 +234,7 @@ export const App: React.FC = () => {
         {/* SECTION 5: FEATURED WORK & PROJECTS */}
         <section
           id="work"
-          className="w-full min-h-screen relative py-16 sm:py-20 px-4 md:px-8 lg:px-12 flex flex-col justify-center max-w-[1600px] mx-auto pointer-events-auto"
+          className="w-full min-h-screen relative py-16 sm:py-20 px-4 sm:px-8 md:px-12 lg:px-16 flex flex-col justify-center w-full max-w-none pointer-events-auto"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -250,7 +250,7 @@ export const App: React.FC = () => {
         {/* SECTION 6: INTERACTIVE TECH STACK */}
         <section
           id="tech-stack"
-          className="w-full min-h-screen relative py-16 sm:py-20 px-4 sm:px-6 lg:px-10 flex flex-col justify-center max-w-[1440px] mx-auto pointer-events-auto"
+          className="w-full min-h-screen relative py-16 sm:py-20 px-4 sm:px-8 md:px-12 lg:px-16 flex flex-col justify-center w-full max-w-none pointer-events-auto"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -266,7 +266,7 @@ export const App: React.FC = () => {
         {/* SECTION 7: CONTACT & LET'S BUILD TOGETHER */}
         <section
           id="contact"
-          className="w-full min-h-screen relative py-12 sm:py-16 px-4 sm:px-6 lg:px-10 flex flex-col justify-center max-w-[1440px] mx-auto pointer-events-auto"
+          className="w-full min-h-screen relative py-12 sm:py-16 px-4 sm:px-8 md:px-12 lg:px-16 flex flex-col justify-center w-full max-w-none pointer-events-auto"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}

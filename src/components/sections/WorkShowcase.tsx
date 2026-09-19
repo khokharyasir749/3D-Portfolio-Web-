@@ -50,7 +50,7 @@ export const WorkShowcase: React.FC = () => {
   };
 
   return (
-    <div className="w-full max-w-[1600px] mx-auto space-y-6 select-none pointer-events-auto px-4 md:px-8 lg:px-12">
+    <div className="w-full max-w-none space-y-6 select-none pointer-events-auto">
       {/* Top Header & Horizontal Controls */}
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-4 border-b border-zinc-200 dark:border-white/10">
         <div>

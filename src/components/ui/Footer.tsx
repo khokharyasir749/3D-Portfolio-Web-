@@ -45,7 +45,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
       className="relative z-20 w-full bg-zinc-950/80 backdrop-blur-xl border-t border-white/10 text-zinc-400 py-16 px-6 md:px-16 pointer-events-auto select-none"
       aria-label="Developer Portfolio Footer"
     >
-      <div className="max-w-[1400px] mx-auto">
+      <div className="w-full max-w-none">
         {/* Main 4-Column Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
           {/* COLUMN 1: Developer Brand & Availability */}

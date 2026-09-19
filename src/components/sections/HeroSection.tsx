@@ -9,7 +9,7 @@ export interface HeroSectionProps {
 
 export const HeroSection: React.FC<HeroSectionProps> = () => {
   return (
-    <div className="w-full min-h-screen relative flex flex-col justify-between px-6 sm:px-10 lg:px-12 py-16 sm:py-20 select-none z-20 max-w-[1400px] mx-auto">
+    <div className="w-full min-h-screen relative flex flex-col justify-between px-4 sm:px-8 md:px-12 lg:px-16 py-16 sm:py-20 select-none z-20 max-w-none">
       {/* Top spacer for TopNav */}
       <div className="h-4 sm:h-6" />
 

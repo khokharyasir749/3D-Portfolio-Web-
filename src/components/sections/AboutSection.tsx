@@ -167,7 +167,7 @@ export const AboutSection: React.FC = () => {
   }, [selectedFocus]);
 
   return (
-    <div className="w-full h-full flex flex-col justify-center px-4 sm:px-8 lg:px-12 max-w-[1400px] mx-auto select-none pointer-events-auto">
+    <div className="w-full h-full flex flex-col justify-center max-w-none select-none pointer-events-auto">
       {/* Section Header */}
       <div className="flex items-center gap-3 mb-6 sm:mb-8">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/30 text-[11px] font-mono text-purple-600 dark:text-purple-300 tracking-widest uppercase">

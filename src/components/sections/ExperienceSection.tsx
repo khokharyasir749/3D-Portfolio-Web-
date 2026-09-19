@@ -184,7 +184,7 @@ export const ExperienceSection: React.FC = () => {
   };
 
   return (
-    <div className="w-full max-w-[1400px] mx-auto space-y-6 px-4 sm:px-8 lg:px-12 select-none pointer-events-auto">
+    <div className="w-full max-w-none space-y-6 select-none pointer-events-auto">
       {/* Top Header */}
       <div className="pb-4 border-b border-zinc-200 dark:border-white/10 flex flex-col sm:flex-row sm:items-end justify-between gap-3">
         <div>
