@@ -17,7 +17,7 @@ const TECH_LIST: TechItem[] = [
   { name: 'TypeScript', category: 'Language', color: '#3178c6', emissive: '#3178c6', size: 0.70 },
   { name: 'Node.js', category: 'Backend', color: '#68a063', emissive: '#43853d', size: 0.72 },
   { name: 'Three.js', category: '3D WebGL', color: '#00f0ff', emissive: '#00f0ff', size: 0.75 },
-  { name: 'Tailwind', category: 'Styling', color: '#38bdf8', emissive: '#06b6d4', size: 0.68 },
+  { name: 'Tailwind', category: 'Styling', color: '#2C665D', emissive: '#06b6d4', size: 0.68 },
   { name: 'Compose', category: 'Mobile', color: '#4285f4', emissive: '#34a853', size: 0.70 },
   { name: 'MongoDB', category: 'Database', color: '#47a248', emissive: '#13aa52', size: 0.70 },
   { name: 'Express', category: 'Backend', color: '#f59e0b', emissive: '#d97706', size: 0.68 },
@@ -209,9 +209,9 @@ export const TechSpheresCanvas: React.FC = () => {
   }, []);
 
   return (
-    <div className="w-full h-[420px] sm:h-[480px] lg:h-[540px] relative rounded-sm overflow-hidden bg-[#0a0c14]/80 border border-white/10 shadow-2xl">
+    <div className="w-full h-[420px] sm:h-[480px] lg:h-[540px] relative rounded-sm overflow-hidden bg-[#0A1312] border border-[#25524B] shadow-2xl">
       {/* Background Ambient Glow */}
-      <div className="absolute inset-0 bg-radial-gradient from-cyan-500/10 via-transparent to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-radial-gradient from-[#2C665D]/15 via-transparent to-transparent pointer-events-none" />
 
       {/* Interactive 3D Physics Canvas */}
       <Canvas
@@ -220,10 +220,13 @@ export const TechSpheresCanvas: React.FC = () => {
         gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }}
         className="w-full h-full cursor-grab active:cursor-grabbing"
       >
+        {/* Obsidian Void Clear Color */}
+        <color attach="background" args={["#0A1312"]} />
+
         {/* Studio Lighting */}
         <ambientLight intensity={1.2} />
-        <directionalLight position={[6, 8, 5]} intensity={3.0} color="#00f0ff" />
-        <directionalLight position={[-6, -4, 4]} intensity={2.5} color="#ff007f" />
+        <directionalLight position={[6, 8, 5]} intensity={3.0} color="#2C665D" />
+        <directionalLight position={[-6, -4, 4]} intensity={2.5} color="#25524B" />
         <pointLight position={[0, 0, 5]} intensity={1.8} color="#ffffff" />
 
         {/* Floating Interactive Spheres */}
@@ -250,8 +253,8 @@ export const TechSpheresCanvas: React.FC = () => {
       </Canvas>
 
       {/* Floating Interactive Badge Hint */}
-      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-slate-950/80 border border-white/10 text-[10px] font-code text-slate-400 flex items-center gap-2 backdrop-blur-md pointer-events-none select-none">
-        <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-[#132B27]/90 border border-[#25524B] text-[10px] font-code text-[#E6F4F1]/80 flex items-center gap-2 backdrop-blur-md pointer-events-none select-none">
+        <span className="w-1.5 h-1.5 rounded-full bg-[#2C665D] animate-pulse" />
         <span>HOVER & REPEL 3D SPHERES</span>
       </div>
     </div>

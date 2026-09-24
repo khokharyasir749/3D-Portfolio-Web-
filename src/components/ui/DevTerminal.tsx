@@ -545,18 +545,18 @@ export const DevTerminal: React.FC<DevTerminalProps> = ({
         animate={{ opacity: 1, y: 0, scale: 1 }}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        className="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-40 group flex items-center gap-2.5 px-3.5 py-2 rounded-xl backdrop-blur-xl bg-zinc-950/85 dark:bg-black/85 border border-purple-500/40 hover:border-cyan-400 shadow-xl shadow-purple-950/40 hover:shadow-cyan-500/20 text-slate-200 transition-all duration-300 select-none cursor-pointer"
+        className="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-40 group flex items-center gap-2.5 px-3.5 py-2 rounded-xl backdrop-blur-xl bg-white dark:bg-[#132B27] border border-zinc-200 dark:border-[#25524B] hover:border-[#C58A55] shadow-xl text-zinc-900 dark:text-[#E6F4F1] transition-all duration-300 select-none cursor-pointer"
         aria-label="Open Interactive Dev Terminal Console"
       >
         <span className="relative flex h-2 w-2">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-          <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C58A55] opacity-75" />
+          <span className="relative inline-flex rounded-full h-2 w-2 bg-[#C58A55]" />
         </span>
-        <TerminalIcon className="w-3.5 h-3.5 text-purple-400 group-hover:text-cyan-300 transition-colors" />
-        <span className="font-mono text-xs font-bold tracking-wider text-slate-200 group-hover:text-white">
+        <TerminalIcon className="w-3.5 h-3.5 text-[#C58A55] group-hover:text-zinc-950 dark:group-hover:text-[#E6F4F1] transition-colors" />
+        <span className="font-mono text-xs font-bold tracking-wider text-zinc-900 dark:text-[#E6F4F1]">
           &gt;_ TERMINAL
         </span>
-        <span className="hidden sm:inline-block text-[10px] font-mono text-slate-400 bg-white/5 px-1.5 py-0.5 rounded border border-white/10">
+        <span className="hidden sm:inline-block text-[10px] font-mono text-zinc-600 dark:text-[#E6F4F1]/60 bg-zinc-100 dark:bg-[#0A1312] px-1.5 py-0.5 rounded border border-zinc-200 dark:border-[#25524B]">
           ~
         </span>
       </motion.button>
@@ -570,14 +570,14 @@ export const DevTerminal: React.FC<DevTerminalProps> = ({
             exit={{ opacity: 0, y: 60, scale: 0.96 }}
             transition={{ type: 'spring', damping: 28, stiffness: 350 }}
             data-lenis-prevent="true"
-            className={`fixed z-50 transition-all duration-300 shadow-2xl flex flex-col overflow-hidden backdrop-blur-2xl bg-[#090b14]/95 dark:bg-[#06080e]/95 border border-purple-500/30 dark:border-white/15 ${
+            className={`fixed z-50 transition-all duration-300 shadow-2xl flex flex-col overflow-hidden backdrop-blur-2xl bg-[#132B27]/98 border border-[#25524B] ${
               isExpanded
-                ? 'inset-3 sm:inset-6 rounded-2xl sm:rounded-3xl shadow-purple-950/70'
-                : 'bottom-4 right-4 sm:bottom-6 sm:right-6 w-[calc(100vw-32px)] sm:w-[600px] h-[520px] max-h-[85vh] rounded-2xl shadow-purple-950/60'
+                ? 'inset-3 sm:inset-6 rounded-2xl sm:rounded-3xl shadow-black/70'
+                : 'bottom-4 right-4 sm:bottom-6 sm:right-6 w-[calc(100vw-32px)] sm:w-[600px] h-[520px] max-h-[85vh] rounded-2xl shadow-black/60'
             }`}
           >
             {/* Terminal Header Bar */}
-            <div className="flex items-center justify-between px-4 py-3 bg-[#0d101d]/90 border-b border-white/10 select-none shrink-0">
+            <div className="flex items-center justify-between px-4 py-3 bg-[#0A1312] border-b border-[#25524B] select-none shrink-0">
               <div className="flex items-center gap-2">
                 {/* Traffic lights */}
                 <button
@@ -602,20 +602,20 @@ export const DevTerminal: React.FC<DevTerminalProps> = ({
                   <Maximize2 className="w-2 h-2 text-emerald-950 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </button>
 
-                <span className="ml-2 font-mono text-[11px] font-bold text-slate-300 flex items-center gap-1.5">
-                  <Sparkles className="w-3 h-3 text-purple-400" />
+                <span className="ml-2 font-mono text-[11px] font-bold text-[#E6F4F1] flex items-center gap-1.5">
+                  <Sparkles className="w-3 h-3 text-[#2C665D]" />
                   <span>YASIR_OS // DEV_CONSOLE</span>
-                  <span className="hidden sm:inline text-purple-400 text-[10px]">
+                  <span className="hidden sm:inline text-[#2C665D] text-[10px]">
                     [ONLINE]
                   </span>
                 </span>
               </div>
 
               {/* Right actions */}
-              <div className="flex items-center gap-1.5 text-slate-400">
+              <div className="flex items-center gap-1.5 text-[#E6F4F1]/70">
                 <button
                   onClick={() => setIsExpanded(!isExpanded)}
-                  className="p-1 rounded hover:bg-white/10 hover:text-white transition-colors cursor-pointer"
+                  className="p-1 rounded hover:bg-[#25524B] hover:text-[#E6F4F1] transition-colors cursor-pointer"
                   title={isExpanded ? 'Restore' : 'Maximize'}
                 >
                   {isExpanded ? (
@@ -626,7 +626,7 @@ export const DevTerminal: React.FC<DevTerminalProps> = ({
                 </button>
                 <button
                   onClick={closeTerminal}
-                  className="p-1 rounded hover:bg-white/10 hover:text-white transition-colors cursor-pointer"
+                  className="p-1 rounded hover:bg-[#25524B] hover:text-[#E6F4F1] transition-colors cursor-pointer"
                   title="Close (Esc)"
                 >
                   <X className="w-3.5 h-3.5" />
@@ -635,15 +635,15 @@ export const DevTerminal: React.FC<DevTerminalProps> = ({
             </div>
 
             {/* Quick Command Action Chips */}
-            <div className="flex items-center gap-1.5 px-4 py-2 bg-black/40 border-b border-white/5 overflow-x-auto no-scrollbar shrink-0 select-none">
-              <span className="text-[10px] font-mono text-slate-500 uppercase tracking-wider shrink-0">
+            <div className="flex items-center gap-1.5 px-4 py-2 bg-[#0A1312]/60 border-b border-[#25524B]/50 overflow-x-auto no-scrollbar shrink-0 select-none">
+              <span className="text-[10px] font-mono text-[#E6F4F1]/50 uppercase tracking-wider shrink-0">
                 QUICK:
               </span>
               {['help', 'skills', 'projects', 'contact', 'about', 'clear'].map((c) => (
                 <button
                   key={c}
                   onClick={() => handleCommandExecution(c)}
-                  className="px-2 py-0.5 rounded text-[11px] font-mono bg-purple-500/10 hover:bg-cyan-500/20 text-purple-300 hover:text-cyan-200 border border-purple-500/25 hover:border-cyan-400/40 transition-all shrink-0 cursor-pointer active:scale-95"
+                  className="px-2 py-0.5 rounded text-[11px] font-mono bg-[#25524B]/50 hover:bg-[#2C665D]/20 text-[#E6F4F1] hover:text-white border border-[#25524B] hover:border-[#2C665D]/40 transition-all shrink-0 cursor-pointer active:scale-95"
                 >
                   {c}
                 </button>
@@ -654,7 +654,7 @@ export const DevTerminal: React.FC<DevTerminalProps> = ({
             <div
               ref={outputContainerRef}
               data-lenis-prevent="true"
-              className="flex-1 min-h-0 overflow-y-auto cyber-scrollbar p-4 font-mono text-xs text-slate-200 space-y-2.5 select-text overscroll-contain"
+              className="flex-1 min-h-0 overflow-y-auto cyber-scrollbar p-4 font-mono text-xs text-[#E6F4F1] space-y-2.5 select-text overscroll-contain"
               style={{ overscrollBehavior: 'contain' }}
               onClick={() => inputRef.current?.focus()}
             >
@@ -663,7 +663,7 @@ export const DevTerminal: React.FC<DevTerminalProps> = ({
                   return (
                     <pre
                       key={line.id}
-                      className="text-purple-400 font-mono text-[10px] sm:text-[11px] leading-tight select-none opacity-90 overflow-x-auto"
+                      className="text-[#2C665D] font-mono text-[10px] sm:text-[11px] leading-tight select-none opacity-90 overflow-x-auto"
                     >
                       {line.content}
                     </pre>
@@ -672,9 +672,9 @@ export const DevTerminal: React.FC<DevTerminalProps> = ({
 
                 if (line.type === 'input') {
                   return (
-                    <div key={line.id} className="flex items-center gap-2 text-cyan-400">
-                      <span className="text-emerald-400 font-bold">guest@yasir:~$</span>
-                      <span className="text-white">{line.content}</span>
+                    <div key={line.id} className="flex items-center gap-2 text-[#2C665D]">
+                      <span className="text-[#2C665D] font-bold">guest@yasir:~$</span>
+                      <span className="text-[#E6F4F1]">{line.content}</span>
                     </div>
                   );
                 }
@@ -691,7 +691,7 @@ export const DevTerminal: React.FC<DevTerminalProps> = ({
                   return (
                     <div
                       key={line.id}
-                      className="text-emerald-400 pl-4 border-l-2 border-emerald-500/50"
+                      className="text-[#2C665D] pl-4 border-l-2 border-[#2C665D]/50"
                     >
                       {line.content}
                     </div>
@@ -703,7 +703,7 @@ export const DevTerminal: React.FC<DevTerminalProps> = ({
                 }
 
                 return (
-                  <div key={line.id} className="text-slate-300 whitespace-pre-wrap">
+                  <div key={line.id} className="text-[#E6F4F1]/80 whitespace-pre-wrap">
                     {line.content}
                   </div>
                 );
@@ -711,8 +711,8 @@ export const DevTerminal: React.FC<DevTerminalProps> = ({
             </div>
 
             {/* Terminal Input Prompt Bar */}
-            <div className="flex items-center gap-2 px-4 py-3 bg-[#0d101d]/95 border-t border-white/10 shrink-0">
-              <span className="font-mono text-xs font-bold text-emerald-400 shrink-0 select-none">
+            <div className="flex items-center gap-2 px-4 py-3 bg-[#0A1312] border-t border-[#25524B] shrink-0">
+              <span className="font-mono text-xs font-bold text-[#2C665D] shrink-0 select-none">
                 guest@yasir:~$
               </span>
               <input
@@ -722,7 +722,7 @@ export const DevTerminal: React.FC<DevTerminalProps> = ({
                 onChange={(e) => setInputVal(e.target.value)}
                 onKeyDown={handleKeyDown}
                 placeholder="type 'help' or any command..."
-                className="flex-1 bg-transparent font-mono text-xs text-white placeholder-slate-500 outline-none border-none"
+                className="flex-1 bg-transparent font-mono text-xs text-[#E6F4F1] placeholder-[#E6F4F1]/40 outline-none border-none"
                 autoComplete="off"
                 autoCorrect="off"
                 autoCapitalize="off"
@@ -730,7 +730,7 @@ export const DevTerminal: React.FC<DevTerminalProps> = ({
               />
               <button
                 onClick={() => handleCommandExecution(inputVal)}
-                className="p-1.5 rounded bg-purple-500/20 hover:bg-purple-500/40 text-purple-300 hover:text-white border border-purple-500/30 transition-all cursor-pointer"
+                className="p-1.5 rounded bg-[#2C665D] hover:bg-[#357B70] text-[#E6F4F1] border border-[#2C665D]/50 transition-all cursor-pointer"
                 title="Execute Command"
               >
                 <CornerDownLeft className="w-3.5 h-3.5" />

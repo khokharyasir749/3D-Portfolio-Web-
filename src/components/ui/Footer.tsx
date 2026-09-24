@@ -42,7 +42,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
   return (
     <footer
-      className="relative z-20 w-full bg-zinc-950/80 backdrop-blur-xl border-t border-white/10 text-zinc-400 py-16 px-6 md:px-16 pointer-events-auto select-none"
+      className="relative z-20 w-full bg-[#F4F7F6]/95 dark:bg-[#0A1312]/95 backdrop-blur-xl border-t border-zinc-200/90 dark:border-[#25524B] text-zinc-700 dark:text-[#9FB8B2] py-16 px-6 md:px-16 pointer-events-auto select-none"
       aria-label="Developer Portfolio Footer"
     >
       <div className="w-full max-w-7xl mx-auto">
@@ -51,33 +51,32 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           {/* COLUMN 1: Developer Brand & Availability */}
           <div className="flex flex-col space-y-4">
             <div>
-              <span className="font-bold text-2xl tracking-wide text-white block">
+              <span className="font-bold text-2xl tracking-wide text-[#0F2420] dark:text-[#E6F4F1] block">
                 YASIR KHOKHAR
               </span>
-              <span className="text-xs sm:text-sm font-mono text-zinc-400 uppercase tracking-wider block mt-1">
+              <span className="text-xs sm:text-sm font-mono text-[#1D5A50] dark:text-[#E6F4F1]/60 uppercase tracking-wider block mt-1">
                 Full-Stack & 3D Creative Developer
               </span>
             </div>
 
-            <p className="text-base text-zinc-300 leading-relaxed font-normal">
+            <p className="text-base text-zinc-700 dark:text-[#9FB8B2] leading-relaxed font-normal">
               Building high-performance web applications, interactive 3D WebGL experiences, and scalable full-stack architectures.
             </p>
 
             {/* Live Status Badge */}
-            <div className="pt-2 flex items-center gap-2.5">
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500 shadow-sm shadow-emerald-500/50" />
-              </span>
-              <span className="text-xs sm:text-sm font-mono font-medium text-emerald-400 tracking-wide">
-                Available for Freelance & Full-time Roles
-              </span>
+            <div className="pt-2 flex items-center">
+              <div className="flex items-center px-3 py-1.5 rounded-lg bg-white dark:bg-[#132B27] border border-zinc-200 dark:border-[#25524B] shadow-sm">
+                <span className="w-2 h-2 rounded-full bg-[#C58A55] mr-2 shrink-0 animate-pulse" />
+                <span className="text-xs sm:text-sm font-mono text-zinc-800 dark:text-[#E6F4F1] font-medium tracking-wide">
+                  Available for Freelance & Full-time Roles
+                </span>
+              </div>
             </div>
           </div>
 
           {/* COLUMN 2: Portfolio Navigation */}
           <div className="flex flex-col space-y-4">
-            <h3 className="text-xs sm:text-sm uppercase tracking-widest text-zinc-200 font-bold mb-1">
+            <h3 className="text-xs sm:text-sm uppercase tracking-widest text-[#0F2420] dark:text-[#E6F4F1] font-bold mb-1">
               NAVIGATION
             </h3>
             <ul className="flex flex-col space-y-2.5 text-sm sm:text-base">
@@ -85,9 +84,9 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 <button
                   type="button"
                   onClick={() => onNavigate?.('about')}
-                  className="group flex items-center gap-2 text-zinc-400 hover:text-amber-400 transition-all duration-200 cursor-pointer text-left"
+                  className="group flex items-center gap-2 text-zinc-600 hover:text-zinc-950 dark:text-[#E6F4F1]/70 dark:hover:text-[#E6F4F1] transition-colors duration-200 cursor-pointer text-left"
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-zinc-600 group-hover:bg-amber-400 transition-colors" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-zinc-400 group-hover:bg-[#1D5A50] dark:bg-[#25524B] dark:group-hover:bg-[#2C665D] transition-colors" />
                   <span className="group-hover:translate-x-1 transition-transform">About Me</span>
                 </button>
               </li>
@@ -95,9 +94,9 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 <button
                   type="button"
                   onClick={() => onNavigate?.('work')}
-                  className="group flex items-center gap-2 text-zinc-400 hover:text-amber-400 transition-all duration-200 cursor-pointer text-left"
+                  className="group flex items-center gap-2 text-zinc-600 hover:text-zinc-950 dark:text-[#E6F4F1]/70 dark:hover:text-[#E6F4F1] transition-colors duration-200 cursor-pointer text-left"
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-zinc-600 group-hover:bg-amber-400 transition-colors" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-zinc-400 group-hover:bg-[#1D5A50] dark:bg-[#25524B] dark:group-hover:bg-[#2C665D] transition-colors" />
                   <span className="group-hover:translate-x-1 transition-transform">
                     Featured Projects (Serene Heights 3D, ShopSphere, BiteHub, Vibe-Chat)
                   </span>
@@ -107,9 +106,9 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 <button
                   type="button"
                   onClick={() => onNavigate?.('tech-stack')}
-                  className="group flex items-center gap-2 text-zinc-400 hover:text-amber-400 transition-all duration-200 cursor-pointer text-left"
+                  className="group flex items-center gap-2 text-zinc-600 hover:text-zinc-950 dark:text-[#E6F4F1]/70 dark:hover:text-[#E6F4F1] transition-colors duration-200 cursor-pointer text-left"
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-zinc-600 group-hover:bg-amber-400 transition-colors" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-zinc-400 group-hover:bg-[#1D5A50] dark:bg-[#25524B] dark:group-hover:bg-[#2C665D] transition-colors" />
                   <span className="group-hover:translate-x-1 transition-transform">Tech Stack & Skills</span>
                 </button>
               </li>
@@ -117,10 +116,10 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 <button
                   type="button"
                   onClick={handleOpenTerminal}
-                  className="group flex items-center gap-2 text-zinc-400 hover:text-amber-400 transition-all duration-200 cursor-pointer text-left"
+                  className="group flex items-center gap-2 text-zinc-600 hover:text-zinc-950 dark:text-[#E6F4F1]/70 dark:hover:text-[#E6F4F1] transition-colors duration-200 cursor-pointer text-left"
                 >
-                  <Terminal className="w-3.5 h-3.5 text-purple-400 group-hover:text-amber-400 transition-colors" />
-                  <span className="group-hover:translate-x-1 transition-transform font-mono text-zinc-300 group-hover:text-amber-400">
+                  <Terminal className="w-3.5 h-3.5 text-[#1D5A50] dark:text-[#2C665D] group-hover:text-zinc-950 dark:group-hover:text-[#E6F4F1] transition-colors" />
+                  <span className="group-hover:translate-x-1 transition-transform font-mono text-zinc-700 dark:text-[#E6F4F1]/80 group-hover:text-zinc-950 dark:group-hover:text-[#E6F4F1]">
                     Dev Terminal (&gt;_)
                   </span>
                 </button>
@@ -129,9 +128,9 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 <button
                   type="button"
                   onClick={() => onNavigate?.('contact')}
-                  className="group flex items-center gap-2 text-zinc-400 hover:text-amber-400 transition-all duration-200 cursor-pointer text-left"
+                  className="group flex items-center gap-2 text-zinc-600 hover:text-zinc-950 dark:text-[#E6F4F1]/70 dark:hover:text-[#E6F4F1] transition-colors duration-200 cursor-pointer text-left"
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-zinc-600 group-hover:bg-amber-400 transition-colors" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-zinc-400 group-hover:bg-[#1D5A50] dark:bg-[#25524B] dark:group-hover:bg-[#2C665D] transition-colors" />
                   <span className="group-hover:translate-x-1 transition-transform">Contact</span>
                 </button>
               </li>
@@ -140,18 +139,18 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
           {/* COLUMN 3: Direct Contact & Connect */}
           <div className="flex flex-col space-y-4">
-            <h3 className="text-xs sm:text-sm uppercase tracking-widest text-zinc-200 font-bold mb-1">
+            <h3 className="text-xs sm:text-sm uppercase tracking-widest text-[#0F2420] dark:text-[#E6F4F1] font-bold mb-1">
               GET IN TOUCH
             </h3>
             <div className="flex flex-col space-y-3.5 text-sm sm:text-base">
               {/* Email */}
               <a
                 href="mailto:khokharyasir749@gmail.com"
-                className="group flex items-center gap-3 text-zinc-300 hover:text-amber-400 transition-colors duration-200"
+                className="group flex items-center gap-3 text-zinc-700 dark:text-[#E6F4F1]/70 hover:text-zinc-950 dark:hover:text-[#E6F4F1] transition-colors duration-200"
                 title="Send an email to Yasir"
               >
-                <div className="p-2 rounded-lg bg-white/5 border border-white/10 group-hover:border-amber-400/30 group-hover:bg-amber-400/10 transition-colors flex-shrink-0">
-                  <Mail className="w-4 h-4 text-zinc-300 group-hover:text-amber-400" />
+                <div className="p-2 rounded-lg bg-white dark:bg-[#132B27] border border-zinc-200 dark:border-[#25524B] text-[#1D5A50] dark:text-[#2C665D] group-hover:text-zinc-950 dark:group-hover:text-[#E6F4F1] group-hover:border-[#1D5A50] dark:group-hover:border-[#2C665D] transition-colors flex-shrink-0 shadow-sm">
+                  <Mail className="w-4 h-4" />
                 </div>
                 <span className="truncate">khokharyasir749@gmail.com</span>
               </a>
@@ -161,39 +160,39 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 href="https://wa.me/923280790704"
                 target="_blank"
                 rel="noreferrer"
-                className="group flex items-center gap-3 text-zinc-300 hover:text-amber-400 transition-colors duration-200"
+                className="group flex items-center gap-3 text-zinc-700 dark:text-[#E6F4F1]/70 hover:text-zinc-950 dark:hover:text-[#E6F4F1] transition-colors duration-200"
                 title="Direct WhatsApp"
               >
-                <div className="p-2 rounded-lg bg-white/5 border border-white/10 group-hover:border-amber-400/30 group-hover:bg-amber-400/10 transition-colors flex-shrink-0">
-                  <Phone className="w-4 h-4 text-zinc-300 group-hover:text-amber-400" />
+                <div className="p-2 rounded-lg bg-white dark:bg-[#132B27] border border-zinc-200 dark:border-[#25524B] text-[#1D5A50] dark:text-[#2C665D] group-hover:text-zinc-950 dark:group-hover:text-[#E6F4F1] group-hover:border-[#1D5A50] dark:group-hover:border-[#2C665D] transition-colors flex-shrink-0 shadow-sm">
+                  <Phone className="w-4 h-4" />
                 </div>
                 <span>+92 328 0790704</span>
               </a>
 
               {/* Location */}
-              <div className="flex items-center gap-3 text-xs sm:text-sm leading-relaxed text-zinc-300">
-                <div className="p-2 rounded-lg bg-white/5 border border-white/10 flex-shrink-0">
-                  <MapPin className="w-4 h-4 text-zinc-300" />
+              <div className="flex items-center gap-3 text-xs sm:text-sm leading-relaxed text-zinc-600 dark:text-[#E6F4F1]/70">
+                <div className="p-2 rounded-lg bg-white dark:bg-[#132B27] border border-zinc-200 dark:border-[#25524B] text-[#1D5A50] dark:text-[#2C665D] flex-shrink-0 shadow-sm">
+                  <MapPin className="w-4 h-4" />
                 </div>
                 <span>Pakistan (Remote / Worldwide Collaboration)</span>
               </div>
 
               {/* Response Time */}
-              <div className="flex items-center gap-3 text-xs sm:text-sm text-zinc-400 pt-0.5">
-                <div className="p-2 rounded-lg bg-white/5 border border-white/10 flex-shrink-0">
-                  <Zap className="w-4 h-4 text-amber-400" />
+              <div className="flex items-center gap-3 text-xs sm:text-sm text-zinc-600 dark:text-[#E6F4F1]/70 pt-0.5">
+                <div className="p-2 rounded-lg bg-white dark:bg-[#132B27] border border-zinc-200 dark:border-[#25524B] text-[#1D5A50] dark:text-[#2C665D] flex-shrink-0 shadow-sm">
+                  <Zap className="w-4 h-4" />
                 </div>
-                <span className="text-zinc-300 font-mono">Average response time: &lt; 24 hours</span>
+                <span className="text-zinc-800 dark:text-[#E6F4F1]/80 font-mono">Average response time: &lt; 24 hours</span>
               </div>
             </div>
           </div>
 
           {/* COLUMN 4: Quick Message / Connect & Socials */}
           <div className="flex flex-col space-y-4">
-            <h3 className="text-xs sm:text-sm uppercase tracking-widest text-zinc-200 font-bold mb-1">
+            <h3 className="text-xs sm:text-sm uppercase tracking-widest text-[#0F2420] dark:text-[#E6F4F1] font-bold mb-1">
               LET'S COLLABORATE
             </h3>
-            <p className="text-base text-zinc-300 leading-relaxed font-normal">
+            <p className="text-base text-zinc-700 dark:text-[#9FB8B2] leading-relaxed font-normal">
               Have an ambitious project or idea? Let's turn it into reality.
             </p>
 
@@ -201,7 +200,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             <div className="pt-1">
               <a
                 href="mailto:khokharyasir749@gmail.com?subject=Project%20Inquiry%20-%20Let's%20Collaborate"
-                className="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-amber-500 hover:bg-amber-400 text-black font-semibold px-6 py-3 rounded-xl text-sm sm:text-base transition-all duration-200 cursor-pointer shadow-lg shadow-amber-500/20 active:scale-95"
+                className="bg-[#1D5A50] hover:bg-[#134038] text-white dark:bg-[#2C665D] dark:text-[#E6F4F1] dark:hover:bg-[#357B70] transition-colors font-semibold py-3 px-5 rounded-lg flex items-center justify-center gap-2 text-sm sm:text-base shadow-sm w-full sm:w-auto"
               >
                 <span>Send Email / Inquire</span>
                 <ExternalLink className="w-4 h-4" />
@@ -210,7 +209,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
             {/* Social Links Row */}
             <div className="pt-2">
-              <div className="text-[11px] font-mono uppercase tracking-wider text-zinc-500 mb-2.5">
+              <div className="text-[11px] font-mono uppercase tracking-wider text-zinc-500 dark:text-[#E6F4F1]/50 mb-2.5">
                 CONNECT DIRECTLY
               </div>
               <div className="flex items-center gap-2.5">
@@ -219,7 +218,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   href={githubUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="p-2.5 rounded-xl bg-white/5 border border-white/10 text-zinc-400 hover:text-amber-400 hover:bg-white/10 hover:border-amber-400/30 transition-all duration-200 cursor-pointer"
+                  className="p-2.5 rounded-xl bg-white dark:bg-[#132B27] border border-zinc-200 dark:border-[#25524B] text-zinc-700 hover:text-zinc-950 dark:text-[#E6F4F1]/70 dark:hover:text-[#E6F4F1] hover:border-[#1D5A50] dark:hover:border-[#2C665D] transition-all duration-200 cursor-pointer shadow-sm"
                   aria-label="GitHub Profile"
                   title="GitHub Profile"
                 >
@@ -231,7 +230,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   href={linkedinUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="p-2.5 rounded-xl bg-white/5 border border-white/10 text-zinc-400 hover:text-amber-400 hover:bg-white/10 hover:border-amber-400/30 transition-all duration-200 cursor-pointer"
+                  className="p-2.5 rounded-xl bg-white dark:bg-[#132B27] border border-zinc-200 dark:border-[#25524B] text-zinc-700 hover:text-zinc-950 dark:text-[#E6F4F1]/70 dark:hover:text-[#E6F4F1] hover:border-[#1D5A50] dark:hover:border-[#2C665D] transition-all duration-200 cursor-pointer shadow-sm"
                   aria-label="LinkedIn Profile"
                   title="LinkedIn Profile"
                 >
@@ -243,7 +242,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   href={twitterUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="p-2.5 rounded-xl bg-white/5 border border-white/10 text-zinc-400 hover:text-amber-400 hover:bg-white/10 hover:border-amber-400/30 transition-all duration-200 cursor-pointer"
+                  className="p-2.5 rounded-xl bg-white dark:bg-[#132B27] border border-zinc-200 dark:border-[#25524B] text-zinc-700 hover:text-zinc-950 dark:text-[#E6F4F1]/70 dark:hover:text-[#E6F4F1] hover:border-[#1D5A50] dark:hover:border-[#2C665D] transition-all duration-200 cursor-pointer shadow-sm"
                   aria-label="X (Twitter) Profile"
                   title="X (Twitter) Profile"
                 >
@@ -255,7 +254,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   href={whatsappUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="p-2.5 rounded-xl bg-white/5 border border-white/10 text-zinc-400 hover:text-emerald-400 hover:bg-white/10 hover:border-emerald-400/30 transition-all duration-200 cursor-pointer"
+                  className="p-2.5 rounded-xl bg-white dark:bg-[#132B27] border border-zinc-200 dark:border-[#25524B] text-zinc-700 hover:text-zinc-950 dark:text-[#E6F4F1]/70 dark:hover:text-[#E6F4F1] hover:border-[#1D5A50] dark:hover:border-[#2C665D] transition-all duration-200 cursor-pointer shadow-sm"
                   aria-label="Direct WhatsApp Chat"
                   title="Direct WhatsApp Chat"
                 >
@@ -267,12 +266,12 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
         </div>
 
         {/* BOTTOM SUB-FOOTER BAR */}
-        <div className="border-t border-white/5 pt-8 mt-12 flex flex-col md:flex-row justify-between items-center text-xs sm:text-sm text-zinc-400 gap-4">
+        <div className="border-t border-zinc-200/90 dark:border-[#25524B] pt-8 mt-12 flex flex-col md:flex-row justify-between items-center text-xs sm:text-sm text-zinc-500 dark:text-[#E6F4F1]/60 gap-4">
           <div className="flex items-center gap-2">
             <span>© 2026 Yasir Khokhar. Crafted with React, Three.js & Tailwind CSS.</span>
           </div>
 
-          <div className="text-zinc-400 font-mono text-xs sm:text-sm">
+          <div className="text-zinc-500 dark:text-[#E6F4F1]/60 font-mono text-xs sm:text-sm">
             Designed for seamless interactive digital experiences.
           </div>
         </div>

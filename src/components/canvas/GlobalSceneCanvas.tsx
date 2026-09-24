@@ -13,8 +13,8 @@ interface GlobalSceneCanvasProps {
 const SceneContent: React.FC<GlobalSceneCanvasProps> = ({ scrollProgress, theme }) => {
   return (
     <>
-      {/* Dynamic Studio Background: #080808 (Dark) or #f8fafc (Light) */}
-      <color attach="background" args={[theme === 'light' ? '#f8fafc' : '#080808']} />
+      {/* Dynamic Studio Background: #0A1312 (Dark) or #F6F9F8 (Light) */}
+      <color attach="background" args={[theme === 'light' ? '#F6F9F8' : '#0A1312']} />
 
       <Suspense fallback={null}>
         {/* Balanced 3-Point Studio Lighting */}
@@ -59,7 +59,7 @@ export const GlobalSceneCanvas: React.FC<GlobalSceneCanvasProps> = ({
         width: '100vw',
         height: '100vh',
         zIndex: 0,
-        backgroundColor: theme === 'light' ? '#f8fafc' : '#080808',
+        backgroundColor: theme === 'light' ? '#f8fafc' : '#0A1312',
       }}
     >
       {webglSupported ? (
@@ -68,7 +68,7 @@ export const GlobalSceneCanvas: React.FC<GlobalSceneCanvasProps> = ({
           fallback={
             <div
               className="w-full h-full"
-              style={{ backgroundColor: theme === 'light' ? '#f8fafc' : '#080808' }}
+              style={{ backgroundColor: theme === 'light' ? '#f8fafc' : '#0A1312' }}
             />
           }
         >
@@ -88,7 +88,7 @@ export const GlobalSceneCanvas: React.FC<GlobalSceneCanvasProps> = ({
               depth: true,
             }}
             onCreated={({ gl }) => {
-              gl.setClearColor(theme === 'light' ? '#f8fafc' : '#080808', 1);
+              gl.setClearColor(theme === 'light' ? '#f8fafc' : '#0A1312', 1);
             }}
             className="w-full h-full pointer-events-auto"
           >
@@ -98,7 +98,7 @@ export const GlobalSceneCanvas: React.FC<GlobalSceneCanvasProps> = ({
       ) : (
         <div
           className="w-full h-full"
-          style={{ backgroundColor: theme === 'light' ? '#f8fafc' : '#080808' }}
+          style={{ backgroundColor: theme === 'light' ? '#f8fafc' : '#0A1312' }}
         />
       )}
     </div>

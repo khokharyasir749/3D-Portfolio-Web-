@@ -20,14 +20,14 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ onClose }) => {
     <ModalBackdrop
       title="FEATURED PROJECTS"
       badge={`${portfolioData.projects.length} SHIPPED APPS`}
-      badgeColor="text-cyan-400 border-cyan-500/40 bg-cyan-500/10"
+      badgeColor="text-[#1D5A50] dark:text-[#E6F4F1] border-emerald-200 dark:border-[#2C665D]/30 bg-emerald-50 dark:bg-[#25524B]/50"
       onClose={onClose}
     >
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* Left Column: Project Selector List */}
         <div className="lg:col-span-5 space-y-3 max-h-[70vh] overflow-y-auto pr-1">
-          <div className="text-xs font-code text-slate-400 uppercase tracking-wider mb-2 flex items-center gap-1.5">
-            <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
+          <div className="text-xs font-mono text-[#1D5A50] dark:text-[#2C665D] uppercase tracking-wider mb-2 flex items-center gap-1.5 font-semibold">
+            <Sparkles className="w-3.5 h-3.5 text-[#1D5A50] dark:text-[#2C665D]" />
             <span>Select System Module</span>
           </div>
 
@@ -37,36 +37,36 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ onClose }) => {
               <div
                 key={project.id}
                 onClick={() => handleSelectProject(project)}
-                className={`p-4 rounded-sm border transition-all cursor-pointer ${
+                className={`p-4 rounded-xl border transition-all cursor-pointer ${
                   isSelected
-                    ? 'bg-slate-900/90 border-cyan-400 shadow-neon-cyan/40 translate-x-1'
-                    : 'bg-slate-950/60 border-slate-800 hover:border-slate-700 hover:bg-slate-900/40'
+                    ? 'bg-emerald-50 dark:bg-[#25524B]/70 border-[#1D5A50] dark:border-[#2C665D] shadow-md translate-x-1'
+                    : 'bg-zinc-50 dark:bg-[#132B27] border-zinc-200 dark:border-[#25524B] hover:border-[#1D5A50]/50 dark:hover:border-[#2C665D]/50 hover:bg-zinc-100 dark:hover:bg-[#132B27]/90'
                 }`}
               >
                 <div className="flex items-center justify-between">
-                  <h3 className={`font-cyber font-bold text-base tracking-wide ${
-                    isSelected ? 'text-cyan-300' : 'text-slate-200'
+                  <h3 className={`font-bold text-base tracking-wide ${
+                    isSelected ? 'text-[#0F2420] dark:text-[#E6F4F1]' : 'text-zinc-800 dark:text-[#E6F4F1]/80'
                   }`}>
                     {project.title}
                   </h3>
                   <ChevronRight className={`w-4 h-4 transition-transform ${
-                    isSelected ? 'text-cyan-400 translate-x-1' : 'text-slate-600'
+                    isSelected ? 'text-[#1D5A50] dark:text-[#2C665D] translate-x-1' : 'text-zinc-400 dark:text-[#E6F4F1]/40'
                   }`} />
                 </div>
-                <p className="text-xs text-slate-400 mt-1 line-clamp-1 font-sans">
+                <p className="text-xs text-zinc-600 dark:text-[#E6F4F1]/70 mt-1 line-clamp-1 font-sans">
                   {project.tagline}
                 </p>
                 <div className="flex flex-wrap gap-1.5 mt-2.5">
                   {project.tags.slice(0, 3).map((tag, idx) => (
                     <span
                       key={idx}
-                      className="text-[10px] font-code px-1.5 py-0.5 rounded bg-slate-800/80 text-slate-300 border border-slate-700/60"
+                      className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white dark:bg-[#25524B]/50 text-zinc-700 dark:text-[#E6F4F1] border border-zinc-200 dark:border-[#2C665D]/30"
                     >
                       {tag}
                     </span>
                   ))}
                   {project.tags.length > 3 && (
-                    <span className="text-[10px] font-code px-1.5 py-0.5 text-slate-500">
+                    <span className="text-[10px] font-mono px-1.5 py-0.5 text-zinc-400 dark:text-[#E6F4F1]/50">
                       +{project.tags.length - 3}
                     </span>
                   )}
@@ -77,38 +77,39 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ onClose }) => {
         </div>
 
         {/* Right Column: Selected Project Detail Card */}
-        <div className="lg:col-span-7 bg-[#101424] border border-cyan-500/20 p-5 rounded-sm flex flex-col justify-between space-y-5 max-h-[70vh] overflow-y-auto">
+        <div className="lg:col-span-7 bg-zinc-50 dark:bg-[#132B27] border border-zinc-200 dark:border-[#25524B] p-5 rounded-2xl flex flex-col justify-between space-y-5 max-h-[70vh] overflow-y-auto">
           <div className="space-y-4">
             {/* Header */}
             <div>
               <div className="flex items-center justify-between">
-                <span className="text-xs font-code px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">
+                <span className="text-xs font-mono px-2.5 py-0.5 rounded-full bg-emerald-50 dark:bg-[#25524B]/50 text-[#1D5A50] dark:text-[#E6F4F1] border border-emerald-200 dark:border-[#2C665D]/30">
                   PRODUCTION SYSTEM
                 </span>
                 {selectedProject.featured && (
-                  <span className="text-xs font-code px-2 py-0.5 rounded bg-pink-500/10 text-pink-400 border border-pink-500/30">
-                    ★ FEATURED
+                  <span className="text-xs font-mono px-2.5 py-0.5 rounded-full bg-emerald-50 dark:bg-[#25524B]/50 text-[#1D5A50] dark:text-[#E6F4F1] border border-emerald-200 dark:border-[#2C665D]/30 flex items-center gap-1">
+                    <Sparkles className="w-3 h-3 text-[#1D5A50] dark:text-[#2C665D]" />
+                    <span>FEATURED</span>
                   </span>
                 )}
               </div>
-              <h3 className="font-cyber font-bold text-2xl text-slate-100 mt-2 tracking-wide">
+              <h3 className="font-bold text-2xl text-[#0F2420] dark:text-[#E6F4F1] mt-2 tracking-wide">
                 {selectedProject.title}
               </h3>
-              <p className="text-sm font-medium text-cyan-400 font-sans mt-0.5">
+              <p className="text-sm font-medium text-[#1D5A50] dark:text-[#2C665D] font-sans mt-0.5">
                 {selectedProject.tagline}
               </p>
             </div>
 
             {/* Authentic Screenshot Banner */}
             <div className="space-y-2">
-              <div className="relative w-full h-48 sm:h-56 rounded-md overflow-hidden bg-slate-950 border border-cyan-500/30 shadow-lg">
+              <div className="relative w-full h-48 sm:h-56 rounded-xl overflow-hidden bg-zinc-100 dark:bg-[#0A1312] border border-zinc-200 dark:border-[#25524B] shadow-lg">
                 <img
                   src={activeImage || selectedProject.image}
                   alt={selectedProject.title}
                   className="w-full h-full object-cover object-top transition-all duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
-                <div className="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/80 border border-white/10 text-[10px] font-code text-white">
+                <div className="absolute bottom-2 left-2 px-2.5 py-0.5 rounded-md bg-black/75 border border-white/20 text-[10px] font-mono text-white">
                   GUI PREVIEW
                 </div>
               </div>
@@ -120,10 +121,10 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ onClose }) => {
                     <button
                       key={gIdx}
                       onClick={() => setActiveImage(imgUrl)}
-                      className={`relative w-16 h-11 shrink-0 rounded overflow-hidden border transition-all cursor-pointer ${
+                      className={`relative w-16 h-11 shrink-0 rounded-lg overflow-hidden border transition-all cursor-pointer ${
                         (activeImage || selectedProject.image) === imgUrl
-                          ? 'border-cyan-400 ring-1 ring-cyan-400/50'
-                          : 'border-slate-800 opacity-60 hover:opacity-100'
+                          ? 'border-[#1D5A50] dark:border-[#2C665D] ring-2 ring-[#1D5A50]/40 dark:ring-[#2C665D]/40'
+                          : 'border-zinc-200 dark:border-[#25524B] opacity-60 hover:opacity-100'
                       }`}
                     >
                       <img
@@ -138,19 +139,19 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ onClose }) => {
             </div>
 
             {/* Description */}
-            <p className="text-sm text-slate-300 leading-relaxed font-sans">
+            <p className="text-sm text-zinc-700 dark:text-[#E6F4F1]/80 leading-relaxed font-sans">
               {selectedProject.description}
             </p>
 
             {/* Key Features */}
-            <div className="space-y-2 pt-2 border-t border-slate-800">
-              <h4 className="text-xs font-code text-slate-400 uppercase tracking-wider">
+            <div className="space-y-2 pt-2 border-t border-zinc-200 dark:border-[#25524B]">
+              <h4 className="text-xs font-mono text-[#1D5A50] dark:text-[#2C665D] uppercase tracking-wider font-semibold">
                 Key Architectural Capabilities:
               </h4>
               <ul className="space-y-1.5">
                 {selectedProject.features.map((feat, idx) => (
-                  <li key={idx} className="flex items-start gap-2 text-xs text-slate-300">
-                    <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                  <li key={idx} className="flex items-start gap-2 text-xs text-zinc-700 dark:text-[#E6F4F1]/80 font-sans">
+                    <CheckCircle2 className="w-4 h-4 text-[#1D5A50] dark:text-[#2C665D] shrink-0 mt-0.5" />
                     <span>{feat}</span>
                   </li>
                 ))}
@@ -159,22 +160,22 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ onClose }) => {
 
             {/* Metrics */}
             {selectedProject.metrics && (
-              <div className="p-3 rounded bg-slate-900/80 border border-emerald-500/30 text-xs font-code text-emerald-300 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <div className="p-3 rounded-xl bg-white dark:bg-[#0A1312]/70 border border-zinc-200 dark:border-[#25524B] text-xs font-mono text-zinc-800 dark:text-[#E6F4F1] flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-[#1D5A50] dark:bg-[#2C665D] mr-1" />
                 <span>Impact: {selectedProject.metrics}</span>
               </div>
             )}
 
             {/* Tech Stack Badges */}
-            <div className="space-y-1.5 pt-2 border-t border-slate-800">
-              <h4 className="text-xs font-code text-slate-400 uppercase tracking-wider">
+            <div className="space-y-1.5 pt-2 border-t border-zinc-200 dark:border-[#25524B]">
+              <h4 className="text-xs font-mono text-[#1D5A50] dark:text-[#2C665D] uppercase tracking-wider font-semibold">
                 Tech Stack & Libraries:
               </h4>
               <div className="flex flex-wrap gap-2">
                 {selectedProject.tags.map((tag, idx) => (
                   <span
                     key={idx}
-                    className="text-xs font-code px-2.5 py-1 rounded bg-slate-800 text-slate-200 border border-slate-700 hover:border-cyan-400 transition-colors"
+                    className="text-xs font-mono px-2.5 py-1 rounded-md bg-white dark:bg-[#25524B]/50 text-zinc-700 dark:text-[#E6F4F1] border border-zinc-200 dark:border-[#2C665D]/30"
                   >
                     {tag}
                   </span>
@@ -184,13 +185,13 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ onClose }) => {
           </div>
 
           {/* Action Links */}
-          <div className="flex items-center gap-3 pt-4 border-t border-slate-800">
+          <div className="flex items-center gap-3 pt-4 border-t border-zinc-200 dark:border-[#25524B]">
             {selectedProject.demoUrl && (
               <a
                 href={selectedProject.demoUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="flex-1 py-2.5 px-4 rounded-sm bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-cyber font-bold tracking-wider text-sm flex items-center justify-center gap-2 shadow-neon-cyan transition-all"
+                className="flex-1 py-2.5 px-4 rounded-xl bg-[#1D5A50] hover:bg-[#15453D] dark:bg-[#2C665D] dark:hover:bg-[#357B70] text-white dark:text-[#E6F4F1] font-mono font-bold tracking-wider text-xs flex items-center justify-center gap-2 shadow-md transition-all"
               >
                 <ExternalLink className="w-4 h-4" />
                 <span>LAUNCH DEMO</span>
@@ -201,7 +202,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ onClose }) => {
                 href={selectedProject.githubUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="py-2.5 px-4 rounded-sm bg-slate-800 hover:bg-slate-700 text-slate-200 font-cyber font-bold tracking-wider text-sm flex items-center justify-center gap-2 border border-slate-700 hover:border-slate-500 transition-all"
+                className="py-2.5 px-4 rounded-xl bg-white hover:bg-zinc-100 dark:bg-[#0A1312] dark:hover:bg-[#25524B] text-zinc-800 dark:text-[#E6F4F1] font-mono font-bold tracking-wider text-xs flex items-center justify-center gap-2 border border-zinc-200 dark:border-[#25524B] transition-all"
               >
                 <Github className="w-4 h-4" />
                 <span>SOURCE CODE</span>

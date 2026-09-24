@@ -51,7 +51,7 @@ export const SceneCanvas: React.FC<SceneCanvasProps> = ({
         style={{ width: '100%', height: '100%', pointerEvents: 'auto' }}
       >
         {/* Deep space background color */}
-        <color attach="background" args={["#05060a"]} />
+        <color attach="background" args={["#0A1312"]} />
 
         <Suspense fallback={null}>
           {/* Deep Cosmic Galaxy Atmosphere (Stars, Sparkles, Orbit Rings) */}

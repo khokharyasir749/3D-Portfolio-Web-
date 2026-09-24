@@ -51,13 +51,13 @@ export const ContactModal: React.FC<ContactModalProps> = ({ onClose }) => {
     <ModalBackdrop
       title="COMMUNICATION TERMINAL"
       badge="INCOMING FREQUENCY OPEN"
-      badgeColor="text-emerald-400 border-emerald-500/40 bg-emerald-500/10"
+      badgeColor="text-[#1D5A50] dark:text-[#2C665D] border-emerald-200 dark:border-[#2C665D]/40 bg-emerald-50 dark:bg-[#2C665D]/10"
       onClose={onClose}
     >
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* Left Column: Direct Links & Fast Copy Channels */}
         <div className="lg:col-span-6 space-y-3.5">
-          <div className="text-xs font-code text-slate-400 uppercase tracking-wider mb-2">
+          <div className="text-xs font-code text-zinc-500 dark:text-[#E6F4F1]/70 uppercase tracking-wider mb-2 font-semibold">
             Direct Uplink Channels
           </div>
 
@@ -66,17 +66,17 @@ export const ContactModal: React.FC<ContactModalProps> = ({ onClose }) => {
             return (
               <div
                 key={idx}
-                className="p-4 rounded-sm bg-[#101424] border border-slate-800 hover:border-emerald-500/40 transition-all flex items-center justify-between gap-3"
+                className="p-4 rounded-xl bg-zinc-50 dark:bg-[#132B27] border border-zinc-200 dark:border-[#25524B] hover:border-[#1D5A50] dark:hover:border-[#2C665D] transition-all flex items-center justify-between gap-3 shadow-sm"
               >
                 <div className="flex items-center gap-3.5 overflow-hidden">
-                  <div className="p-2 rounded bg-slate-900 text-emerald-400 border border-slate-800 shrink-0">
+                  <div className="p-2.5 rounded-lg bg-white dark:bg-[#0A1312] text-[#1D5A50] dark:text-[#2C665D] border border-zinc-200 dark:border-[#25524B] shrink-0">
                     {getContactIcon(contact.type)}
                   </div>
                   <div className="truncate">
-                    <p className="font-cyber font-bold text-sm text-slate-100">
+                    <p className="font-cyber font-bold text-sm text-[#0F2420] dark:text-[#E6F4F1]">
                       {contact.name}
                     </p>
-                    <p className="font-code text-xs text-slate-400 truncate">
+                    <p className="font-code text-xs text-zinc-600 dark:text-[#E6F4F1]/70 truncate">
                       {contact.handle}
                     </p>
                   </div>
@@ -86,11 +86,11 @@ export const ContactModal: React.FC<ContactModalProps> = ({ onClose }) => {
                   {/* Copy Button */}
                   <button
                     onClick={() => handleCopy(contact.handle, contact.name)}
-                    className="p-2 rounded bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-emerald-400 border border-slate-700 transition-colors cursor-pointer"
+                    className="p-2 rounded-lg bg-white hover:bg-zinc-100 dark:bg-[#0A1312] dark:hover:bg-[#25524B] text-zinc-700 dark:text-[#E6F4F1]/80 hover:text-[#0F2420] dark:hover:text-[#E6F4F1] border border-zinc-200 dark:border-[#25524B] transition-colors cursor-pointer"
                     title={`Copy ${contact.name}`}
                   >
                     {isCopied ? (
-                      <Check className="w-4 h-4 text-emerald-400" />
+                      <Check className="w-4 h-4 text-[#1D5A50] dark:text-[#2C665D]" />
                     ) : (
                       <Copy className="w-4 h-4" />
                     )}
@@ -102,7 +102,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ onClose }) => {
                       href={contact.link}
                       target="_blank"
                       rel="noreferrer"
-                      className="p-2 rounded bg-slate-800/80 hover:bg-emerald-500/20 text-slate-300 hover:text-emerald-400 border border-slate-700 hover:border-emerald-500/40 transition-colors"
+                      className="p-2 rounded-lg bg-white hover:bg-zinc-100 dark:bg-[#0A1312] dark:hover:bg-[#2C665D]/20 text-zinc-700 dark:text-[#E6F4F1]/80 hover:text-[#0F2420] dark:hover:text-[#E6F4F1] border border-zinc-200 dark:border-[#25524B] transition-colors"
                       title="Open external link"
                     >
                       <ExternalLink className="w-4 h-4" />
@@ -114,64 +114,64 @@ export const ContactModal: React.FC<ContactModalProps> = ({ onClose }) => {
           })}
 
           {/* Quick Notice */}
-          <div className="p-3 rounded bg-slate-900/60 border border-slate-800 text-xs font-sans text-slate-400">
-            ⚡ Direct Reach: <strong className="text-emerald-400">+92 328 0709704</strong> / <strong className="text-cyan-400">khokharyasir749@gmail.com</strong>
+          <div className="p-3.5 rounded-xl bg-zinc-50 dark:bg-[#132B27] border border-zinc-200 dark:border-[#25524B] text-xs font-sans text-zinc-700 dark:text-[#E6F4F1]/80 shadow-sm">
+            ⚡ Direct Reach: <strong className="text-[#1D5A50] dark:text-[#2C665D]">+92 328 0709704</strong> / <strong className="text-[#0F2420] dark:text-[#E6F4F1]">khokharyasir749@gmail.com</strong>
           </div>
         </div>
 
         {/* Right Column: Encrypted Message Dispatcher Form */}
-        <div className="lg:col-span-6 bg-[#101424] border border-emerald-500/30 p-5 rounded-sm flex flex-col justify-between">
+        <div className="lg:col-span-6 bg-zinc-50 dark:bg-[#132B27] border border-zinc-200 dark:border-[#25524B] p-5 rounded-2xl flex flex-col justify-between shadow-sm">
           <form onSubmit={handleSendMessage} className="space-y-4">
-            <div className="flex items-center justify-between pb-2 border-b border-slate-800">
-              <span className="font-cyber font-bold text-sm text-slate-100 tracking-wide">
+            <div className="flex items-center justify-between pb-2 border-b border-zinc-200 dark:border-[#25524B]">
+              <span className="font-cyber font-bold text-sm text-[#0F2420] dark:text-[#E6F4F1] tracking-wide">
                 DISPATCH ENCRYPTED TRANSMISSION
               </span>
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-[#1D5A50] dark:bg-[#2C665D] animate-pulse" />
             </div>
 
             <div className="space-y-1.5">
-              <label className="text-xs font-code text-slate-400">YOUR CALLSIGN / NAME</label>
+              <label className="text-xs font-code text-zinc-600 dark:text-[#E6F4F1]/70 font-semibold">YOUR CALLSIGN / NAME</label>
               <input
                 type="text"
                 required
                 placeholder="Agent John Doe"
                 value={formState.name}
                 onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                className="w-full px-3 py-2 rounded-sm bg-slate-950/80 border border-slate-700 text-xs font-code text-slate-200 focus:outline-none focus:border-emerald-400 transition-colors"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-white dark:bg-[#0A1312] border border-zinc-300 dark:border-[#25524B] text-xs font-code text-zinc-900 dark:text-[#E6F4F1] placeholder-zinc-400 dark:placeholder-[#E6F4F1]/40 focus:outline-none focus:border-[#1D5A50] dark:focus:border-[#2C665D] transition-colors"
               />
             </div>
 
             <div className="space-y-1.5">
-              <label className="text-xs font-code text-slate-400">YOUR RETURN EMAIL</label>
+              <label className="text-xs font-code text-zinc-600 dark:text-[#E6F4F1]/70 font-semibold">YOUR RETURN EMAIL</label>
               <input
                 type="email"
                 required
                 placeholder="agent@matrix.io"
                 value={formState.email}
                 onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                className="w-full px-3 py-2 rounded-sm bg-slate-950/80 border border-slate-700 text-xs font-code text-slate-200 focus:outline-none focus:border-emerald-400 transition-colors"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-white dark:bg-[#0A1312] border border-zinc-300 dark:border-[#25524B] text-xs font-code text-zinc-900 dark:text-[#E6F4F1] placeholder-zinc-400 dark:placeholder-[#E6F4F1]/40 focus:outline-none focus:border-[#1D5A50] dark:focus:border-[#2C665D] transition-colors"
               />
             </div>
 
             <div className="space-y-1.5">
-              <label className="text-xs font-code text-slate-400">TRANSMISSION PAYLOAD</label>
+              <label className="text-xs font-code text-zinc-600 dark:text-[#E6F4F1]/70 font-semibold">TRANSMISSION PAYLOAD</label>
               <textarea
                 required
                 rows={4}
                 placeholder="Project inquiries, contract proposals, or greetings..."
                 value={formState.message}
                 onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                className="w-full px-3 py-2 rounded-sm bg-slate-950/80 border border-slate-700 text-xs font-sans text-slate-200 focus:outline-none focus:border-emerald-400 transition-colors resize-none"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-white dark:bg-[#0A1312] border border-zinc-300 dark:border-[#25524B] text-xs font-sans text-zinc-900 dark:text-[#E6F4F1] placeholder-zinc-400 dark:placeholder-[#E6F4F1]/40 focus:outline-none focus:border-[#1D5A50] dark:focus:border-[#2C665D] transition-colors resize-none"
               />
             </div>
 
             <button
               type="submit"
               disabled={sentMessage}
-              className={`w-full py-2.5 px-4 rounded-sm font-cyber font-bold tracking-wider text-sm flex items-center justify-center gap-2 transition-all cursor-pointer ${
+              className={`w-full py-2.5 px-4 rounded-xl font-cyber font-bold tracking-wider text-sm flex items-center justify-center gap-2 transition-all cursor-pointer ${
                 sentMessage
-                  ? 'bg-emerald-500 text-slate-950'
-                  : 'bg-emerald-500 hover:bg-emerald-400 text-slate-950 shadow-lg shadow-emerald-500/20 active:scale-98'
+                  ? 'bg-zinc-200 text-zinc-700 dark:bg-[#25524B] dark:text-[#E6F4F1]'
+                  : 'bg-[#1D5A50] hover:bg-[#15453D] dark:bg-[#2C665D] dark:hover:bg-[#357B70] text-white dark:text-[#E6F4F1] shadow-lg shadow-[#1D5A50]/20 active:scale-98'
               }`}
             >
               {sentMessage ? (

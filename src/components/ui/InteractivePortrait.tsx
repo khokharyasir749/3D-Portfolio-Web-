@@ -42,8 +42,8 @@ export const InteractivePortrait: React.FC = () => {
       onMouseLeave={handleMouseLeave}
       className="relative w-full h-full flex items-center justify-center p-4 sm:p-6 cursor-pointer select-none [perspective:1000px] group"
     >
-      {/* 1. Ambient Radial Purple Glow */}
-      <div className="absolute w-72 h-72 sm:w-84 sm:h-84 lg:w-[380px] lg:h-[380px] rounded-full bg-purple-600/15 group-hover:bg-purple-600/30 blur-2xl pointer-events-none -z-10 transition-all duration-700" />
+      {/* 1. Ambient Radial Deep Teal Glow */}
+      <div className="absolute w-72 h-72 sm:w-84 sm:h-84 lg:w-[380px] lg:h-[380px] rounded-full bg-[#2C665D]/25 group-hover:bg-[#2C665D]/40 blur-2xl pointer-events-none -z-10 transition-all duration-700" />
 
       {/* 2. Floating 3D Tilt Container */}
       <motion.div
@@ -65,7 +65,7 @@ export const InteractivePortrait: React.FC = () => {
         className="relative group w-[280px] h-[280px] sm:w-[340px] sm:h-[340px] md:w-[380px] md:h-[380px] rounded-full [transform-style:preserve-3d] will-change-transform cursor-pointer"
       >
         {/* Main Circular Portrait Frame */}
-        <div className="w-full h-full rounded-full overflow-hidden relative bg-[#08080a] border-[3px] border-purple-500/40 group-hover:border-purple-400 shadow-lg shadow-purple-950/40 group-hover:shadow-[0_0_50px_rgba(168,85,247,0.4)] transition-all duration-700 [transform:translateZ(10px)]">
+        <div className="w-full h-full rounded-full overflow-hidden relative bg-[#0A1312] border-[3px] border-[#25524B] group-hover:border-[#C58A55] shadow-2xl group-hover:shadow-[0_0_40px_rgba(197,138,85,0.35)] transition-all duration-700 [transform:translateZ(10px)]">
           {/* Authentic Local Profile Portrait with Monochrome-to-Color hover */}
           <img
             src={profilePic}
@@ -77,7 +77,7 @@ export const InteractivePortrait: React.FC = () => {
           {/* Dynamic Holographic Glare / Light Sheen */}
           <motion.div
             style={{
-              background: `radial-gradient(circle at ${glareX} ${glareY}, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.05) 40%, rgba(255,255,255,0) 70%)`,
+              background: `radial-gradient(circle at ${glareX} ${glareY}, rgba(230, 244, 241,0.2) 0%, rgba(230, 244, 241,0.05) 40%, rgba(230, 244, 241,0) 70%)`,
             }}
             className="absolute inset-0 pointer-events-none opacity-40 group-hover:opacity-80 transition-opacity duration-700"
           />
@@ -98,9 +98,9 @@ export const InteractivePortrait: React.FC = () => {
               animate={{ rotate: -360 }}
               transition={{ repeat: Infinity, duration: 24, ease: 'linear' }}
               whileHover={{ scale: 1.1 }}
-              className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 dark:bg-zinc-950/80 border border-zinc-200 dark:border-white/15 backdrop-blur-md shadow-lg shadow-zinc-200/50 dark:shadow-xl text-xs font-mono text-zinc-900 dark:text-zinc-200 tracking-wide select-none [transform:translateZ(30px)] cursor-pointer"
+              className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1A3D37]/90 border border-[#25524B] hover:border-[#C58A55] backdrop-blur-md shadow-xl text-xs font-mono text-[#E6F4F1] tracking-wide select-none [transform:translateZ(30px)] cursor-pointer"
             >
-              <span className="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.8)] animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-[#C58A55] shadow-[0_0_8px_rgba(197,138,85,0.8)] animate-pulse" />
               <span>React</span>
             </motion.div>
           </div>
@@ -111,9 +111,9 @@ export const InteractivePortrait: React.FC = () => {
               animate={{ rotate: -360 }}
               transition={{ repeat: Infinity, duration: 24, ease: 'linear' }}
               whileHover={{ scale: 1.1 }}
-              className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 dark:bg-zinc-950/80 border border-zinc-200 dark:border-white/15 backdrop-blur-md shadow-lg shadow-zinc-200/50 dark:shadow-xl text-xs font-mono text-zinc-900 dark:text-zinc-200 tracking-wide select-none [transform:translateZ(30px)] cursor-pointer"
+              className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1A3D37]/90 border border-[#25524B] hover:border-[#C58A55] backdrop-blur-md shadow-xl text-xs font-mono text-[#E6F4F1] tracking-wide select-none [transform:translateZ(30px)] cursor-pointer"
             >
-              <span className="w-2 h-2 rounded-full bg-blue-400 shadow-[0_0_8px_rgba(96,165,250,0.8)] animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-[#C58A55] shadow-[0_0_8px_rgba(197,138,85,0.8)] animate-pulse" />
               <span>TypeScript</span>
             </motion.div>
           </div>
@@ -124,9 +124,9 @@ export const InteractivePortrait: React.FC = () => {
               animate={{ rotate: -360 }}
               transition={{ repeat: Infinity, duration: 24, ease: 'linear' }}
               whileHover={{ scale: 1.1 }}
-              className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 dark:bg-zinc-950/80 border border-zinc-200 dark:border-white/15 backdrop-blur-md shadow-lg shadow-zinc-200/50 dark:shadow-xl text-xs font-mono text-zinc-900 dark:text-zinc-200 tracking-wide select-none [transform:translateZ(30px)] cursor-pointer"
+              className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1A3D37]/90 border border-[#25524B] hover:border-[#C58A55] backdrop-blur-md shadow-xl text-xs font-mono text-[#E6F4F1] tracking-wide select-none [transform:translateZ(30px)] cursor-pointer"
             >
-              <span className="w-2 h-2 rounded-full bg-purple-400 shadow-[0_0_8px_rgba(192,132,252,0.8)] animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-[#C58A55] shadow-[0_0_8px_rgba(197,138,85,0.8)] animate-pulse" />
               <span>Three.js</span>
             </motion.div>
           </div>
@@ -137,9 +137,9 @@ export const InteractivePortrait: React.FC = () => {
               animate={{ rotate: -360 }}
               transition={{ repeat: Infinity, duration: 24, ease: 'linear' }}
               whileHover={{ scale: 1.1 }}
-              className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 dark:bg-zinc-950/80 border border-zinc-200 dark:border-white/15 backdrop-blur-md shadow-lg shadow-zinc-200/50 dark:shadow-xl text-xs font-mono text-zinc-900 dark:text-zinc-200 tracking-wide select-none [transform:translateZ(30px)] cursor-pointer"
+              className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1A3D37]/90 border border-[#25524B] hover:border-[#C58A55] backdrop-blur-md shadow-xl text-xs font-mono text-[#E6F4F1] tracking-wide select-none [transform:translateZ(30px)] cursor-pointer"
             >
-              <span className="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)] animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-[#C58A55] shadow-[0_0_8px_rgba(197,138,85,0.8)] animate-pulse" />
               <span>Node.js</span>
             </motion.div>
           </div>

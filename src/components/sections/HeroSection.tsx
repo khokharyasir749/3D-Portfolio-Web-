@@ -27,7 +27,7 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-zinc-600 dark:text-zinc-300 text-xs sm:text-sm md:text-base font-sans tracking-[0.25em] uppercase font-semibold"
+            className="text-[#1D5A50] dark:text-[#2C665D] text-xs sm:text-sm md:text-base font-sans tracking-[0.25em] uppercase font-bold"
           >
             A CREATIVE
           </motion.span>
@@ -38,7 +38,7 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-[clamp(2.4rem,5.2vw,5.0rem)] font-black uppercase tracking-tight leading-[0.92] select-none space-y-1 text-zinc-900 dark:text-white"
+              className="text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight leading-[0.95] select-none space-y-1 text-[#0F2420] dark:text-[#E6F4F1]"
             >
               <span className="block whitespace-nowrap">
                 FULL-STACK
@@ -54,7 +54,7 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-sm sm:text-base md:text-lg text-zinc-700 dark:text-zinc-300 font-sans leading-relaxed max-w-lg pt-1"
+            className="text-base sm:text-lg text-[#2C423E] dark:text-[#9FB8B2] font-sans leading-relaxed max-w-lg pt-1 font-normal"
           >
             {portfolioData.about.bio[0]}
           </motion.p>
@@ -62,16 +62,16 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
       </div>
 
       {/* Bottom Row: Minimalist Status & Resume Link */}
-      <div className="w-full flex items-center justify-between pointer-events-auto pt-4 text-xs sm:text-sm font-mono text-zinc-500 dark:text-zinc-400">
+      <div className="w-full flex items-center justify-between pointer-events-auto pt-4 text-xs sm:text-sm font-mono text-zinc-500 dark:text-[#E6F4F1]/70">
         <span className="tracking-[0.2em] uppercase font-medium">
           LAHORE, PAKISTAN • 2026
         </span>
         <a
           href="mailto:khokharyasir749@gmail.com?subject=Resume%20Request%20-%20Yasir%20Khokhar"
-          className="group flex items-center gap-1.5 tracking-[0.2em] text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white transition-colors uppercase cursor-pointer"
+          className="group flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-gradient-to-r from-[#C58A55] to-[#A87242] hover:from-[#DE9F68] hover:to-[#B87C45] border border-[#DE9F68]/60 tracking-[0.2em] text-[#0A1312] transition-all uppercase cursor-pointer font-bold shadow-lg shadow-[#C58A55]/20"
         >
           <span>RESUME</span>
-          <span className="text-purple-500 dark:text-purple-400 group-hover:translate-y-0.5 transition-transform">↓</span>
+          <span className="text-[#0A1312] group-hover:translate-y-0.5 transition-transform">↓</span>
         </a>
       </div>
     </div>

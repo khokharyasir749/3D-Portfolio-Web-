@@ -37,22 +37,22 @@ export const LeftControlBar: React.FC<LeftControlBarProps> = ({
       aria-label="Quick Controls & Socials"
     >
       {/* Top Subtle Vertical Line */}
-      <div className="w-[1px] h-14 bg-gradient-to-b from-transparent via-white/10 to-white/20 mb-3" />
+      <div className="w-[1px] h-14 bg-gradient-to-b from-transparent via-zinc-300 dark:via-[#25524B] to-zinc-300/30 dark:to-[#2C665D]/30 mb-3" />
 
       {/* Control Icons Stack (Ultra-crisp & minimal) */}
       <div className="flex flex-col items-center gap-3.5 py-1">
         {/* 1. Sound Toggle */}
         <button
           onClick={onToggleAudio}
-          className="group relative p-1.5 text-white/50 hover:text-white transition-all duration-200 cursor-pointer"
+          className="group relative p-1.5 text-zinc-600 hover:text-zinc-950 dark:text-[#E6F4F1]/50 dark:hover:text-[#E6F4F1] transition-all duration-200 cursor-pointer"
           aria-label={isMuted ? 'Unmute Audio' : 'Mute Audio'}
         >
           {isMuted ? (
             <VolumeX className="w-3.5 h-3.5 group-hover:scale-110 transition-transform" />
           ) : (
-            <Volume2 className="w-3.5 h-3.5 text-purple-400 group-hover:scale-110 transition-transform" />
+            <Volume2 className="w-3.5 h-3.5 text-[#1D5A50] dark:text-[#2C665D] group-hover:scale-110 transition-transform" />
           )}
-          <span className="absolute left-full ml-3 px-2 py-0.5 rounded bg-[#111116] border border-white/10 text-[10px] font-mono text-slate-300 whitespace-nowrap opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all pointer-events-none shadow-2xl z-50">
+          <span className="absolute left-full ml-3 px-2 py-0.5 rounded bg-white dark:bg-[#132B27] border border-zinc-200 dark:border-[#25524B] text-[10px] font-mono text-zinc-800 dark:text-[#E6F4F1] whitespace-nowrap opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all pointer-events-none shadow-lg z-50">
             {isMuted ? 'Sound Off' : 'Sound On'}
           </span>
         </button>
@@ -62,11 +62,11 @@ export const LeftControlBar: React.FC<LeftControlBarProps> = ({
           href={linkedinUrl}
           target="_blank"
           rel="noreferrer"
-          className="group relative p-1.5 text-white/50 hover:text-white transition-all duration-200 cursor-pointer"
+          className="group relative p-1.5 text-zinc-600 hover:text-zinc-950 dark:text-[#E6F4F1]/50 dark:hover:text-[#E6F4F1] transition-all duration-200 cursor-pointer"
           aria-label="LinkedIn Profile"
         >
           <Linkedin className="w-3.5 h-3.5 group-hover:scale-110 transition-transform" />
-          <span className="absolute left-full ml-3 px-2 py-0.5 rounded bg-[#111116] border border-white/10 text-[10px] font-mono text-slate-300 whitespace-nowrap opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all pointer-events-none shadow-2xl z-50">
+          <span className="absolute left-full ml-3 px-2 py-0.5 rounded bg-white dark:bg-[#132B27] border border-zinc-200 dark:border-[#25524B] text-[10px] font-mono text-zinc-800 dark:text-[#E6F4F1] whitespace-nowrap opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all pointer-events-none shadow-lg z-50">
             LinkedIn
           </span>
         </a>
@@ -76,11 +76,11 @@ export const LeftControlBar: React.FC<LeftControlBarProps> = ({
           href={twitterUrl}
           target="_blank"
           rel="noreferrer"
-          className="group relative p-1.5 text-white/50 hover:text-white transition-all duration-200 cursor-pointer"
+          className="group relative p-1.5 text-zinc-600 hover:text-zinc-950 dark:text-[#E6F4F1]/50 dark:hover:text-[#E6F4F1] transition-all duration-200 cursor-pointer"
           aria-label="X (Twitter) Profile"
         >
           <XTwitterIcon className="w-3.5 h-3.5 group-hover:scale-110 transition-transform" />
-          <span className="absolute left-full ml-3 px-2 py-0.5 rounded bg-[#111116] border border-white/10 text-[10px] font-mono text-slate-300 whitespace-nowrap opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all pointer-events-none shadow-2xl z-50">
+          <span className="absolute left-full ml-3 px-2 py-0.5 rounded bg-white dark:bg-[#132B27] border border-zinc-200 dark:border-[#25524B] text-[10px] font-mono text-zinc-800 dark:text-[#E6F4F1] whitespace-nowrap opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all pointer-events-none shadow-lg z-50">
             X
           </span>
         </a>
@@ -90,11 +90,11 @@ export const LeftControlBar: React.FC<LeftControlBarProps> = ({
           href={githubUrl}
           target="_blank"
           rel="noreferrer"
-          className="group relative p-1.5 text-white/50 hover:text-white transition-all duration-200 cursor-pointer"
+          className="group relative p-1.5 text-zinc-600 hover:text-zinc-950 dark:text-[#E6F4F1]/50 dark:hover:text-[#E6F4F1] transition-all duration-200 cursor-pointer"
           aria-label="GitHub Profile"
         >
           <Github className="w-3.5 h-3.5 group-hover:scale-110 transition-transform" />
-          <span className="absolute left-full ml-3 px-2 py-0.5 rounded bg-[#111116] border border-white/10 text-[10px] font-mono text-slate-300 whitespace-nowrap opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all pointer-events-none shadow-2xl z-50">
+          <span className="absolute left-full ml-3 px-2 py-0.5 rounded bg-white dark:bg-[#132B27] border border-zinc-200 dark:border-[#25524B] text-[10px] font-mono text-zinc-800 dark:text-[#E6F4F1] whitespace-nowrap opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all pointer-events-none shadow-lg z-50">
             GitHub
           </span>
         </a>
@@ -102,22 +102,22 @@ export const LeftControlBar: React.FC<LeftControlBarProps> = ({
         {/* 5. Theme Toggle */}
         <button
           onClick={onToggleTheme}
-          className="group relative p-1.5 text-white/50 hover:text-white transition-all duration-200 cursor-pointer"
+          className="group relative p-1.5 text-zinc-600 hover:text-zinc-950 dark:text-[#E6F4F1]/50 dark:hover:text-[#E6F4F1] transition-all duration-200 cursor-pointer"
           aria-label="Toggle Theme"
         >
           {theme === 'dark' ? (
-            <Moon className="w-3.5 h-3.5 text-purple-300 group-hover:scale-110 transition-transform" />
+            <Moon className="w-3.5 h-3.5 text-[#2C665D] group-hover:scale-110 transition-transform" />
           ) : (
-            <Sun className="w-3.5 h-3.5 text-amber-400 group-hover:scale-110 transition-transform" />
+            <Sun className="w-3.5 h-3.5 text-amber-500 group-hover:scale-110 transition-transform" />
           )}
-          <span className="absolute left-full ml-3 px-2 py-0.5 rounded bg-[#111116] border border-white/10 text-[10px] font-mono text-slate-300 whitespace-nowrap opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all pointer-events-none shadow-2xl z-50">
+          <span className="absolute left-full ml-3 px-2 py-0.5 rounded bg-white dark:bg-[#132B27] border border-zinc-200 dark:border-[#25524B] text-[10px] font-mono text-zinc-800 dark:text-[#E6F4F1] whitespace-nowrap opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all pointer-events-none shadow-lg z-50">
             {theme === 'dark' ? 'Dark Mode' : 'Light Mode'}
           </span>
         </button>
       </div>
 
       {/* Bottom Subtle Vertical Line */}
-      <div className="w-[1px] h-14 bg-gradient-to-b from-white/20 via-white/10 to-transparent mt-3" />
+      <div className="w-[1px] h-14 bg-gradient-to-b from-zinc-300/30 dark:from-[#2C665D]/30 via-zinc-300 dark:via-[#25524B] to-transparent mt-3" />
     </aside>
   );
 };

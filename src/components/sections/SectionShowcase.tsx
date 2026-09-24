@@ -93,19 +93,19 @@ export const SectionShowcase: React.FC<SectionShowcaseProps> = ({
           animate={{ x: 0, opacity: 1 }}
           exit={{ x: '100%', opacity: 0 }}
           transition={{ type: 'spring', damping: 30, stiffness: 260 }}
-          className="relative w-full max-w-2xl md:max-w-3xl lg:max-w-5xl h-full bg-[#090b12]/95 border-l border-white/10 shadow-2xl flex flex-col z-50 overflow-hidden"
+          className="relative w-full max-w-2xl md:max-w-3xl lg:max-w-5xl h-full bg-[#F6F9F8] dark:bg-[#0A1312]/95 border-l border-zinc-200 dark:border-[#25524B] shadow-2xl flex flex-col z-50 overflow-hidden text-zinc-900 dark:text-[#E6F4F1]"
         >
           {/* Top Drawer Header & Tab Selector */}
-          <div className="px-5 py-4 border-b border-white/10 bg-[#0c0f18] flex items-center justify-between gap-4">
+          <div className="px-5 py-4 border-b border-zinc-200 dark:border-[#25524B] bg-white dark:bg-[#132B27] flex items-center justify-between gap-4">
             {/* Navigation Tabs */}
             <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar">
               {/* WHAT I DO TAB */}
               <button
                 onClick={() => onSelectSection('what-i-do')}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-sm font-cyber font-bold text-xs tracking-wider transition-all cursor-pointer ${
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-mono font-bold text-xs tracking-wider transition-all cursor-pointer ${
                   currentTab === 'what-i-do'
-                    ? 'bg-cyan-400 text-slate-950 shadow-neon-cyan'
-                    : 'text-slate-400 hover:text-cyan-300 hover:bg-slate-900'
+                    ? 'bg-[#1D5A50] text-white shadow-md dark:bg-[#2C665D] dark:text-[#E6F4F1]'
+                    : 'text-zinc-600 hover:text-zinc-950 hover:bg-zinc-100 dark:text-[#E6F4F1]/70 dark:hover:text-[#E6F4F1] dark:hover:bg-[#25524B]/50'
                 }`}
               >
                 <Layers className="w-3.5 h-3.5" />
@@ -115,10 +115,10 @@ export const SectionShowcase: React.FC<SectionShowcaseProps> = ({
               {/* EXPERIENCE TAB */}
               <button
                 onClick={() => onSelectSection('experience')}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-sm font-cyber font-bold text-xs tracking-wider transition-all cursor-pointer ${
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-mono font-bold text-xs tracking-wider transition-all cursor-pointer ${
                   currentTab === 'experience'
-                    ? 'bg-emerald-400 text-slate-950 shadow-lg shadow-emerald-500/30'
-                    : 'text-slate-400 hover:text-emerald-300 hover:bg-slate-900'
+                    ? 'bg-[#1D5A50] text-white shadow-md dark:bg-[#2C665D] dark:text-[#E6F4F1]'
+                    : 'text-zinc-600 hover:text-zinc-950 hover:bg-zinc-100 dark:text-[#E6F4F1]/70 dark:hover:text-[#E6F4F1] dark:hover:bg-[#25524B]/50'
                 }`}
               >
                 <Briefcase className="w-3.5 h-3.5" />
@@ -128,10 +128,10 @@ export const SectionShowcase: React.FC<SectionShowcaseProps> = ({
               {/* WORK TAB */}
               <button
                 onClick={() => onSelectSection('work')}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-sm font-cyber font-bold text-xs tracking-wider transition-all cursor-pointer ${
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-mono font-bold text-xs tracking-wider transition-all cursor-pointer ${
                   currentTab === 'work'
-                    ? 'bg-cyan-400 text-slate-950 shadow-neon-cyan'
-                    : 'text-slate-400 hover:text-cyan-300 hover:bg-slate-900'
+                    ? 'bg-[#1D5A50] text-white shadow-md dark:bg-[#2C665D] dark:text-[#E6F4F1]'
+                    : 'text-zinc-600 hover:text-zinc-950 hover:bg-zinc-100 dark:text-[#E6F4F1]/70 dark:hover:text-[#E6F4F1] dark:hover:bg-[#25524B]/50'
                 }`}
               >
                 <FolderGit2 className="w-3.5 h-3.5" />
@@ -141,10 +141,10 @@ export const SectionShowcase: React.FC<SectionShowcaseProps> = ({
               {/* SKILLS TAB */}
               <button
                 onClick={() => onSelectSection('skills')}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-sm font-cyber font-bold text-xs tracking-wider transition-all cursor-pointer ${
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-mono font-bold text-xs tracking-wider transition-all cursor-pointer ${
                   currentTab === 'skills'
-                    ? 'bg-pink-500 text-slate-950 shadow-neon-magenta'
-                    : 'text-slate-400 hover:text-pink-300 hover:bg-slate-900'
+                    ? 'bg-[#1D5A50] text-white shadow-md dark:bg-[#2C665D] dark:text-[#E6F4F1]'
+                    : 'text-zinc-600 hover:text-zinc-950 hover:bg-zinc-100 dark:text-[#E6F4F1]/70 dark:hover:text-[#E6F4F1] dark:hover:bg-[#25524B]/50'
                 }`}
               >
                 <Cpu className="w-3.5 h-3.5" />
@@ -154,10 +154,10 @@ export const SectionShowcase: React.FC<SectionShowcaseProps> = ({
               {/* ABOUT TAB */}
               <button
                 onClick={() => onSelectSection('about')}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-sm font-cyber font-bold text-xs tracking-wider transition-all cursor-pointer ${
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-mono font-bold text-xs tracking-wider transition-all cursor-pointer ${
                   currentTab === 'about'
-                    ? 'bg-yellow-400 text-slate-950 shadow-lg shadow-yellow-500/30'
-                    : 'text-slate-400 hover:text-yellow-300 hover:bg-slate-900'
+                    ? 'bg-[#1D5A50] text-white shadow-md dark:bg-[#2C665D] dark:text-[#E6F4F1]'
+                    : 'text-zinc-600 hover:text-zinc-950 hover:bg-zinc-100 dark:text-[#E6F4F1]/70 dark:hover:text-[#E6F4F1] dark:hover:bg-[#25524B]/50'
                 }`}
               >
                 <User className="w-3.5 h-3.5" />
@@ -167,10 +167,10 @@ export const SectionShowcase: React.FC<SectionShowcaseProps> = ({
               {/* CONTACT TAB */}
               <button
                 onClick={() => onSelectSection('contact')}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-sm font-cyber font-bold text-xs tracking-wider transition-all cursor-pointer ${
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-mono font-bold text-xs tracking-wider transition-all cursor-pointer ${
                   currentTab === 'contact'
-                    ? 'bg-emerald-400 text-slate-950 shadow-lg shadow-emerald-500/30'
-                    : 'text-slate-400 hover:text-emerald-300 hover:bg-slate-900'
+                    ? 'bg-[#1D5A50] text-white shadow-md dark:bg-[#2C665D] dark:text-[#E6F4F1]'
+                    : 'text-zinc-600 hover:text-zinc-950 hover:bg-zinc-100 dark:text-[#E6F4F1]/70 dark:hover:text-[#E6F4F1] dark:hover:bg-[#25524B]/50'
                 }`}
               >
                 <Mail className="w-3.5 h-3.5" />
@@ -181,7 +181,7 @@ export const SectionShowcase: React.FC<SectionShowcaseProps> = ({
             {/* Close Button */}
             <button
               onClick={onClose}
-              className="p-1.5 rounded-sm bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-slate-100 border border-slate-700 transition-colors cursor-pointer shrink-0"
+              className="p-1.5 rounded-lg bg-zinc-100 hover:bg-zinc-200 text-zinc-700 hover:text-zinc-950 dark:bg-[#0A1312] dark:hover:bg-[#25524B] dark:text-[#E6F4F1]/70 dark:hover:text-[#E6F4F1] border border-zinc-200 dark:border-[#25524B] transition-colors cursor-pointer shrink-0"
               title="Close Drawer"
             >
               <X className="w-5 h-5" />
@@ -243,10 +243,10 @@ export const SectionShowcase: React.FC<SectionShowcaseProps> = ({
                 className="space-y-6"
               >
                 {/* Header Profile Card */}
-                <div className="p-5 rounded-sm bg-[#0f1320] border border-yellow-500/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div className="p-5 rounded-2xl bg-[#132B27] border border-[#25524B] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                   <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-yellow-400 via-cyan-500 to-pink-500 p-0.5 shadow-lg shrink-0">
-                      <div className="w-full h-full bg-[#0a0d17] rounded-2xl overflow-hidden flex items-center justify-center font-cyber font-bold text-xl text-yellow-400">
+                    <div className="w-14 h-14 rounded-2xl bg-[#0A1312] border border-[#25524B] p-0.5 shadow-lg shrink-0">
+                      <div className="w-full h-full bg-[#0A1312] rounded-2xl overflow-hidden flex items-center justify-center font-bold text-xl text-[#E6F4F1]">
                         <img
                           src={profilePic}
                           alt="YK"
@@ -255,33 +255,33 @@ export const SectionShowcase: React.FC<SectionShowcaseProps> = ({
                       </div>
                     </div>
                     <div>
-                      <h3 className="font-cyber font-bold text-xl text-slate-100 flex items-center gap-2">
+                      <h3 className="font-bold text-xl text-[#E6F4F1] flex items-center gap-2">
                         <span>{portfolioData.about.name}</span>
-                        <span className="text-xs font-code text-yellow-400">
+                        <span className="text-xs font-mono text-[#2C665D]">
                           [@{portfolioData.about.handle}]
                         </span>
                       </h3>
-                      <p className="text-xs text-cyan-300 font-code mt-0.5">
+                      <p className="text-xs text-[#2C665D] font-mono mt-0.5">
                         {portfolioData.about.role}
                       </p>
-                      <p className="text-xs text-slate-400 font-sans mt-0.5">
+                      <p className="text-xs text-[#E6F4F1]/70 font-sans mt-0.5">
                         📍 {portfolioData.about.location}
                       </p>
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-2 px-3 py-1.5 rounded bg-emerald-500/10 border border-emerald-500/40 text-emerald-400 text-xs font-code">
-                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#25524B]/50 border border-[#2C665D]/30 text-[#E6F4F1] text-xs font-mono">
+                    <span className="w-2 h-2 rounded-full bg-[#2C665D] animate-pulse" />
                     <span>{portfolioData.about.status}</span>
                   </div>
                 </div>
 
                 {/* Bio Summary */}
-                <div className="p-4 rounded-sm bg-[#0f1320] border border-white/10 space-y-2">
-                  <p className="text-sm text-slate-200 leading-relaxed font-sans font-medium">
+                <div className="p-4 rounded-2xl bg-[#132B27] border border-[#25524B] space-y-2">
+                  <p className="text-sm text-[#E6F4F1] leading-relaxed font-sans font-medium">
                     "{portfolioData.about.tagline}"
                   </p>
-                  <p className="text-xs text-slate-400 leading-relaxed font-sans">
+                  <p className="text-xs text-[#E6F4F1]/80 leading-relaxed font-sans">
                     {portfolioData.about.bio[1]}
                   </p>
                 </div>
@@ -291,15 +291,25 @@ export const SectionShowcase: React.FC<SectionShowcaseProps> = ({
                   {portfolioData.about.stats.map((stat, idx) => (
                     <div
                       key={idx}
-                      className="p-3 rounded-sm bg-[#0e1220] border border-slate-800 text-center space-y-1"
+                      className="p-3 rounded-xl bg-[#132B27] border border-[#25524B] text-center space-y-1 min-w-0 overflow-hidden flex flex-col justify-center"
                     >
-                      <p className="font-code text-[10px] text-slate-400 tracking-wider">
+                      <p className="font-mono text-[10px] text-[#2C665D] tracking-wider truncate">
                         {stat.label}
                       </p>
-                      <p className="font-cyber font-bold text-xl text-yellow-400">
-                        {stat.value}
-                      </p>
-                      <p className="font-sans text-[10px] text-slate-500">
+                      <div className="flex items-center justify-center min-w-0">
+                        {stat.label === 'STATUS' && (
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#2C665D] mr-1.5 shrink-0" />
+                        )}
+                        <p
+                          className={`font-bold text-[#E6F4F1] truncate ${
+                            stat.value.length > 5 ? 'text-base sm:text-lg font-sans' : 'text-lg sm:text-xl'
+                          }`}
+                          title={stat.value}
+                        >
+                          {stat.value}
+                        </p>
+                      </div>
+                      <p className="font-sans text-[10px] text-[#E6F4F1]/60 truncate">
                         {stat.sub}
                       </p>
                     </div>
@@ -307,8 +317,8 @@ export const SectionShowcase: React.FC<SectionShowcaseProps> = ({
                 </div>
 
                 {/* Core Principles */}
-                <div className="p-4 rounded-sm bg-[#0f1320] border border-white/10 space-y-2.5">
-                  <div className="flex items-center gap-2 text-xs font-code text-pink-400 uppercase tracking-wider">
+                <div className="p-4 rounded-2xl bg-[#132B27] border border-[#25524B] space-y-2.5">
+                  <div className="flex items-center gap-2 text-xs font-mono text-[#2C665D] uppercase tracking-wider">
                     <Zap className="w-4 h-4" />
                     <span>Engineering Principles</span>
                   </div>
@@ -316,9 +326,9 @@ export const SectionShowcase: React.FC<SectionShowcaseProps> = ({
                     {portfolioData.about.philosophies.map((phil, idx) => (
                       <div
                         key={idx}
-                        className="flex items-center gap-2 text-xs text-slate-300 p-2 rounded bg-slate-900/60 border border-slate-800"
+                        className="flex items-center gap-2 text-xs text-[#E6F4F1]/80 p-2.5 rounded-xl bg-[#0A1312]/70 border border-[#25524B]"
                       >
-                        <Shield className="w-3.5 h-3.5 text-yellow-400 shrink-0" />
+                        <Shield className="w-3.5 h-3.5 text-[#2C665D] shrink-0" />
                         <span>{phil}</span>
                       </div>
                     ))}
@@ -337,15 +347,15 @@ export const SectionShowcase: React.FC<SectionShowcaseProps> = ({
                 transition={{ duration: 0.25 }}
                 className="space-y-6"
               >
-                <div className="pb-3 border-b border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div className="pb-3 border-b border-[#25524B] flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                   <div>
-                    <h2 className="font-cyber font-bold text-xl text-slate-100 tracking-wider flex items-center gap-2">
-                      <span className="text-pink-400">MY TECHSTACK</span>
-                      <span className="text-xs font-code px-2 py-0.5 rounded bg-pink-500/20 text-pink-300 border border-pink-500/40">
+                    <h2 className="font-bold text-xl text-[#E6F4F1] tracking-wider flex items-center gap-2">
+                      <span className="text-[#2C665D]">MY TECHSTACK</span>
+                      <span className="text-xs font-mono px-2 py-0.5 rounded-full bg-[#25524B]/50 text-[#E6F4F1] border border-[#2C665D]/30">
                         INTERACTIVE 3D
                       </span>
                     </h2>
-                    <p className="text-xs text-slate-400 font-sans mt-0.5">
+                    <p className="text-xs text-[#E6F4F1]/80 font-sans mt-0.5">
                       Hover and drag mouse over the 3D physics spheres to disperse and inspect technologies.
                     </p>
                   </div>
@@ -355,15 +365,15 @@ export const SectionShowcase: React.FC<SectionShowcaseProps> = ({
                 <TechSpheresCanvas />
 
                 {/* Primary Core Tech Pills */}
-                <div className="p-4 rounded-sm bg-[#0f1320] border border-white/10 space-y-2.5">
-                  <h3 className="font-code text-xs text-slate-400 uppercase tracking-wider">
+                <div className="p-4 rounded-2xl bg-[#132B27] border border-[#25524B] space-y-2.5">
+                  <h3 className="font-mono text-xs text-[#2C665D] uppercase tracking-wider">
                     Core Engineering Stack:
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     {portfolioData.techStack.map((tech, idx) => (
                       <span
                         key={idx}
-                        className="font-code text-xs px-3 py-1.5 rounded-sm bg-slate-900 text-cyan-300 border border-cyan-500/30 shadow-sm"
+                        className="font-mono text-xs px-3 py-1.5 rounded-lg bg-[#25524B]/50 text-[#E6F4F1] border border-[#2C665D]/30 shadow-sm"
                       >
                         {tech}
                       </span>
@@ -376,31 +386,31 @@ export const SectionShowcase: React.FC<SectionShowcaseProps> = ({
                   {portfolioData.skills.map((category, idx) => (
                     <div
                       key={idx}
-                      className="p-4 rounded-sm bg-[#0f1320] border border-slate-800 space-y-3"
+                      className="p-4 rounded-2xl bg-[#132B27] border border-[#25524B] space-y-3"
                     >
-                      <h3 className="font-cyber font-bold text-sm text-pink-300 tracking-wide flex items-center justify-between">
+                      <h3 className="font-bold text-sm text-[#E6F4F1] tracking-wide flex items-center justify-between">
                         <span>{category.category}</span>
-                        <Cpu className="w-4 h-4 text-pink-400" />
+                        <Cpu className="w-4 h-4 text-[#2C665D]" />
                       </h3>
 
                       <div className="space-y-2.5">
                         {category.skills.map((skill, sIdx) => (
                           <div key={sIdx} className="space-y-1">
                             <div className="flex items-center justify-between text-xs">
-                              <span className="font-code text-slate-200">
+                              <span className="font-mono text-[#E6F4F1]">
                                 {skill.name}
                               </span>
-                              <span className="font-code text-slate-400">
+                              <span className="font-mono text-[#2C665D]">
                                 {skill.level}%
                               </span>
                             </div>
-                            <div className="w-full h-1.5 rounded-full bg-slate-900 overflow-hidden">
+                            <div className="w-full h-1.5 rounded-full bg-[#0A1312] overflow-hidden">
                               <div
-                                className="h-full bg-gradient-to-r from-cyan-400 to-pink-500 rounded-full"
+                                className="h-full bg-gradient-to-r from-[#25524B] to-[#2C665D] rounded-full"
                                 style={{ width: `${skill.level}%` }}
                               />
                             </div>
-                            <p className="text-[10px] text-slate-500 font-sans">
+                            <p className="text-[10px] text-[#E6F4F1]/60 font-sans">
                               {skill.note}
                             </p>
                           </div>
@@ -422,10 +432,10 @@ export const SectionShowcase: React.FC<SectionShowcaseProps> = ({
                 transition={{ duration: 0.25 }}
                 className="space-y-6"
               >
-                <div className="pb-3 border-b border-white/10">
-                  <h2 className="font-cyber font-bold text-xl text-slate-100 tracking-wider flex items-center gap-2">
-                    <span className="text-emerald-400">INITIATE TRANSMISSION</span>
-                    <span className="text-xs font-code px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">
+                <div className="pb-3 border-b border-[#25524B]">
+                  <h2 className="font-bold text-xl text-[#E6F4F1] tracking-wider flex items-center gap-2">
+                    <span className="text-[#2C665D]">INITIATE TRANSMISSION</span>
+                    <span className="text-xs font-mono px-2 py-0.5 rounded-full bg-[#25524B]/50 text-[#E6F4F1] border border-[#2C665D]/30">
                       OPEN CHANNEL
                     </span>
                   </h2>
@@ -434,7 +444,7 @@ export const SectionShowcase: React.FC<SectionShowcaseProps> = ({
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
                   {/* Left: Contact Channels */}
                   <div className="lg:col-span-5 space-y-3">
-                    <div className="text-xs font-code text-slate-400 uppercase tracking-wider mb-1">
+                    <div className="text-xs font-mono text-[#2C665D] uppercase tracking-wider mb-1">
                       Direct Uplink Channels
                     </div>
 
@@ -443,10 +453,10 @@ export const SectionShowcase: React.FC<SectionShowcaseProps> = ({
                       return (
                         <div
                           key={idx}
-                          className="p-3.5 rounded-sm bg-[#0f1320] border border-slate-800 hover:border-emerald-500/40 transition-all flex items-center justify-between gap-3"
+                          className="p-3.5 rounded-xl bg-[#132B27] border border-[#25524B] hover:border-[#2C665D] transition-all flex items-center justify-between gap-3"
                         >
                           <div className="flex items-center gap-3 overflow-hidden">
-                            <div className="p-2 rounded bg-slate-900 text-emerald-400 border border-slate-800 shrink-0">
+                            <div className="p-2 rounded-lg bg-[#0A1312] text-[#2C665D] border border-[#25524B] shrink-0">
                               {contact.type === 'email' && <Mail className="w-4 h-4" />}
                               {contact.type === 'whatsapp' && (
                                 <MessageCircle className="w-4 h-4" />
@@ -459,10 +469,10 @@ export const SectionShowcase: React.FC<SectionShowcaseProps> = ({
                               )}
                             </div>
                             <div className="truncate">
-                              <p className="font-cyber font-bold text-xs text-slate-100">
+                              <p className="font-bold text-xs text-[#E6F4F1]">
                                 {contact.name}
                               </p>
-                              <p className="font-code text-[11px] text-slate-400 truncate">
+                              <p className="font-mono text-[11px] text-[#E6F4F1]/70 truncate">
                                 {contact.handle}
                               </p>
                             </div>
@@ -471,11 +481,11 @@ export const SectionShowcase: React.FC<SectionShowcaseProps> = ({
                           <div className="flex items-center gap-1.5 shrink-0">
                             <button
                               onClick={() => handleCopy(contact.handle, contact.name)}
-                              className="p-1.5 rounded bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-emerald-400 border border-slate-700 transition-colors cursor-pointer"
+                              className="p-1.5 rounded-lg bg-[#0A1312] hover:bg-[#25524B] text-[#E6F4F1] hover:text-[#2C665D] border border-[#25524B] transition-colors cursor-pointer"
                               title={`Copy ${contact.name}`}
                             >
                               {isCopied ? (
-                                <Check className="w-3.5 h-3.5 text-emerald-400" />
+                                <Check className="w-3.5 h-3.5 text-[#2C665D]" />
                               ) : (
                                 <Copy className="w-3.5 h-3.5" />
                               )}
@@ -486,7 +496,7 @@ export const SectionShowcase: React.FC<SectionShowcaseProps> = ({
                                 href={contact.link}
                                 target="_blank"
                                 rel="noreferrer"
-                                className="p-1.5 rounded bg-slate-800/80 hover:bg-emerald-500/20 text-slate-300 hover:text-emerald-400 border border-slate-700 hover:border-emerald-500/40 transition-colors"
+                                className="p-1.5 rounded-lg bg-[#0A1312] hover:bg-[#25524B] text-[#E6F4F1] hover:text-[#2C665D] border border-[#25524B] hover:border-[#2C665D] transition-colors"
                               >
                                 <ExternalLink className="w-3.5 h-3.5" />
                               </a>
@@ -496,16 +506,16 @@ export const SectionShowcase: React.FC<SectionShowcaseProps> = ({
                       );
                     })}
 
-                    <div className="p-3 rounded bg-slate-900/60 border border-slate-800 text-xs font-sans text-slate-400 space-y-1">
+                    <div className="p-3 rounded-xl bg-[#132B27] border border-[#25524B] text-xs font-sans text-[#E6F4F1]/70 space-y-1">
                       <p>
                         ⚡ Direct Reach:{' '}
-                        <strong className="text-emerald-400">
+                        <strong className="text-[#2C665D]">
                           +92 328 0709704
                         </strong>
                       </p>
                       <p>
                         ✉️ Email:{' '}
-                        <strong className="text-cyan-400">
+                        <strong className="text-[#2C665D]">
                           khokharyasir749@gmail.com
                         </strong>
                       </p>
@@ -513,17 +523,17 @@ export const SectionShowcase: React.FC<SectionShowcaseProps> = ({
                   </div>
 
                   {/* Right: Message Dispatch Form */}
-                  <div className="lg:col-span-7 bg-[#0f1320] border border-emerald-500/30 p-5 rounded-sm">
+                  <div className="lg:col-span-7 bg-[#132B27] border border-[#25524B] p-5 rounded-2xl">
                     <form onSubmit={handleSendMessage} className="space-y-3.5">
-                      <div className="flex items-center justify-between pb-2 border-b border-slate-800">
-                        <span className="font-cyber font-bold text-xs text-slate-100 tracking-wide">
+                      <div className="flex items-center justify-between pb-2 border-b border-[#25524B]">
+                        <span className="font-bold text-xs text-[#E6F4F1] tracking-wide">
                           SEND ENCRYPTED MESSAGE
                         </span>
-                        <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                        <span className="w-2 h-2 rounded-full bg-[#2C665D] animate-pulse" />
                       </div>
 
                       <div className="space-y-1">
-                        <label className="text-[11px] font-code text-slate-400">
+                        <label className="text-[11px] font-mono text-[#E6F4F1]">
                           NAME / CALLSIGN
                         </label>
                         <input
@@ -534,12 +544,12 @@ export const SectionShowcase: React.FC<SectionShowcaseProps> = ({
                           onChange={(e) =>
                             setFormState({ ...formState, name: e.target.value })
                           }
-                          className="w-full px-3 py-2 rounded-sm bg-slate-950/80 border border-slate-700 text-xs font-code text-slate-200 focus:outline-none focus:border-emerald-400 transition-colors"
+                          className="w-full px-3 py-2 rounded-xl bg-[#0A1312] border border-[#25524B] text-xs font-mono text-[#E6F4F1] placeholder:text-[#E6F4F1]/30 focus:outline-none focus:border-[#2C665D] transition-colors"
                         />
                       </div>
 
                       <div className="space-y-1">
-                        <label className="text-[11px] font-code text-slate-400">
+                        <label className="text-[11px] font-mono text-[#E6F4F1]">
                           EMAIL ADDRESS
                         </label>
                         <input
@@ -550,12 +560,12 @@ export const SectionShowcase: React.FC<SectionShowcaseProps> = ({
                           onChange={(e) =>
                             setFormState({ ...formState, email: e.target.value })
                           }
-                          className="w-full px-3 py-2 rounded-sm bg-slate-950/80 border border-slate-700 text-xs font-code text-slate-200 focus:outline-none focus:border-emerald-400 transition-colors"
+                          className="w-full px-3 py-2 rounded-xl bg-[#0A1312] border border-[#25524B] text-xs font-mono text-[#E6F4F1] placeholder:text-[#E6F4F1]/30 focus:outline-none focus:border-[#2C665D] transition-colors"
                         />
                       </div>
 
                       <div className="space-y-1">
-                        <label className="text-[11px] font-code text-slate-400">
+                        <label className="text-[11px] font-mono text-[#E6F4F1]">
                           MESSAGE CONTENT
                         </label>
                         <textarea
@@ -566,22 +576,22 @@ export const SectionShowcase: React.FC<SectionShowcaseProps> = ({
                           onChange={(e) =>
                             setFormState({ ...formState, message: e.target.value })
                           }
-                          className="w-full px-3 py-2 rounded-sm bg-slate-950/80 border border-slate-700 text-xs font-sans text-slate-200 focus:outline-none focus:border-emerald-400 transition-colors resize-none"
+                          className="w-full px-3 py-2 rounded-xl bg-[#0A1312] border border-[#25524B] text-xs font-sans text-[#E6F4F1] placeholder:text-[#E6F4F1]/30 focus:outline-none focus:border-[#2C665D] transition-colors resize-none"
                         />
                       </div>
 
                       <button
                         type="submit"
                         disabled={sentMessage}
-                        className={`w-full py-2.5 px-4 rounded-sm font-cyber font-bold tracking-wider text-xs flex items-center justify-center gap-2 transition-all cursor-pointer ${
+                        className={`w-full py-2.5 px-4 rounded-xl font-mono font-bold tracking-wider text-xs flex items-center justify-center gap-2 transition-all cursor-pointer ${
                           sentMessage
-                            ? 'bg-emerald-500 text-slate-950'
-                            : 'bg-emerald-500 hover:bg-emerald-400 text-slate-950 shadow-lg shadow-emerald-500/20 active:scale-98'
+                            ? 'bg-[#25524B] text-[#E6F4F1] border border-[#2C665D]'
+                            : 'bg-[#2C665D] hover:bg-[#357B70] text-[#E6F4F1] shadow-md active:scale-98'
                         }`}
                       >
                         {sentMessage ? (
                           <>
-                            <Check className="w-4 h-4" />
+                            <Check className="w-4 h-4 text-[#2C665D]" />
                             <span>TRANSMISSION DISPATCHED // THANK YOU</span>
                           </>
                         ) : (

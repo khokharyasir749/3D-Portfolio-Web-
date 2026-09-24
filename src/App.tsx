@@ -10,14 +10,15 @@ import { WorkShowcase } from './components/sections/WorkShowcase';
 import { TechStackSection } from './components/sections/TechStackSection';
 import { ContactSection } from './components/sections/ContactSection';
 import { OverlayHUD } from './components/ui/OverlayHUD';
-import { LoadingScreen } from './components/ui/LoadingScreen';
 import { DevTerminal } from './components/ui/DevTerminal';
 import { Footer } from './components/ui/Footer';
 import { ErrorBoundary } from './components/ui/ErrorBoundary';
 import { audioManager } from './utils/audioSystem';
 
 export const App: React.FC = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+  void isLoading;
+  void setIsLoading;
   const [isMuted, setIsMuted] = useState(true);
   const [activeSectionId, setActiveSectionId] = useState<string>('hero');
   const [scrollProgress, setScrollProgress] = useState<number>(0);
@@ -29,13 +30,6 @@ export const App: React.FC = () => {
     return 'dark';
   });
 
-  // Safety timer to guarantee loading screen always dismisses
-  useEffect(() => {
-    const safetyTimer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2500);
-    return () => clearTimeout(safetyTimer);
-  }, []);
 
   useEffect(() => {
     const root = document.documentElement;
@@ -163,13 +157,7 @@ export const App: React.FC = () => {
 
   return (
     <ErrorBoundary name="RootApplication">
-      <div className={`w-full min-h-screen relative selection:bg-purple-500 selection:text-white transition-colors duration-500 ${theme === 'light' ? 'bg-[#f8fafc] text-zinc-900' : 'bg-[#080808] text-slate-100'}`}>
-        {/* Initialization Loading Splash Screen */}
-        {isLoading && (
-          <ErrorBoundary name="LoadingScreen" fallback={null}>
-            <LoadingScreen onComplete={() => setIsLoading(false)} />
-          </ErrorBoundary>
-        )}
+      <div className={`w-full min-h-screen relative selection:bg-[#2C665D] selection:text-[#E6F4F1] transition-colors duration-500 ${theme === 'light' ? 'bg-[#F6F9F8] text-[#0F2420]' : 'bg-[#0A1312] text-[#E6F4F1]'}`}>
 
         {/* Single Fixed Full-Screen Background 3D Scene Canvas (Z-Index 0) */}
         <ErrorBoundary name="GlobalSceneCanvas" fallback={null}>

@@ -68,8 +68,8 @@ const EXPERIENCES: ExperienceItem[] = [
     ],
     tags: ['React', 'Node.js', 'Express', 'MongoDB', 'Tailwind CSS', 'REST API', 'Vite', 'Git', 'JWT'],
     icon: 'code',
-    color: 'border-cyan-500/40 text-cyan-300 bg-cyan-500/10',
-    accentColor: 'border-cyan-400',
+    color: 'border-[#2C665D]/40 text-[#E6F4F1] bg-[#25524B]/50',
+    accentColor: 'border-[#2C665D]',
   },
   {
     year: '2025',
@@ -106,8 +106,8 @@ const EXPERIENCES: ExperienceItem[] = [
     ],
     tags: ['Jetpack Compose', 'Android', 'Kotlin', 'MVVM', 'Coroutines', 'StateFlow', 'Room DB', 'Retrofit'],
     icon: 'mobile',
-    color: 'border-purple-500/40 text-purple-300 bg-purple-500/10',
-    accentColor: 'border-purple-400',
+    color: 'border-[#2C665D]/40 text-[#E6F4F1] bg-[#25524B]/50',
+    accentColor: 'border-[#2C665D]',
   },
   {
     year: 'NOW',
@@ -144,8 +144,8 @@ const EXPERIENCES: ExperienceItem[] = [
     ],
     tags: ['Three.js', 'React Three Fiber', 'Next.js', 'TypeScript', 'Tailwind CSS', 'WebGL', 'Framer Motion', 'Lenis'],
     icon: 'box',
-    color: 'border-emerald-500/40 text-emerald-300 bg-emerald-500/10',
-    accentColor: 'border-emerald-400',
+    color: 'border-[#2C665D]/40 text-[#E6F4F1] bg-[#25524B]/50',
+    accentColor: 'border-[#2C665D]',
     current: true,
   },
 ];
@@ -175,32 +175,32 @@ export const ExperienceSection: React.FC = () => {
   const renderIcon = (type: 'code' | 'mobile' | 'box', className = 'w-4 h-4') => {
     switch (type) {
       case 'code':
-        return <Code2 className={`${className} text-cyan-400`} />;
+        return <Code2 className={`${className} text-[#2C665D]`} />;
       case 'mobile':
-        return <Smartphone className={`${className} text-purple-400`} />;
+        return <Smartphone className={`${className} text-[#2C665D]`} />;
       case 'box':
-        return <Box className={`${className} text-emerald-400`} />;
+        return <Box className={`${className} text-[#2C665D]`} />;
     }
   };
 
   return (
     <div className="w-full space-y-6 select-none pointer-events-auto">
       {/* Top Header */}
-      <div className="pb-4 border-b border-zinc-200 dark:border-white/10 flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+      <div className="pb-4 border-b border-zinc-200/80 dark:border-[#25524B] flex flex-col sm:flex-row sm:items-end justify-between gap-3">
         <div>
-          <span className="text-xs sm:text-sm uppercase tracking-widest text-zinc-400 font-bold mb-2 block">
+          <span className="text-xs sm:text-sm uppercase tracking-widest text-[#1D5A50] dark:text-[#2C665D] font-bold mb-2 block">
             CAREER & IMPACT
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-zinc-900 dark:text-white tracking-tight uppercase">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F2420] dark:text-[#E6F4F1] tracking-tight uppercase">
             EXPERIENCE & CAREER
           </h2>
-          <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-300 font-sans mt-2 leading-relaxed">
+          <p className="text-base sm:text-lg text-[#2C423E] dark:text-[#E6F4F1]/80 font-sans mt-2 leading-relaxed">
             A chronological timeline of engineering scalable web applications, mobile architectures, and 3D spatial experiences.
           </p>
         </div>
 
-        <div className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-xs sm:text-sm font-mono text-emerald-600 dark:text-emerald-400 shrink-0 font-medium">
-          <Sparkles className="w-4 h-4" />
+        <div className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white dark:bg-[#132B27] border border-zinc-200 dark:border-[#25524B] text-xs sm:text-sm font-mono text-zinc-800 dark:text-[#E6F4F1] shrink-0 font-medium shadow-sm">
+          <Sparkles className="w-4 h-4 text-[#1D5A50] dark:text-[#2C665D]" />
           <span>CONTINUOUS GROWTH</span>
         </div>
       </div>
@@ -212,25 +212,21 @@ export const ExperienceSection: React.FC = () => {
             key={idx}
             whileHover={{ y: -4 }}
             onClick={() => setSelectedExperience(exp)}
-            className={`p-6 rounded-2xl bg-white/90 dark:bg-zinc-950/80 border transition-all duration-300 flex flex-col justify-between space-y-4 shadow-xl shadow-zinc-200/50 dark:shadow-xl cursor-pointer group hover:border-purple-400/50 hover:shadow-purple-500/10 ${
-              exp.current
-                ? 'border-emerald-500/40 shadow-emerald-500/10 hover:border-emerald-400'
-                : 'border-zinc-200 dark:border-white/10'
-            }`}
+            className="p-6 rounded-2xl bg-white dark:bg-[#132B27]/90 border border-zinc-200/90 dark:border-[#25524B] transition-all duration-300 flex flex-col justify-between space-y-4 shadow-sm cursor-pointer group hover:border-[#1D5A50] dark:hover:border-[#C58A55]"
           >
             <div className="space-y-3.5">
               {/* Top Year Badge & Role Icon */}
               <div className="flex items-center justify-between">
                 <span
-                  className={`font-mono font-bold text-xs sm:text-sm px-3 py-1 rounded-full border flex items-center gap-1.5 ${exp.color}`}
+                  className={`font-mono font-bold text-xs sm:text-sm px-3 py-1 rounded-full border flex items-center gap-1.5 bg-zinc-100 dark:bg-[#25524B]/50 border-zinc-200 dark:border-[#2C665D]/40 text-[#0F2420] dark:text-[#E6F4F1]`}
                 >
-                  <Calendar className="w-3.5 h-3.5" />
+                  <Calendar className="w-3.5 h-3.5 text-[#1D5A50] dark:text-[#2C665D]" />
                   <span>{exp.year}</span>
                 </span>
 
                 {exp.current && (
-                  <span className="text-xs font-mono px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 border border-emerald-500/40 flex items-center gap-1.5 font-medium">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  <span className="text-xs font-mono px-2.5 py-0.5 rounded-full bg-zinc-100 dark:bg-[#1A3D37]/80 text-[#0F2420] dark:text-[#E6F4F1] border border-zinc-200 dark:border-[#25524B] flex items-center gap-1.5 font-medium">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#1D5A50] dark:bg-[#C58A55] shrink-0" />
                     <span>CURRENT FOCUS</span>
                   </span>
                 )}
@@ -240,32 +236,32 @@ export const ExperienceSection: React.FC = () => {
               <div>
                 <div className="flex items-center gap-2">
                   {renderIcon(exp.icon)}
-                  <h3 className="font-bold text-lg sm:text-xl text-zinc-900 dark:text-white tracking-wide group-hover:text-purple-600 dark:group-hover:text-purple-300 transition-colors">
+                  <h3 className="font-bold text-lg sm:text-xl text-[#0F2420] dark:text-[#E6F4F1] tracking-wide group-hover:text-[#1D5A50] dark:group-hover:text-[#C58A55] transition-colors">
                     {exp.role}
                   </h3>
                 </div>
-                <p className="font-mono text-xs sm:text-sm text-zinc-600 dark:text-slate-400 mt-1">
+                <p className="font-mono text-xs sm:text-sm text-[#1D5A50] dark:text-[#C58A55] mt-1 font-semibold">
                   {exp.subtitle}
                 </p>
               </div>
 
               {/* Summary Description */}
-              <p className="text-sm sm:text-base text-zinc-600 dark:text-slate-300 font-sans leading-relaxed">
+              <p className="text-sm sm:text-base text-[#2C423E] dark:text-[#9FB8B2] font-sans leading-relaxed">
                 {exp.summary}
               </p>
 
               {/* Key Highlights */}
-              <div className="space-y-1.5 pt-2 border-t border-zinc-200 dark:border-white/5">
-                <h4 className="text-xs font-mono text-zinc-500 dark:text-slate-400 uppercase tracking-wider font-semibold">
+              <div className="space-y-1.5 pt-2 border-t border-zinc-200 dark:border-[#25524B]">
+                <h4 className="text-xs font-mono text-[#1D5A50] dark:text-[#2C665D] uppercase tracking-wider font-semibold">
                   Key Accomplishments:
                 </h4>
                 <ul className="space-y-1">
                   {exp.highlights.slice(0, 3).map((item, hIdx) => (
                     <li
                       key={hIdx}
-                      className="flex items-start gap-1.5 text-xs sm:text-sm text-zinc-700 dark:text-slate-300 font-sans"
+                      className="flex items-start gap-1.5 text-xs sm:text-sm text-[#2C423E] dark:text-[#E6F4F1]/80 font-sans"
                     >
-                      <CheckCircle2 className="w-4 h-4 text-cyan-600 dark:text-cyan-400 shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-4 h-4 text-[#1D5A50] dark:text-[#2C665D] shrink-0 mt-0.5" />
                       <span className="line-clamp-1">{item}</span>
                     </li>
                   ))}
@@ -274,27 +270,27 @@ export const ExperienceSection: React.FC = () => {
             </div>
 
             {/* Bottom Tag Pills & Interactive Affordance Badge */}
-            <div className="space-y-3 pt-3 border-t border-zinc-200 dark:border-white/5">
+            <div className="space-y-3 pt-3 border-t border-zinc-200 dark:border-[#25524B]">
               <div className="flex flex-wrap gap-1.5">
                 {exp.tags.slice(0, 4).map((tag, tIdx) => (
                   <span
                     key={tIdx}
-                    className="text-xs font-mono px-2.5 py-1 rounded-md bg-zinc-100 text-zinc-700 border border-zinc-200 dark:bg-white/5 dark:text-slate-300 dark:border-white/5"
+                    className="text-xs font-mono px-2.5 py-1 rounded-md bg-zinc-100 dark:bg-[#25524B]/50 text-zinc-800 dark:text-[#E6F4F1] border border-zinc-200 dark:border-[#2C665D]/30"
                   >
                     {tag}
                   </span>
                 ))}
                 {exp.tags.length > 4 && (
-                  <span className="text-[10px] font-mono px-1.5 py-0.5 text-zinc-400 dark:text-slate-500">
+                  <span className="text-[10px] font-mono px-1.5 py-0.5 text-zinc-500 dark:text-[#E6F4F1]/50">
                     +{exp.tags.length - 4}
                   </span>
                 )}
               </div>
 
               {/* Click to View Dossier CTA Badge */}
-              <div className="flex items-center justify-between text-[11px] font-mono text-purple-600 dark:text-purple-400 group-hover:text-purple-700 dark:group-hover:text-purple-300 pt-1">
+              <div className="flex items-center justify-between text-[11px] font-mono text-zinc-600 dark:text-[#E6F4F1]/70 group-hover:text-zinc-950 dark:group-hover:text-[#E6F4F1] pt-1">
                 <span>VIEW FULL DOSSIER</span>
-                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1.5 transition-transform duration-200" />
+                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1.5 transition-transform duration-200 text-[#1D5A50] dark:text-[#2C665D]" />
               </div>
             </div>
           </motion.div>
@@ -319,12 +315,12 @@ export const ExperienceSection: React.FC = () => {
               exit={{ opacity: 0, scale: 0.94, y: 15 }}
               transition={{ duration: 0.25, ease: 'easeOut' }}
               onClick={(e) => e.stopPropagation()}
-              className="max-w-2xl w-full max-h-[85vh] overflow-y-auto rounded-3xl p-6 sm:p-8 bg-white/95 dark:bg-zinc-950/95 border border-zinc-200 dark:border-purple-500/30 shadow-2xl relative text-zinc-900 dark:text-white space-y-6 backdrop-blur-xl"
+              className="max-w-2xl w-full max-h-[85vh] overflow-y-auto rounded-3xl p-6 sm:p-8 bg-white dark:bg-[#132B27] border border-zinc-200 dark:border-[#25524B] shadow-2xl relative text-zinc-900 dark:text-[#E6F4F1] space-y-6 backdrop-blur-xl"
             >
               {/* Floating Close Button */}
               <button
                 onClick={() => setSelectedExperience(null)}
-                className="absolute top-5 right-5 p-2 rounded-full bg-zinc-100 hover:bg-zinc-200 text-zinc-600 dark:bg-white/5 dark:hover:bg-white/10 dark:text-zinc-400 dark:hover:text-white border border-zinc-200 dark:border-white/10 transition-colors cursor-pointer"
+                className="absolute top-5 right-5 p-2 rounded-full bg-zinc-100 hover:bg-zinc-200 text-zinc-700 dark:bg-[#0A1312] dark:hover:bg-[#25524B] dark:text-[#E6F4F1] border border-zinc-200 dark:border-[#25524B] transition-colors cursor-pointer"
                 title="Close Dossier"
                 aria-label="Close"
               >
@@ -333,45 +329,45 @@ export const ExperienceSection: React.FC = () => {
 
               {/* Top Studio Dossier Chip & Header */}
               <div className="space-y-2 pr-8">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/30 text-xs font-mono text-purple-600 dark:text-purple-300 tracking-widest uppercase">
-                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-100 dark:bg-[#25524B]/50 border border-zinc-200 dark:border-[#2C665D]/30 text-xs font-mono text-[#1D5A50] dark:text-[#E6F4F1] tracking-widest uppercase">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#1D5A50] dark:bg-[#2C665D] animate-pulse" />
                   <span>EXPERIENCE DOSSIER</span>
                 </div>
 
                 <div className="flex flex-wrap items-center gap-3 pt-1">
-                  <h3 className="text-xl sm:text-2xl font-black text-zinc-900 dark:text-white tracking-tight">
+                  <h3 className="text-xl sm:text-2xl font-black text-[#0F2420] dark:text-[#E6F4F1] tracking-tight">
                     {selectedExperience.role}
                   </h3>
                   <span
-                    className={`font-mono text-xs px-2.5 py-0.5 rounded-full border ${selectedExperience.color}`}
+                    className={`font-mono text-xs px-2.5 py-0.5 rounded-full border bg-zinc-100 dark:bg-[#25524B]/50 border-zinc-200 dark:border-[#2C665D]/40 text-[#0F2420] dark:text-[#E6F4F1]`}
                   >
                     {selectedExperience.year}
                   </span>
                 </div>
 
-                <p className="text-xs sm:text-sm font-mono text-purple-600 dark:text-purple-300">
+                <p className="text-xs sm:text-sm font-mono text-[#1D5A50] dark:text-[#2C665D]">
                   {selectedExperience.subtitle}
                 </p>
-                <p className="text-xs text-zinc-600 dark:text-zinc-400 font-sans">
+                <p className="text-xs text-zinc-600 dark:text-[#E6F4F1]/70 font-sans">
                   🏢 {selectedExperience.company}
                 </p>
               </div>
 
               {/* Comprehensive Overview */}
-              <div className="space-y-2 p-4 rounded-2xl bg-zinc-50 dark:bg-white/[0.03] border border-zinc-200 dark:border-white/5">
-                <h4 className="text-xs font-mono text-zinc-600 dark:text-zinc-400 uppercase tracking-wider flex items-center gap-1.5">
-                  <Layers className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400" />
+              <div className="space-y-2 p-4 rounded-2xl bg-zinc-50 dark:bg-[#0A1312]/70 border border-zinc-200 dark:border-[#25524B]">
+                <h4 className="text-xs font-mono text-[#1D5A50] dark:text-[#2C665D] uppercase tracking-wider flex items-center gap-1.5 font-bold">
+                  <Layers className="w-3.5 h-3.5 text-[#1D5A50] dark:text-[#2C665D]" />
                   <span>Executive Overview</span>
                 </h4>
-                <p className="text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed font-sans">
+                <p className="text-xs sm:text-sm text-zinc-700 dark:text-[#E6F4F1]/80 leading-relaxed font-sans">
                   {selectedExperience.detailedOverview}
                 </p>
               </div>
 
               {/* Key Technical Deliverables Grid */}
               <div className="space-y-3">
-                <h4 className="text-xs font-mono text-zinc-600 dark:text-zinc-400 uppercase tracking-wider flex items-center gap-1.5">
-                  <Zap className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400" />
+                <h4 className="text-xs font-mono text-zinc-800 dark:text-[#2C665D] uppercase tracking-wider font-semibold flex items-center gap-1.5">
+                  <Zap className="w-3.5 h-3.5 text-[#1D5A50] dark:text-[#2C665D]" />
                   <span>Key Architectural Deliverables & Impact</span>
                 </h4>
 
@@ -379,13 +375,13 @@ export const ExperienceSection: React.FC = () => {
                   {selectedExperience.deliverables.map((item, dIdx) => (
                     <div
                       key={dIdx}
-                      className="p-3.5 rounded-xl bg-zinc-50 dark:bg-zinc-900/60 border border-zinc-200 dark:border-white/5 space-y-1 hover:border-purple-500/30 transition-colors"
+                      className="p-3.5 rounded-xl bg-zinc-50 dark:bg-[#0A1312]/70 border border-zinc-200 dark:border-[#25524B] space-y-1 hover:border-[#1D5A50] dark:hover:border-[#2C665D] transition-colors"
                     >
-                      <div className="flex items-center gap-2 text-xs font-semibold text-zinc-900 dark:text-white">
-                        <CheckCircle2 className="w-4 h-4 text-cyan-600 dark:text-cyan-400 shrink-0" />
+                      <div className="flex items-center gap-2 text-xs font-semibold text-[#0F2420] dark:text-[#E6F4F1]">
+                        <CheckCircle2 className="w-4 h-4 text-[#1D5A50] dark:text-[#2C665D] shrink-0" />
                         <span>{item.title}</span>
                       </div>
-                      <p className="text-xs text-zinc-600 dark:text-zinc-400 font-sans pl-6 leading-relaxed">
+                      <p className="text-xs text-zinc-600 dark:text-[#E6F4F1]/70 font-sans pl-6 leading-relaxed">
                         {item.description}
                       </p>
                     </div>
@@ -394,15 +390,15 @@ export const ExperienceSection: React.FC = () => {
               </div>
 
               {/* Core Technologies Badges */}
-              <div className="space-y-2.5 pt-3 border-t border-zinc-200 dark:border-white/5">
-                <h4 className="text-xs font-mono text-zinc-600 dark:text-zinc-400 uppercase tracking-wider">
+              <div className="space-y-2.5 pt-3 border-t border-zinc-200 dark:border-[#25524B]">
+                <h4 className="text-xs font-mono text-zinc-800 dark:text-[#2C665D] uppercase tracking-wider font-semibold">
                   Core Technologies & Ecosystem:
                 </h4>
                 <div className="flex flex-wrap gap-1.5">
                   {selectedExperience.tags.map((tag, tIdx) => (
                     <span
                       key={tIdx}
-                      className="text-xs font-mono px-3 py-1 rounded-lg bg-purple-500/10 text-purple-700 dark:text-purple-200 border border-purple-500/20"
+                      className="text-xs font-mono px-3 py-1 rounded-lg bg-zinc-100 dark:bg-[#25524B]/50 text-zinc-800 dark:text-[#E6F4F1] border border-zinc-200 dark:border-[#2C665D]/30"
                     >
                       {tag}
                     </span>
@@ -411,11 +407,11 @@ export const ExperienceSection: React.FC = () => {
               </div>
 
               {/* Bottom Footer Close Action */}
-              <div className="pt-4 border-t border-zinc-200 dark:border-white/5 flex items-center justify-between text-xs font-mono text-zinc-500">
+              <div className="pt-4 border-t border-zinc-200 dark:border-[#25524B] flex items-center justify-between text-xs font-mono text-zinc-500 dark:text-[#E6F4F1]/60">
                 <span>ESC OR CLICK OUTSIDE TO CLOSE</span>
                 <button
                   onClick={() => setSelectedExperience(null)}
-                  className="px-5 py-2.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-white dark:bg-white dark:hover:bg-zinc-200 dark:text-zinc-950 font-bold tracking-wider uppercase transition-colors cursor-pointer shadow-md text-xs font-mono"
+                  className="px-5 py-2.5 rounded-xl bg-[#1D5A50] hover:bg-[#134038] text-white dark:bg-[#2C665D] dark:hover:bg-[#357B70] dark:text-[#E6F4F1] font-bold tracking-wider uppercase transition-colors cursor-pointer shadow-md text-xs font-mono"
                 >
                   DISMISS
                 </button>

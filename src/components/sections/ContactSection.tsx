@@ -50,7 +50,7 @@ export const ContactSection: React.FC = () => {
           particleCount: 100,
           spread: 80,
           origin: { y: 0.65 },
-          colors: ['#a855f7', '#06b6d4', '#ec4899', '#3b82f6', '#ffffff'],
+          colors: ['#2C665D', '#E6F4F1', '#25524B', '#357B70', '#132B27'],
         });
       } catch {
         // safe fallback
@@ -74,60 +74,60 @@ export const ContactSection: React.FC = () => {
 
   return (
     <div className="w-full h-full flex flex-col justify-between py-6 sm:py-8 select-none pointer-events-auto relative">
-      {/* 1. Ambient Background Glowing Spheres */}
-      <div className="absolute -left-28 top-1/4 w-80 sm:w-96 h-80 sm:h-96 rounded-full bg-purple-600/10 blur-[130px] pointer-events-none -z-10" />
-      <div className="absolute -right-28 bottom-1/4 w-80 sm:w-96 h-80 sm:h-96 rounded-full bg-cyan-600/10 blur-[130px] pointer-events-none -z-10" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] sm:w-[900px] h-[400px] bg-purple-950/15 blur-[160px] pointer-events-none -z-10" />
+      {/* 1. Ambient Background Subtle Tonal Spheres */}
+      <div className="absolute -left-28 top-1/4 w-80 sm:w-96 h-80 sm:h-96 rounded-full bg-[#2C665D]/10 blur-[130px] pointer-events-none -z-10" />
+      <div className="absolute -right-28 bottom-1/4 w-80 sm:w-96 h-80 sm:h-96 rounded-full bg-[#2C665D]/10 blur-[130px] pointer-events-none -z-10" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] sm:w-[900px] h-[400px] bg-[#132B27]/50 blur-[160px] pointer-events-none -z-10" />
 
       {/* 2. High-Tech Outer Side Rail Accents & HUD Markers (Desktop View) */}
       {/* Left Outer Tech Rail */}
       <div className="hidden xl:flex absolute -left-6 top-12 bottom-16 flex-col justify-between items-center pointer-events-none select-none z-0">
-        <div className="w-[1px] h-full bg-gradient-to-b from-transparent via-purple-500/25 to-transparent relative flex flex-col justify-between items-center">
+        <div className="w-[1px] h-full bg-gradient-to-b from-transparent via-[#25524B] to-transparent relative flex flex-col justify-between items-center">
           {/* Top HUD Label */}
-          <div className="flex items-center gap-2 -rotate-90 origin-center text-[9px] font-mono text-zinc-500 tracking-[0.25em] whitespace-nowrap -mt-8">
-            <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
+          <div className="flex items-center gap-2 -rotate-90 origin-center text-[9px] font-mono text-[#E6F4F1]/50 tracking-[0.25em] whitespace-nowrap -mt-8">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#2C665D] animate-pulse" />
             <span>SYS.STATUS // NOMINAL</span>
           </div>
 
           {/* Mid Technical Tick Marks */}
           <div className="flex flex-col gap-2.5 py-6 opacity-40">
-            <div className="w-3 h-[1px] bg-purple-400" />
-            <div className="w-1.5 h-[1px] bg-purple-400" />
-            <div className="w-4 h-[1px] bg-cyan-400" />
-            <div className="w-1.5 h-[1px] bg-purple-400" />
-            <div className="w-3 h-[1px] bg-purple-400" />
+            <div className="w-3 h-[1px] bg-[#2C665D]" />
+            <div className="w-1.5 h-[1px] bg-[#2C665D]" />
+            <div className="w-4 h-[1px] bg-[#E6F4F1]" />
+            <div className="w-1.5 h-[1px] bg-[#2C665D]" />
+            <div className="w-3 h-[1px] bg-[#2C665D]" />
           </div>
 
           {/* Bottom Coordinate Marker */}
-          <div className="flex items-center gap-2 -rotate-90 origin-center text-[9px] font-mono text-zinc-500 tracking-[0.25em] whitespace-nowrap -mb-8">
+          <div className="flex items-center gap-2 -rotate-90 origin-center text-[9px] font-mono text-[#E6F4F1]/50 tracking-[0.25em] whitespace-nowrap -mb-8">
             <span>LOC // 31.5204° N, 74.3587° E</span>
-            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400/80" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#2C665D]" />
           </div>
         </div>
       </div>
 
       {/* Right Outer Tech Rail */}
       <div className="hidden xl:flex absolute -right-6 top-12 bottom-16 flex-col justify-between items-center pointer-events-none select-none z-0">
-        <div className="w-[1px] h-full bg-gradient-to-b from-transparent via-cyan-500/25 to-transparent relative flex flex-col justify-between items-center">
+        <div className="w-[1px] h-full bg-gradient-to-b from-transparent via-[#25524B] to-transparent relative flex flex-col justify-between items-center">
           {/* Top HUD Label */}
-          <div className="flex items-center gap-2 rotate-90 origin-center text-[9px] font-mono text-zinc-500 tracking-[0.25em] whitespace-nowrap -mt-8">
-            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+          <div className="flex items-center gap-2 rotate-90 origin-center text-[9px] font-mono text-[#E6F4F1]/50 tracking-[0.25em] whitespace-nowrap -mt-8">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#2C665D] animate-pulse" />
             <span>SECURE_NODE // v2.6</span>
           </div>
 
           {/* Mid Technical Tick Marks */}
           <div className="flex flex-col gap-2.5 py-6 opacity-40">
-            <div className="w-3 h-[1px] bg-cyan-400" />
-            <div className="w-1.5 h-[1px] bg-cyan-400" />
-            <div className="w-4 h-[1px] bg-purple-400" />
-            <div className="w-1.5 h-[1px] bg-cyan-400" />
-            <div className="w-3 h-[1px] bg-cyan-400" />
+            <div className="w-3 h-[1px] bg-[#2C665D]" />
+            <div className="w-1.5 h-[1px] bg-[#2C665D]" />
+            <div className="w-4 h-[1px] bg-[#E6F4F1]" />
+            <div className="w-1.5 h-[1px] bg-[#2C665D]" />
+            <div className="w-3 h-[1px] bg-[#2C665D]" />
           </div>
 
           {/* Bottom Ping Marker */}
-          <div className="flex items-center gap-2 rotate-90 origin-center text-[9px] font-mono text-zinc-500 tracking-[0.25em] whitespace-nowrap -mb-8">
+          <div className="flex items-center gap-2 rotate-90 origin-center text-[9px] font-mono text-[#E6F4F1]/50 tracking-[0.25em] whitespace-nowrap -mb-8">
             <span>SSL // ENCRYPTED_PIPELINE</span>
-            <span className="w-1.5 h-1.5 rounded-full bg-purple-400/80" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#2C665D]" />
           </div>
         </div>
       </div>
@@ -138,25 +138,25 @@ export const ContactSection: React.FC = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-5 border-b border-zinc-200 dark:border-white/10 mb-6 relative z-10"
+        className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-5 border-b border-zinc-200/80 dark:border-[#25524B] mb-6 relative z-10"
       >
         <div>
-          <span className="text-xs sm:text-sm uppercase tracking-widest text-zinc-400 font-bold mb-3 block">
+          <span className="text-xs sm:text-sm uppercase tracking-widest text-[#1D5A50] dark:text-[#2C665D] font-bold mb-3 block">
             GET IN TOUCH
           </span>
 
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-zinc-900 dark:text-white tracking-tight uppercase leading-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F2420] dark:text-[#E6F4F1] tracking-tight uppercase leading-tight">
             LET'S BUILD SOMETHING EXTRAORDINARY
           </h2>
 
-          <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-400 font-sans mt-2 max-w-2xl leading-relaxed">
+          <p className="text-base sm:text-lg text-[#2C423E] dark:text-[#E6F4F1]/80 font-sans mt-2 max-w-2xl leading-relaxed">
             Open for high-impact frontend engineering, creative 3D web experiences, and engineering collaborations worldwide.
           </p>
         </div>
 
         {/* Live Availability Status Pill */}
-        <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-xs sm:text-sm font-mono text-emerald-700 dark:text-emerald-400 shrink-0 shadow-sm shadow-emerald-500/20">
-          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+        <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white dark:bg-[#132B27] border border-zinc-200 dark:border-[#25524B] text-xs sm:text-sm font-mono text-zinc-800 dark:text-[#E6F4F1] shrink-0 shadow-sm font-medium">
+          <span className="w-2 h-2 rounded-full bg-[#1D5A50] dark:bg-[#2C665D] mr-0.5 animate-pulse" />
           <span>OPEN FOR COMMISSIONS</span>
         </div>
       </motion.div>
@@ -172,15 +172,15 @@ export const ContactSection: React.FC = () => {
           className="lg:col-span-5 flex flex-col justify-between space-y-4"
         >
           {/* Profile Glass Card */}
-          <div className="backdrop-blur-md bg-white/90 dark:bg-zinc-950/80 border border-zinc-200 dark:border-white/10 rounded-2xl p-5 sm:p-6 relative overflow-hidden group shadow-xl shadow-zinc-200/50 dark:shadow-xl hover:border-purple-500/30 transition-all duration-300">
+          <div className="backdrop-blur-md bg-white dark:bg-[#132B27] border border-zinc-200/90 dark:border-[#25524B] rounded-2xl p-5 sm:p-6 relative overflow-hidden group shadow-sm hover:border-[#1D5A50] dark:hover:border-[#2C665D] transition-all duration-300">
             {/* Ambient Radial Rim Glow */}
-            <div className="absolute -right-10 -top-10 w-36 h-36 bg-purple-600/15 rounded-full blur-xl pointer-events-none group-hover:bg-purple-600/25 transition-all" />
+            <div className="absolute -right-10 -top-10 w-36 h-36 bg-[#2C665D]/10 rounded-full blur-xl pointer-events-none group-hover:bg-[#2C665D]/20 transition-all" />
 
             <div className="flex items-center gap-4">
-              {/* Neon Holographic Monogram Avatar Badge */}
+              {/* Monogram Avatar Badge */}
               <div className="relative shrink-0">
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500 via-indigo-600 to-cyan-400 p-[1.5px] shadow-lg shadow-purple-500/20">
-                  <div className="w-full h-full bg-zinc-900 dark:bg-[#09090e] rounded-2xl overflow-hidden flex items-center justify-center font-black text-lg text-white tracking-wider">
+                <div className="w-14 h-14 rounded-2xl bg-zinc-100 dark:bg-[#0A1312] border border-zinc-200 dark:border-[#25524B] p-[1.5px] shadow-sm">
+                  <div className="w-full h-full bg-zinc-100 dark:bg-[#0A1312] rounded-2xl overflow-hidden flex items-center justify-center font-black text-lg text-[#0F2420] dark:text-[#E6F4F1] tracking-wider">
                     <img
                       src={profilePic}
                       alt="YK"
@@ -188,35 +188,35 @@ export const ContactSection: React.FC = () => {
                     />
                   </div>
                 </div>
-                <span className="absolute -bottom-1 -right-1 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-white dark:border-[#09090e] animate-pulse" />
+                <span className="absolute -bottom-1 -right-1 w-3.5 h-3.5 rounded-full bg-[#1D5A50] dark:bg-[#2C665D] border-2 border-white dark:border-[#132B27]" />
               </div>
 
               <div className="space-y-0.5 min-w-0">
                 <div className="flex items-center gap-2">
-                  <h3 className="font-bold text-base sm:text-lg text-zinc-900 dark:text-white truncate">
+                  <h3 className="font-bold text-base sm:text-lg text-[#0F2420] dark:text-[#E6F4F1] truncate">
                     {portfolioData.about.name}
                   </h3>
-                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-purple-500/10 text-purple-700 dark:text-purple-300 border border-purple-500/30 shrink-0">
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-zinc-100 dark:bg-[#25524B]/50 text-[#0F2420] dark:text-[#E6F4F1] border border-zinc-200 dark:border-[#2C665D]/30 shrink-0">
                     DEV
                   </span>
                 </div>
-                <p className="text-xs text-purple-600 dark:text-purple-400 font-mono font-medium truncate">
+                <p className="text-xs text-[#1D5A50] dark:text-[#2C665D] font-mono font-semibold truncate">
                   Full-Stack & Creative 3D Engineer
                 </p>
-                <p className="text-[11px] text-zinc-500 dark:text-zinc-400 font-sans flex items-center gap-1 pt-0.5">
-                  <span>📍</span> {portfolioData.about.location} • <span className="text-zinc-400 dark:text-zinc-500">UTC+5</span>
+                <p className="text-[11px] text-zinc-600 dark:text-[#E6F4F1]/70 font-sans flex items-center gap-1 pt-0.5">
+                  <span>📍</span> {portfolioData.about.location} • <span className="text-zinc-500 dark:text-[#E6F4F1]/50">UTC+5</span>
                 </p>
               </div>
             </div>
 
             {/* Live Status Indicator Bar */}
-            <div className="mt-4 pt-3 border-t border-zinc-200 dark:border-white/5 flex items-center justify-between text-xs font-mono text-zinc-500 dark:text-zinc-400">
+            <div className="mt-4 pt-3 border-t border-zinc-200 dark:border-[#25524B] flex items-center justify-between text-xs font-mono text-zinc-600 dark:text-[#E6F4F1]/70">
               <div className="flex items-center gap-2">
-                <Radio className="w-3.5 h-3.5 text-emerald-500 dark:text-emerald-400 animate-pulse" />
-                <span className="text-zinc-700 dark:text-zinc-300 font-medium">ONLINE & AVAILABLE 2026</span>
+                <Radio className="w-3.5 h-3.5 text-[#1D5A50] dark:text-[#2C665D]" />
+                <span className="text-[#0F2420] dark:text-[#E6F4F1] font-medium">ONLINE & AVAILABLE 2026</span>
               </div>
-              <div className="flex items-center gap-1.5 text-purple-600 dark:text-purple-400/80 font-medium">
-                <Activity className="w-3.5 h-3.5 text-purple-500 dark:text-purple-400 animate-pulse" />
+              <div className="flex items-center gap-1.5 text-zinc-500 dark:text-[#E6F4F1]/60 font-medium">
+                <Activity className="w-3.5 h-3.5 text-[#1D5A50] dark:text-[#2C665D]" />
                 <span>100% RESPONSIVE</span>
               </div>
             </div>
@@ -231,20 +231,20 @@ export const ContactSection: React.FC = () => {
                   key={idx}
                   whileHover={{ y: -2 }}
                   transition={{ duration: 0.2 }}
-                  className="p-3.5 rounded-xl bg-white/90 dark:bg-zinc-950/70 border border-zinc-200 dark:border-white/10 hover:border-purple-500/50 hover:bg-zinc-50 dark:hover:bg-zinc-900/80 transition-all duration-300 flex items-center justify-between gap-3 shadow-md shadow-zinc-200/40 dark:shadow-lg hover:shadow-purple-500/10 backdrop-blur-md group/tile"
+                  className="p-3.5 rounded-xl bg-white dark:bg-[#132B27] border border-zinc-200/90 dark:border-[#25524B] hover:border-[#1D5A50] dark:hover:border-[#2C665D] transition-all duration-300 flex items-center justify-between gap-3 shadow-sm backdrop-blur-md group/tile"
                 >
                   <div className="flex items-center gap-3 overflow-hidden min-w-0">
-                    <div className="p-2.5 rounded-xl bg-purple-500/10 text-purple-600 dark:text-purple-400 border border-purple-500/20 group-hover/tile:scale-110 group-hover/tile:text-cyan-600 dark:group-hover/tile:text-cyan-300 group-hover/tile:border-cyan-500/40 transition-all shrink-0">
+                    <div className="p-2.5 rounded-xl bg-zinc-100 dark:bg-[#0A1312] border border-zinc-200 dark:border-[#25524B] text-[#1D5A50] dark:text-[#2C665D] group-hover/tile:scale-105 group-hover/tile:text-zinc-950 dark:group-hover/tile:text-[#E6F4F1] group-hover/tile:border-[#1D5A50] dark:group-hover/tile:border-[#2C665D] transition-all shrink-0">
                       {contact.type === 'email' && <Mail className="w-4 h-4" />}
                       {contact.type === 'whatsapp' && <MessageCircle className="w-4 h-4" />}
                       {contact.type === 'github' && <Github className="w-4 h-4" />}
                       {contact.type === 'linkedin' && <Linkedin className="w-4 h-4" />}
                     </div>
                     <div className="truncate">
-                      <p className="font-semibold text-sm sm:text-base text-zinc-900 dark:text-white group-hover/tile:text-purple-600 dark:group-hover/tile:text-purple-300 transition-colors">
+                      <p className="font-semibold text-sm sm:text-base text-[#0F2420] dark:text-[#E6F4F1] group-hover/tile:text-[#1D5A50] dark:group-hover/tile:text-[#2C665D] transition-colors">
                         {contact.name}
                       </p>
-                      <p className="font-mono text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 truncate">
+                      <p className="font-mono text-xs sm:text-sm text-zinc-600 dark:text-[#E6F4F1]/70 truncate">
                         {contact.handle}
                       </p>
                     </div>
@@ -256,14 +256,14 @@ export const ContactSection: React.FC = () => {
                       onClick={() => handleCopy(contact.handle, contact.name)}
                       className={`px-3 py-1.5 rounded-lg text-xs sm:text-sm font-mono transition-all flex items-center gap-1.5 cursor-pointer ${
                         isCopied
-                          ? 'bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 border border-emerald-500/40 font-bold'
-                          : 'bg-zinc-100 hover:bg-zinc-200 text-zinc-700 dark:bg-white/5 dark:hover:bg-white/10 dark:text-zinc-300 dark:hover:text-white border border-zinc-200 dark:border-white/10'
+                          ? 'bg-[#1D5A50] text-white dark:bg-[#25524B] dark:text-[#E6F4F1] border border-[#1D5A50] dark:border-[#2C665D] font-bold'
+                          : 'bg-zinc-100 hover:bg-zinc-200 text-zinc-800 dark:bg-[#0A1312] dark:hover:bg-[#25524B] dark:text-[#E6F4F1] border border-zinc-200 dark:border-[#25524B] hover:border-[#1D5A50] dark:hover:border-[#2C665D]'
                       }`}
                       title={`Copy ${contact.name}`}
                     >
                       {isCopied ? (
                         <>
-                          <Check className="w-3.5 h-3.5 text-emerald-500 dark:text-emerald-400" />
+                          <Check className="w-3.5 h-3.5 text-white dark:text-[#2C665D]" />
                           <span className="text-xs font-semibold">COPIED</span>
                         </>
                       ) : (
@@ -280,7 +280,7 @@ export const ContactSection: React.FC = () => {
                         href={contact.link}
                         target="_blank"
                         rel="noreferrer"
-                        className="p-2 rounded-lg bg-zinc-100 hover:bg-purple-500/10 text-zinc-600 hover:text-purple-600 dark:bg-white/5 dark:hover:bg-purple-500/20 dark:text-zinc-400 dark:hover:text-purple-300 border border-zinc-200 dark:border-white/10 hover:border-purple-500/40 transition-all group/ext"
+                        className="p-2 rounded-lg bg-zinc-100 hover:bg-zinc-200 text-zinc-700 hover:text-zinc-950 dark:bg-[#0A1312] dark:hover:bg-[#25524B] dark:text-[#E6F4F1]/70 dark:hover:text-[#E6F4F1] border border-zinc-200 dark:border-[#25524B] hover:border-[#1D5A50] dark:hover:border-[#2C665D] transition-all group/ext"
                         title={`Open ${contact.name}`}
                       >
                         <ExternalLink className="w-4 h-4 group-hover/ext:rotate-12 transition-transform" />
@@ -299,26 +299,26 @@ export const ContactSection: React.FC = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="lg:col-span-7 bg-white/90 dark:bg-zinc-950/85 border border-zinc-200 dark:border-white/10 hover:border-purple-500/30 transition-all duration-300 p-6 sm:p-8 rounded-2xl shadow-xl shadow-zinc-200/50 dark:shadow-2xl backdrop-blur-md relative overflow-hidden flex flex-col justify-between"
+          className="lg:col-span-7 bg-white dark:bg-[#132B27] border border-zinc-200/90 dark:border-[#25524B] hover:border-[#1D5A50] dark:hover:border-[#2C665D] transition-all duration-300 p-6 sm:p-8 rounded-2xl shadow-sm backdrop-blur-md relative overflow-hidden flex flex-col justify-between"
         >
           {/* Ambient Background Glow */}
-          <div className="absolute -left-20 -bottom-20 w-56 h-56 bg-cyan-500/10 rounded-full blur-2xl pointer-events-none" />
-          <div className="absolute -right-20 -top-20 w-56 h-56 bg-purple-500/10 rounded-full blur-2xl pointer-events-none" />
+          <div className="absolute -left-20 -bottom-20 w-56 h-56 bg-[#2C665D]/10 rounded-full blur-2xl pointer-events-none" />
+          <div className="absolute -right-20 -top-20 w-56 h-56 bg-[#2C665D]/10 rounded-full blur-2xl pointer-events-none" />
 
           {/* Top Console Terminal Header */}
-          <div className="flex items-center justify-between pb-4 border-b border-zinc-200 dark:border-white/10 mb-5">
+          <div className="flex items-center justify-between pb-4 border-b border-zinc-200 dark:border-[#25524B] mb-5">
             <div className="flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
-              <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
-              <span className="font-mono text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 ml-2 flex items-center gap-1.5 font-semibold">
-                <Terminal className="w-4 h-4 text-purple-600 dark:text-purple-400" />
+              <span className="w-2.5 h-2.5 rounded-full bg-zinc-300 dark:bg-[#2C665D]/40" />
+              <span className="w-2.5 h-2.5 rounded-full bg-zinc-300 dark:bg-[#2C665D]/40" />
+              <span className="w-2.5 h-2.5 rounded-full bg-zinc-300 dark:bg-[#2C665D]/40" />
+              <span className="font-mono text-xs sm:text-sm text-[#1D5A50] dark:text-[#2C665D] ml-2 flex items-center gap-1.5 font-semibold">
+                <Terminal className="w-4 h-4 text-[#1D5A50] dark:text-[#2C665D]" />
                 <span>DISPATCH TERMINAL</span>
               </span>
             </div>
 
-            <div className="flex items-center gap-2 text-xs sm:text-sm font-mono text-emerald-600 dark:text-emerald-400 font-semibold">
-              <ShieldCheck className="w-4 h-4 text-emerald-500 dark:text-emerald-400" />
+            <div className="flex items-center gap-2 text-xs sm:text-sm font-mono text-zinc-600 dark:text-[#E6F4F1]/70 font-semibold">
+              <ShieldCheck className="w-4 h-4 text-[#1D5A50] dark:text-[#2C665D]" />
               <span className="hidden sm:inline">SECURE CHANNEL READY</span>
             </div>
           </div>
@@ -327,9 +327,9 @@ export const ContactSection: React.FC = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* Name Input */}
               <div className="space-y-2">
-                <label className="text-xs sm:text-sm font-mono text-zinc-700 dark:text-zinc-300 uppercase tracking-wider flex items-center justify-between font-semibold">
+                <label className="text-xs sm:text-sm font-mono text-[#0F2420] dark:text-[#E6F4F1] uppercase tracking-wider flex items-center justify-between font-semibold">
                   <span>NAME</span>
-                  <span className="text-zinc-400 dark:text-zinc-500 font-normal">REQUIRED</span>
+                  <span className="text-[#1D5A50] dark:text-[#2C665D] font-normal">REQUIRED</span>
                 </label>
                 <input
                   type="text"
@@ -337,15 +337,15 @@ export const ContactSection: React.FC = () => {
                   placeholder="e.g. John Doe / Studio"
                   value={formState.name}
                   onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl bg-zinc-50 dark:bg-white/[0.03] border border-zinc-200 dark:border-white/10 focus:border-purple-500 focus:bg-white dark:focus:bg-white/[0.06] text-sm sm:text-base text-zinc-900 dark:text-white placeholder:text-zinc-400 dark:placeholder:text-zinc-600 transition-all outline-none font-sans shadow-inner focus:shadow-purple-500/20"
+                  className="w-full px-4 py-3 rounded-xl bg-zinc-50 dark:bg-[#0A1312] border border-zinc-300 dark:border-[#25524B] focus:border-[#1D5A50] dark:focus:border-[#C58A55] text-sm sm:text-base text-zinc-900 dark:text-[#E6F4F1] placeholder:text-zinc-400 dark:placeholder:text-[#E6F4F1]/30 transition-all outline-none font-sans"
                 />
               </div>
 
               {/* Email Input */}
               <div className="space-y-2">
-                <label className="text-xs sm:text-sm font-mono text-zinc-700 dark:text-zinc-300 uppercase tracking-wider flex items-center justify-between font-semibold">
+                <label className="text-xs sm:text-sm font-mono text-[#0F2420] dark:text-[#E6F4F1] uppercase tracking-wider flex items-center justify-between font-semibold">
                   <span>EMAIL</span>
-                  <span className="text-zinc-400 dark:text-zinc-500 font-normal">REQUIRED</span>
+                  <span className="text-[#1D5A50] dark:text-[#C58A55] font-normal">REQUIRED</span>
                 </label>
                 <input
                   type="email"
@@ -353,16 +353,16 @@ export const ContactSection: React.FC = () => {
                   placeholder="name@company.com"
                   value={formState.email}
                   onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl bg-zinc-50 dark:bg-white/[0.03] border border-zinc-200 dark:border-white/10 focus:border-purple-500 focus:bg-white dark:focus:bg-white/[0.06] text-sm sm:text-base text-zinc-900 dark:text-white placeholder:text-zinc-400 dark:placeholder:text-zinc-600 transition-all outline-none font-sans shadow-inner focus:shadow-purple-500/20"
+                  className="w-full px-4 py-3 rounded-xl bg-zinc-50 dark:bg-[#0A1312] border border-zinc-300 dark:border-[#25524B] focus:border-[#1D5A50] dark:focus:border-[#C58A55] text-sm sm:text-base text-zinc-900 dark:text-[#E6F4F1] placeholder:text-zinc-400 dark:placeholder:text-[#E6F4F1]/30 transition-all outline-none font-sans"
                 />
               </div>
             </div>
 
             {/* Message Payload Input */}
             <div className="space-y-2">
-              <label className="text-xs sm:text-sm font-mono text-zinc-700 dark:text-zinc-300 uppercase tracking-wider flex items-center justify-between font-semibold">
+              <label className="text-xs sm:text-sm font-mono text-[#0F2420] dark:text-[#E6F4F1] uppercase tracking-wider flex items-center justify-between font-semibold">
                 <span>MESSAGE</span>
-                <span className="text-zinc-400 dark:text-zinc-500 font-normal">REQUIRED</span>
+                <span className="text-[#1D5A50] dark:text-[#C58A55] font-normal">REQUIRED</span>
               </label>
               <textarea
                 required
@@ -370,35 +370,35 @@ export const ContactSection: React.FC = () => {
                 placeholder="Project specifications, frontend architecture, 3D web design, or general inquiry..."
                 value={formState.message}
                 onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                className="w-full px-4 py-3 rounded-xl bg-zinc-50 dark:bg-white/[0.03] border border-zinc-200 dark:border-white/10 focus:border-purple-500 focus:bg-white dark:focus:bg-white/[0.06] text-sm sm:text-base text-zinc-900 dark:text-white placeholder:text-zinc-400 dark:placeholder:text-zinc-600 transition-all outline-none font-sans shadow-inner focus:shadow-purple-500/20 resize-none leading-relaxed"
+                className="w-full px-4 py-3 rounded-xl bg-zinc-50 dark:bg-[#0A1312] border border-zinc-300 dark:border-[#25524B] focus:border-[#1D5A50] dark:focus:border-[#C58A55] text-sm sm:text-base text-zinc-900 dark:text-[#E6F4F1] placeholder:text-zinc-400 dark:placeholder:text-[#E6F4F1]/30 transition-all outline-none font-sans resize-none leading-relaxed"
               />
             </div>
 
-            {/* High-Impact Transmit Submit Button */}
+            {/* Transmit Submit Button */}
             <button
               type="submit"
               disabled={isSubmitting || sentMessage}
-              className={`w-full py-4 px-6 rounded-xl font-mono font-bold tracking-widest text-sm sm:text-base flex items-center justify-center gap-2.5 transition-all cursor-pointer uppercase relative overflow-hidden shadow-lg ${
+              className={`w-full py-4 px-6 rounded-xl font-mono font-bold tracking-widest text-sm sm:text-base flex items-center justify-center gap-2.5 transition-all cursor-pointer uppercase relative overflow-hidden shadow-sm ${
                 sentMessage
-                  ? 'bg-emerald-600 text-white shadow-emerald-500/30'
+                  ? 'bg-[#1D5A50] dark:bg-[#25524B] text-white dark:text-[#E6F4F1] border border-[#1D5A50] dark:border-[#2C665D]'
                   : isSubmitting
-                  ? 'bg-purple-900/80 text-purple-200 cursor-wait'
-                  : 'bg-gradient-to-r from-purple-600 via-indigo-600 to-cyan-600 hover:from-purple-500 hover:via-indigo-500 hover:to-cyan-400 text-white shadow-purple-600/30 hover:shadow-purple-500/50 active:scale-[0.99] group/btn'
+                  ? 'bg-zinc-200 dark:bg-[#132B27] text-zinc-500 dark:text-[#E6F4F1]/50 border border-zinc-300 dark:border-[#25524B] cursor-wait'
+                  : 'bg-[#1D5A50] hover:bg-[#134038] text-white dark:bg-[#2C665D] dark:text-[#E6F4F1] dark:hover:bg-[#357B70] transition-colors active:scale-[0.99] group/btn'
               }`}
             >
               {isSubmitting ? (
                 <>
-                  <Loader2 className="w-4 h-4 animate-spin text-cyan-300" />
+                  <Loader2 className="w-4 h-4 animate-spin text-white dark:text-[#E6F4F1]" />
                   <span className="animate-pulse">ENCRYPTING & TRANSMITTING...</span>
                 </>
               ) : sentMessage ? (
                 <>
-                  <CheckCircle2 className="w-4 h-4 text-emerald-300" />
+                  <CheckCircle2 className="w-4 h-4 text-white dark:text-[#E6F4F1]" />
                   <span>MESSAGE TRANSMITTED SUCCESSFULLY</span>
                 </>
               ) : (
                 <>
-                  <Send className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform text-cyan-300" />
+                  <Send className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform text-white dark:text-[#E6F4F1]" />
                   <span>TRANSMIT MESSAGE</span>
                 </>
               )}
@@ -411,12 +411,12 @@ export const ContactSection: React.FC = () => {
                   initial={{ opacity: 0, y: 8, height: 0 }}
                   animate={{ opacity: 1, y: 0, height: 'auto' }}
                   exit={{ opacity: 0, y: -8, height: 0 }}
-                  className="p-3.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 dark:text-emerald-300 text-xs font-mono flex items-center gap-3 overflow-hidden"
+                  className="p-3.5 rounded-xl bg-zinc-50 dark:bg-[#0A1312] border border-[#1D5A50]/50 dark:border-[#2C665D]/50 text-zinc-900 dark:text-[#E6F4F1] text-xs font-mono flex items-center gap-3 overflow-hidden"
                 >
-                  <CheckCircle2 className="w-4 h-4 text-emerald-500 dark:text-emerald-400 shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-[#1D5A50] dark:text-[#2C665D] shrink-0" />
                   <div>
                     <p className="font-bold">STATUS 200: DISPATCH SUCCESSFUL</p>
-                    <p className="text-[11px] text-emerald-600 dark:text-emerald-400/80 font-sans">
+                    <p className="text-[11px] text-zinc-700 dark:text-[#E6F4F1]/80 font-sans">
                       Thank you for reaching out. I'll review your transmission and reply within 24 hours.
                     </p>
                   </div>
@@ -428,15 +428,15 @@ export const ContactSection: React.FC = () => {
       </div>
 
       {/* 5. Footer Bar */}
-      <div className="pt-6 border-t border-zinc-200 dark:border-white/5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono text-zinc-500 relative z-10">
+      <div className="pt-6 border-t border-zinc-200 dark:border-[#25524B] flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono text-zinc-500 dark:text-[#E6F4F1]/60 relative z-10">
         <p>© {new Date().getFullYear()} Yasir Khokhar. All Rights Reserved.</p>
 
         <button
           onClick={scrollToTop}
-          className="flex items-center gap-1.5 text-zinc-500 dark:text-zinc-400 hover:text-purple-600 dark:hover:text-purple-300 transition-colors cursor-pointer uppercase font-mono text-[11px] group"
+          className="flex items-center gap-1.5 text-zinc-600 hover:text-zinc-950 dark:text-[#E6F4F1]/60 dark:hover:text-[#E6F4F1] transition-colors cursor-pointer uppercase font-mono text-[11px] group"
         >
           <span>BACK TO TOP</span>
-          <ArrowUp className="w-3.5 h-3.5 group-hover:-translate-y-0.5 transition-transform text-purple-600 dark:text-purple-400" />
+          <ArrowUp className="w-3.5 h-3.5 group-hover:-translate-y-0.5 transition-transform text-[#1D5A50] dark:text-[#2C665D] group-hover:text-zinc-950 dark:group-hover:text-[#E6F4F1]" />
         </button>
       </div>
     </div>

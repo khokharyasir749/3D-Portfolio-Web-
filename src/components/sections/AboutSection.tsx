@@ -170,7 +170,7 @@ export const AboutSection: React.FC = () => {
     <div className="w-full h-full flex flex-col justify-center select-none pointer-events-auto">
       {/* Section Header */}
       <div className="mb-4 sm:mb-6">
-        <span className="text-sm uppercase tracking-widest text-zinc-400 font-bold mb-3 block">
+        <span className="text-sm uppercase tracking-widest text-[#1D5A50] dark:text-[#2C665D] font-bold mb-3 block">
           ABOUT ME
         </span>
       </div>
@@ -178,29 +178,41 @@ export const AboutSection: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         {/* Left Column: Headline & Bio Paragraphs */}
         <div className="lg:col-span-6 space-y-6 text-left">
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-zinc-900 dark:text-white tracking-tight leading-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F2420] dark:text-[#E6F4F1] tracking-tight leading-tight">
             Engineering digital experiences with technical precision.
           </h2>
 
-          <div className="space-y-5 text-zinc-700 dark:text-zinc-300 text-lg lg:text-xl leading-relaxed font-sans">
+          <div className="space-y-4 text-[#2C423E] dark:text-[#E6F4F1]/80 text-base leading-relaxed font-sans">
             {about.bio.map((paragraph, idx) => (
-              <p key={idx} className="text-zinc-700 dark:text-zinc-300">
+              <p key={idx}>
                 {paragraph}
               </p>
             ))}
           </div>
 
           {/* Key Metric Badges */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3 lg:gap-3.5 pt-4">
             {about.stats.map((stat, idx) => (
               <div
                 key={idx}
-                className="p-4 rounded-xl bg-white/90 dark:bg-[#101017]/80 border border-zinc-200 dark:border-white/5 flex flex-col shadow-md shadow-zinc-200/40 dark:shadow-none transition-colors"
+                className="p-3 sm:p-3.5 rounded-xl bg-white dark:bg-[#132B27] border border-zinc-200/90 dark:border-[#25524B] flex flex-col justify-center min-w-0 overflow-hidden shadow-sm transition-colors"
               >
-                <span className="text-2xl lg:text-3xl font-black font-mono text-purple-600 dark:text-white">
-                  {stat.value}
-                </span>
-                <span className="text-xs lg:text-sm font-medium font-mono uppercase tracking-wider text-zinc-600 dark:text-zinc-400 mt-1">
+                <div className="flex items-center min-w-0">
+                  {stat.label === 'STATUS' && (
+                    <span className="w-2 h-2 rounded-full bg-[#C58A55] mr-1.5 shrink-0 animate-pulse" />
+                  )}
+                  <span
+                    className={`font-black tracking-tight text-[#0F2420] dark:text-[#E6F4F1] truncate ${
+                      stat.value.length > 5
+                        ? 'text-base sm:text-lg lg:text-xl font-sans'
+                        : 'text-xl sm:text-2xl lg:text-2xl font-mono'
+                    }`}
+                    title={stat.value}
+                  >
+                    {stat.value}
+                  </span>
+                </div>
+                <span className="text-[10px] sm:text-xs font-semibold font-mono uppercase tracking-wider text-zinc-600 dark:text-[#9FB8B2] mt-1 truncate">
                   {stat.label}
                 </span>
               </div>
@@ -218,27 +230,28 @@ export const AboutSection: React.FC = () => {
                 whileHover={{ y: -4, scale: 1.02 }}
                 transition={{ duration: 0.2 }}
                 onClick={() => setSelectedFocus(area)}
-                className="p-6 rounded-2xl bg-white/90 dark:bg-[#0e0e16]/80 border border-zinc-200 dark:border-white/10 hover:border-purple-500/50 hover:shadow-purple-500/10 shadow-md shadow-zinc-200/40 dark:shadow-xl transition-all flex flex-col justify-between backdrop-blur-md cursor-pointer group"
+                className="p-6 rounded-2xl bg-white dark:bg-[#132B27]/90 border border-zinc-200/90 dark:border-[#25524B] hover:border-[#1D5A50] dark:hover:border-[#C58A55] shadow-sm transition-all flex flex-col justify-between backdrop-blur-md cursor-pointer group"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <div className="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center group-hover:border-purple-400/50 transition-colors">
-                      <Icon className="w-5 h-5 text-purple-600 dark:text-purple-400 group-hover:text-purple-700 dark:group-hover:text-purple-300 transition-colors" />
+                    <div className="w-10 h-10 rounded-xl bg-zinc-100 dark:bg-[#1A3D37]/80 border border-zinc-200 dark:border-[#25524B] flex items-center justify-center group-hover:border-[#1D5A50] dark:group-hover:border-[#C58A55] transition-colors">
+                      <Icon className="w-5 h-5 text-[#1D5A50] dark:text-[#C58A55] group-hover:text-[#0F2420] dark:group-hover:text-[#E6F4F1] transition-colors" />
                     </div>
-                    <span className="text-xs font-mono px-2.5 py-1 rounded bg-zinc-100 dark:bg-white/5 text-zinc-600 dark:text-slate-400 border border-zinc-200 dark:border-white/5">
-                      FOCUS {area.pillarNumber}
+                    <span className="text-xs font-mono px-2.5 py-1 rounded bg-zinc-100 dark:bg-[#1A3D37]/80 text-[#0F2420] dark:text-[#E6F4F1] border border-zinc-200 dark:border-[#25524B] flex items-center gap-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#1D5A50] dark:bg-[#C58A55]" />
+                      <span>FOCUS {area.pillarNumber}</span>
                     </span>
                   </div>
 
-                  <h3 className="text-xl lg:text-2xl font-bold text-zinc-900 dark:text-white tracking-wide mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-300 transition-colors">
+                  <h3 className="text-xl lg:text-2xl font-bold text-[#0F2420] dark:text-[#E6F4F1] tracking-wide mb-2 group-hover:text-[#1D5A50] dark:group-hover:text-[#C58A55] transition-colors">
                     {area.title}
                   </h3>
-                  <p className="text-sm lg:text-base text-zinc-600 dark:text-zinc-300 leading-relaxed font-sans line-clamp-2">
+                  <p className="text-sm lg:text-base text-[#2C423E] dark:text-[#9FB8B2] leading-relaxed font-sans line-clamp-2">
                     {area.desc}
                   </p>
                 </div>
 
-                <div className="mt-5 pt-3.5 border-t border-zinc-200 dark:border-white/5 flex items-center justify-between text-xs lg:text-sm font-semibold tracking-wider font-mono text-purple-600 dark:text-purple-400 group-hover:text-purple-700 dark:group-hover:text-purple-300">
+                <div className="mt-5 pt-3.5 border-t border-zinc-200 dark:border-[#25524B] flex items-center justify-between text-xs lg:text-sm font-semibold tracking-wider font-mono text-[#1D5A50] dark:text-[#C58A55] group-hover:text-zinc-950 dark:group-hover:text-[#E6F4F1] transition-colors">
                   <span>EXPLORE PILLAR</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-200" />
                 </div>
@@ -257,7 +270,7 @@ export const AboutSection: React.FC = () => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
             onClick={() => setSelectedFocus(null)}
-            className="fixed inset-0 z-50 bg-black/75 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 select-none"
+            className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 select-none"
           >
             {/* Modal Surface Box */}
             <motion.div
@@ -266,12 +279,12 @@ export const AboutSection: React.FC = () => {
               exit={{ opacity: 0, scale: 0.94, y: 15 }}
               transition={{ duration: 0.25, ease: 'easeOut' }}
               onClick={(e) => e.stopPropagation()}
-              className="max-w-2xl w-full max-h-[85vh] overflow-y-auto rounded-3xl p-6 sm:p-8 bg-white/95 dark:bg-zinc-950/95 border border-zinc-200 dark:border-purple-500/30 shadow-2xl relative text-zinc-900 dark:text-white space-y-6 backdrop-blur-xl"
+              className="max-w-2xl w-full max-h-[85vh] overflow-y-auto rounded-3xl p-6 sm:p-8 bg-white dark:bg-[#132B27] border border-zinc-200 dark:border-[#25524B] shadow-2xl relative text-zinc-900 dark:text-[#E6F4F1] space-y-6 backdrop-blur-xl"
             >
               {/* Floating Close Button */}
               <button
                 onClick={() => setSelectedFocus(null)}
-                className="absolute top-5 right-5 p-2 rounded-full bg-zinc-100 hover:bg-zinc-200 text-zinc-600 dark:bg-white/5 dark:hover:bg-white/10 dark:text-zinc-400 dark:hover:text-white border border-zinc-200 dark:border-white/10 transition-colors cursor-pointer"
+                className="absolute top-5 right-5 p-2 rounded-full bg-zinc-100 hover:bg-zinc-200 text-zinc-700 dark:bg-[#25524B]/50 dark:hover:bg-[#2C665D] dark:text-[#E6F4F1] border border-zinc-200 dark:border-[#25524B] transition-colors cursor-pointer"
                 title="Close Dossier"
                 aria-label="Close"
               >
@@ -281,43 +294,43 @@ export const AboutSection: React.FC = () => {
               {/* Top Studio Dossier Chip & Header */}
               <div className="space-y-2 pr-8">
                 <div className="flex flex-wrap items-center gap-2">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/30 text-xs font-mono text-purple-600 dark:text-purple-300 tracking-widest uppercase">
-                    <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-100 dark:bg-[#25524B]/50 border border-zinc-200 dark:border-[#2C665D]/30 text-xs font-mono text-[#1D5A50] dark:text-[#E6F4F1] tracking-widest uppercase">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#1D5A50] dark:bg-[#2C665D] animate-pulse" />
                     <span>ENGINEERING PHILOSOPHY</span>
                   </div>
-                  <span className="text-xs font-mono px-2.5 py-0.5 rounded-full bg-purple-500/10 text-purple-600 dark:text-purple-300 border border-purple-500/30">
+                  <span className="text-xs font-mono px-2.5 py-0.5 rounded-full bg-zinc-100 dark:bg-[#25524B]/50 text-zinc-700 dark:text-[#E6F4F1] border border-zinc-200 dark:border-[#2C665D]/30">
                     PILLAR {selectedFocus.pillarNumber}
                   </span>
                 </div>
 
-                <h3 className="text-2xl sm:text-3xl font-black text-zinc-900 dark:text-white tracking-tight pt-1">
+                <h3 className="text-2xl sm:text-3xl font-black text-[#0F2420] dark:text-[#E6F4F1] tracking-tight pt-1">
                   {selectedFocus.title}
                 </h3>
-                <p className="text-xs sm:text-sm font-mono text-purple-600 dark:text-purple-300">
+                <p className="text-xs sm:text-sm font-mono text-zinc-500 dark:text-[#E6F4F1]/60">
                   {selectedFocus.tagline}
                 </p>
               </div>
 
               {/* Philosophy Statement */}
-              <div className="space-y-2 p-4 rounded-2xl bg-zinc-50 dark:bg-white/[0.03] border border-zinc-200 dark:border-white/5">
-                <h4 className="text-xs font-mono text-zinc-600 dark:text-zinc-400 uppercase tracking-wider flex items-center gap-1.5">
-                  <Layers className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400" />
+              <div className="space-y-2 p-4 rounded-2xl bg-zinc-50 dark:bg-[#0A1312]/70 border border-zinc-200 dark:border-[#25524B]">
+                <h4 className="text-xs font-mono text-[#1D5A50] dark:text-[#2C665D] uppercase tracking-wider flex items-center gap-1.5 font-bold">
+                  <Layers className="w-3.5 h-3.5 text-[#1D5A50] dark:text-[#2C665D]" />
                   <span>Engineering Philosophy</span>
                 </h4>
-                <p className="text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed font-sans italic">
+                <p className="text-xs sm:text-sm text-zinc-700 dark:text-[#E6F4F1]/90 leading-relaxed font-sans italic">
                   "{selectedFocus.philosophy}"
                 </p>
               </div>
 
               {/* Architectural Principles */}
               <div className="space-y-2">
-                <h4 className="text-xs font-mono text-zinc-600 dark:text-zinc-400 uppercase tracking-wider">
+                <h4 className="text-xs font-mono text-zinc-800 dark:text-[#E6F4F1]/80 uppercase tracking-wider font-semibold">
                   Architectural Core Principles:
                 </h4>
                 <ul className="space-y-1.5">
                   {selectedFocus.principles.map((principle, pIdx) => (
-                    <li key={pIdx} className="flex items-start gap-2 text-xs text-zinc-700 dark:text-zinc-300 font-sans">
-                      <CheckCircle2 className="w-4 h-4 text-cyan-600 dark:text-cyan-400 shrink-0 mt-0.5" />
+                    <li key={pIdx} className="flex items-start gap-2 text-xs text-zinc-700 dark:text-[#E6F4F1]/80 font-sans">
+                      <CheckCircle2 className="w-4 h-4 text-[#1D5A50] dark:text-[#2C665D] shrink-0 mt-0.5" />
                       <span>{principle}</span>
                     </li>
                   ))}
@@ -326,8 +339,8 @@ export const AboutSection: React.FC = () => {
 
               {/* Deliverables & Impact */}
               <div className="space-y-3">
-                <h4 className="text-xs font-mono text-zinc-600 dark:text-zinc-400 uppercase tracking-wider flex items-center gap-1.5">
-                  <Zap className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400" />
+                <h4 className="text-xs font-mono text-zinc-800 dark:text-[#E6F4F1]/80 uppercase tracking-wider font-semibold flex items-center gap-1.5">
+                  <Zap className="w-3.5 h-3.5 text-[#1D5A50] dark:text-[#2C665D]" />
                   <span>Key Architectural Deliverables</span>
                 </h4>
 
@@ -335,13 +348,13 @@ export const AboutSection: React.FC = () => {
                   {selectedFocus.deliverables.map((item, dIdx) => (
                     <div
                       key={dIdx}
-                      className="p-3.5 rounded-xl bg-zinc-50 dark:bg-zinc-900/60 border border-zinc-200 dark:border-white/5 space-y-1 hover:border-purple-500/30 transition-colors"
+                      className="p-3.5 rounded-xl bg-zinc-50 dark:bg-[#0A1312]/50 border border-zinc-200 dark:border-[#25524B] space-y-1 hover:border-[#1D5A50] dark:hover:border-[#2C665D]/60 transition-colors"
                     >
-                      <div className="flex items-center gap-2 text-xs font-semibold text-zinc-900 dark:text-white">
-                        <span className="w-1.5 h-1.5 rounded-full bg-purple-500 dark:bg-purple-400" />
+                      <div className="flex items-center gap-2 text-xs font-semibold text-[#0F2420] dark:text-[#E6F4F1]">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#1D5A50] dark:bg-[#2C665D]" />
                         <span>{item.title}</span>
                       </div>
-                      <p className="text-xs text-zinc-600 dark:text-zinc-400 font-sans pl-3.5 leading-relaxed">
+                      <p className="text-xs text-zinc-600 dark:text-[#E6F4F1]/70 font-sans pl-3.5 leading-relaxed">
                         {item.desc}
                       </p>
                     </div>
@@ -350,21 +363,21 @@ export const AboutSection: React.FC = () => {
               </div>
 
               {/* Performance Metric Badge */}
-              <div className="p-3.5 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center gap-2.5 text-xs font-mono text-emerald-700 dark:text-emerald-300">
-                <Activity className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0 animate-pulse" />
+              <div className="p-3.5 rounded-2xl bg-zinc-50 dark:bg-[#0A1312]/70 border border-zinc-200 dark:border-[#25524B] flex items-center gap-2.5 text-xs font-mono text-zinc-700 dark:text-[#E6F4F1]/80">
+                <Activity className="w-4 h-4 text-[#1D5A50] dark:text-[#2C665D] shrink-0" />
                 <span>Standard Metric: {selectedFocus.metric}</span>
               </div>
 
               {/* Tech Stack Badges */}
-              <div className="space-y-2.5 pt-2 border-t border-zinc-200 dark:border-white/5">
-                <h4 className="text-xs font-mono text-zinc-600 dark:text-zinc-400 uppercase tracking-wider">
+              <div className="space-y-2.5 pt-2 border-t border-zinc-200 dark:border-[#25524B]">
+                <h4 className="text-xs font-mono text-zinc-800 dark:text-[#E6F4F1]/80 uppercase tracking-wider font-semibold">
                   Pillar Technologies:
                 </h4>
                 <div className="flex flex-wrap gap-1.5">
                   {selectedFocus.techStack.map((tech, tIdx) => (
                     <span
                       key={tIdx}
-                      className="text-xs font-mono px-3 py-1 rounded-lg bg-purple-500/10 text-purple-700 dark:text-purple-200 border border-purple-500/20"
+                      className="text-xs font-mono px-3 py-1 rounded-lg bg-zinc-100 dark:bg-[#25524B]/50 text-zinc-800 dark:text-[#E6F4F1] border border-zinc-200 dark:border-[#2C665D]/30"
                     >
                       {tech}
                     </span>
@@ -373,11 +386,11 @@ export const AboutSection: React.FC = () => {
               </div>
 
               {/* Modal Footer Close Action */}
-              <div className="pt-4 border-t border-zinc-200 dark:border-white/5 flex items-center justify-between text-xs font-mono text-zinc-500">
+              <div className="pt-4 border-t border-zinc-200 dark:border-[#25524B] flex items-center justify-between text-xs font-mono text-zinc-500 dark:text-[#E6F4F1]/60">
                 <span>ESC OR CLICK OUTSIDE TO CLOSE</span>
                 <button
                   onClick={() => setSelectedFocus(null)}
-                  className="px-5 py-2.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-white dark:bg-white dark:hover:bg-zinc-200 dark:text-zinc-950 font-mono font-bold text-xs tracking-wider uppercase transition-colors cursor-pointer shadow-md"
+                  className="px-5 py-2.5 rounded-xl bg-[#1D5A50] hover:bg-[#134038] text-white dark:bg-[#2C665D] dark:hover:bg-[#357B70] dark:text-[#E6F4F1] font-mono font-bold text-xs tracking-wider uppercase transition-colors cursor-pointer shadow-md"
                 >
                   DISMISS
                 </button>
