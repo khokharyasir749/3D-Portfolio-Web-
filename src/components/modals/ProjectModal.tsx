@@ -23,10 +23,10 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ onClose }) => {
       badgeColor="text-[#1D5A50] dark:text-[#E6F4F1] border-emerald-200 dark:border-[#2C665D]/30 bg-emerald-50 dark:bg-[#25524B]/50"
       onClose={onClose}
     >
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
         {/* Left Column: Project Selector List */}
-        <div className="lg:col-span-5 space-y-3 max-h-[70vh] overflow-y-auto pr-1">
-          <div className="text-xs font-mono text-[#1D5A50] dark:text-[#2C665D] uppercase tracking-wider mb-2 flex items-center gap-1.5 font-semibold">
+        <div className="lg:col-span-5 space-y-3 lg:max-h-[calc(90vh-165px)] overflow-y-auto overscroll-contain pr-1.5 custom-scrollbar">
+          <div className="text-xs font-mono text-[#1D5A50] dark:text-[#2C665D] uppercase tracking-wider mb-2 flex items-center gap-1.5 font-semibold sticky top-0 bg-white dark:bg-[#132B27] py-1 z-10">
             <Sparkles className="w-3.5 h-3.5 text-[#1D5A50] dark:text-[#2C665D]" />
             <span>Select System Module</span>
           </div>
@@ -77,7 +77,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ onClose }) => {
         </div>
 
         {/* Right Column: Selected Project Detail Card */}
-        <div className="lg:col-span-7 bg-zinc-50 dark:bg-[#132B27] border border-zinc-200 dark:border-[#25524B] p-5 rounded-2xl flex flex-col justify-between space-y-5 max-h-[70vh] overflow-y-auto">
+        <div className="lg:col-span-7 bg-zinc-50 dark:bg-[#132B27] border border-zinc-200 dark:border-[#25524B] p-5 rounded-2xl flex flex-col justify-between space-y-5 lg:max-h-[calc(90vh-165px)] overflow-y-auto overscroll-contain pr-1.5 custom-scrollbar">
           <div className="space-y-4">
             {/* Header */}
             <div>
@@ -116,24 +116,29 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ onClose }) => {
 
               {/* Gallery Strip */}
               {selectedProject.gallery && selectedProject.gallery.length > 1 && (
-                <div className="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar">
-                  {selectedProject.gallery.map((imgUrl, gIdx) => (
-                    <button
-                      key={gIdx}
-                      onClick={() => setActiveImage(imgUrl)}
-                      className={`relative w-16 h-11 shrink-0 rounded-lg overflow-hidden border transition-all cursor-pointer ${
-                        (activeImage || selectedProject.image) === imgUrl
-                          ? 'border-[#1D5A50] dark:border-[#2C665D] ring-2 ring-[#1D5A50]/40 dark:ring-[#2C665D]/40'
-                          : 'border-zinc-200 dark:border-[#25524B] opacity-60 hover:opacity-100'
-                      }`}
-                    >
-                      <img
-                        src={imgUrl}
-                        alt={`View ${gIdx + 1}`}
-                        className="w-full h-full object-cover object-top"
-                      />
-                    </button>
-                  ))}
+                <div className="space-y-1.5">
+                  <div className="text-[10px] font-mono text-[#1D5A50] dark:text-[#2C665D] uppercase tracking-wider flex items-center gap-1.5 font-bold">
+                    <span>INTERACTIVE INTERFACE VIEWS</span>
+                  </div>
+                  <div className="flex items-center gap-2 overflow-x-auto pb-6 sm:pb-8 no-scrollbar">
+                    {selectedProject.gallery.map((imgUrl, gIdx) => (
+                      <button
+                        key={gIdx}
+                        onClick={() => setActiveImage(imgUrl)}
+                        className={`relative w-16 h-11 shrink-0 rounded-lg overflow-hidden border transition-all cursor-pointer ${
+                          (activeImage || selectedProject.image) === imgUrl
+                            ? 'border-[#1D5A50] dark:border-[#2C665D] ring-2 ring-[#1D5A50]/40 dark:ring-[#2C665D]/40'
+                            : 'border-zinc-200 dark:border-[#25524B] opacity-60 hover:opacity-100'
+                        }`}
+                      >
+                        <img
+                          src={imgUrl}
+                          alt={`View ${gIdx + 1}`}
+                          className="w-full h-full object-cover object-top"
+                        />
+                      </button>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>
@@ -185,7 +190,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ onClose }) => {
           </div>
 
           {/* Action Links */}
-          <div className="flex items-center gap-3 pt-4 border-t border-zinc-200 dark:border-[#25524B]">
+          <div className="flex items-center gap-3 pt-4 pb-1 border-t border-zinc-200 dark:border-[#25524B] shrink-0">
             {selectedProject.demoUrl && (
               <a
                 href={selectedProject.demoUrl}

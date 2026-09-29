@@ -14,6 +14,7 @@ export interface Project {
   number: string;
   id: string;
   title: string;
+  category?: string;
   tagline: string;
   description: string;
   tags: string[];
@@ -117,6 +118,56 @@ export const portfolioData = {
   projects: [
     {
       number: "01",
+      id: "noir-luxury-fragrance",
+      title: "NOIR — Luxury Fragrance Experience",
+      category: "E-Commerce / 3D Experience",
+      tagline: "E-Commerce / 3D Experience",
+      description: "An ultra-premium fragrance e-commerce web platform showcasing luxury perfume notes, interactive visual storytelling, and bespoke product presentation.",
+      tags: ["Next.js", "Tailwind CSS", "Three.js", "E-Commerce", "UI/UX"],
+      features: [
+        "Interactive 3D fragrance bottle presentation and fluid camera choreography",
+        "Sensory note pyramid exploration covering top, heart, and base notes",
+        "Ultra-premium dark aesthetic with micro-animations and bespoke luxury typography",
+        "Bespoke digital commerce checkout flow with dynamic cart persistence"
+      ],
+      metrics: "Sub-50ms catalog interaction latency with optimized 60 FPS WebGL rendering",
+      githubUrl: "https://github.com/khokharyasir749",
+      featured: true,
+      image: "/NOIR SPRAY 1.png",
+      gallery: [
+        "/NOIR SPRAY 1.png",
+        "/NOIR SPRAY 2.png",
+        "/NOIR SPRAY 3.png",
+        "/NOIR SPRAY 4.png"
+      ]
+    },
+    {
+      number: "02",
+      id: "sillage-fragrance-atelier",
+      title: "SILLAGE — Haute Parfumerie Paris",
+      category: "Luxury Brand / Web App",
+      tagline: "Luxury Brand / Web App",
+      description: "A cinematic digital atelier for bespoke haute perfumery featuring immersive dark-mode aesthetics, note pyramid breakdowns, and seamless ordering architecture.",
+      tags: ["React", "WebGL", "Framer Motion", "Tailwind CSS", "TypeScript"],
+      features: [
+        "Cinematic dark-mode digital atelier showcasing artisanal haute perfumery",
+        "Interactive olfactory note breakdowns with real-time visual feedback",
+        "Seamless ordering architecture and luxury bespoke perfume configuration",
+        "High-performance WebGL transitions and fluid Framer Motion choreography"
+      ],
+      metrics: "High-fidelity WebGL graphics with seamless 60 FPS spatial interactions",
+      githubUrl: "https://github.com/khokharyasir749",
+      featured: true,
+      image: "/SILLAGE PERFUME 1.png",
+      gallery: [
+        "/SILLAGE PERFUME 1.png",
+        "/SILLAGE PERFUME 2.png",
+        "/SILLAGE PERFUME 3.png",
+        "/SILLAGE PERFUME 4.png"
+      ]
+    },
+    {
+      number: "03",
       id: "netflix-clone",
       title: "Netflix Clone",
       tagline: "Video Streaming Platform UI & Dynamic Catalog",
@@ -141,7 +192,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "02",
+      number: "04",
       id: "inventory-system",
       title: "Inventory System",
       tagline: "Enterprise Inventory & Stock Management Platform",
@@ -164,7 +215,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "03",
+      number: "05",
       id: "lonetex-pakistan",
       title: "Lonetex Pakistan",
       tagline: "Commercial Cleaning Equipment E-Commerce & Wholesale Catalog",
@@ -189,7 +240,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "04",
+      number: "06",
       id: "bite-hub",
       title: "Bite-Hub",
       tagline: "Cyberpunk-themed fast-food ordering web app with state persistence & admin dashboard",
@@ -213,7 +264,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "05",
+      number: "07",
       id: "shopsphere-ecommerce",
       title: "ShopSphere E-Commerce",
       tagline: "Modern digital commerce platform with dynamic filters & shopping cart",
@@ -237,7 +288,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "06",
+      number: "08",
       id: "sync-space",
       title: "Sync-Space Chat Hub",
       tagline: "Real-time full-stack chat application with Socket.io & live presence",
@@ -260,7 +311,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "07",
+      number: "09",
       id: "smartlearn-lms",
       title: "SmartLearn LMS",
       tagline: "Modern learning management frontend with course discovery & progress filters",
@@ -285,7 +336,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "08",
+      number: "10",
       id: "lonetex-inventory",
       title: "Lonetex Inventory ERP",
       tagline: "Industrial stock operations dashboard with rack allocations & supply metrics",
@@ -309,7 +360,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "09",
+      number: "11",
       id: "weather-dashboard",
       title: "Cyber Weather Dashboard",
       tagline: "Real-time global meteorological monitor with forecast telemetry",
@@ -333,7 +384,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "10",
+      number: "12",
       id: "modern-calculator",
       title: "Modern Glass Calculator",
       tagline: "Precision financial and scientific calculation engine with dark UI",

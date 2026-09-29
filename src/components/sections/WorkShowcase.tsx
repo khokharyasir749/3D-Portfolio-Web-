@@ -240,7 +240,7 @@ const WorkShowcaseInner: React.FC = () => {
               exit={{ opacity: 0, scale: 0.94, y: 15 }}
               transition={{ duration: 0.25, ease: 'easeOut' }}
               onClick={(e) => e.stopPropagation()}
-              className="max-w-3xl w-full max-h-[85vh] overflow-y-auto rounded-3xl p-6 sm:p-8 bg-white dark:bg-[#132B27] border border-zinc-200 dark:border-[#25524B] shadow-2xl relative text-zinc-900 dark:text-[#E6F4F1] space-y-6 backdrop-blur-xl"
+              className="max-w-3xl w-full max-h-[90vh] overflow-y-auto overscroll-contain rounded-3xl p-6 sm:p-8 bg-white dark:bg-[#132B27] border border-zinc-200 dark:border-[#25524B] shadow-2xl relative text-zinc-900 dark:text-[#E6F4F1] space-y-6 backdrop-blur-xl custom-scrollbar"
             >
               {/* Floating Close Button */}
               <button
@@ -298,9 +298,9 @@ const WorkShowcaseInner: React.FC = () => {
                 {(selectedProject?.gallery ?? []).length > 1 && (
                   <div className="space-y-1.5">
                     <div className="text-[11px] font-mono text-[#1D5A50] dark:text-[#2C665D] uppercase tracking-wider flex items-center gap-1.5 font-bold">
-                      <span>Interactive Interface Views:</span>
+                      <span>INTERACTIVE INTERFACE VIEWS:</span>
                     </div>
-                    <div className="flex items-center gap-2.5 overflow-x-auto pb-1.5 no-scrollbar">
+                    <div className="flex items-center gap-2.5 overflow-x-auto pb-6 sm:pb-8 no-scrollbar">
                       {(selectedProject.gallery ?? []).map((imgUrl, gIdx) => {
                         const isCurrent = activeModalImage === imgUrl;
                         return (
