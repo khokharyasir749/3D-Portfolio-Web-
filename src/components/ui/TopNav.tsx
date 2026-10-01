@@ -1,5 +1,5 @@
 import React from 'react';
-import { Volume2, VolumeX, Linkedin, Github, Moon, Sun } from 'lucide-react';
+import { Linkedin, Github } from 'lucide-react';
 import { portfolioData } from '../../data/portfolioData';
 
 interface TopNavProps {
@@ -26,10 +26,6 @@ const XTwitterIcon: React.FC<{ className?: string }> = ({ className = 'w-4 h-4' 
 export const TopNav: React.FC<TopNavProps> = ({
   activeSectionId,
   onNavigate,
-  isMuted = true,
-  onToggleAudio,
-  theme = 'dark',
-  onToggleTheme,
 }) => {
   const linkedinUrl =
     portfolioData.contacts.find((c) => c.type === 'linkedin')?.link ||
@@ -66,7 +62,7 @@ export const TopNav: React.FC<TopNavProps> = ({
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-40 py-3.5 sm:py-4 flex items-center justify-between pointer-events-none backdrop-blur-md bg-[#F6F9F8]/90 dark:bg-[#0A1312]/90 border-b border-zinc-200/80 dark:border-[#25524B] transition-all duration-300">
+    <header className="fixed top-0 left-0 right-0 z-40 py-3.5 sm:py-4 flex items-center justify-between pointer-events-none backdrop-blur-md bg-[#0A1312]/90 border-b border-[#25524B] transition-all duration-300">
       <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 flex items-center justify-between pointer-events-none gap-3 sm:gap-6">
         {/* Top-Left: Minimal Clean Typography Logo */}
         <div className="pointer-events-auto flex-shrink-0">
@@ -75,7 +71,7 @@ export const TopNav: React.FC<TopNavProps> = ({
             className="group flex items-center gap-2 text-left cursor-pointer transition-opacity hover:opacity-80"
             aria-label="Back to top"
           >
-            <span className="font-sans font-bold text-xs sm:text-base text-zinc-900 dark:text-[#E6F4F1] tracking-[0.18em] sm:tracking-[0.22em] uppercase transition-colors group-hover:text-[#1D5A50] dark:group-hover:text-[#C58A55]">
+            <span className="font-sans font-bold text-xs sm:text-base text-[#E6F4F1] tracking-[0.18em] sm:tracking-[0.22em] uppercase transition-colors group-hover:text-[#C58A55]">
               YASIR KHOKHAR
             </span>
           </button>
@@ -83,75 +79,47 @@ export const TopNav: React.FC<TopNavProps> = ({
 
         {/* Top-Right: Action & Social Icons + Nav Links */}
         <div className="pointer-events-auto flex items-center gap-2 sm:gap-3 md:gap-4 flex-shrink-0">
-          {/* Action & Social Icons (Placed directly before ABOUT) */}
+          {/* Social Icons (Placed directly before ABOUT) */}
           <div className="flex items-center gap-1 sm:gap-2 md:gap-3">
-            {/* 1. Sound / Audio Mute toggle */}
-            <button
-              onClick={onToggleAudio}
-              className="p-1.5 sm:p-2 text-zinc-600 hover:text-zinc-900 hover:bg-zinc-200/60 dark:text-[#E6F4F1]/70 dark:hover:text-[#E6F4F1] dark:hover:bg-[#132B27] rounded-lg transition-all cursor-pointer inline-flex items-center justify-center border border-transparent dark:hover:border-[#25524B]"
-              aria-label={isMuted ? 'Unmute Audio' : 'Mute Audio'}
-              title={isMuted ? 'Unmute Audio' : 'Mute Audio'}
-            >
-              {isMuted ? (
-                <VolumeX className="w-4 h-4" />
-              ) : (
-                <Volume2 className="w-4 h-4 text-[#1D5A50] dark:text-[#C58A55]" />
-              )}
-            </button>
-
-            {/* 2. LinkedIn link icon */}
+            {/* 1. LinkedIn link icon */}
             <a
               href={linkedinUrl}
               target="_blank"
               rel="noreferrer"
-              className="p-1.5 sm:p-2 text-zinc-600 hover:text-zinc-900 hover:bg-zinc-200/60 dark:text-[#E6F4F1]/70 dark:hover:text-[#E6F4F1] dark:hover:bg-[#132B27] rounded-lg transition-all cursor-pointer inline-flex items-center justify-center border border-transparent dark:hover:border-[#25524B]"
+              className="p-1.5 sm:p-2 text-[#E6F4F1]/70 hover:text-[#E6F4F1] hover:bg-[#132B27] rounded-lg transition-all cursor-pointer inline-flex items-center justify-center border border-transparent hover:border-[#25524B]"
               aria-label="LinkedIn Profile"
               title="LinkedIn Profile"
             >
               <Linkedin className="w-4 h-4" />
             </a>
 
-            {/* 3. X / Twitter link icon */}
+            {/* 2. X / Twitter link icon */}
             <a
               href={twitterUrl}
               target="_blank"
               rel="noreferrer"
-              className="p-1.5 sm:p-2 text-zinc-600 hover:text-zinc-900 hover:bg-zinc-200/60 dark:text-[#E6F4F1]/70 dark:hover:text-[#E6F4F1] dark:hover:bg-[#132B27] rounded-lg transition-all cursor-pointer inline-flex items-center justify-center border border-transparent dark:hover:border-[#25524B]"
+              className="p-1.5 sm:p-2 text-[#E6F4F1]/70 hover:text-[#E6F4F1] hover:bg-[#132B27] rounded-lg transition-all cursor-pointer inline-flex items-center justify-center border border-transparent hover:border-[#25524B]"
               aria-label="X (Twitter) Profile"
               title="X (Twitter) Profile"
             >
               <XTwitterIcon className="w-4 h-4" />
             </a>
 
-            {/* 4. GitHub link icon */}
+            {/* 3. GitHub link icon */}
             <a
               href={githubUrl}
               target="_blank"
               rel="noreferrer"
-              className="p-1.5 sm:p-2 text-zinc-600 hover:text-zinc-900 hover:bg-zinc-200/60 dark:text-[#E6F4F1]/70 dark:hover:text-[#E6F4F1] dark:hover:bg-[#132B27] rounded-lg transition-all cursor-pointer inline-flex items-center justify-center border border-transparent dark:hover:border-[#25524B]"
+              className="p-1.5 sm:p-2 text-[#E6F4F1]/70 hover:text-[#E6F4F1] hover:bg-[#132B27] rounded-lg transition-all cursor-pointer inline-flex items-center justify-center border border-transparent hover:border-[#25524B]"
               aria-label="GitHub Profile"
               title="GitHub Profile"
             >
               <Github className="w-4 h-4" />
             </a>
-
-            {/* 5. Dark/Light Theme toggle */}
-            <button
-              onClick={onToggleTheme}
-              className="p-1.5 sm:p-2 text-zinc-600 hover:text-zinc-900 hover:bg-zinc-200/60 dark:text-[#E6F4F1]/70 dark:hover:text-[#E6F4F1] dark:hover:bg-[#132B27] rounded-lg transition-all cursor-pointer inline-flex items-center justify-center border border-transparent dark:hover:border-[#25524B]"
-              aria-label={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-              title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-            >
-              {theme === 'dark' ? (
-                <Moon className="w-4 h-4" />
-              ) : (
-                <Sun className="w-4 h-4 text-amber-500" />
-              )}
-            </button>
           </div>
 
           {/* Subtle vertical divider */}
-          <div className="h-4 w-[1px] bg-zinc-300 dark:bg-[#25524B] mx-1 sm:mx-2" />
+          <div className="h-4 w-[1px] bg-[#25524B] mx-1 sm:mx-2" />
 
           {/* Navigation Links (starting with ABOUT) */}
           <nav className="flex items-center gap-3 sm:gap-5 md:gap-8">
@@ -163,8 +131,8 @@ export const TopNav: React.FC<TopNavProps> = ({
                   onClick={() => onNavigate(item.id)}
                   className={`relative py-1 text-xs sm:text-sm font-sans tracking-[0.18em] sm:tracking-[0.22em] uppercase transition-all cursor-pointer ${
                     isActive
-                      ? 'text-zinc-900 dark:text-[#E6F4F1] font-bold'
-                      : 'text-zinc-600 hover:text-zinc-950 dark:text-[#E6F4F1]/60 dark:hover:text-[#E6F4F1] font-medium'
+                      ? 'text-[#E6F4F1] font-bold'
+                      : 'text-[#E6F4F1]/60 hover:text-[#E6F4F1] font-medium'
                   }`}
                 >
                   <span>{item.label}</span>

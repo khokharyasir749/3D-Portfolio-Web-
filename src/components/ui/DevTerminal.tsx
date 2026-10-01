@@ -51,7 +51,6 @@ const AVAILABLE_COMMANDS = [
   { cmd: 'projects', desc: 'Browse featured client & open-source projects' },
   { cmd: 'contact', desc: 'Show direct communication & social channels' },
   { cmd: 'about', desc: 'View developer biography & background dossier' },
-  { cmd: 'theme', desc: 'Toggle between Cyber Dark & Ultra Light mode' },
   { cmd: 'audio', desc: 'Toggle cyberpunk ambient synth soundscape' },
   { cmd: 'date', desc: 'Show local & system UTC time' },
   { cmd: 'whoami', desc: 'Display current terminal user session & privilege' },
@@ -60,8 +59,6 @@ const AVAILABLE_COMMANDS = [
 ];
 
 export const DevTerminal: React.FC<DevTerminalProps> = ({
-  theme = 'dark',
-  onToggleTheme,
   isMuted,
   onToggleAudio,
   onNavigate,
@@ -396,21 +393,11 @@ export const DevTerminal: React.FC<DevTerminalProps> = ({
         break;
 
       case 'theme':
-        if (onToggleTheme) {
-          onToggleTheme();
-          const newTheme = theme === 'dark' ? 'LIGHT' : 'DARK';
-          responseLine = {
-            id: `resp-${Date.now()}`,
-            type: 'success',
-            content: `✓ Interface visual theme successfully switched to: [${newTheme} MODE]`,
-          };
-        } else {
-          responseLine = {
-            id: `resp-${Date.now()}`,
-            type: 'output',
-            content: 'Theme toggle controller not bound.',
-          };
-        }
+        responseLine = {
+          id: `resp-${Date.now()}`,
+          type: 'output',
+          content: '✓ Dark mode is permanently enabled as the portfolio visual aesthetic.',
+        };
         break;
 
       case 'audio':

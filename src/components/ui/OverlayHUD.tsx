@@ -4,8 +4,8 @@ import { TopNav } from './TopNav';
 interface OverlayHUDProps {
   activeSectionId: string;
   onNavigate: (sectionId: string) => void;
-  isMuted: boolean;
-  onToggleAudio: () => void;
+  isMuted?: boolean;
+  onToggleAudio?: () => void;
   theme?: 'dark' | 'light';
   onToggleTheme?: () => void;
 }
@@ -13,10 +13,6 @@ interface OverlayHUDProps {
 export const OverlayHUD: React.FC<OverlayHUDProps> = ({
   activeSectionId,
   onNavigate,
-  isMuted,
-  onToggleAudio,
-  theme = 'dark',
-  onToggleTheme,
 }) => {
   return (
     <div
@@ -27,10 +23,6 @@ export const OverlayHUD: React.FC<OverlayHUDProps> = ({
       <TopNav
         activeSectionId={activeSectionId}
         onNavigate={onNavigate}
-        isMuted={isMuted}
-        onToggleAudio={onToggleAudio}
-        theme={theme}
-        onToggleTheme={onToggleTheme}
       />
     </div>
   );

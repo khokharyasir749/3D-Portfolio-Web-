@@ -480,19 +480,7 @@ export const WhatIDoSection: React.FC = () => {
               {/* Ambient Outer Glow */}
               <div className="absolute -inset-1 bg-gradient-to-r from-[#2C665D]/20 via-[#25524B]/30 to-[#2C665D]/20 rounded-3xl blur-xl opacity-40 group-hover:opacity-80 transition-opacity duration-700 pointer-events-none" />
 
-              <div className="relative rounded-2xl overflow-hidden bg-white dark:bg-[#132B27] border border-zinc-200/90 dark:border-[#25524B] group-hover:border-[#1D5A50] dark:group-hover:border-[#2C665D] shadow-md transition-all duration-500 flex flex-col justify-between">
-                {/* Top Header Label */}
-                <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-20 pointer-events-none">
-                  <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/90 dark:bg-[#0A1312]/85 backdrop-blur-md border border-zinc-200 dark:border-[#25524B] text-xs font-mono text-[#1D5A50] dark:text-[#2C665D] shadow-sm font-semibold">
-                    <span className="w-2 h-2 rounded-full bg-[#1D5A50] dark:bg-[#2C665D] animate-pulse" />
-                    <span>HARDWARE WORKSTATION</span>
-                  </div>
-
-                  <span className="text-xs font-mono px-2.5 py-1 rounded-full bg-white/90 dark:bg-[#0A1312]/85 backdrop-blur-md border border-zinc-200 dark:border-[#25524B] text-[#0F2420] dark:text-[#E6F4F1] shadow-sm">
-                    4K DUAL DISPLAY
-                  </span>
-                </div>
-
+              <div className="relative rounded-2xl overflow-hidden bg-[#132B27] border border-[#25524B] group-hover:border-[#2C665D] shadow-md transition-all duration-500">
                 {/* Setup Photo */}
                 <div className="relative w-full h-[280px] sm:h-[340px] lg:h-[380px] overflow-hidden">
                   <img
@@ -500,21 +488,6 @@ export const WhatIDoSection: React.FC = () => {
                     alt="Yasir Khokhar Hardware & Developer Workstation Setup"
                     className="w-full h-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-700 select-none"
                   />
-                  {/* Dark Vignette Bottom Gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
-                </div>
-
-                {/* Bottom Glass Pill Overlay */}
-                <div className="absolute bottom-3 left-3 right-3 p-3 rounded-xl bg-white/95 dark:bg-[#132B27]/90 backdrop-blur-md border border-zinc-200 dark:border-[#25524B] flex items-center justify-between z-20 shadow-md">
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-[#1D5A50] dark:bg-[#2C665D] animate-ping" />
-                    <span className="text-xs font-mono font-bold text-[#0F2420] dark:text-[#E6F4F1] tracking-wider">
-                      WORKSTATION & LAB SETUP
-                    </span>
-                  </div>
-                  <span className="text-xs font-mono text-[#1D5A50] dark:text-[#2C665D] font-semibold">
-                    60 FPS ULTRA-HD
-                  </span>
                 </div>
               </div>
             </div>
@@ -592,19 +565,7 @@ export const WhatIDoSection: React.FC = () => {
               {/* Ambient Outer Glow */}
               <div className="absolute -inset-1 bg-gradient-to-r from-[#2C665D]/20 via-[#25524B]/30 to-[#2C665D]/20 rounded-3xl blur-xl opacity-40 group-hover:opacity-80 transition-opacity duration-700 pointer-events-none" />
 
-              <div className="relative rounded-2xl overflow-hidden bg-white dark:bg-[#132B27] border border-zinc-200/90 dark:border-[#25524B] group-hover:border-[#1D5A50] dark:group-hover:border-[#2C665D] shadow-md transition-all duration-500 flex flex-col justify-between">
-                {/* Top Header Label */}
-                <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-20 pointer-events-none">
-                  <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/90 dark:bg-[#0A1312]/85 backdrop-blur-md border border-zinc-200 dark:border-[#25524B] text-xs font-mono text-[#1D5A50] dark:text-[#2C665D] shadow-sm font-semibold">
-                    <span className="w-2 h-2 rounded-full bg-[#1D5A50] dark:bg-[#2C665D] animate-pulse" />
-                    <span>3D SPATIAL LAB</span>
-                  </div>
-
-                  <span className="text-xs font-mono px-2.5 py-1 rounded-full bg-white/90 dark:bg-[#0A1312]/85 backdrop-blur-md border border-zinc-200 dark:border-[#25524B] text-[#0F2420] dark:text-[#E6F4F1] shadow-sm">
-                    STUDIO DISPLAY
-                  </span>
-                </div>
-
+              <div className="relative rounded-2xl overflow-hidden bg-[#132B27] border border-[#25524B] group-hover:border-[#2C665D] shadow-md transition-all duration-500">
                 {/* Setup Photo */}
                 <div className="relative w-full h-[280px] sm:h-[340px] lg:h-[380px] overflow-hidden">
                   <img
@@ -612,21 +573,6 @@ export const WhatIDoSection: React.FC = () => {
                     alt="Yasir Khokhar Creative & 3D WebGL Studio Workstation"
                     className="w-full h-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-700 select-none"
                   />
-                  {/* Dark Vignette Bottom Gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
-                </div>
-
-                {/* Bottom Glass Pill Overlay */}
-                <div className="absolute bottom-3 left-3 right-3 p-3 rounded-xl bg-white/95 dark:bg-[#132B27]/90 backdrop-blur-md border border-zinc-200 dark:border-[#25524B] flex items-center justify-between z-20 shadow-md">
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-[#1D5A50] dark:bg-[#2C665D] animate-ping" />
-                    <span className="text-xs font-mono font-bold text-[#0F2420] dark:text-[#E6F4F1] tracking-wider">
-                      CREATIVE STUDIO SETUP
-                    </span>
-                  </div>
-                  <span className="text-xs font-mono text-[#1D5A50] dark:text-[#2C665D] font-semibold">
-                    GPU ACCELERATED
-                  </span>
                 </div>
               </div>
             </div>

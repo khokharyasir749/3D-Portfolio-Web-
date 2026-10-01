@@ -23,33 +23,18 @@ export const App: React.FC = () => {
   const [activeSectionId, setActiveSectionId] = useState<string>('hero');
   const [scrollProgress, setScrollProgress] = useState<number>(0);
   const lenisRef = useRef<Lenis | null>(null);
-  const [theme, setTheme] = useState<'dark' | 'light'>(() => {
-    if (typeof window !== 'undefined') {
-      return localStorage.getItem('theme') === 'light' ? 'light' : 'dark';
-    }
-    return 'dark';
-  });
 
-
+  // Permanently lock interface to Dark Mode
   useEffect(() => {
     const root = document.documentElement;
-    if (theme === 'light') {
-      root.classList.remove('dark');
-      root.classList.add('light');
-    } else {
-      root.classList.remove('light');
-      root.classList.add('dark');
-    }
-    localStorage.setItem('theme', theme);
-  }, [theme]);
+    root.classList.remove('light');
+    root.classList.add('dark');
+    localStorage.setItem('theme', 'dark');
+  }, []);
 
-  const handleToggleTheme = () => {
-    audioManager.playClickSound();
-    setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
-  };
-
-  // Scroll Restoration Control & Reset to Top on Page Load / Refresh
+  // Scroll Restoration Control & Reset to Top on Page Load / Refresh + Enforce Tab Title
   useEffect(() => {
+    document.title = 'YASIR DEVELOPER PORTFOLIO';
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
     }
@@ -157,11 +142,11 @@ export const App: React.FC = () => {
 
   return (
     <ErrorBoundary name="RootApplication">
-      <div className={`w-full min-h-screen relative selection:bg-[#2C665D] selection:text-[#E6F4F1] transition-colors duration-500 ${theme === 'light' ? 'bg-[#F6F9F8] text-[#0F2420]' : 'bg-[#0A1312] text-[#E6F4F1]'}`}>
+      <div className="w-full min-h-screen relative selection:bg-[#2C665D] selection:text-[#E6F4F1] bg-[#0A1312] text-[#E6F4F1]">
 
         {/* Single Fixed Full-Screen Background 3D Scene Canvas (Z-Index 0) */}
         <ErrorBoundary name="GlobalSceneCanvas" fallback={null}>
-          <GlobalSceneCanvas scrollProgress={scrollProgress} theme={theme} />
+          <GlobalSceneCanvas scrollProgress={scrollProgress} theme="dark" />
         </ErrorBoundary>
 
         {/* Global Fixed Minimalist HUD */}
@@ -169,18 +154,13 @@ export const App: React.FC = () => {
           <OverlayHUD
             activeSectionId={activeSectionId}
             onNavigate={handleNavigate}
-            isMuted={isMuted}
-            onToggleAudio={handleToggleAudio}
-            theme={theme}
-            onToggleTheme={handleToggleTheme}
           />
         </ErrorBoundary>
 
         {/* Interactive Dev Terminal Console Drawer */}
         <ErrorBoundary name="DevTerminal">
           <DevTerminal
-            theme={theme}
-            onToggleTheme={handleToggleTheme}
+            theme="dark"
             isMuted={isMuted}
             onToggleAudio={handleToggleAudio}
             onNavigate={handleNavigate}

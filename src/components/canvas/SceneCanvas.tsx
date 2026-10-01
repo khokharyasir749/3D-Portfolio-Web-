@@ -60,7 +60,7 @@ export const SceneCanvas: React.FC<SceneCanvasProps> = ({
           {/* Atmospheric Lighting with Desk Spotlight & Neon Accents */}
           <Lighting />
           
-          {/* Cyberpunk Isometric Room Shell */}
+          {/* Isometric Room Shell */}
           <RoomShell />
 
           {/* Centered & Scaled 1.35x Battle-Station Rig facing front */}
