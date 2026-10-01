@@ -118,6 +118,31 @@ export const portfolioData = {
   projects: [
     {
       number: "01",
+      id: "enterprise-rag-system",
+      title: "Enterprise RAG Intelligence System",
+      category: "AI / Retrieval-Augmented Generation",
+      tagline: "AI / Retrieval-Augmented Generation",
+      description: "An enterprise-grade Retrieval-Augmented Generation (RAG) platform designed for semantic document querying, contextual vector retrieval, and automated knowledge synthesis.",
+      tags: ["Python", "LangChain", "Vector DB", "React", "Tailwind CSS", "FastAPI"],
+      features: [
+        "Hardware-accelerated 384-dimensional vector pre-filtering with pre-LLM security isolation",
+        "Role-Based Access Control (RBAC) indexing with dynamic recursive document chunking in Qdrant",
+        "Permanent compliance audit trail logging every query, document retrieval, and security rejection",
+        "Multi-tenant workspace gateway with role-gated security passkey authentication"
+      ],
+      metrics: "Sub-100ms vector similarity search with zero cross-tenant vector leakage",
+      githubUrl: "https://github.com/khokharyasir749",
+      featured: true,
+      image: "/RAG 1 (1).png",
+      gallery: [
+        "/RAG 1 (1).png",
+        "/RAG 1 (2).png",
+        "/RAG 1 (3).png",
+        "/RAG 1 (4).png"
+      ]
+    },
+    {
+      number: "02",
       id: "noir-luxury-fragrance",
       title: "NOIR — Luxury Fragrance Experience",
       category: "E-Commerce / 3D Experience",
@@ -142,7 +167,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "02",
+      number: "03",
       id: "sillage-fragrance-atelier",
       title: "SILLAGE — Haute Parfumerie Paris",
       category: "Luxury Brand / Web App",
@@ -167,7 +192,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "03",
+      number: "04",
       id: "netflix-clone",
       title: "Netflix Clone",
       tagline: "Video Streaming Platform UI & Dynamic Catalog",
@@ -192,7 +217,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "04",
+      number: "05",
       id: "inventory-system",
       title: "Inventory System",
       tagline: "Enterprise Inventory & Stock Management Platform",
@@ -215,7 +240,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "05",
+      number: "06",
       id: "lonetex-pakistan",
       title: "Lonetex Pakistan",
       tagline: "Commercial Cleaning Equipment E-Commerce & Wholesale Catalog",
@@ -240,7 +265,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "06",
+      number: "07",
       id: "bite-hub",
       title: "Bite-Hub",
       tagline: "Cyberpunk-themed fast-food ordering web app with state persistence & admin dashboard",
@@ -264,7 +289,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "07",
+      number: "08",
       id: "shopsphere-ecommerce",
       title: "ShopSphere E-Commerce",
       tagline: "Modern digital commerce platform with dynamic filters & shopping cart",
@@ -288,7 +313,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "08",
+      number: "09",
       id: "sync-space",
       title: "Sync-Space Chat Hub",
       tagline: "Real-time full-stack chat application with Socket.io & live presence",
@@ -311,7 +336,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "09",
+      number: "10",
       id: "smartlearn-lms",
       title: "SmartLearn LMS",
       tagline: "Modern learning management frontend with course discovery & progress filters",
@@ -336,7 +361,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "10",
+      number: "11",
       id: "lonetex-inventory",
       title: "Lonetex Inventory ERP",
       tagline: "Industrial stock operations dashboard with rack allocations & supply metrics",
@@ -360,7 +385,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "11",
+      number: "12",
       id: "weather-dashboard",
       title: "Cyber Weather Dashboard",
       tagline: "Real-time global meteorological monitor with forecast telemetry",
@@ -384,7 +409,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "12",
+      number: "13",
       id: "modern-calculator",
       title: "Modern Glass Calculator",
       tagline: "Precision financial and scientific calculation engine with dark UI",
