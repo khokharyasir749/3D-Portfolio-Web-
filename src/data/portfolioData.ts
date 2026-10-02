@@ -118,6 +118,28 @@ export const portfolioData = {
   projects: [
     {
       number: "01",
+      id: "flight-one-travel",
+      title: "FlightOne — Web & Mobile Travel Platform",
+      category: "Cross-Platform Web & Mobile App",
+      tagline: "Unified Web & Mobile Custom Tour Booking Ecosystem",
+      description: "A comprehensive cross-platform digital booking ecosystem featuring responsive web interfaces and mobile application flows for custom tour packages, real-time ticket booking, and interactive destination itineraries.",
+      tags: ["React", "React Native", "Next.js", "Tailwind CSS", "TypeScript", "Node.js"],
+      features: [
+        "Unified web portal and mobile app architecture tailored for domestic and international travel bookings",
+        "Custom tour package builder with dynamic itinerary planning and fare estimates",
+        "Cross-device synchronized booking state with real-time seat and schedule availability",
+        "Responsive mobile-first UI with offline-capable itinerary caching and fast checkout"
+      ],
+      metrics: "Cross-platform Web & Mobile architecture with sub-second responsive interaction",
+      githubUrl: "https://github.com/khokharyasir749",
+      featured: true,
+      image: "/flight one 1.jpeg",
+      gallery: [
+        "/flight one 1.jpeg"
+      ]
+    },
+    {
+      number: "02",
       id: "enterprise-rag-system",
       title: "Enterprise RAG Intelligence System",
       category: "AI / Retrieval-Augmented Generation",
@@ -142,7 +164,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "02",
+      number: "03",
       id: "noir-luxury-fragrance",
       title: "NOIR — Luxury Fragrance Experience",
       category: "E-Commerce / 3D Experience",
@@ -167,7 +189,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "03",
+      number: "04",
       id: "sillage-fragrance-atelier",
       title: "SILLAGE — Haute Parfumerie Paris",
       category: "Luxury Brand / Web App",
@@ -192,7 +214,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "04",
+      number: "05",
       id: "netflix-clone",
       title: "Netflix Clone",
       tagline: "Video Streaming Platform UI & Dynamic Catalog",
@@ -217,7 +239,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "05",
+      number: "06",
       id: "inventory-system",
       title: "Inventory System",
       tagline: "Enterprise Inventory & Stock Management Platform",
@@ -240,7 +262,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "06",
+      number: "07",
       id: "lonetex-pakistan",
       title: "Lonetex Pakistan",
       tagline: "Commercial Cleaning Equipment E-Commerce & Wholesale Catalog",
@@ -265,7 +287,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "07",
+      number: "08",
       id: "bite-hub",
       title: "Bite-Hub",
       tagline: "Cyberpunk-themed fast-food ordering web app with state persistence & admin dashboard",
@@ -289,7 +311,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "08",
+      number: "09",
       id: "shopsphere-ecommerce",
       title: "ShopSphere E-Commerce",
       tagline: "Modern digital commerce platform with dynamic filters & shopping cart",
@@ -313,7 +335,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "09",
+      number: "10",
       id: "sync-space",
       title: "Sync-Space Chat Hub",
       tagline: "Real-time full-stack chat application with Socket.io & live presence",
@@ -336,7 +358,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "10",
+      number: "11",
       id: "smartlearn-lms",
       title: "SmartLearn LMS",
       tagline: "Modern learning management frontend with course discovery & progress filters",
@@ -361,7 +383,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "11",
+      number: "12",
       id: "lonetex-inventory",
       title: "Lonetex Inventory ERP",
       tagline: "Industrial stock operations dashboard with rack allocations & supply metrics",
@@ -385,7 +407,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "12",
+      number: "13",
       id: "weather-dashboard",
       title: "Cyber Weather Dashboard",
       tagline: "Real-time global meteorological monitor with forecast telemetry",
@@ -409,7 +431,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "13",
+      number: "14",
       id: "modern-calculator",
       title: "Modern Glass Calculator",
       tagline: "Precision financial and scientific calculation engine with dark UI",
