@@ -303,11 +303,12 @@ export const portfolioData = {
       demoUrl: "https://bite-hub-demo.netlify.app",
       githubUrl: "https://github.com/khokharyasir749/bite-hub",
       featured: true,
-      image: "/projects/bite-hub-1.png",
+      image: "/bithub 1.png",
       gallery: [
-        "/projects/bite-hub-1.png",
-        "/projects/bite-hub-2.png",
-        "/projects/bite-hub-3.png"
+        "/bithub 1.png",
+        "/bithub 2.png",
+        "/bithub 3.png",
+        "/bithub 4.png"
       ]
     },
     {
