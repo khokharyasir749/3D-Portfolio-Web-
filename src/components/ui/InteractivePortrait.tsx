@@ -1,6 +1,5 @@
 import React, { useRef } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
-import profilePic from '../../assets/profile.jpg';
 
 export const InteractivePortrait: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -68,7 +67,7 @@ export const InteractivePortrait: React.FC = () => {
         <div className="w-full h-full rounded-full overflow-hidden relative bg-[#0A1312] border-[3px] border-[#25524B] group-hover:border-[#C58A55] shadow-2xl group-hover:shadow-[0_0_40px_rgba(197,138,85,0.35)] transition-all duration-700 [transform:translateZ(10px)]">
           {/* Authentic Local Profile Portrait with Monochrome-to-Color hover */}
           <img
-            src={profilePic}
+            src="/mein professional profile 2.jpeg"
             alt="Yasir Khokhar"
             className="w-full h-full object-cover object-[center_20%] scale-105 group-hover:scale-110 grayscale contrast-125 brightness-95 group-hover:grayscale-0 group-hover:contrast-100 group-hover:brightness-105 transition-all duration-700 ease-out"
             loading="eager"
