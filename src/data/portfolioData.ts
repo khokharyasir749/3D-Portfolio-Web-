@@ -140,6 +140,30 @@ export const portfolioData = {
     },
     {
       number: "02",
+      id: "enterprise-crm-system",
+      title: "Enterprise CRM & Client Operations Platform",
+      category: "Enterprise SaaS / Business Operations",
+      tagline: "Comprehensive Customer Relationship & Operations Management",
+      description: "An enterprise-grade CRM and workflow management platform delivering end-to-end client lifecycle tracking, sales pipeline automation, financial ledger insights, and team productivity analytics.",
+      tags: ["React", "Next.js", "TypeScript", "Node.js", "Tailwind CSS", "PostgreSQL"],
+      features: [
+        "Real-time pipeline monitoring with multi-stage deal tracking and conversion analytics",
+        "Automated client interaction logs, activity timelines, and communication history",
+        "Role-based access control (RBAC) with granular administrative and team permissions",
+        "Integrated financial reporting, invoice management, and metric visualization dashboards"
+      ],
+      metrics: "End-to-end client lifecycle management with sub-100ms dashboard queries",
+      githubUrl: "https://github.com/khokharyasir749",
+      featured: true,
+      image: "/CRM System 1.png",
+      gallery: [
+        "/CRM System 1.png",
+        "/CRM System 2.png",
+        "/CRM System 3.png"
+      ]
+    },
+    {
+      number: "03",
       id: "enterprise-rag-system",
       title: "Enterprise RAG Intelligence System",
       category: "AI / Retrieval-Augmented Generation",
@@ -164,7 +188,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "03",
+      number: "04",
       id: "noir-luxury-fragrance",
       title: "NOIR — Luxury Fragrance Experience",
       category: "E-Commerce / 3D Experience",
@@ -189,7 +213,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "04",
+      number: "05",
       id: "sillage-fragrance-atelier",
       title: "SILLAGE — Haute Parfumerie Paris",
       category: "Luxury Brand / Web App",
@@ -214,7 +238,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "05",
+      number: "06",
       id: "netflix-clone",
       title: "Netflix Clone",
       tagline: "Video Streaming Platform UI & Dynamic Catalog",
@@ -239,7 +263,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "06",
+      number: "07",
       id: "inventory-system",
       title: "Inventory System",
       tagline: "Enterprise Inventory & Stock Management Platform",
@@ -262,7 +286,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "07",
+      number: "08",
       id: "lonetex-pakistan",
       title: "Lonetex Pakistan",
       tagline: "Commercial Cleaning Equipment E-Commerce & Wholesale Catalog",
@@ -287,7 +311,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "08",
+      number: "09",
       id: "bite-hub",
       title: "Bite-Hub",
       tagline: "Cyberpunk-themed fast-food ordering web app with state persistence & admin dashboard",
@@ -312,7 +336,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "09",
+      number: "10",
       id: "shopsphere-ecommerce",
       title: "ShopSphere E-Commerce",
       tagline: "Modern digital commerce platform with dynamic filters & shopping cart",
@@ -336,7 +360,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "10",
+      number: "11",
       id: "sync-space",
       title: "Sync-Space Chat Hub",
       tagline: "Real-time full-stack chat application with Socket.io & live presence",
@@ -359,7 +383,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "11",
+      number: "12",
       id: "smartlearn-lms",
       title: "SmartLearn LMS",
       tagline: "Modern learning management frontend with course discovery & progress filters",
@@ -384,7 +408,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "12",
+      number: "13",
       id: "lonetex-inventory",
       title: "Lonetex Inventory ERP",
       tagline: "Industrial stock operations dashboard with rack allocations & supply metrics",
@@ -408,7 +432,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "13",
+      number: "14",
       id: "weather-dashboard",
       title: "Cyber Weather Dashboard",
       tagline: "Real-time global meteorological monitor with forecast telemetry",
@@ -432,7 +456,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "14",
+      number: "15",
       id: "modern-calculator",
       title: "Modern Glass Calculator",
       tagline: "Precision financial and scientific calculation engine with dark UI",
