@@ -50,15 +50,15 @@ export const HeroV2: React.FC<HeroV2Props> = ({ onCtaClick }) => {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,#ffffff09_1px,transparent_0)] [background-size:20px_20px] opacity-40 pointer-events-none" />
       </div>
 
-      {/* 2. Massive Typographic Branding Watermark */}
-      <div className="absolute inset-x-0 top-[18%] sm:top-[22%] flex justify-center pointer-events-none select-none z-10 overflow-hidden px-4">
-        <h1 className="text-[14vw] sm:text-[11vw] lg:text-[10.5rem] font-black uppercase tracking-tighter text-[#eae5df]/[0.17] leading-none whitespace-nowrap drop-shadow-sm font-sans">
+      {/* 2. Typographic Branding Watermark (Positioned behind portrait head & shoulders) */}
+      <div className="absolute inset-x-0 top-[10%] sm:top-[12%] lg:top-[14%] flex justify-center pointer-events-none select-none z-0 px-4">
+        <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[7.5vw] xl:text-[7.2rem] font-black uppercase tracking-tight text-white/[0.08] leading-none whitespace-nowrap font-sans drop-shadow-sm">
           YASIR KHOKHAR
         </h1>
       </div>
 
       {/* 3. Centered High-Resolution Cutout Portrait */}
-      <div className="absolute inset-0 flex items-end justify-center pointer-events-none z-20">
+      <div className="absolute inset-0 flex items-end justify-center pointer-events-none z-10">
         <div className="relative flex items-end justify-center h-full max-h-[580px] sm:max-h-[660px] lg:max-h-[740px]">
           <img
             src="/yasir-hero-cutout.png"
