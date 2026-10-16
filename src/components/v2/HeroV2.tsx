@@ -50,12 +50,15 @@ export const HeroV2: React.FC<HeroV2Props> = ({ onCtaClick }) => {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,#ffffff09_1px,transparent_0)] [background-size:20px_20px] opacity-40 pointer-events-none" />
       </div>
 
-      {/* 2. Typographic Branding Watermark (Positioned behind portrait head & shoulders) */}
-      <div className="absolute inset-x-0 top-[10%] sm:top-[12%] lg:top-[14%] flex justify-center pointer-events-none select-none z-0 px-4">
-        <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[7.5vw] xl:text-[7.2rem] font-black uppercase tracking-tight text-white/[0.08] leading-none whitespace-nowrap font-sans drop-shadow-sm">
-          YASIR KHOKHAR
-        </h1>
-      </div>
+      {/* 2. Typographic Branding Watermark (Split across left and right with center gap behind portrait head) */}
+      <h1 className="absolute inset-x-0 top-[10%] sm:top-[12%] lg:top-[14%] flex items-baseline justify-between pointer-events-none select-none z-0 px-4 sm:px-6 lg:px-8 w-full">
+        <span className="text-5xl sm:text-7xl md:text-8xl lg:text-[7.5vw] xl:text-[7.2rem] font-black uppercase tracking-tight text-white/[0.08] leading-none whitespace-nowrap font-sans drop-shadow-sm">
+          YASIR
+        </span>
+        <span className="text-5xl sm:text-7xl md:text-8xl lg:text-[7.5vw] xl:text-[7.2rem] font-black uppercase tracking-tight text-white/[0.08] leading-none whitespace-nowrap font-sans drop-shadow-sm text-right">
+          KHOKHAR
+        </span>
+      </h1>
 
       {/* 3. Centered High-Resolution Cutout Portrait */}
       <div className="absolute inset-0 flex items-end justify-center pointer-events-none z-10">
