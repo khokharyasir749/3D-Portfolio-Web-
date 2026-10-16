@@ -50,23 +50,20 @@ export const HeroV2: React.FC<HeroV2Props> = ({ onCtaClick }) => {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,#ffffff09_1px,transparent_0)] [background-size:20px_20px] opacity-40 pointer-events-none" />
       </div>
 
-      {/* 2. Typographic Branding Watermark (Split across left and right with center gap behind portrait head) */}
-      <h1 className="absolute inset-x-0 top-[10%] sm:top-[12%] lg:top-[14%] flex items-baseline justify-between pointer-events-none select-none z-0 px-4 sm:px-6 lg:px-8 w-full">
-        <span className="text-5xl sm:text-7xl md:text-8xl lg:text-[7.5vw] xl:text-[7.2rem] font-black uppercase tracking-tight text-white/[0.08] leading-none whitespace-nowrap font-sans drop-shadow-sm">
-          YASIR
-        </span>
-        <span className="text-5xl sm:text-7xl md:text-8xl lg:text-[7.5vw] xl:text-[7.2rem] font-black uppercase tracking-tight text-white/[0.08] leading-none whitespace-nowrap font-sans drop-shadow-sm text-right">
-          KHOKHAR
-        </span>
-      </h1>
+      {/* 2. Typographic Branding Watermark (Positioned completely above portrait head, unified and centered) */}
+      <div className="absolute inset-x-0 top-4 sm:top-5 lg:top-6 flex justify-center pointer-events-none select-none z-0 px-4">
+        <h1 className="text-[2.6rem] sm:text-7xl md:text-8xl lg:text-[8vw] xl:text-[7.8rem] font-black uppercase tracking-tight text-white/[0.08] leading-none whitespace-nowrap font-sans drop-shadow-sm text-center">
+          YASIR KHOKHAR
+        </h1>
+      </div>
 
       {/* 3. Centered High-Resolution Cutout Portrait */}
       <div className="absolute inset-0 flex items-end justify-center pointer-events-none z-10">
-        <div className="relative flex items-end justify-center h-full max-h-[580px] sm:max-h-[660px] lg:max-h-[740px]">
+        <div className="relative flex items-end justify-center h-full max-h-[490px] sm:max-h-[560px] lg:max-h-[630px]">
           <img
             src="/yasir-hero-cutout.png"
             alt="Yasir Khokhar — Full-Stack Developer & Creative Technologist"
-            className="h-[84%] sm:h-[90%] lg:h-[95%] w-auto max-w-none object-contain object-bottom filter contrast-[1.04] drop-shadow-[0_25px_50px_rgba(0,0,0,0.95)]"
+            className="h-[76%] sm:h-[80%] lg:h-[83%] w-auto max-w-none object-contain object-bottom filter contrast-[1.04] drop-shadow-[0_25px_50px_rgba(0,0,0,0.95)]"
             loading="eager"
           />
           {/* Subtle bottom fade gradient to seamlessly ground portrait into the canvas base */}
