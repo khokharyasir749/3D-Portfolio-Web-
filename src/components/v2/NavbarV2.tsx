@@ -19,8 +19,9 @@ export const NavbarV2: React.FC<NavbarV2Props> = ({ onContactClick }) => {
 
   const navLinks = [
     { name: 'Home', href: '#home' },
-    { name: 'Services', href: '#services' },
     { name: 'Projects', href: '#projects' },
+    { name: 'Experience', href: '#experience' },
+    { name: 'Skills', href: '#skills' },
     { name: 'About', href: '#about' },
   ];
 
@@ -33,7 +34,7 @@ export const NavbarV2: React.FC<NavbarV2Props> = ({ onContactClick }) => {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Brand Logo matching JAXON STEEL typography from Dribbble reference */}
         <a
-          href="/v2"
+          href="#home"
           className="flex items-center gap-2 group tracking-tight text-lg sm:text-xl font-black text-white uppercase select-none transition-transform hover:scale-[1.02]"
         >
           <span className="tracking-wider">YASIR</span>
@@ -63,8 +64,17 @@ export const NavbarV2: React.FC<NavbarV2Props> = ({ onContactClick }) => {
           })}
         </nav>
 
-        {/* Top Right Action Button: "Get in Touch" pill button */}
-        <div className="flex items-center gap-3">
+        {/* Top Right Action Buttons: Resume & "Get in Touch" pill button */}
+        <div className="flex items-center gap-2.5 sm:gap-3">
+          <a
+            href="mailto:khokharyasir749@gmail.com?subject=Resume%20Request%20-%20Yasir%20Khokhar"
+            className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-mono font-medium border border-white/10 bg-white/5 hover:bg-white/10 text-neutral-300 hover:text-white transition-all hover:border-orange-500/30"
+            title="Request Yasir's Resume"
+          >
+            <span>Resume</span>
+            <ArrowUpRight className="w-3.5 h-3.5 text-orange-400" />
+          </a>
+
           <a
             href="#contact"
             onClick={(e) => {
@@ -73,7 +83,7 @@ export const NavbarV2: React.FC<NavbarV2Props> = ({ onContactClick }) => {
                 onContactClick();
               }
             }}
-            className="group inline-flex items-center gap-2 px-5 py-2 rounded-full text-xs sm:text-sm font-medium border border-white/15 bg-white/5 hover:bg-white/10 text-white backdrop-blur-md transition-all duration-200 hover:border-orange-500/40 hover:scale-105 active:scale-95 shadow-sm"
+            className="group inline-flex items-center gap-2 px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-medium border border-white/15 bg-white/5 hover:bg-white/10 text-white backdrop-blur-md transition-all duration-200 hover:border-orange-500/40 hover:scale-105 active:scale-95 shadow-sm"
           >
             <span>Get in Touch</span>
             <ArrowUpRight className="w-3.5 h-3.5 text-neutral-400 group-hover:text-orange-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />

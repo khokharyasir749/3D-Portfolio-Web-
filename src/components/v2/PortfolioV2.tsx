@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { NavbarV2 } from './NavbarV2';
 import { HeroV2 } from './HeroV2';
 import { BentoGridV2 } from './BentoGridV2';
-import { ArrowUpRight, Mail, Phone, X, Check } from 'lucide-react';
+import { ArrowUpRight, Mail, Phone, X, Check, FileText } from 'lucide-react';
 import { portfolioData } from '../../data/portfolioData';
 
 export const PortfolioV2: React.FC = () => {
@@ -46,7 +46,7 @@ export const PortfolioV2: React.FC = () => {
       {/* Floating Quick Action / Switcher Controls (Bottom-Right) */}
       <div className="fixed bottom-5 right-5 z-40 flex items-center gap-3">
         <a
-          href="/"
+          href="/v1"
           className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#121216]/90 hover:bg-[#1a1a22] text-neutral-300 hover:text-white border border-white/10 hover:border-white/20 backdrop-blur-xl shadow-2xl text-xs font-mono transition-all duration-200 hover:scale-105 active:scale-95"
           title="Return to the original 3D Portfolio version"
         >
@@ -75,7 +75,7 @@ export const PortfolioV2: React.FC = () => {
               </span>
               <h3 className="text-2xl font-bold text-white">Book a Call & Get in Touch</h3>
               <p className="text-sm text-neutral-400 mt-1">
-                Reach out directly via WhatsApp, Email, or schedule an inquiry.
+                Reach out directly via WhatsApp, Email, or request verified credentials.
               </p>
             </div>
 
@@ -124,6 +124,22 @@ export const PortfolioV2: React.FC = () => {
                 </button>
               </div>
 
+              <a
+                href={portfolioData.about.resumeUrl}
+                className="flex items-center justify-between p-4 rounded-2xl bg-white/5 hover:bg-orange-500/10 border border-white/10 hover:border-orange-500/30 transition-all group"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="p-2.5 rounded-xl bg-orange-500/10 text-orange-400">
+                    <FileText className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <div className="text-sm font-semibold text-white">Direct Resume Request</div>
+                    <div className="text-xs text-neutral-400">Official technical dossier & CV</div>
+                  </div>
+                </div>
+                <ArrowUpRight className="w-4 h-4 text-neutral-400 group-hover:text-orange-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </a>
+
               <div className="flex items-center gap-3 pt-2">
                 {contacts
                   .filter((c) => c.type === 'github' || c.type === 'linkedin')
@@ -144,6 +160,27 @@ export const PortfolioV2: React.FC = () => {
           </div>
         </div>
       )}
+
+      {/* Sleek Minimalist Footer */}
+      <footer className="relative z-10 border-t border-white/5 bg-[#09090c]/80 backdrop-blur-xl py-10 px-4 sm:px-8 lg:px-12 text-xs font-mono text-neutral-400">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-2">
+            <span className="font-bold text-white tracking-wider">YASIR KHOKHAR</span>
+            <span className="text-neutral-600">•</span>
+            <span>{portfolioData.about.role}</span>
+          </div>
+          <div className="flex items-center gap-4 text-neutral-300">
+            <a href="https://github.com/khokharyasir749" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">GitHub</a>
+            <a href="https://linkedin.com/in/yasirkhokhar" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">LinkedIn</a>
+            <a href="https://wa.me/923280790704" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">WhatsApp</a>
+            <a href="mailto:khokharyasir749@gmail.com" className="hover:text-white transition-colors">Email</a>
+            <a href={portfolioData.about.resumeUrl} className="text-orange-400 hover:text-orange-300 transition-colors">Resume ↗</a>
+          </div>
+          <div className="text-neutral-500">
+            <span>📍 {portfolioData.about.location}</span>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };

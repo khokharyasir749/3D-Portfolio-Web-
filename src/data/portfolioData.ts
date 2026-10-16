@@ -53,6 +53,7 @@ export interface AboutData {
   timeline: TimelineEntry[];
   stats: { label: string; value: string; sub: string }[];
   philosophies: string[];
+  resumeUrl: string;
 }
 
 export interface ContactChannel {
@@ -72,6 +73,7 @@ export const portfolioData = {
     tagline: "Building digital experiences with React, Node.js & modern web technologies.",
     status: "AVAILABLE FOR WORK",
     location: "Lahore, Pakistan // Remote Worldwide",
+    resumeUrl: "mailto:khokharyasir749@gmail.com?subject=Resume%20Request%20-%20Yasir%20Khokhar",
     bio: [
       "A full-stack developer & creative technologist specializing in crafting high-performance, visually stunning web applications and interactive digital experiences with React, Node.js, modern CSS systems, and 3D WebGL.",
       "Experienced across modern full-stack engineering, single-page application state persistence, real-time WebSocket pipelines, and interactive 3D interfaces with Three.js and React Three Fiber.",

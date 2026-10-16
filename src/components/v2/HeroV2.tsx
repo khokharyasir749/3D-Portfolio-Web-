@@ -8,6 +8,7 @@ import {
   Crosshair,
   Smartphone,
   Terminal,
+  FileText,
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -89,12 +90,12 @@ export const HeroV2: React.FC<HeroV2Props> = ({ onCtaClick }) => {
           </p>
         </motion.div>
 
-        {/* Right Glowing Amber/Orange CTA Button */}
+        {/* Right Glowing Amber/Orange CTA Button & Resume Link */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-          className="flex justify-start md:justify-end items-center"
+          className="flex flex-wrap justify-start md:justify-end items-center gap-3 sm:gap-4"
         >
           <a
             href="#contact"
@@ -104,10 +105,19 @@ export const HeroV2: React.FC<HeroV2Props> = ({ onCtaClick }) => {
                 onCtaClick();
               }
             }}
-            className="group relative inline-flex items-center gap-3 px-8 sm:px-9 py-4 sm:py-4.5 rounded-2xl bg-white hover:bg-neutral-100 text-black font-semibold text-sm sm:text-base transition-all duration-300 transform hover:-translate-y-1 active:translate-y-0 cursor-pointer shadow-[0_0_55px_rgba(249,115,22,0.52),0_0_22px_rgba(249,115,22,0.35)] hover:shadow-[0_0_80px_rgba(249,115,22,0.75),0_0_30px_rgba(249,115,22,0.5)]"
+            className="group relative inline-flex items-center gap-3 px-7 sm:px-8 py-3.5 sm:py-4 rounded-2xl bg-white hover:bg-neutral-100 text-black font-semibold text-sm sm:text-base transition-all duration-300 transform hover:-translate-y-1 active:translate-y-0 cursor-pointer shadow-[0_0_55px_rgba(249,115,22,0.52),0_0_22px_rgba(249,115,22,0.35)] hover:shadow-[0_0_80px_rgba(249,115,22,0.75),0_0_30px_rgba(249,115,22,0.5)]"
           >
             <span>Book a free call</span>
             <ArrowUpRight className="w-5 h-5 text-black group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
+          </a>
+
+          <a
+            href="mailto:khokharyasir749@gmail.com?subject=Resume%20Request%20-%20Yasir%20Khokhar"
+            className="inline-flex items-center gap-2 px-5 sm:px-6 py-3.5 sm:py-4 rounded-2xl bg-white/5 hover:bg-white/10 text-white font-medium text-sm sm:text-base border border-white/10 hover:border-orange-500/40 backdrop-blur-md transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 shadow-sm"
+            title="Request Yasir Khokhar's Resume"
+          >
+            <FileText className="w-4 h-4 text-orange-400" />
+            <span>Resume</span>
           </a>
         </motion.div>
       </div>
