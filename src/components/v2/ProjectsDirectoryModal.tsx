@@ -66,7 +66,7 @@ export const ProjectsDirectoryModal: React.FC<ProjectsDirectoryModalProps> = ({
   });
 
   return (
-    <div className="fixed inset-0 z-50 bg-[#070709]/95 backdrop-blur-2xl overflow-y-auto selection:bg-orange-500/30 selection:text-orange-200">
+    <div className="fixed inset-0 z-50 bg-[#120805]/95 backdrop-blur-2xl overflow-y-auto selection:bg-orange-500/30 selection:text-orange-200">
       {/* Background ambient lighting */}
       <div className="fixed inset-0 pointer-events-none z-0">
         <div className="absolute -top-[10%] left-1/2 -translate-x-1/2 w-[800px] h-[450px] bg-gradient-to-b from-orange-600/10 via-amber-700/5 to-transparent blur-[140px] rounded-full" />
@@ -75,7 +75,7 @@ export const ProjectsDirectoryModal: React.FC<ProjectsDirectoryModalProps> = ({
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-8 sm:py-12 space-y-10">
         {/* Top Floating Control Bar */}
-        <div className="flex items-center justify-between pb-6 border-b border-white/10 sticky top-0 bg-[#070709]/80 backdrop-blur-xl z-30 pt-2 -mt-2">
+        <div className="flex items-center justify-between pb-6 border-b border-white/10 sticky top-0 bg-[#120805]/85 backdrop-blur-xl z-30 pt-2 -mt-2">
           <button
             onClick={onClose}
             className="group flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-neutral-300 hover:text-white transition-all text-xs font-mono"
@@ -138,7 +138,7 @@ export const ProjectsDirectoryModal: React.FC<ProjectsDirectoryModalProps> = ({
               whileHover={{ y: -6 }}
               transition={{ duration: 0.2 }}
               onClick={() => setSelectedCaseStudy(project)}
-              className="group relative rounded-3xl bg-[#0e0e12]/90 border border-white/10 hover:border-orange-500/40 p-6 backdrop-blur-xl transition-all duration-300 flex flex-col justify-between overflow-hidden cursor-pointer shadow-2xl"
+              className="group relative rounded-3xl bg-white/[0.03] hover:bg-white/[0.06] border border-white/[0.08] hover:border-orange-500/40 p-6 backdrop-blur-xl transition-all duration-300 flex flex-col justify-between overflow-hidden cursor-pointer shadow-2xl"
             >
               {/* Subtle ambient card glow */}
               <div className="absolute top-0 right-0 w-64 h-64 bg-orange-600/5 group-hover:bg-orange-600/10 rounded-full blur-[80px] pointer-events-none transition-colors" />

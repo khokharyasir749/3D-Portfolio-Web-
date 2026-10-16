@@ -200,7 +200,7 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
   return (
     <section id="projects" className="space-y-16 pt-10 select-none">
       {/* Section Header */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-white/5">
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-4">
         <div className="space-y-2">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 font-mono text-xs">
             <Sparkles className="w-3.5 h-3.5 text-orange-400" />
@@ -217,14 +217,14 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
         {onOpenAllProjects ? (
           <button
             onClick={onOpenAllProjects}
-            className="group text-xs font-mono px-3.5 py-1.5 rounded-xl bg-[#141418] hover:bg-[#1c1c24] border border-white/10 hover:border-orange-500/30 text-neutral-300 hover:text-white transition-all cursor-pointer flex items-center gap-2"
+            className="group text-xs font-mono px-3.5 py-1.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 hover:border-orange-500/30 text-neutral-300 hover:text-white transition-all cursor-pointer flex items-center gap-2"
             title="Open complete projects directory"
           >
             <span>3 Featured • 7 in Directory</span>
             <ArrowUpRight className="w-3.5 h-3.5 text-orange-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </button>
         ) : (
-          <div className="text-xs font-mono px-3.5 py-1.5 rounded-xl bg-[#141418] border border-white/10 text-neutral-300">
+          <div className="text-xs font-mono px-3.5 py-1.5 rounded-xl bg-white/[0.04] border border-white/10 text-neutral-300">
             3 Featured • 7 in Archive
           </div>
         )}
@@ -241,7 +241,7 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
           {/* Image Column (Left - 7 cols) */}
           <div className="lg:col-span-7">
-            <div className="relative group rounded-3xl overflow-hidden bg-[#09090c] border border-white/10 hover:border-orange-500/40 transition-all duration-500 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)]">
+            <div className="relative group rounded-3xl overflow-hidden bg-black/40 border border-white/10 hover:border-orange-500/40 transition-all duration-500 backdrop-blur-sm shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)]">
               <div className="absolute -inset-1 bg-gradient-to-r from-orange-500/20 to-transparent rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
               <img
                 src={bithubVariant === 'bithub' ? bentoProjects[0].image : bentoProjects[0].altImage}
@@ -320,7 +320,7 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
 
             {/* Challenge & Solution Architecture Text */}
             <div className="space-y-3 pt-1">
-              <div className="p-4 rounded-2xl bg-[#0f0f14]/80 border border-white/5 space-y-1">
+              <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/[0.06] backdrop-blur-sm space-y-1">
                 <span className="text-[11px] font-mono uppercase tracking-wider text-orange-400 font-bold block">
                   THE CHALLENGE
                 </span>
@@ -329,7 +329,7 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
                 </p>
               </div>
 
-              <div className="p-4 rounded-2xl bg-[#0f0f14]/80 border border-white/5 space-y-1">
+              <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/[0.06] backdrop-blur-sm space-y-1">
                 <span className="text-[11px] font-mono uppercase tracking-wider text-emerald-400 font-bold block">
                   THE SOLUTION & IMPACT
                 </span>
@@ -420,7 +420,7 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
 
             {/* Challenge & Solution Architecture Text */}
             <div className="space-y-3 pt-1">
-              <div className="p-4 rounded-2xl bg-[#0f0f14]/80 border border-white/5 space-y-1">
+              <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/[0.06] backdrop-blur-sm space-y-1">
                 <span className="text-[11px] font-mono uppercase tracking-wider text-orange-400 font-bold block">
                   THE CHALLENGE
                 </span>
@@ -429,7 +429,7 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
                 </p>
               </div>
 
-              <div className="p-4 rounded-2xl bg-[#0f0f14]/80 border border-white/5 space-y-1">
+              <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/[0.06] backdrop-blur-sm space-y-1">
                 <span className="text-[11px] font-mono uppercase tracking-wider text-emerald-400 font-bold block">
                   THE SOLUTION & IMPACT
                 </span>
@@ -473,7 +473,7 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
 
           {/* Image Column (Right on desktop - 7 cols) */}
           <div className="lg:col-span-7 order-1 lg:order-2">
-            <div className="relative group rounded-3xl overflow-hidden bg-[#09090c] border border-white/10 hover:border-orange-500/40 transition-all duration-500 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)]">
+            <div className="relative group rounded-3xl overflow-hidden bg-black/40 border border-white/10 hover:border-orange-500/40 transition-all duration-500 backdrop-blur-sm shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)]">
               <div className="absolute -inset-1 bg-gradient-to-l from-orange-500/20 to-transparent rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
               <img
                 src={bentoProjects[4].image}
@@ -504,7 +504,7 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
           {/* Image Column (Left - 7 cols) */}
           <div className="lg:col-span-7">
-            <div className="relative group rounded-3xl overflow-hidden bg-[#09090c] border border-white/10 hover:border-orange-500/40 transition-all duration-500 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)]">
+            <div className="relative group rounded-3xl overflow-hidden bg-black/40 border border-white/10 hover:border-orange-500/40 transition-all duration-500 backdrop-blur-sm shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)]">
               <div className="absolute -inset-1 bg-gradient-to-r from-orange-500/20 to-transparent rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
               <img
                 src={bentoProjects[6].image}
@@ -559,7 +559,7 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
 
             {/* Challenge & Solution Architecture Text */}
             <div className="space-y-3 pt-1">
-              <div className="p-4 rounded-2xl bg-[#0f0f14]/80 border border-white/5 space-y-1">
+              <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/[0.06] backdrop-blur-sm space-y-1">
                 <span className="text-[11px] font-mono uppercase tracking-wider text-orange-400 font-bold block">
                   THE CHALLENGE
                 </span>
@@ -568,7 +568,7 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
                 </p>
               </div>
 
-              <div className="p-4 rounded-2xl bg-[#0f0f14]/80 border border-white/5 space-y-1">
+              <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/[0.06] backdrop-blur-sm space-y-1">
                 <span className="text-[11px] font-mono uppercase tracking-wider text-emerald-400 font-bold block">
                   THE SOLUTION & IMPACT
                 </span>
@@ -631,8 +631,8 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
       {/* ========================================================
           EXPERIENCE & CAREER JOURNEY SECTION
          ======================================================== */}
-      <section id="experience" className="space-y-10 pt-14 border-t border-white/5">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-white/5">
+      <section id="experience" className="space-y-10 pt-16 sm:pt-24">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-4">
           <div className="space-y-2">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 font-mono text-xs">
               <Briefcase className="w-3.5 h-3.5 text-orange-400" />
@@ -645,7 +645,7 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
               Demonstrated engineering progression across enterprise full-stack web applications, real-time distributed interfaces, and creative spatial 3D systems.
             </p>
           </div>
-          <div className="text-xs font-mono px-3.5 py-1.5 rounded-xl bg-[#141418] border border-white/10 text-neutral-300">
+          <div className="text-xs font-mono px-3.5 py-1.5 rounded-xl bg-white/[0.04] border border-white/10 text-neutral-300">
             2024 — Present
           </div>
         </div>
@@ -658,8 +658,8 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
               transition={{ duration: 0.2 }}
               className={`relative rounded-3xl p-6 sm:p-7 backdrop-blur-xl border transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-xl ${
                 item.current
-                  ? 'bg-gradient-to-b from-[#16161e] to-[#0e0e13] border-orange-500/40 shadow-orange-950/20'
-                  : 'bg-[#0e0e12]/90 border-white/10 hover:border-white/20'
+                  ? 'bg-gradient-to-b from-white/[0.08] to-white/[0.02] border-orange-500/40 shadow-orange-950/20'
+                  : 'bg-white/[0.03] hover:bg-white/[0.06] border-white/[0.08] hover:border-white/20'
               }`}
             >
               {item.current && (
@@ -713,9 +713,9 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
       {/* ========================================================
           TECHNICAL SKILLS & CORE STACK SECTION
          ======================================================== */}
-      <section id="skills" className="space-y-10 pt-14 border-t border-white/5 relative">
+      <section id="skills" className="space-y-10 pt-16 sm:pt-24 relative">
         <span id="services" className="absolute -top-24" />
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-white/5">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-4">
           <div className="space-y-2">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 font-mono text-xs">
               <Cpu className="w-3.5 h-3.5 text-orange-400" />
@@ -728,13 +728,13 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
               Modern full-stack toolchain calibrated for 60 FPS fluidity, strict TypeScript typing, and resilient high-throughput architectures.
             </p>
           </div>
-          <div className="text-xs font-mono px-3.5 py-1.5 rounded-xl bg-[#141418] border border-white/10 text-neutral-300">
+          <div className="text-xs font-mono px-3.5 py-1.5 rounded-xl bg-white/[0.04] border border-white/10 text-neutral-300">
             {portfolioData.techStack.length} Technologies Indexed
           </div>
         </div>
 
         {/* Core Stack Pills Strip */}
-        <div className="flex flex-wrap items-center gap-2.5 p-4 rounded-3xl bg-[#0e0e12]/90 border border-white/10 backdrop-blur-xl">
+        <div className="flex flex-wrap items-center gap-2.5 p-4 rounded-3xl bg-white/[0.03] border border-white/[0.08] backdrop-blur-xl">
           <span className="text-xs font-mono uppercase tracking-wider text-neutral-400 font-semibold px-2">
             CORE STACK:
           </span>
@@ -755,7 +755,7 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
               key={cIdx}
               whileHover={{ y: -4 }}
               transition={{ duration: 0.2 }}
-              className="rounded-3xl bg-[#0e0e12]/90 border border-white/10 hover:border-orange-500/40 p-6 sm:p-7 backdrop-blur-xl transition-all duration-300 flex flex-col justify-between shadow-xl"
+              className="rounded-3xl bg-white/[0.03] hover:bg-white/[0.06] border border-white/[0.08] hover:border-orange-500/40 p-6 sm:p-7 backdrop-blur-xl transition-all duration-300 flex flex-col justify-between shadow-xl"
             >
               <div className="space-y-5">
                 <div className="flex items-center justify-between pb-3 border-b border-white/5">
@@ -804,8 +804,8 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
       {/* ========================================================
           PERSONAL PROFILE & ABOUT SECTION
          ======================================================== */}
-      <section id="about" className="space-y-10 pt-14 border-t border-white/5">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-white/5">
+      <section id="about" className="space-y-10 pt-16 sm:pt-24">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-4">
           <div className="space-y-2">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 font-mono text-xs">
               <User className="w-3.5 h-3.5 text-orange-400" />
@@ -827,7 +827,7 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
         {/* Profile Card & Stats Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Main Bio Card (2-Cols) */}
-          <div className="lg:col-span-2 rounded-3xl bg-[#0e0e12]/90 border border-white/10 p-6 sm:p-8 backdrop-blur-xl space-y-6 shadow-xl">
+          <div className="lg:col-span-2 rounded-3xl bg-white/[0.03] border border-white/[0.08] p-6 sm:p-8 backdrop-blur-xl space-y-6 shadow-xl">
             {/* Profile Header */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pb-6 border-b border-white/5">
               <div className="w-16 h-16 rounded-2xl overflow-hidden border border-white/15 bg-neutral-900 shrink-0 shadow-lg">
@@ -867,7 +867,7 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
             {portfolioData.about.stats.map((stat, sIdx) => (
               <div
                 key={sIdx}
-                className="rounded-3xl bg-[#0e0e12]/90 border border-white/10 hover:border-orange-500/30 p-5 sm:p-6 backdrop-blur-xl flex flex-col justify-center space-y-1.5 transition-all shadow-lg"
+                className="rounded-3xl bg-white/[0.03] hover:bg-white/[0.06] border border-white/[0.08] hover:border-orange-500/30 p-5 sm:p-6 backdrop-blur-xl flex flex-col justify-center space-y-1.5 transition-all shadow-lg"
               >
                 <span className="text-[11px] font-mono uppercase tracking-wider text-neutral-400">
                   {stat.label}
@@ -884,7 +884,7 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
         </div>
 
         {/* Engineering Philosophies Strip */}
-        <div className="rounded-3xl bg-[#0e0e12]/90 border border-white/10 p-6 sm:p-8 backdrop-blur-xl space-y-4 shadow-xl">
+        <div className="rounded-3xl bg-white/[0.03] border border-white/[0.08] p-6 sm:p-8 backdrop-blur-xl space-y-4 shadow-xl">
           <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-orange-400 font-bold">
             <Compass className="w-4 h-4 text-orange-400" />
             <span>CORE ARCHITECTURAL PHILOSOPHIES</span>
@@ -906,8 +906,8 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
       {/* ========================================================
           CONTACT, SOCIAL & RESUME SECTION
          ======================================================== */}
-      <section id="contact" className="space-y-10 pt-14 border-t border-white/5">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-white/5">
+      <section id="contact" className="space-y-10 pt-16 sm:pt-24">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-4">
           <div className="space-y-2">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 font-mono text-xs">
               <Mail className="w-3.5 h-3.5 text-orange-400" />
@@ -920,14 +920,14 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
               Reach out directly for freelance contracts, full-time engineering inquiries, or spatial web collaborations.
             </p>
           </div>
-          <div className="text-xs font-mono px-3.5 py-1.5 rounded-xl bg-[#141418] border border-white/10 text-neutral-300">
+          <div className="text-xs font-mono px-3.5 py-1.5 rounded-xl bg-white/[0.04] border border-white/10 text-neutral-300">
             Fast Response Within 24h
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Card 1: Direct Email */}
-          <div className="rounded-3xl bg-[#0e0e12]/90 border border-white/10 hover:border-orange-500/40 p-6 backdrop-blur-xl flex flex-col justify-between space-y-4 shadow-xl">
+          <div className="rounded-3xl bg-white/[0.03] hover:bg-white/[0.06] border border-white/[0.08] hover:border-orange-500/40 p-6 backdrop-blur-xl flex flex-col justify-between space-y-4 shadow-xl transition-all">
             <div className="space-y-3">
               <div className="p-3 rounded-2xl bg-orange-500/10 text-orange-400 w-fit">
                 <Mail className="w-5 h-5" />
@@ -969,7 +969,7 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
             href="https://wa.me/923280790704"
             target="_blank"
             rel="noreferrer"
-            className="group rounded-3xl bg-[#0e0e12]/90 border border-white/10 hover:border-emerald-500/40 p-6 backdrop-blur-xl flex flex-col justify-between space-y-4 shadow-xl transition-all"
+            className="group rounded-3xl bg-white/[0.03] hover:bg-white/[0.06] border border-white/[0.08] hover:border-emerald-500/40 p-6 backdrop-blur-xl flex flex-col justify-between space-y-4 shadow-xl transition-all"
           >
             <div className="space-y-3">
               <div className="p-3 rounded-2xl bg-emerald-500/10 text-emerald-400 w-fit">
@@ -989,7 +989,7 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
           </a>
 
           {/* Card 3: Social & Repositories */}
-          <div className="rounded-3xl bg-[#0e0e12]/90 border border-white/10 p-6 backdrop-blur-xl flex flex-col justify-between space-y-4 shadow-xl">
+          <div className="rounded-3xl bg-white/[0.03] border border-white/[0.08] p-6 backdrop-blur-xl flex flex-col justify-between space-y-4 shadow-xl">
             <div className="space-y-3">
               <div className="p-3 rounded-2xl bg-white/5 text-neutral-300 w-fit">
                 <Github className="w-5 h-5" />
@@ -1028,7 +1028,7 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
           </div>
 
           {/* Card 4: Official CV & Resume Link */}
-          <div className="relative rounded-3xl bg-gradient-to-b from-[#1b1510] to-[#0e0e12] border border-orange-500/40 p-6 backdrop-blur-xl flex flex-col justify-between space-y-4 shadow-xl shadow-orange-950/20 overflow-hidden">
+          <div className="relative rounded-3xl bg-gradient-to-b from-orange-500/10 via-white/[0.03] to-white/[0.02] border border-orange-500/40 p-6 backdrop-blur-xl flex flex-col justify-between space-y-4 shadow-xl shadow-orange-950/20 overflow-hidden">
             <div className="absolute top-0 right-0 w-48 h-48 bg-orange-600/15 rounded-full blur-[60px] pointer-events-none" />
             <div className="space-y-3 relative z-10">
               <div className="p-3 rounded-2xl bg-orange-500/20 text-orange-400 w-fit border border-orange-500/30">

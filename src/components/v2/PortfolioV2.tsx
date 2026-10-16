@@ -24,13 +24,13 @@ export const PortfolioV2: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#140a06] text-[#fafafa] selection:bg-orange-500/30 selection:text-orange-200 font-sans antialiased relative overflow-x-hidden flex flex-col justify-between">
+    <div className="min-h-screen bg-[#120805] text-[#fafafa] selection:bg-orange-500/30 selection:text-orange-200 font-sans antialiased relative overflow-x-hidden flex flex-col justify-between">
       {/* Background ambient lighting and fine dot matrix texture */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        {/* Upper warm dark espresso atmosphere extending across navbar and top corners */}
-        <div className="absolute top-0 inset-x-0 h-[900px] bg-gradient-to-b from-[#180d08] via-[#140a06] to-[#070709]" />
+        {/* Continuous warm espresso atmosphere running uninterrupted from top to bottom */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#180d08] via-[#140a06] via-[#100704] to-[#0a0503]" />
         {/* Global micro-dot matrix pattern */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,#ffffff07_1px,transparent_0)] [background-size:24px_24px] opacity-50" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,#ffffff07_1px,transparent_0)] [background-size:24px_24px] opacity-40" />
       </div>
 
       {/* Floating Pill Navbar */}
@@ -40,7 +40,7 @@ export const PortfolioV2: React.FC = () => {
       />
 
       {/* Main Content Area */}
-      <main className="relative z-10 flex-1 pt-24 sm:pt-28 lg:pt-32 pb-24 px-4 sm:px-8 lg:px-12 max-w-7xl mx-auto w-full space-y-16">
+      <main className="relative z-10 flex-1 pt-24 sm:pt-28 lg:pt-32 pb-24 px-4 sm:px-8 lg:px-12 max-w-7xl mx-auto w-full space-y-24 sm:space-y-36">
         {/* Step 1: Hero Section */}
         <HeroV2 onCtaClick={() => setIsContactModalOpen(true)} />
 
@@ -173,7 +173,7 @@ export const PortfolioV2: React.FC = () => {
       />
 
       {/* Sleek Minimalist Footer */}
-      <footer className="relative z-10 border-t border-white/5 bg-[#09090c]/80 backdrop-blur-xl py-10 px-4 sm:px-8 lg:px-12 text-xs font-mono text-neutral-400">
+      <footer className="relative z-10 border-t border-white/[0.04] bg-transparent py-14 px-4 sm:px-8 lg:px-12 text-xs font-mono text-neutral-400">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
             <span className="font-bold text-white tracking-wider">YASIR KHOKHAR</span>

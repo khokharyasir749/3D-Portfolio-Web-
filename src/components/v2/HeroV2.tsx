@@ -34,12 +34,12 @@ export const HeroV2: React.FC<HeroV2Props> = ({ onCtaClick }) => {
     >
       {/* 1. Rich Warm Chocolate / Espresso Studio Backlight Directly Behind Portrait */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-        {/* Soft, warm amber-copper radial studio backlight */}
+        {/* Soft, warm amber-copper radial studio backlight smoothly blending into canvas */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              'radial-gradient(ellipse 70% 60% at 50% 40%, rgba(135, 62, 23, 0.55) 0%, rgba(85, 36, 12, 0.40) 45%, rgba(26, 14, 8, 0.95) 85%, #140a06 100%)',
+              'radial-gradient(ellipse 75% 65% at 50% 38%, rgba(135, 62, 23, 0.50) 0%, rgba(85, 36, 12, 0.35) 45%, rgba(20, 10, 6, 0.85) 80%, transparent 100%)',
           }}
         />
 
@@ -124,7 +124,7 @@ export const HeroV2: React.FC<HeroV2Props> = ({ onCtaClick }) => {
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-        className="relative z-30 pt-6 sm:pt-8 border-t border-white/5 overflow-x-auto no-scrollbar"
+        className="relative z-30 pt-8 sm:pt-10 overflow-x-auto no-scrollbar"
       >
         <div className="flex items-center gap-3 sm:gap-4 shrink-0 pb-1">
           {servicePills.map((pill, idx) => {
@@ -134,8 +134,8 @@ export const HeroV2: React.FC<HeroV2Props> = ({ onCtaClick }) => {
                 key={idx}
                 className={`group flex items-center gap-3 px-5 py-3 rounded-2xl border text-xs sm:text-sm font-medium backdrop-blur-xl transition-all duration-200 whitespace-nowrap cursor-pointer select-none ${
                   pill.active
-                    ? 'bg-[#15151a] border-orange-500/50 text-white shadow-[0_0_25px_rgba(249,115,22,0.18)]'
-                    : 'bg-[#121215]/80 hover:bg-[#18181f] border-white/10 hover:border-white/20 text-neutral-300 hover:text-white hover:scale-[1.02]'
+                    ? 'bg-white/10 border-orange-500/50 text-white shadow-[0_0_25px_rgba(249,115,22,0.18)]'
+                    : 'bg-white/[0.04] hover:bg-white/[0.08] border-white/10 hover:border-white/20 text-neutral-300 hover:text-white hover:scale-[1.02]'
                 }`}
               >
                 <div
