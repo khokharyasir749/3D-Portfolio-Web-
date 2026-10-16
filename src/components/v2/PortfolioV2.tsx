@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { NavbarV2 } from './NavbarV2';
 import { HeroV2 } from './HeroV2';
+import { BentoGridV2 } from './BentoGridV2';
 import { ArrowUpRight, Mail, Phone, X, Check } from 'lucide-react';
 import { portfolioData } from '../../data/portfolioData';
 
@@ -30,12 +31,16 @@ export const PortfolioV2: React.FC = () => {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,#ffffff07_1px,transparent_0)] [background-size:24px_24px] opacity-70" />
       </div>
 
-      {/* Floating Pill Navbar (Step 1) */}
+      {/* Floating Pill Navbar */}
       <NavbarV2 onContactClick={() => setIsContactModalOpen(true)} />
 
-      {/* Hero Header Area (Step 1) */}
-      <main className="relative z-10 flex-1 pt-24 sm:pt-28 lg:pt-32 pb-16 px-4 sm:px-8 lg:px-12 max-w-7xl mx-auto w-full flex flex-col justify-center">
+      {/* Main Content Area */}
+      <main className="relative z-10 flex-1 pt-24 sm:pt-28 lg:pt-32 pb-24 px-4 sm:px-8 lg:px-12 max-w-7xl mx-auto w-full space-y-16">
+        {/* Step 1: Hero Section */}
         <HeroV2 onCtaClick={() => setIsContactModalOpen(true)} />
+
+        {/* Step 2: Bento Grid Layout & Featured Projects / Services */}
+        <BentoGridV2 />
       </main>
 
       {/* Floating Quick Action / Switcher Controls (Bottom-Right) */}
