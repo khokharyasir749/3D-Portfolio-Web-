@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {
+  ArrowRight,
   ArrowUpRight,
   Sparkles,
   ExternalLink,
@@ -193,468 +194,488 @@ export const BentoGridV2: React.FC = () => {
   ];
 
   return (
-    <section id="projects" className="space-y-10 pt-10 select-none">
+    <section id="projects" className="space-y-16 pt-10 select-none">
       {/* Section Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-white/5">
         <div className="space-y-2">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 font-mono text-xs">
             <Sparkles className="w-3.5 h-3.5 text-orange-400" />
-            <span>NUMBERED SHOWCASE (01 — 07)</span>
+            <span>SELECTED ARCHITECTURE SHOWCASE</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white">
-            Featured Systems
+            Featured Projects
           </h2>
           <p className="text-sm sm:text-base text-neutral-400 max-w-2xl font-light">
-            Exact 7 verified production projects in sequential order, matching high-resolution system mockups and architecture telemetry.
+            Seamless alternating breakdowns of core production applications, featuring challenge-to-solution engineering pipelines.
           </p>
         </div>
 
         <div className="text-xs font-mono px-3.5 py-1.5 rounded-xl bg-[#141418] border border-white/10 text-neutral-300">
-          7 Production Systems Loaded
+          3 Featured • 7 in Archive
         </div>
       </div>
 
-      {/* Sequential Asymmetrical Bento Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {/* ========================================================
-            PROJECT 01: BITHUB (Large 2-col card on desktop)
-           ======================================================== */}
-        <motion.div
-          whileHover={{ y: -4 }}
-          transition={{ duration: 0.2 }}
-          onClick={() => setActiveProject(bentoProjects[0])}
-          className="group relative md:col-span-2 lg:col-span-2 rounded-3xl bg-[#0e0e12]/90 border border-white/10 hover:border-orange-500/40 p-6 sm:p-8 backdrop-blur-xl transition-all duration-300 flex flex-col justify-between overflow-hidden cursor-pointer shadow-xl"
-        >
-          {/* Ambient Glow */}
-          <div className="absolute top-0 right-0 w-80 h-80 bg-orange-600/10 rounded-full blur-[90px] pointer-events-none group-hover:bg-orange-600/15 transition-colors" />
-
-          {/* Watermark Number */}
-          <div className="absolute top-4 right-8 font-black text-7xl sm:text-8xl text-white/[0.03] group-hover:text-orange-500/10 transition-colors pointer-events-none select-none z-0">
-            01
-          </div>
-
-          <div className="space-y-4 relative z-10">
-            <div className="flex items-center justify-between gap-4">
-              <div className="flex items-center gap-2">
-                <span className="font-mono text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-neutral-300 font-bold">
-                  PROJECT 01
-                </span>
-                <span className="text-xs font-mono px-3 py-1 rounded-full bg-orange-500/10 text-orange-400 border border-orange-500/20">
-                  {bentoProjects[0].category}
-                </span>
-              </div>
-
-              {/* Toggle for BITHUB vs RAG SYSTEM mockups */}
-              <div
-                onClick={(e) => e.stopPropagation()}
-                className="flex items-center gap-1 bg-black/60 p-1 rounded-xl border border-white/10 text-[11px] font-mono"
-              >
-                <button
-                  onClick={() => setBithubVariant('bithub')}
-                  className={`px-2.5 py-1 rounded-lg transition-all ${
-                    bithubVariant === 'bithub'
-                      ? 'bg-orange-500 text-black font-bold shadow'
-                      : 'text-neutral-400 hover:text-white'
-                  }`}
-                >
-                  BITEHUB
-                </button>
-                <button
-                  onClick={() => setBithubVariant('rag')}
-                  className={`px-2.5 py-1 rounded-lg transition-all ${
-                    bithubVariant === 'rag'
-                      ? 'bg-orange-500 text-black font-bold shadow'
-                      : 'text-neutral-400 hover:text-white'
-                  }`}
-                >
-                  RAG SYSTEM
-                </button>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight group-hover:text-orange-300 transition-colors">
-                {bithubVariant === 'bithub' ? bentoProjects[0].title : 'Lonetex — Enterprise RAG & Knowledge Intelligence Platform'}
-              </h3>
-              <p className="text-sm sm:text-base text-neutral-300 line-clamp-2 max-w-2xl font-light mt-1">
-                {bithubVariant === 'bithub'
-                  ? bentoProjects[0].description
-                  : 'A multi-tenant enterprise RAG platform integrating Qdrant 384-dimensional vector indexing, role-based document clearance, and zero-leakage compliance auditing.'}
-              </p>
-            </div>
-
-            {/* High Resolution Mockup Image */}
-            <div className="relative w-full h-64 sm:h-80 rounded-2xl overflow-hidden bg-[#09090c] border border-white/10 group-hover:border-orange-500/30 transition-colors">
+      {/* ========================================================
+          1. FEATURED PROJECTS: CLEAN CANVAS ALTERNATING ZIG-ZAG
+         ======================================================== */}
+      <div className="space-y-24 sm:space-y-32 pt-6">
+        {/* ----------------------------------------------------
+            FEATURED #1: Project 01 (BITE-HUB / BITHUB)
+            Layout: Image LEFT | Details RIGHT
+           ---------------------------------------------------- */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
+          {/* Image Column (Left - 7 cols) */}
+          <div className="lg:col-span-7">
+            <div className="relative group rounded-3xl overflow-hidden bg-[#09090c] border border-white/10 hover:border-orange-500/40 transition-all duration-500 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)]">
+              <div className="absolute -inset-1 bg-gradient-to-r from-orange-500/20 to-transparent rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
               <img
                 src={bithubVariant === 'bithub' ? bentoProjects[0].image : bentoProjects[0].altImage}
                 alt={bentoProjects[0].title}
-                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                className="w-full h-auto aspect-[16/10] object-cover object-top group-hover:scale-[1.02] transition-transform duration-700 cursor-pointer"
+                onClick={() => setActiveProject(bentoProjects[0])}
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
-              
-              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs font-mono text-neutral-200">
+
+              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs font-mono text-neutral-300">
                 <div className="px-3 py-1.5 rounded-xl bg-black/80 backdrop-blur-md border border-white/15 flex items-center gap-2">
                   <TrendingUp className="w-3.5 h-3.5 text-orange-400" />
                   <span>{bentoProjects[0].metrics}</span>
                 </div>
-                <span className="hidden sm:inline-block px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-md border border-white/10 font-bold text-white">
-                  VIEW CASE STUDY →
-                </span>
-              </div>
-            </div>
-          </div>
 
-          <div className="flex flex-wrap items-center gap-2 pt-4 border-t border-white/5 relative z-10 mt-4">
-            {bentoProjects[0].tags.map((tag, idx) => (
-              <span key={idx} className="text-xs font-mono px-2.5 py-1 rounded-lg bg-white/5 border border-white/5 text-neutral-300">
-                {tag}
-              </span>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* ========================================================
-            PROJECT 02: NETFLIX CLONE
-           ======================================================== */}
-        <motion.div
-          whileHover={{ y: -4 }}
-          transition={{ duration: 0.2 }}
-          onClick={() => setActiveProject(bentoProjects[1])}
-          className="group relative rounded-3xl bg-[#0e0e12]/90 border border-white/10 hover:border-orange-500/40 p-6 sm:p-7 backdrop-blur-xl transition-all duration-300 flex flex-col justify-between overflow-hidden cursor-pointer shadow-xl"
-        >
-          <div className="absolute top-4 right-6 font-black text-6xl text-white/[0.03] group-hover:text-orange-500/10 transition-colors pointer-events-none select-none z-0">
-            02
-          </div>
-
-          <div className="space-y-3 relative z-10">
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-mono px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-neutral-300 font-bold">
-                PROJECT 02
-              </span>
-              <span className="text-[11px] font-mono text-rose-400 bg-rose-500/10 border border-rose-500/20 px-2.5 py-0.5 rounded-full">
-                STREAMING UI
-              </span>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-bold text-white group-hover:text-orange-300 transition-colors">
-                {bentoProjects[1].title}
-              </h3>
-              <p className="text-xs text-neutral-400 mt-1 line-clamp-2">
-                {bentoProjects[1].tagline}
-              </p>
-            </div>
-
-            <div className="relative w-full h-48 sm:h-52 rounded-2xl overflow-hidden bg-neutral-950 border border-white/10 group-hover:border-orange-500/30 transition-colors">
-              <img
-                src={bentoProjects[1].image}
-                alt={bentoProjects[1].title}
-                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none" />
-            </div>
-          </div>
-
-          <div className="flex flex-wrap gap-1.5 pt-4 border-t border-white/5 mt-4 relative z-10">
-            {bentoProjects[1].tags.slice(0, 4).map((tag, idx) => (
-              <span key={idx} className="text-[11px] font-mono px-2 py-0.5 rounded-md bg-white/5 text-neutral-300">
-                {tag}
-              </span>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* ========================================================
-            PROJECT 03: SILAGE / SILLAGE
-           ======================================================== */}
-        <motion.div
-          whileHover={{ y: -4 }}
-          transition={{ duration: 0.2 }}
-          onClick={() => setActiveProject(bentoProjects[2])}
-          className="group relative rounded-3xl bg-[#0e0e12]/90 border border-white/10 hover:border-orange-500/40 p-6 sm:p-7 backdrop-blur-xl transition-all duration-300 flex flex-col justify-between overflow-hidden cursor-pointer shadow-xl"
-        >
-          <div className="absolute top-4 right-6 font-black text-6xl text-white/[0.03] group-hover:text-orange-500/10 transition-colors pointer-events-none select-none z-0">
-            03
-          </div>
-
-          <div className="space-y-3 relative z-10">
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-mono px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-neutral-300 font-bold">
-                PROJECT 03
-              </span>
-              <span className="text-[11px] font-mono text-amber-400 bg-amber-500/10 border border-amber-500/20 px-2.5 py-0.5 rounded-full">
-                LUXURY ATELIER
-              </span>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-bold text-white group-hover:text-orange-300 transition-colors">
-                {bentoProjects[2].title}
-              </h3>
-              <p className="text-xs text-neutral-400 mt-1 line-clamp-2">
-                {bentoProjects[2].tagline}
-              </p>
-            </div>
-
-            <div className="relative w-full h-48 sm:h-52 rounded-2xl overflow-hidden bg-neutral-950 border border-white/10 group-hover:border-orange-500/30 transition-colors">
-              <img
-                src={bentoProjects[2].image}
-                alt={bentoProjects[2].title}
-                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none" />
-            </div>
-          </div>
-
-          <div className="flex flex-wrap gap-1.5 pt-4 border-t border-white/5 mt-4 relative z-10">
-            {bentoProjects[2].tags.slice(0, 4).map((tag, idx) => (
-              <span key={idx} className="text-[11px] font-mono px-2 py-0.5 rounded-md bg-white/5 text-neutral-300">
-                {tag}
-              </span>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* ========================================================
-            PROJECT 04: LONETEX (Large 2-col card on desktop)
-           ======================================================== */}
-        <motion.div
-          whileHover={{ y: -4 }}
-          transition={{ duration: 0.2 }}
-          onClick={() => setActiveProject(bentoProjects[3])}
-          className="group relative md:col-span-2 lg:col-span-2 rounded-3xl bg-[#0e0e12]/90 border border-white/10 hover:border-orange-500/40 p-6 sm:p-8 backdrop-blur-xl transition-all duration-300 flex flex-col justify-between overflow-hidden cursor-pointer shadow-xl"
-        >
-          <div className="absolute top-4 right-8 font-black text-7xl sm:text-8xl text-white/[0.03] group-hover:text-orange-500/10 transition-colors pointer-events-none select-none z-0">
-            04
-          </div>
-
-          <div className="space-y-4 relative z-10">
-            <div className="flex items-center justify-between gap-4">
-              <div className="flex items-center gap-2">
-                <span className="font-mono text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-neutral-300 font-bold">
-                  PROJECT 04
-                </span>
-                <span className="text-xs font-mono px-3 py-1 rounded-full bg-orange-500/10 text-orange-400 border border-orange-500/20">
-                  {bentoProjects[3].category}
-                </span>
-              </div>
-              <div className="p-2.5 rounded-2xl bg-white/5 group-hover:bg-orange-500/20 text-neutral-400 group-hover:text-orange-400 border border-white/10 transition-all">
-                <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight group-hover:text-orange-300 transition-colors">
-                {bentoProjects[3].title}
-              </h3>
-              <p className="text-sm sm:text-base text-neutral-300 line-clamp-2 max-w-2xl font-light mt-1">
-                {bentoProjects[3].description}
-              </p>
-            </div>
-
-            <div className="relative w-full h-64 sm:h-72 rounded-2xl overflow-hidden bg-[#09090c] border border-white/10 group-hover:border-orange-500/30 transition-colors">
-              <img
-                src={bentoProjects[3].image}
-                alt={bentoProjects[3].title}
-                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
-
-              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs font-mono text-neutral-200">
-                <div className="px-3 py-1.5 rounded-xl bg-black/80 backdrop-blur-md border border-white/15 flex items-center gap-2">
-                  <TrendingUp className="w-3.5 h-3.5 text-orange-400" />
-                  <span>{bentoProjects[3].metrics}</span>
+                {/* Bithub vs RAG variant switcher */}
+                <div
+                  onClick={(e) => e.stopPropagation()}
+                  className="flex items-center gap-1 bg-black/80 backdrop-blur-md p-1 rounded-xl border border-white/15 text-[11px]"
+                >
+                  <button
+                    onClick={() => setBithubVariant('bithub')}
+                    className={`px-2.5 py-0.5 rounded-lg transition-all ${
+                      bithubVariant === 'bithub'
+                        ? 'bg-orange-500 text-black font-bold shadow'
+                        : 'text-neutral-400 hover:text-white'
+                    }`}
+                  >
+                    BITEHUB
+                  </button>
+                  <button
+                    onClick={() => setBithubVariant('rag')}
+                    className={`px-2.5 py-0.5 rounded-lg transition-all ${
+                      bithubVariant === 'rag'
+                        ? 'bg-orange-500 text-black font-bold shadow'
+                        : 'text-neutral-400 hover:text-white'
+                    }`}
+                  >
+                    RAG
+                  </button>
                 </div>
-                <span className="hidden sm:inline-block px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-md border border-white/10 font-bold text-white">
-                  VIEW CASE STUDY →
-                </span>
               </div>
             </div>
           </div>
 
-          <div className="flex flex-wrap items-center gap-2 pt-4 border-t border-white/5 relative z-10 mt-4">
-            {bentoProjects[3].tags.map((tag, idx) => (
-              <span key={idx} className="text-xs font-mono px-2.5 py-1 rounded-lg bg-white/5 border border-white/5 text-neutral-300">
-                {tag}
+          {/* Info & Challenge Column (Right - 5 cols) */}
+          <div className="lg:col-span-5 space-y-5">
+            <div className="flex items-center gap-3">
+              <span className="font-mono text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-neutral-300 font-bold">
+                01 / AI & FULL-STACK
               </span>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* ========================================================
-            PROJECT 05: INVENTORY SYSTEM
-           ======================================================== */}
-        <motion.div
-          whileHover={{ y: -4 }}
-          transition={{ duration: 0.2 }}
-          onClick={() => setActiveProject(bentoProjects[4])}
-          className="group relative rounded-3xl bg-[#0e0e12]/90 border border-white/10 hover:border-orange-500/40 p-6 sm:p-7 backdrop-blur-xl transition-all duration-300 flex flex-col justify-between overflow-hidden cursor-pointer shadow-xl"
-        >
-          <div className="absolute top-4 right-6 font-black text-6xl text-white/[0.03] group-hover:text-orange-500/10 transition-colors pointer-events-none select-none z-0">
-            05
-          </div>
-
-          <div className="space-y-3 relative z-10">
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-mono px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-neutral-300 font-bold">
-                PROJECT 05
-              </span>
-              <span className="text-[11px] font-mono text-blue-400 bg-blue-500/10 border border-blue-500/20 px-2.5 py-0.5 rounded-full">
-                ERP / POS
+              <span className="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded-full">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                COMPLETED
               </span>
             </div>
 
-            <div>
-              <h3 className="text-xl font-bold text-white group-hover:text-orange-300 transition-colors">
-                {bentoProjects[4].title}
-              </h3>
-              <p className="text-xs text-neutral-400 mt-1 line-clamp-2">
-                {bentoProjects[4].tagline}
-              </p>
+            <h3
+              onClick={() => setActiveProject(bentoProjects[0])}
+              className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight hover:text-orange-300 transition-colors cursor-pointer"
+            >
+              {bithubVariant === 'bithub' ? bentoProjects[0].title : 'Lonetex — Enterprise RAG & Knowledge Intelligence Platform'}
+            </h3>
+
+            {/* Horizontal Pipeline Pills */}
+            <div className="flex flex-wrap items-center gap-2 text-xs font-mono text-neutral-300">
+              <span className="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10">React.js</span>
+              <ArrowRight className="w-3.5 h-3.5 text-orange-400" />
+              <span className="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10">Node.js</span>
+              <ArrowRight className="w-3.5 h-3.5 text-orange-400" />
+              <span className="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10">Tailwind</span>
+              <ArrowRight className="w-3.5 h-3.5 text-orange-400" />
+              <span className="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10">Context API</span>
             </div>
 
-            <div className="relative w-full h-48 sm:h-52 rounded-2xl overflow-hidden bg-neutral-950 border border-white/10 group-hover:border-orange-500/30 transition-colors">
+            {/* Challenge & Solution Architecture Text */}
+            <div className="space-y-3 pt-1">
+              <div className="p-4 rounded-2xl bg-[#0f0f14]/80 border border-white/5 space-y-1">
+                <span className="text-[11px] font-mono uppercase tracking-wider text-orange-400 font-bold block">
+                  THE CHALLENGE
+                </span>
+                <p className="text-xs sm:text-sm text-neutral-300 font-light leading-relaxed">
+                  Fast-casual web ordering interfaces frequently suffer from cart desynchronization during connection spikes, unresponsive nested food modifier pickers, and abrupt menu render delays.
+                </p>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-[#0f0f14]/80 border border-white/5 space-y-1">
+                <span className="text-[11px] font-mono uppercase tracking-wider text-emerald-400 font-bold block">
+                  THE SOLUTION & IMPACT
+                </span>
+                <p className="text-xs sm:text-sm text-neutral-300 font-light leading-relaxed">
+                  Engineered zero-latency local caching architecture with fluid 60 FPS motion, dynamic modifier calculation engines, and an instant administrative dashboard for live catalog adjustments.
+                </p>
+              </div>
+            </div>
+
+            {/* Tech Stack Pills */}
+            <div className="flex flex-wrap items-center gap-1.5 pt-1">
+              {bentoProjects[0].tags.map((tag, idx) => (
+                <span key={idx} className="text-xs font-mono px-2.5 py-1 rounded-lg bg-white/5 border border-white/5 text-neutral-400">
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            {/* Action Links */}
+            <div className="flex items-center gap-3 pt-2">
+              <button
+                onClick={() => setActiveProject(bentoProjects[0])}
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-white hover:bg-neutral-100 text-black font-semibold text-xs sm:text-sm transition-all hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(249,115,22,0.3)]"
+              >
+                <span>READ CASE STUDY</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
+              {bentoProjects[0].demoUrl && (
+                <a
+                  href={bentoProjects[0].demoUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-3 rounded-2xl bg-white/5 hover:bg-white/10 text-white font-medium text-xs sm:text-sm border border-white/10 transition-colors"
+                >
+                  <span>Live Demo</span>
+                  <ExternalLink className="w-3.5 h-3.5 text-neutral-400" />
+                </a>
+              )}
+              {bentoProjects[0].githubUrl && (
+                <a
+                  href={bentoProjects[0].githubUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="p-3 rounded-2xl bg-white/5 hover:bg-white/10 text-neutral-300 hover:text-white border border-white/10 transition-colors"
+                  title="GitHub Repository"
+                >
+                  <Github className="w-4 h-4" />
+                </a>
+              )}
+            </div>
+          </div>
+        </div>
+
+        {/* ----------------------------------------------------
+            FEATURED #2: Project 05 (INVENTORY SYSTEM)
+            Layout: Details LEFT | Image RIGHT (Alternated/Flipped)
+           ---------------------------------------------------- */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
+          {/* Info & Challenge Column (Left on desktop - 5 cols) */}
+          <div className="lg:col-span-5 space-y-5 order-2 lg:order-1">
+            <div className="flex items-center gap-3">
+              <span className="font-mono text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-neutral-300 font-bold">
+                02 / ENTERPRISE SAAS & POS
+              </span>
+              <span className="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded-full">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                COMPLETED
+              </span>
+            </div>
+
+            <h3
+              onClick={() => setActiveProject(bentoProjects[4])}
+              className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight hover:text-orange-300 transition-colors cursor-pointer"
+            >
+              {bentoProjects[4].title}
+            </h3>
+
+            {/* Horizontal Pipeline Pills */}
+            <div className="flex flex-wrap items-center gap-2 text-xs font-mono text-neutral-300">
+              <span className="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10">React.js</span>
+              <ArrowRight className="w-3.5 h-3.5 text-orange-400" />
+              <span className="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10">Node.js</span>
+              <ArrowRight className="w-3.5 h-3.5 text-orange-400" />
+              <span className="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10">MongoDB</span>
+              <ArrowRight className="w-3.5 h-3.5 text-orange-400" />
+              <span className="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10">Tailwind</span>
+            </div>
+
+            {/* Challenge & Solution Architecture Text */}
+            <div className="space-y-3 pt-1">
+              <div className="p-4 rounded-2xl bg-[#0f0f14]/80 border border-white/5 space-y-1">
+                <span className="text-[11px] font-mono uppercase tracking-wider text-orange-400 font-bold block">
+                  THE CHALLENGE
+                </span>
+                <p className="text-xs sm:text-sm text-neutral-300 font-light leading-relaxed">
+                  Commercial inventory hubs and wholesale distributors face distributed stock count discrepancies, slow transaction logging, and high manual auditing costs across multiple warehouses.
+                </p>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-[#0f0f14]/80 border border-white/5 space-y-1">
+                <span className="text-[11px] font-mono uppercase tracking-wider text-emerald-400 font-bold block">
+                  THE SOLUTION & IMPACT
+                </span>
+                <p className="text-xs sm:text-sm text-neutral-300 font-light leading-relaxed">
+                  Architected an enterprise dashboard with automated ledger recording, multi-warehouse catalog controls, instant SKU barcode verification, and automated restock warning telemetry.
+                </p>
+              </div>
+            </div>
+
+            {/* Tech Stack Pills */}
+            <div className="flex flex-wrap items-center gap-1.5 pt-1">
+              {bentoProjects[4].tags.map((tag, idx) => (
+                <span key={idx} className="text-xs font-mono px-2.5 py-1 rounded-lg bg-white/5 border border-white/5 text-neutral-400">
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            {/* Action Links */}
+            <div className="flex items-center gap-3 pt-2">
+              <button
+                onClick={() => setActiveProject(bentoProjects[4])}
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-white hover:bg-neutral-100 text-black font-semibold text-xs sm:text-sm transition-all hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(249,115,22,0.3)]"
+              >
+                <span>READ CASE STUDY</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
+              {bentoProjects[4].githubUrl && (
+                <a
+                  href={bentoProjects[4].githubUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-3 rounded-2xl bg-white/5 hover:bg-white/10 text-white font-medium text-xs sm:text-sm border border-white/10 transition-colors"
+                >
+                  <Github className="w-4 h-4" />
+                  <span>Source Code</span>
+                </a>
+              )}
+            </div>
+          </div>
+
+          {/* Image Column (Right on desktop - 7 cols) */}
+          <div className="lg:col-span-7 order-1 lg:order-2">
+            <div className="relative group rounded-3xl overflow-hidden bg-[#09090c] border border-white/10 hover:border-orange-500/40 transition-all duration-500 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)]">
+              <div className="absolute -inset-1 bg-gradient-to-l from-orange-500/20 to-transparent rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
               <img
                 src={bentoProjects[4].image}
                 alt={bentoProjects[4].title}
-                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none" />
-            </div>
-          </div>
-
-          <div className="flex flex-wrap gap-1.5 pt-4 border-t border-white/5 mt-4 relative z-10">
-            {bentoProjects[4].tags.slice(0, 4).map((tag, idx) => (
-              <span key={idx} className="text-[11px] font-mono px-2 py-0.5 rounded-md bg-white/5 text-neutral-300">
-                {tag}
-              </span>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* ========================================================
-            PROJECT 06: PHARMACY MANAGEMENT
-           ======================================================== */}
-        <motion.div
-          whileHover={{ y: -4 }}
-          transition={{ duration: 0.2 }}
-          onClick={() => setActiveProject(bentoProjects[5])}
-          className="group relative rounded-3xl bg-[#0e0e12]/90 border border-white/10 hover:border-orange-500/40 p-6 sm:p-7 backdrop-blur-xl transition-all duration-300 flex flex-col justify-between overflow-hidden cursor-pointer shadow-xl"
-        >
-          <div className="absolute top-4 right-6 font-black text-6xl text-white/[0.03] group-hover:text-orange-500/10 transition-colors pointer-events-none select-none z-0">
-            06
-          </div>
-
-          <div className="space-y-3 relative z-10">
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-mono px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-neutral-300 font-bold">
-                PROJECT 06
-              </span>
-              <span className="text-[11px] font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded-full">
-                HEALTHCARE POS
-              </span>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-bold text-white group-hover:text-orange-300 transition-colors">
-                {bentoProjects[5].title}
-              </h3>
-              <p className="text-xs text-neutral-400 mt-1 line-clamp-2">
-                {bentoProjects[5].tagline}
-              </p>
-            </div>
-
-            <div className="relative w-full h-48 sm:h-52 rounded-2xl overflow-hidden bg-neutral-950 border border-white/10 group-hover:border-orange-500/30 transition-colors">
-              <img
-                src={bentoProjects[5].image}
-                alt={bentoProjects[5].title}
-                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none" />
-            </div>
-          </div>
-
-          <div className="flex flex-wrap gap-1.5 pt-4 border-t border-white/5 mt-4 relative z-10">
-            {bentoProjects[5].tags.slice(0, 4).map((tag, idx) => (
-              <span key={idx} className="text-[11px] font-mono px-2 py-0.5 rounded-md bg-white/5 text-neutral-300">
-                {tag}
-              </span>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* ========================================================
-            PROJECT 07: FLIGHT ONE (2-col card on desktop)
-           ======================================================== */}
-        <motion.div
-          whileHover={{ y: -4 }}
-          transition={{ duration: 0.2 }}
-          onClick={() => setActiveProject(bentoProjects[6])}
-          className="group relative md:col-span-2 lg:col-span-2 rounded-3xl bg-[#0e0e12]/90 border border-white/10 hover:border-orange-500/40 p-6 sm:p-8 backdrop-blur-xl transition-all duration-300 flex flex-col justify-between overflow-hidden cursor-pointer shadow-xl"
-        >
-          <div className="absolute top-4 right-8 font-black text-7xl sm:text-8xl text-white/[0.03] group-hover:text-orange-500/10 transition-colors pointer-events-none select-none z-0">
-            07
-          </div>
-
-          <div className="space-y-4 relative z-10">
-            <div className="flex items-center justify-between gap-4">
-              <div className="flex items-center gap-2">
-                <span className="font-mono text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-neutral-300 font-bold">
-                  PROJECT 07
-                </span>
-                <span className="text-xs font-mono px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
-                  {bentoProjects[6].category}
-                </span>
-              </div>
-              <div className="p-2.5 rounded-2xl bg-white/5 group-hover:bg-orange-500/20 text-neutral-400 group-hover:text-orange-400 border border-white/10 transition-all">
-                <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight group-hover:text-orange-300 transition-colors">
-                {bentoProjects[6].title}
-              </h3>
-              <p className="text-sm sm:text-base text-neutral-300 line-clamp-2 max-w-2xl font-light mt-1">
-                {bentoProjects[6].description}
-              </p>
-            </div>
-
-            <div className="relative w-full h-64 sm:h-72 rounded-2xl overflow-hidden bg-[#09090c] border border-white/10 group-hover:border-orange-500/30 transition-colors">
-              <img
-                src={bentoProjects[6].image}
-                alt={bentoProjects[6].title}
-                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                className="w-full h-auto aspect-[16/10] object-cover object-top group-hover:scale-[1.02] transition-transform duration-700 cursor-pointer"
+                onClick={() => setActiveProject(bentoProjects[4])}
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
 
-              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs font-mono text-neutral-200">
+              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs font-mono text-neutral-300">
+                <div className="px-3 py-1.5 rounded-xl bg-black/80 backdrop-blur-md border border-white/15 flex items-center gap-2">
+                  <TrendingUp className="w-3.5 h-3.5 text-orange-400" />
+                  <span>{bentoProjects[4].metrics}</span>
+                </div>
+                <span className="hidden sm:inline-block px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-md border border-white/10 font-bold text-white">
+                  ENTERPRISE POS →
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* ----------------------------------------------------
+            FEATURED #3: Project 07 (FLIGHT ONE)
+            Layout: Image LEFT | Details RIGHT
+           ---------------------------------------------------- */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
+          {/* Image Column (Left - 7 cols) */}
+          <div className="lg:col-span-7">
+            <div className="relative group rounded-3xl overflow-hidden bg-[#09090c] border border-white/10 hover:border-orange-500/40 transition-all duration-500 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)]">
+              <div className="absolute -inset-1 bg-gradient-to-r from-orange-500/20 to-transparent rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+              <img
+                src={bentoProjects[6].image}
+                alt={bentoProjects[6].title}
+                className="w-full h-auto aspect-[16/10] object-cover object-top group-hover:scale-[1.02] transition-transform duration-700 cursor-pointer"
+                onClick={() => setActiveProject(bentoProjects[6])}
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
+
+              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs font-mono text-neutral-300">
                 <div className="px-3 py-1.5 rounded-xl bg-black/80 backdrop-blur-md border border-white/15 flex items-center gap-2">
                   <TrendingUp className="w-3.5 h-3.5 text-orange-400" />
                   <span>{bentoProjects[6].metrics}</span>
                 </div>
                 <span className="hidden sm:inline-block px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-md border border-white/10 font-bold text-white">
-                  VIEW CASE STUDY →
+                  TRAVEL ECOSYSTEM →
                 </span>
               </div>
             </div>
           </div>
 
-          <div className="flex flex-wrap items-center gap-2 pt-4 border-t border-white/5 relative z-10 mt-4">
-            {bentoProjects[6].tags.map((tag, idx) => (
-              <span key={idx} className="text-xs font-mono px-2.5 py-1 rounded-lg bg-white/5 border border-white/5 text-neutral-300">
-                {tag}
+          {/* Info & Challenge Column (Right - 5 cols) */}
+          <div className="lg:col-span-5 space-y-5">
+            <div className="flex items-center gap-3">
+              <span className="font-mono text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-neutral-300 font-bold">
+                03 / CROSS-PLATFORM & TRAVEL TECH
               </span>
-            ))}
+              <span className="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded-full">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                COMPLETED
+              </span>
+            </div>
+
+            <h3
+              onClick={() => setActiveProject(bentoProjects[6])}
+              className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight hover:text-orange-300 transition-colors cursor-pointer"
+            >
+              {bentoProjects[6].title}
+            </h3>
+
+            {/* Horizontal Pipeline Pills */}
+            <div className="flex flex-wrap items-center gap-2 text-xs font-mono text-neutral-300">
+              <span className="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10">Next.js</span>
+              <ArrowRight className="w-3.5 h-3.5 text-orange-400" />
+              <span className="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10">React Native</span>
+              <ArrowRight className="w-3.5 h-3.5 text-orange-400" />
+              <span className="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10">TypeScript</span>
+              <ArrowRight className="w-3.5 h-3.5 text-orange-400" />
+              <span className="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10">Tailwind</span>
+            </div>
+
+            {/* Challenge & Solution Architecture Text */}
+            <div className="space-y-3 pt-1">
+              <div className="p-4 rounded-2xl bg-[#0f0f14]/80 border border-white/5 space-y-1">
+                <span className="text-[11px] font-mono uppercase tracking-wider text-orange-400 font-bold block">
+                  THE CHALLENGE
+                </span>
+                <p className="text-xs sm:text-sm text-neutral-300 font-light leading-relaxed">
+                  Travel portals commonly encounter booking state drop-offs between mobile apps and web portals, creating reservation conflicts and fragmented destination itinerary planners.
+                </p>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-[#0f0f14]/80 border border-white/5 space-y-1">
+                <span className="text-[11px] font-mono uppercase tracking-wider text-emerald-400 font-bold block">
+                  THE SOLUTION & IMPACT
+                </span>
+                <p className="text-xs sm:text-sm text-neutral-300 font-light leading-relaxed">
+                  Engineered unified cross-platform booking flows with real-time seat availability, dynamic custom tour package builder, and offline-capable schedule caching.
+                </p>
+              </div>
+            </div>
+
+            {/* Tech Stack Pills */}
+            <div className="flex flex-wrap items-center gap-1.5 pt-1">
+              {bentoProjects[6].tags.map((tag, idx) => (
+                <span key={idx} className="text-xs font-mono px-2.5 py-1 rounded-lg bg-white/5 border border-white/5 text-neutral-400">
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            {/* Action Links */}
+            <div className="flex items-center gap-3 pt-2">
+              <button
+                onClick={() => setActiveProject(bentoProjects[6])}
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-white hover:bg-neutral-100 text-black font-semibold text-xs sm:text-sm transition-all hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(249,115,22,0.3)]"
+              >
+                <span>READ CASE STUDY</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
+              {bentoProjects[6].githubUrl && (
+                <a
+                  href={bentoProjects[6].githubUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-3 rounded-2xl bg-white/5 hover:bg-white/10 text-white font-medium text-xs sm:text-sm border border-white/10 transition-colors"
+                >
+                  <Github className="w-4 h-4" />
+                  <span>Source Code</span>
+                </a>
+              )}
+            </div>
           </div>
-        </motion.div>
+        </div>
+      </div>
+
+      {/* ========================================================
+          3. SEPARATE "ALL PROJECTS / ARCHIVE" SECTION
+         ======================================================== */}
+      <div className="pt-20 border-t border-white/5 space-y-8">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+          <div className="space-y-1">
+            <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-orange-400 font-bold">
+              <Sparkles className="w-3.5 h-3.5 text-orange-400" />
+              <span>COMPLETE ARCHIVE (01 — 07)</span>
+            </div>
+            <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
+              All Projects & Specialized Works
+            </h3>
+            <p className="text-sm text-neutral-400 font-light">
+              Full directory of verified client deliverables, enterprise dashboards, and creative 3D web applications.
+            </p>
+          </div>
+          <span className="text-xs font-mono px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-neutral-300 w-fit">
+            7 Verified Systems
+          </span>
+        </div>
+
+        {/* Secondary Compact Card Grid for All 7 Projects */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {bentoProjects.map((project, idx) => (
+            <motion.div
+              key={idx}
+              whileHover={{ y: -4 }}
+              transition={{ duration: 0.2 }}
+              onClick={() => setActiveProject(project)}
+              className="group relative rounded-3xl bg-[#0e0e12]/90 border border-white/10 hover:border-orange-500/40 p-5 sm:p-6 backdrop-blur-xl transition-all duration-300 flex flex-col justify-between overflow-hidden cursor-pointer shadow-xl"
+            >
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <span className="font-mono text-xs px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-neutral-300 font-bold">
+                    PROJECT {project.number}
+                  </span>
+                  <span className="text-[11px] font-mono px-2.5 py-0.5 rounded-full bg-orange-500/10 text-orange-400 border border-orange-500/20">
+                    {project.category}
+                  </span>
+                </div>
+
+                <div className="relative w-full h-44 sm:h-48 rounded-2xl overflow-hidden bg-black/60 border border-white/10 group-hover:border-orange-500/30 transition-colors">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] font-mono text-neutral-300">
+                    <span className="truncate pr-2">{project.metrics}</span>
+                    <ArrowUpRight className="w-4 h-4 text-orange-400 shrink-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  </div>
+                </div>
+
+                <div>
+                  <h4 className="text-lg font-bold text-white group-hover:text-orange-300 transition-colors line-clamp-1">
+                    {project.title}
+                  </h4>
+                  <p className="text-xs text-neutral-400 mt-1 line-clamp-2 font-light">
+                    {project.description}
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap gap-1.5 pt-4 border-t border-white/5 mt-4">
+                {project.tags.slice(0, 4).map((tag, tIdx) => (
+                  <span
+                    key={tIdx}
+                    className="text-[11px] font-mono px-2 py-0.5 rounded-md bg-white/5 text-neutral-300"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
 
       {/* ========================================================
@@ -1085,6 +1106,8 @@ export const BentoGridV2: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Interactive Case Study Modal for All 7 Projects */}
       <AnimatePresence>
         {activeProject && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-xl">
