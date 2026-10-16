@@ -713,7 +713,8 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
       {/* ========================================================
           TECHNICAL SKILLS & CORE STACK SECTION
          ======================================================== */}
-      <section id="skills" className="space-y-10 pt-14 border-t border-white/5">
+      <section id="skills" className="space-y-10 pt-14 border-t border-white/5 relative">
+        <span id="services" className="absolute -top-24" />
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-white/5">
           <div className="space-y-2">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 font-mono text-xs">

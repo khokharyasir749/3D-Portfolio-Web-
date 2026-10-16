@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 
 interface NavbarV2Props {
@@ -7,31 +7,17 @@ interface NavbarV2Props {
 }
 
 export const NavbarV2: React.FC<NavbarV2Props> = ({ onContactClick, onProjectsClick }) => {
-  const [scrolled, setScrolled] = useState(false);
   const [activeItem, setActiveItem] = useState('Home');
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const navLinks = [
     { name: 'Home', href: '#home' },
+    { name: 'Services', href: '#services' },
     { name: 'Projects', href: '#projects' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Skills', href: '#skills' },
     { name: 'About', href: '#about' },
   ];
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 sm:px-8 lg:px-12 ${
-        scrolled ? 'py-3.5 bg-[#09090b]/80 backdrop-blur-xl border-b border-white/5' : 'py-5 sm:py-7'
-      }`}
-    >
+    <header className="fixed top-0 left-0 right-0 z-50 bg-transparent py-5 sm:py-7 px-4 sm:px-8 lg:px-12 transition-all duration-300">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Brand Logo matching JAXON STEEL typography from Dribbble reference */}
         <a
@@ -44,8 +30,8 @@ export const NavbarV2: React.FC<NavbarV2Props> = ({ onContactClick, onProjectsCl
           </span>
         </a>
 
-        {/* Centered Floating Pill Navigation (Dribbble Ref) */}
-        <nav className="hidden md:flex items-center gap-1 bg-[#141418]/90 backdrop-blur-xl border border-white/10 rounded-full px-3.5 py-1.5 shadow-2xl shadow-black/80">
+        {/* Centered Floating Pill Navigation (Matching Reference Exactly) */}
+        <nav className="hidden md:flex items-center gap-1 sm:gap-2 bg-white/[0.04] border border-white/5 backdrop-blur-md rounded-full px-5 py-2 shadow-sm">
           {navLinks.map((link) => {
             const isActive = activeItem === link.name;
             return (
@@ -61,10 +47,8 @@ export const NavbarV2: React.FC<NavbarV2Props> = ({ onContactClick, onProjectsCl
                   }
                   setActiveItem(link.name);
                 }}
-                className={`relative px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 cursor-pointer ${
-                  isActive
-                    ? 'text-white bg-white/10 shadow-inner'
-                    : 'text-neutral-400 hover:text-white hover:bg-white/5'
+                className={`px-3.5 py-1 text-xs sm:text-sm font-medium transition-colors cursor-pointer ${
+                  isActive ? 'text-white font-semibold' : 'text-zinc-400 hover:text-white'
                 }`}
               >
                 {link.name}
@@ -73,17 +57,8 @@ export const NavbarV2: React.FC<NavbarV2Props> = ({ onContactClick, onProjectsCl
           })}
         </nav>
 
-        {/* Top Right Action Buttons: Resume & "Get in Touch" pill button */}
-        <div className="flex items-center gap-2.5 sm:gap-3">
-          <a
-            href="mailto:khokharyasir749@gmail.com?subject=Resume%20Request%20-%20Yasir%20Khokhar"
-            className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-mono font-medium border border-white/10 bg-white/5 hover:bg-white/10 text-neutral-300 hover:text-white transition-all hover:border-orange-500/30"
-            title="Request Yasir's Resume"
-          >
-            <span>Resume</span>
-            <ArrowUpRight className="w-3.5 h-3.5 text-orange-400" />
-          </a>
-
+        {/* Top Right Action Button: Single sleek pill button */}
+        <div className="flex items-center">
           <a
             href="#contact"
             onClick={(e) => {
@@ -92,10 +67,10 @@ export const NavbarV2: React.FC<NavbarV2Props> = ({ onContactClick, onProjectsCl
                 onContactClick();
               }
             }}
-            className="group inline-flex items-center gap-2 px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-medium border border-white/15 bg-white/5 hover:bg-white/10 text-white backdrop-blur-md transition-all duration-200 hover:border-orange-500/40 hover:scale-105 active:scale-95 shadow-sm"
+            className="group inline-flex items-center gap-2 px-5 py-2 rounded-full text-xs sm:text-sm font-medium border border-white/20 hover:border-white/40 bg-white/[0.04] hover:bg-white/[0.08] text-white backdrop-blur-md transition-all duration-200 shadow-sm hover:scale-105 active:scale-95"
           >
             <span>Get in Touch</span>
-            <ArrowUpRight className="w-3.5 h-3.5 text-neutral-400 group-hover:text-orange-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            <ArrowUpRight className="w-3.5 h-3.5 text-zinc-400 group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </a>
         </div>
       </div>

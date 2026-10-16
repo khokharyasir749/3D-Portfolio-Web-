@@ -30,27 +30,27 @@ export const HeroV2: React.FC<HeroV2Props> = ({ onCtaClick }) => {
   return (
     <section
       id="home"
-      className="relative w-full rounded-3xl sm:rounded-[36px] bg-[#0d0d10] border border-white/10 shadow-[0_25px_80px_-15px_rgba(0,0,0,0.9)] overflow-hidden min-h-[620px] sm:min-h-[700px] lg:min-h-[780px] flex flex-col justify-between p-6 sm:p-10 lg:p-12 select-none"
+      className="relative w-full min-h-[620px] sm:min-h-[700px] lg:min-h-[780px] flex flex-col justify-between py-6 sm:py-10 select-none overflow-hidden"
     >
-      {/* 1. Warm Studio Amber / Terracotta Radial Lighting Glow (Matching Dribbble Ref) */}
+      {/* 1. Warm Studio Amber / Terracotta Radial Lighting Glow (Matching Reference) */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
         {/* Core warm amber glow directly behind portrait head & shoulders */}
         <div
-          className="absolute top-[18%] left-1/2 -translate-x-1/2 w-[520px] sm:w-[680px] lg:w-[820px] h-[400px] sm:h-[500px] lg:h-[600px] rounded-full blur-[90px] sm:blur-[110px] pointer-events-none opacity-85"
+          className="absolute top-[15%] left-1/2 -translate-x-1/2 w-[540px] sm:w-[700px] lg:w-[850px] h-[420px] sm:h-[520px] lg:h-[620px] rounded-full blur-[90px] sm:blur-[120px] pointer-events-none opacity-90"
           style={{
             background:
-              'radial-gradient(circle at 50% 40%, rgba(225, 95, 25, 0.48) 0%, rgba(180, 70, 18, 0.28) 42%, rgba(120, 40, 12, 0.12) 65%, transparent 80%)',
+              'radial-gradient(circle at 50% 40%, rgba(225, 95, 25, 0.5) 0%, rgba(180, 70, 18, 0.3) 42%, rgba(120, 40, 12, 0.12) 65%, transparent 80%)',
           }}
         />
 
         {/* Ambient warm edge fill */}
-        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-full max-w-4xl h-72 bg-orange-600/10 blur-[130px] rounded-full" />
+        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-full max-w-5xl h-72 bg-orange-600/10 blur-[140px] rounded-full" />
 
         {/* Subtle high-tech micro dot matrix pattern */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,#ffffff09_1px,transparent_0)] [background-size:20px_20px] opacity-40 pointer-events-none" />
       </div>
 
-      {/* 2. Massive Typographic Branding Watermark (JAXON STEEL style in Dribbble ref) */}
+      {/* 2. Massive Typographic Branding Watermark */}
       <div className="absolute inset-x-0 top-[18%] sm:top-[22%] flex justify-center pointer-events-none select-none z-10 overflow-hidden px-4">
         <h1 className="text-[14vw] sm:text-[11vw] lg:text-[10.5rem] font-black uppercase tracking-tighter text-[#eae5df]/[0.17] leading-none whitespace-nowrap drop-shadow-sm font-sans">
           YASIR KHOKHAR
@@ -66,8 +66,8 @@ export const HeroV2: React.FC<HeroV2Props> = ({ onCtaClick }) => {
             className="h-[84%] sm:h-[90%] lg:h-[95%] w-auto max-w-none object-contain object-bottom filter contrast-[1.04] drop-shadow-[0_25px_50px_rgba(0,0,0,0.95)]"
             loading="eager"
           />
-          {/* Subtle bottom fade gradient to seamlessly ground portrait into the card base */}
-          <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#0d0d10] via-[#0d0d10]/60 to-transparent pointer-events-none" />
+          {/* Subtle bottom fade gradient to seamlessly ground portrait into the canvas base */}
+          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#070709] via-[#070709]/70 to-transparent pointer-events-none" />
         </div>
       </div>
 
@@ -122,12 +122,12 @@ export const HeroV2: React.FC<HeroV2Props> = ({ onCtaClick }) => {
         </motion.div>
       </div>
 
-      {/* 5. Bottom Horizontal Service & Skill Pills (Dribbble Ref Footer Strip) */}
+      {/* 5. Bottom Horizontal Service & Skill Pills (Footer Strip) */}
       <motion.div
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-        className="relative z-30 pt-6 sm:pt-8 border-t border-white/5 overflow-x-auto no-scrollbar -mx-6 sm:-mx-10 lg:-mx-12 px-6 sm:px-10 lg:px-12"
+        className="relative z-30 pt-6 sm:pt-8 border-t border-white/5 overflow-x-auto no-scrollbar"
       >
         <div className="flex items-center gap-3 sm:gap-4 shrink-0 pb-1">
           {servicePills.map((pill, idx) => {
