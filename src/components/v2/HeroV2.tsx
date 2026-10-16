@@ -32,24 +32,24 @@ export const HeroV2: React.FC<HeroV2Props> = ({ onCtaClick }) => {
       id="home"
       className="relative w-full min-h-[620px] sm:min-h-[700px] lg:min-h-[780px] flex flex-col justify-between py-6 sm:py-10 select-none"
     >
-      {/* 1. Subtle, Focused Moody Studio Backlight Directly Behind Portrait */}
+      {/* 1. Rich Warm Chocolate / Espresso Studio Backlight Directly Behind Portrait */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-        {/* Focused warm terracotta/amber backlight centered behind head & shoulders */}
+        {/* Soft, warm amber-copper radial studio backlight */}
         <div
-          className="absolute top-[18%] sm:top-[20%] left-1/2 -translate-x-1/2 w-[520px] sm:w-[680px] lg:w-[820px] h-[400px] sm:h-[500px] lg:h-[600px] rounded-full blur-[80px] sm:blur-[110px] pointer-events-none"
+          className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              'radial-gradient(circle at 50% 45%, rgba(180, 75, 20, 0.22) 0%, rgba(140, 55, 15, 0.12) 40%, rgba(70, 25, 8, 0.04) 65%, transparent 80%)',
+              'radial-gradient(ellipse 70% 60% at 50% 40%, rgba(135, 62, 23, 0.55) 0%, rgba(85, 36, 12, 0.40) 45%, rgba(26, 14, 8, 0.95) 85%, #140a06 100%)',
           }}
         />
 
         {/* Subtle high-tech micro dot matrix pattern */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,#ffffff09_1px,transparent_0)] [background-size:20px_20px] opacity-30 pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,#ffffff09_1px,transparent_0)] [background-size:20px_20px] opacity-25 pointer-events-none" />
       </div>
 
       {/* 2. Typographic Branding Watermark */}
       <div className="absolute inset-x-0 top-4 sm:top-5 lg:top-6 flex justify-center pointer-events-none select-none z-0 px-4">
-        <h1 className="text-[2.6rem] sm:text-7xl md:text-8xl lg:text-[8vw] xl:text-[7.8rem] font-black uppercase tracking-tight text-white/[0.10] leading-none whitespace-nowrap font-sans drop-shadow-md text-center">
+        <h1 className="text-[2.6rem] sm:text-7xl md:text-8xl lg:text-[8vw] xl:text-[7.8rem] font-black uppercase tracking-tight text-white/30 leading-none whitespace-nowrap font-sans drop-shadow-lg text-center">
           YASIR KHOKHAR
         </h1>
       </div>
@@ -63,8 +63,8 @@ export const HeroV2: React.FC<HeroV2Props> = ({ onCtaClick }) => {
             className="h-[86%] sm:h-[92%] lg:h-[96%] w-auto max-w-none object-contain object-bottom filter contrast-[1.04] drop-shadow-[0_25px_50px_rgba(0,0,0,0.95)]"
             loading="eager"
           />
-          {/* Subtle bottom fade gradient to seamlessly ground portrait into the canvas base */}
-          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#070709] via-[#070709]/70 to-transparent pointer-events-none" />
+          {/* Subtle bottom fade gradient to seamlessly ground portrait into the warm espresso base */}
+          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#140a06] via-[#140a06]/80 to-transparent pointer-events-none" />
         </div>
       </div>
 

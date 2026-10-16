@@ -24,11 +24,13 @@ export const PortfolioV2: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#070709] text-[#fafafa] selection:bg-orange-500/30 selection:text-orange-200 font-sans antialiased relative overflow-x-hidden flex flex-col justify-between">
+    <div className="min-h-screen bg-[#140a06] text-[#fafafa] selection:bg-orange-500/30 selection:text-orange-200 font-sans antialiased relative overflow-x-hidden flex flex-col justify-between">
       {/* Background ambient lighting and fine dot matrix texture */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        {/* Upper warm dark espresso atmosphere extending across navbar and top corners */}
+        <div className="absolute top-0 inset-x-0 h-[900px] bg-gradient-to-b from-[#180d08] via-[#140a06] to-[#070709]" />
         {/* Global micro-dot matrix pattern */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,#ffffff07_1px,transparent_0)] [background-size:24px_24px] opacity-60" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,#ffffff07_1px,transparent_0)] [background-size:24px_24px] opacity-50" />
       </div>
 
       {/* Floating Pill Navbar */}
