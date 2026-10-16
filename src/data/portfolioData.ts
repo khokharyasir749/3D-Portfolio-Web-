@@ -164,6 +164,30 @@ export const portfolioData = {
     },
     {
       number: "03",
+      id: "pharmacy-management-system",
+      title: "PharmaCare — Pharmacy Management & POS System",
+      category: "Healthcare Tech / Inventory & POS",
+      tagline: "Enterprise Drug Inventory, FIFO Dispensing & Healthcare POS",
+      description: "An enterprise healthcare pharmacy management system featuring batch expiry tracking, prescription validation, automated inventory reordering, and integrated point-of-sale operations.",
+      tags: ["React", "Node.js", "TypeScript", "PostgreSQL", "Tailwind CSS", "Express"],
+      features: [
+        "Automated batch expiry alerting and FIFO inventory tracking for pharmaceutical stocks",
+        "Integrated digital point-of-sale (POS) terminal with instant barcode scanning and invoice generation",
+        "Prescription logging with dosage auditing, patient history records, and regulatory compliance logs",
+        "Real-time revenue metrics, inventory turnover insights, and supplier procurement workflows"
+      ],
+      metrics: "Real-time drug stock auditing with sub-100ms checkout and dispensing flows",
+      githubUrl: "https://github.com/khokharyasir749",
+      featured: true,
+      image: "/Pharmacy Management 1 (1).png",
+      gallery: [
+        "/Pharmacy Management 1 (1).png",
+        "/Pharmacy Management 1 (2).png",
+        "/Pharmacy Management 1 (3).png"
+      ]
+    },
+    {
+      number: "04",
       id: "enterprise-rag-system",
       title: "Enterprise RAG Intelligence System",
       category: "AI / Retrieval-Augmented Generation",
@@ -188,7 +212,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "04",
+      number: "05",
       id: "noir-luxury-fragrance",
       title: "NOIR — Luxury Fragrance Experience",
       category: "E-Commerce / 3D Experience",
@@ -213,7 +237,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "05",
+      number: "06",
       id: "sillage-fragrance-atelier",
       title: "SILLAGE — Haute Parfumerie Paris",
       category: "Luxury Brand / Web App",
@@ -238,7 +262,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "06",
+      number: "07",
       id: "netflix-clone",
       title: "Netflix Clone",
       tagline: "Video Streaming Platform UI & Dynamic Catalog",
@@ -263,7 +287,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "07",
+      number: "08",
       id: "inventory-system",
       title: "Inventory System",
       tagline: "Enterprise Inventory & Stock Management Platform",
@@ -286,7 +310,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "08",
+      number: "09",
       id: "lonetex-pakistan",
       title: "Lonetex Pakistan",
       tagline: "Commercial Cleaning Equipment E-Commerce & Wholesale Catalog",
@@ -311,7 +335,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "09",
+      number: "10",
       id: "bite-hub",
       title: "Bite-Hub",
       tagline: "Cyberpunk-themed fast-food ordering web app with state persistence & admin dashboard",
@@ -336,7 +360,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "10",
+      number: "11",
       id: "shopsphere-ecommerce",
       title: "ShopSphere E-Commerce",
       tagline: "Modern digital commerce platform with dynamic filters & shopping cart",
@@ -360,7 +384,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "11",
+      number: "12",
       id: "sync-space",
       title: "Sync-Space Chat Hub",
       tagline: "Real-time full-stack chat application with Socket.io & live presence",
@@ -383,7 +407,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "12",
+      number: "13",
       id: "smartlearn-lms",
       title: "SmartLearn LMS",
       tagline: "Modern learning management frontend with course discovery & progress filters",
@@ -408,7 +432,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "13",
+      number: "14",
       id: "lonetex-inventory",
       title: "Lonetex Inventory ERP",
       tagline: "Industrial stock operations dashboard with rack allocations & supply metrics",
@@ -432,7 +456,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "14",
+      number: "15",
       id: "weather-dashboard",
       title: "Cyber Weather Dashboard",
       tagline: "Real-time global meteorological monitor with forecast telemetry",
@@ -456,7 +480,7 @@ export const portfolioData = {
       ]
     },
     {
-      number: "15",
+      number: "16",
       id: "modern-calculator",
       title: "Modern Glass Calculator",
       tagline: "Precision financial and scientific calculation engine with dark UI",
