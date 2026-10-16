@@ -32,27 +32,24 @@ export const HeroV2: React.FC<HeroV2Props> = ({ onCtaClick }) => {
       id="home"
       className="relative w-full min-h-[620px] sm:min-h-[700px] lg:min-h-[780px] flex flex-col justify-between py-6 sm:py-10 select-none"
     >
-      {/* 1. Warm Studio Amber / Terracotta Radial Lighting Glow (Seamless with top canvas) */}
-      <div className="absolute inset-0 pointer-events-none z-0">
-        {/* Core warm amber glow directly behind portrait head & shoulders */}
+      {/* 1. Subtle, Focused Moody Studio Backlight Directly Behind Portrait */}
+      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+        {/* Focused warm terracotta/amber backlight centered behind head & shoulders */}
         <div
-          className="absolute -top-10 sm:-top-16 left-1/2 -translate-x-1/2 w-[600px] sm:w-[800px] lg:w-[1000px] h-[500px] sm:h-[650px] lg:h-[750px] rounded-full blur-[90px] sm:blur-[130px] pointer-events-none opacity-90"
+          className="absolute top-[18%] sm:top-[20%] left-1/2 -translate-x-1/2 w-[520px] sm:w-[680px] lg:w-[820px] h-[400px] sm:h-[500px] lg:h-[600px] rounded-full blur-[80px] sm:blur-[110px] pointer-events-none"
           style={{
             background:
-              'radial-gradient(circle at 50% 35%, rgba(225, 95, 25, 0.5) 0%, rgba(180, 70, 18, 0.3) 42%, rgba(120, 40, 12, 0.12) 65%, transparent 80%)',
+              'radial-gradient(circle at 50% 45%, rgba(180, 75, 20, 0.22) 0%, rgba(140, 55, 15, 0.12) 40%, rgba(70, 25, 8, 0.04) 65%, transparent 80%)',
           }}
         />
 
-        {/* Ambient warm edge fill */}
-        <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-full max-w-6xl h-80 bg-orange-600/15 blur-[140px] rounded-full" />
-
         {/* Subtle high-tech micro dot matrix pattern */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,#ffffff09_1px,transparent_0)] [background-size:20px_20px] opacity-40 pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,#ffffff09_1px,transparent_0)] [background-size:20px_20px] opacity-30 pointer-events-none" />
       </div>
 
-      {/* 2. Typographic Branding Watermark (Positioned completely above portrait head, unified and centered) */}
+      {/* 2. Typographic Branding Watermark */}
       <div className="absolute inset-x-0 top-4 sm:top-5 lg:top-6 flex justify-center pointer-events-none select-none z-0 px-4">
-        <h1 className="text-[2.6rem] sm:text-7xl md:text-8xl lg:text-[8vw] xl:text-[7.8rem] font-black uppercase tracking-tight text-white/[0.08] leading-none whitespace-nowrap font-sans drop-shadow-sm text-center">
+        <h1 className="text-[2.6rem] sm:text-7xl md:text-8xl lg:text-[8vw] xl:text-[7.8rem] font-black uppercase tracking-tight text-white/[0.10] leading-none whitespace-nowrap font-sans drop-shadow-md text-center">
           YASIR KHOKHAR
         </h1>
       </div>

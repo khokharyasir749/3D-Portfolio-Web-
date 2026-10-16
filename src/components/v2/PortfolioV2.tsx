@@ -27,20 +27,8 @@ export const PortfolioV2: React.FC = () => {
     <div className="min-h-screen bg-[#070709] text-[#fafafa] selection:bg-orange-500/30 selection:text-orange-200 font-sans antialiased relative overflow-x-hidden flex flex-col justify-between">
       {/* Background ambient lighting and fine dot matrix texture */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        {/* Seamless studio amber / terracotta radial lighting glow covering the whole upper canvas all the way to the top */}
-        <div
-          className="absolute -top-[10%] sm:-top-[15%] left-1/2 -translate-x-1/2 w-[1200px] sm:w-[1500px] lg:w-[1700px] h-[750px] sm:h-[900px] lg:h-[1050px] rounded-full blur-[100px] sm:blur-[140px] pointer-events-none"
-          style={{
-            background:
-              'radial-gradient(ellipse at 50% 25%, rgba(225, 95, 25, 0.48) 0%, rgba(180, 70, 18, 0.32) 42%, rgba(120, 40, 12, 0.14) 65%, transparent 82%)',
-          }}
-        />
-
-        {/* Ambient warm edge fill to guarantee zero black cutoffs at corners */}
-        <div className="absolute -top-16 left-1/2 -translate-x-1/2 w-full max-w-7xl h-80 bg-gradient-to-b from-orange-600/25 via-amber-700/12 to-transparent blur-[120px] rounded-full" />
-
         {/* Global micro-dot matrix pattern */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,#ffffff07_1px,transparent_0)] [background-size:24px_24px] opacity-70" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,#ffffff07_1px,transparent_0)] [background-size:24px_24px] opacity-60" />
       </div>
 
       {/* Floating Pill Navbar */}
