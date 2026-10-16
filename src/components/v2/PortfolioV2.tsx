@@ -15,6 +15,12 @@ export const PortfolioV2: React.FC = () => {
   useEffect(() => {
     document.title = 'YASIR KHOKHAR — Modern Bento Portfolio (V2)';
     document.documentElement.classList.add('dark');
+    document.body.style.overflow = 'auto';
+    document.body.style.backgroundColor = '#140a06';
+    return () => {
+      document.body.style.overflow = '';
+      document.body.style.backgroundColor = '';
+    };
   }, []);
 
   const handleCopyEmail = () => {
@@ -24,12 +30,25 @@ export const PortfolioV2: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#120805] text-[#fafafa] selection:bg-orange-500/30 selection:text-orange-200 font-sans antialiased relative overflow-x-hidden flex flex-col justify-between">
-      {/* Background ambient lighting and fine dot matrix texture */}
+    <div className="min-h-screen bg-[#140a06] text-[#fafafa] selection:bg-orange-500/30 selection:text-orange-200 font-sans antialiased relative overflow-x-hidden flex flex-col justify-between">
+      {/* 1. Global Continuous Canvas Background & Ambient Glow */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        {/* Continuous warm espresso atmosphere running uninterrupted from top to bottom */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#180d08] via-[#140a06] via-[#100704] to-[#0a0503]" />
-        {/* Global micro-dot matrix pattern */}
+        {/* Continuous warm espresso base canvas running uninterrupted from top to bottom */}
+        <div className="absolute inset-0 bg-[#140a06]" />
+
+        {/* Global Warm Studio Amber-Copper Backlight radiating behind Hero and Floating Navbar */}
+        <div
+          className="absolute inset-x-0 top-0 h-[960px] pointer-events-none"
+          style={{
+            background:
+              'radial-gradient(ellipse 75% 65% at 50% 28%, rgba(135, 62, 23, 0.48) 0%, rgba(85, 36, 12, 0.30) 45%, rgba(20, 10, 6, 0.75) 80%, transparent 100%)',
+          }}
+        />
+
+        {/* Smooth downward depth transition into deep warm dark tones */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#140a06]/30 via-[#100704]/70 to-[#0a0503]" />
+
+        {/* Global micro-dot matrix pattern across entire document */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,#ffffff07_1px,transparent_0)] [background-size:24px_24px] opacity-40" />
       </div>
 
@@ -39,7 +58,7 @@ export const PortfolioV2: React.FC = () => {
         onProjectsClick={() => setIsProjectsModalOpen(true)}
       />
 
-      {/* Main Content Area */}
+      {/* Main Content Area: Natural Window-Level Scrolling Flow */}
       <main className="relative z-10 flex-1 pt-24 sm:pt-28 lg:pt-32 pb-24 px-4 sm:px-8 lg:px-12 max-w-7xl mx-auto w-full space-y-24 sm:space-y-36">
         {/* Step 1: Hero Section */}
         <HeroV2 onCtaClick={() => setIsContactModalOpen(true)} />

@@ -32,23 +32,8 @@ export const HeroV2: React.FC<HeroV2Props> = ({ onCtaClick }) => {
       id="home"
       className="relative w-full min-h-[620px] sm:min-h-[700px] lg:min-h-[780px] flex flex-col justify-between py-6 sm:py-10 select-none"
     >
-      {/* 1. Rich Warm Chocolate / Espresso Studio Backlight Directly Behind Portrait */}
-      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-        {/* Soft, warm amber-copper radial studio backlight smoothly blending into canvas */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              'radial-gradient(ellipse 75% 65% at 50% 38%, rgba(135, 62, 23, 0.50) 0%, rgba(85, 36, 12, 0.35) 45%, rgba(20, 10, 6, 0.85) 80%, transparent 100%)',
-          }}
-        />
-
-        {/* Subtle high-tech micro dot matrix pattern */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,#ffffff09_1px,transparent_0)] [background-size:20px_20px] opacity-25 pointer-events-none" />
-      </div>
-
-      {/* 2. Typographic Branding Watermark */}
-      <div className="absolute inset-x-0 top-4 sm:top-5 lg:top-6 flex justify-center pointer-events-none select-none z-0 px-4">
+      {/* Typographic Branding Watermark */}
+      <div className="absolute inset-x-0 top-3 sm:top-4 lg:top-5 flex justify-center pointer-events-none select-none z-0 px-4">
         <h1 className="text-[2.6rem] sm:text-7xl md:text-8xl lg:text-[8vw] xl:text-[7.8rem] font-black uppercase tracking-tight text-white/30 leading-none whitespace-nowrap font-sans drop-shadow-lg text-center">
           YASIR KHOKHAR
         </h1>

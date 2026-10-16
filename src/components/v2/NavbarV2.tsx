@@ -17,7 +17,7 @@ export const NavbarV2: React.FC<NavbarV2Props> = ({ onContactClick, onProjectsCl
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-transparent py-5 sm:py-7 px-4 sm:px-8 lg:px-12 transition-all duration-300">
+    <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-white/[0.03] py-4 sm:py-5 px-4 sm:px-8 lg:px-12 transition-all duration-300">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Brand Logo matching JAXON STEEL typography from Dribbble reference */}
         <a
