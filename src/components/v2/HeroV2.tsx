@@ -30,21 +30,21 @@ export const HeroV2: React.FC<HeroV2Props> = ({ onCtaClick }) => {
   return (
     <section
       id="home"
-      className="relative w-full min-h-[620px] sm:min-h-[700px] lg:min-h-[780px] flex flex-col justify-between py-6 sm:py-10 select-none overflow-hidden"
+      className="relative w-full min-h-[620px] sm:min-h-[700px] lg:min-h-[780px] flex flex-col justify-between py-6 sm:py-10 select-none"
     >
-      {/* 1. Warm Studio Amber / Terracotta Radial Lighting Glow (Matching Reference) */}
-      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+      {/* 1. Warm Studio Amber / Terracotta Radial Lighting Glow (Seamless with top canvas) */}
+      <div className="absolute inset-0 pointer-events-none z-0">
         {/* Core warm amber glow directly behind portrait head & shoulders */}
         <div
-          className="absolute top-[15%] left-1/2 -translate-x-1/2 w-[540px] sm:w-[700px] lg:w-[850px] h-[420px] sm:h-[520px] lg:h-[620px] rounded-full blur-[90px] sm:blur-[120px] pointer-events-none opacity-90"
+          className="absolute -top-10 sm:-top-16 left-1/2 -translate-x-1/2 w-[600px] sm:w-[800px] lg:w-[1000px] h-[500px] sm:h-[650px] lg:h-[750px] rounded-full blur-[90px] sm:blur-[130px] pointer-events-none opacity-90"
           style={{
             background:
-              'radial-gradient(circle at 50% 40%, rgba(225, 95, 25, 0.5) 0%, rgba(180, 70, 18, 0.3) 42%, rgba(120, 40, 12, 0.12) 65%, transparent 80%)',
+              'radial-gradient(circle at 50% 35%, rgba(225, 95, 25, 0.5) 0%, rgba(180, 70, 18, 0.3) 42%, rgba(120, 40, 12, 0.12) 65%, transparent 80%)',
           }}
         />
 
         {/* Ambient warm edge fill */}
-        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-full max-w-5xl h-72 bg-orange-600/10 blur-[140px] rounded-full" />
+        <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-full max-w-6xl h-80 bg-orange-600/15 blur-[140px] rounded-full" />
 
         {/* Subtle high-tech micro dot matrix pattern */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,#ffffff09_1px,transparent_0)] [background-size:20px_20px] opacity-40 pointer-events-none" />
