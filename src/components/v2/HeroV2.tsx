@@ -59,11 +59,11 @@ export const HeroV2: React.FC<HeroV2Props> = ({ onCtaClick }) => {
 
       {/* 3. Centered High-Resolution Cutout Portrait */}
       <div className="absolute inset-0 flex items-end justify-center pointer-events-none z-10">
-        <div className="relative flex items-end justify-center h-full max-h-[490px] sm:max-h-[560px] lg:max-h-[630px]">
+        <div className="relative flex items-end justify-center h-full max-h-[540px] sm:max-h-[640px] lg:max-h-[720px] xl:max-h-[760px]">
           <img
             src="/yasir-hero-cutout.png"
             alt="Yasir Khokhar — Full-Stack Developer & Creative Technologist"
-            className="h-[76%] sm:h-[80%] lg:h-[83%] w-auto max-w-none object-contain object-bottom filter contrast-[1.04] drop-shadow-[0_25px_50px_rgba(0,0,0,0.95)]"
+            className="h-[86%] sm:h-[92%] lg:h-[96%] w-auto max-w-none object-contain object-bottom filter contrast-[1.04] drop-shadow-[0_25px_50px_rgba(0,0,0,0.95)]"
             loading="eager"
           />
           {/* Subtle bottom fade gradient to seamlessly ground portrait into the canvas base */}
