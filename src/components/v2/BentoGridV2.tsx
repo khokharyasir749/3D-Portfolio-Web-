@@ -629,9 +629,9 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
       )}
 
       {/* ========================================================
-          EXPERIENCE & CAREER JOURNEY SECTION
+          EXPERIENCE & CAREER JOURNEY SECTION: EDITORIAL TIMELINE
          ======================================================== */}
-      <section id="experience" className="space-y-10 pt-16 sm:pt-24">
+      <section id="experience" className="space-y-10 pt-16 sm:pt-24 select-none">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-4">
           <div className="space-y-2">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 font-mono text-xs">
@@ -650,60 +650,76 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {/* Modern Editorial Timeline Rows (Direct Canvas, No Segmented Cards) */}
+        <div className="relative pl-6 sm:pl-10 space-y-6 sm:space-y-8">
+          {/* Subtle Vertical Guiding Line connecting the milestones on the left */}
+          <div className="absolute left-2.5 sm:left-4 top-4 bottom-4 w-px bg-gradient-to-b from-orange-500 via-amber-500/30 to-white/10 pointer-events-none" />
+
           {portfolioData.about.timeline.map((item, idx) => (
             <motion.div
               key={idx}
-              whileHover={{ y: -4 }}
-              transition={{ duration: 0.2 }}
-              className={`relative rounded-3xl p-6 sm:p-7 backdrop-blur-xl border transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-xl ${
-                item.current
-                  ? 'bg-gradient-to-b from-white/[0.08] to-white/[0.02] border-orange-500/40 shadow-orange-950/20'
-                  : 'bg-white/[0.03] hover:bg-white/[0.06] border-white/[0.08] hover:border-white/20'
-              }`}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-50px' }}
+              transition={{ duration: 0.4, delay: idx * 0.1 }}
+              className="group relative rounded-2xl p-5 sm:p-7 border-l-2 border-transparent hover:border-orange-500 transition-all duration-300 hover:bg-gradient-to-r hover:from-orange-500/10 hover:via-amber-500/5 hover:to-transparent"
             >
-              {item.current && (
-                <div className="absolute top-0 right-0 w-64 h-64 bg-orange-600/10 rounded-full blur-[80px] pointer-events-none" />
-              )}
-              <div className="space-y-4 relative z-10">
-                <div className="flex items-center justify-between">
-                  <span className="font-mono text-xs font-bold px-3 py-1 rounded-full bg-white/5 border border-white/10 text-neutral-200">
-                    {item.year}
-                  </span>
-                  {item.current ? (
-                    <span className="inline-flex items-center gap-1.5 text-[11px] font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded-full">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                      ACTIVE FOCUS
-                    </span>
-                  ) : (
-                    <span className="text-[11px] font-mono text-neutral-400">
-                      MILESTONE
-                    </span>
-                  )}
-                </div>
+              {/* Timeline Marker Dot on Left Guiding Line */}
+              <div className="absolute -left-[31px] sm:-left-[47px] top-7 -translate-y-1/2 flex items-center justify-center">
+                <div
+                  className={`w-3.5 h-3.5 rounded-full border-2 transition-all duration-300 ${
+                    item.current
+                      ? 'bg-orange-500 border-white/80 shadow-[0_0_14px_rgba(249,115,22,0.85)] scale-110'
+                      : 'bg-[#140a06] border-orange-400/60 group-hover:border-orange-400 group-hover:scale-110'
+                  }`}
+                />
+              </div>
 
-                <div>
-                  <h3 className="text-xl font-bold text-white group-hover:text-orange-300 transition-colors">
-                    {item.title}
-                  </h3>
-                  <p className="text-xs font-mono text-orange-400/90 mt-1">
+              {/* Row Grid: Left Year/Status | Center Role & Impact | Right Minimalist Tags */}
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-8 items-start">
+                {/* 1. Left Column: Year & Status Badge */}
+                <div className="lg:col-span-3 space-y-2">
+                  <div className="flex items-center gap-3">
+                    <span className="font-mono text-lg sm:text-xl font-black tracking-wider text-white group-hover:text-orange-300 transition-colors">
+                      {item.year}
+                    </span>
+                    {item.current ? (
+                      <span className="inline-flex items-center gap-1.5 text-[11px] font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded-full font-bold">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                        ACTIVE FOCUS
+                      </span>
+                    ) : (
+                      <span className="text-[11px] font-mono text-neutral-400 px-2.5 py-0.5 rounded-full bg-white/[0.04]">
+                        MILESTONE
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-xs font-mono text-orange-400/90 tracking-tight">
                     {item.subtitle}
                   </p>
-                  <p className="text-sm text-neutral-300 font-light mt-3 leading-relaxed">
+                </div>
+
+                {/* 2. Center/Main Column: High-Contrast Role Title & Impact */}
+                <div className="lg:col-span-6 space-y-2">
+                  <h3 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight group-hover:text-orange-200 transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm sm:text-[15px] text-neutral-300 font-light leading-relaxed">
                     {item.description}
                   </p>
                 </div>
-              </div>
 
-              <div className="flex flex-wrap gap-1.5 pt-5 border-t border-white/5 mt-5 relative z-10">
-                {item.tags.map((tag, tIdx) => (
-                  <span
-                    key={tIdx}
-                    className="text-[11px] font-mono px-2.5 py-1 rounded-lg bg-white/5 border border-white/5 text-neutral-300"
-                  >
-                    {tag}
-                  </span>
-                ))}
+                {/* 3. Right Column: Key Tech Tags as Minimalist, Borderless Pill Tags */}
+                <div className="lg:col-span-3 flex flex-wrap gap-1.5 lg:justify-end pt-1">
+                  {item.tags.map((tag, tIdx) => (
+                    <span
+                      key={tIdx}
+                      className="text-[11px] font-mono px-2.5 py-1 rounded-lg bg-white/[0.03] hover:bg-white/[0.07] text-zinc-400 hover:text-white transition-colors"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
             </motion.div>
           ))}
