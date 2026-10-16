@@ -58,11 +58,16 @@ export default {
       animation: {
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'glow-pulse': 'glowPulse 2s ease-in-out infinite alternate',
+        'marquee': 'marquee 32s linear infinite',
       },
       keyframes: {
         glowPulse: {
           '0%': { opacity: '0.6', filter: 'drop-shadow(0 0 5px rgba(0,240,255,0.4))' },
           '100%': { opacity: '1', filter: 'drop-shadow(0 0 15px rgba(0,240,255,0.8))' },
+        },
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-50%)' },
         },
       },
     },

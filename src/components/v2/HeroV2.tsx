@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   ArrowUpRight,
   Monitor,
@@ -17,14 +17,16 @@ interface HeroV2Props {
 }
 
 export const HeroV2: React.FC<HeroV2Props> = ({ onCtaClick }) => {
+  const [activePill, setActivePill] = useState<string>('Web App');
+
   const servicePills = [
-    { name: 'Wireframing', icon: Layout, active: false },
-    { name: 'Web App', icon: Monitor, active: true },
-    { name: 'UX Design', icon: Layers, active: false },
-    { name: 'UI Design', icon: Palette, active: false },
-    { name: 'User Research', icon: Crosshair, active: false },
-    { name: 'Mobile App Design', icon: Smartphone, active: false },
-    { name: 'Full-Stack Dev', icon: Terminal, active: false },
+    { name: 'Wireframing', icon: Layout },
+    { name: 'Web App', icon: Monitor },
+    { name: 'UX Design', icon: Layers },
+    { name: 'UI Design', icon: Palette },
+    { name: 'User Research', icon: Crosshair },
+    { name: 'Mobile App Design', icon: Smartphone },
+    { name: 'Full-Stack Dev', icon: Terminal },
   ];
 
   return (
@@ -39,7 +41,7 @@ export const HeroV2: React.FC<HeroV2Props> = ({ onCtaClick }) => {
         </h1>
       </div>
 
-      {/* 3. Centered High-Resolution Cutout Portrait */}
+      {/* Centered High-Resolution Cutout Portrait */}
       <div className="absolute inset-0 flex items-end justify-center pointer-events-none z-10">
         <div className="relative flex items-end justify-center h-full max-h-[540px] sm:max-h-[640px] lg:max-h-[720px] xl:max-h-[760px]">
           <img
@@ -53,7 +55,7 @@ export const HeroV2: React.FC<HeroV2Props> = ({ onCtaClick }) => {
         </div>
       </div>
 
-      {/* 4. Left Statement Pitch & Right Glowing CTA Button Row */}
+      {/* Left Statement Pitch & Right Glowing CTA Button Row */}
       <div className="relative z-30 grid grid-cols-1 md:grid-cols-2 gap-8 items-center my-auto pt-16 sm:pt-20 lg:pt-24">
         {/* Left Headline Pitch */}
         <motion.div
@@ -104,36 +106,74 @@ export const HeroV2: React.FC<HeroV2Props> = ({ onCtaClick }) => {
         </motion.div>
       </div>
 
-      {/* 5. Bottom Horizontal Service & Skill Pills (Footer Strip) */}
+      {/* 5. Bottom Horizontal Service & Skill Pills: Seamless Infinite Auto-Scroll Marquee */}
       <motion.div
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-        className="relative z-30 pt-8 sm:pt-10 overflow-x-auto no-scrollbar"
+        className="relative z-30 pt-8 sm:pt-10 w-full overflow-hidden select-none [mask-image:linear-gradient(to_right,transparent_0%,black_5%,black_95%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_right,transparent_0%,black_5%,black_95%,transparent_100%)]"
       >
-        <div className="flex items-center gap-3 sm:gap-4 shrink-0 pb-1">
-          {servicePills.map((pill, idx) => {
-            const Icon = pill.icon;
-            return (
-              <div
-                key={idx}
-                className={`group flex items-center gap-3 px-5 py-3 rounded-2xl border text-xs sm:text-sm font-medium backdrop-blur-xl transition-all duration-200 whitespace-nowrap cursor-pointer select-none ${
-                  pill.active
-                    ? 'bg-white/10 border-orange-500/50 text-white shadow-[0_0_25px_rgba(249,115,22,0.18)]'
-                    : 'bg-white/[0.04] hover:bg-white/[0.08] border-white/10 hover:border-white/20 text-neutral-300 hover:text-white hover:scale-[1.02]'
-                }`}
-              >
+        {/* Soft edge fade gradient overlays for smooth left/right entering & exiting */}
+        <div className="absolute left-0 inset-y-0 w-12 sm:w-20 bg-gradient-to-r from-[#140a06] to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 inset-y-0 w-12 sm:w-20 bg-gradient-to-l from-[#140a06] to-transparent z-10 pointer-events-none" />
+
+        {/* Continuous Infinite Marquee Track with Hover Pause */}
+        <div className="flex w-max animate-marquee hover:[animation-play-state:paused] py-2 cursor-pointer">
+          {/* Track 1 */}
+          <div className="flex items-center gap-3 sm:gap-4 shrink-0 pr-3 sm:pr-4">
+            {servicePills.map((pill, idx) => {
+              const Icon = pill.icon;
+              const isActive = activePill === pill.name;
+              return (
                 <div
-                  className={`p-1 rounded-lg ${
-                    pill.active ? 'text-orange-400' : 'text-orange-400/80 group-hover:text-orange-400'
+                  key={`track1-${idx}`}
+                  onClick={() => setActivePill(pill.name)}
+                  className={`group flex items-center gap-3 px-5 py-3 rounded-2xl border text-xs sm:text-sm font-medium backdrop-blur-xl transition-all duration-200 whitespace-nowrap cursor-pointer select-none ${
+                    isActive
+                      ? 'bg-white/10 border-orange-500/50 text-white shadow-[0_0_25px_rgba(249,115,22,0.18)]'
+                      : 'bg-white/[0.04] hover:bg-white/[0.08] border-white/10 hover:border-white/20 text-neutral-300 hover:text-white hover:scale-[1.02]'
                   }`}
                 >
-                  <Icon className="w-4 h-4" />
+                  <div
+                    className={`p-1 rounded-lg ${
+                      isActive ? 'text-orange-400' : 'text-orange-400/80 group-hover:text-orange-400'
+                    }`}
+                  >
+                    <Icon className="w-4 h-4" />
+                  </div>
+                  <span>{pill.name}</span>
                 </div>
-                <span>{pill.name}</span>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
+
+          {/* Track 2 (Identical duplicate for seamless zero-gap infinite loop) */}
+          <div className="flex items-center gap-3 sm:gap-4 shrink-0 pr-3 sm:pr-4" aria-hidden="true">
+            {servicePills.map((pill, idx) => {
+              const Icon = pill.icon;
+              const isActive = activePill === pill.name;
+              return (
+                <div
+                  key={`track2-${idx}`}
+                  onClick={() => setActivePill(pill.name)}
+                  className={`group flex items-center gap-3 px-5 py-3 rounded-2xl border text-xs sm:text-sm font-medium backdrop-blur-xl transition-all duration-200 whitespace-nowrap cursor-pointer select-none ${
+                    isActive
+                      ? 'bg-white/10 border-orange-500/50 text-white shadow-[0_0_25px_rgba(249,115,22,0.18)]'
+                      : 'bg-white/[0.04] hover:bg-white/[0.08] border-white/10 hover:border-white/20 text-neutral-300 hover:text-white hover:scale-[1.02]'
+                  }`}
+                >
+                  <div
+                    className={`p-1 rounded-lg ${
+                      isActive ? 'text-orange-400' : 'text-orange-400/80 group-hover:text-orange-400'
+                    }`}
+                  >
+                    <Icon className="w-4 h-4" />
+                  </div>
+                  <span>{pill.name}</span>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </motion.div>
     </section>
