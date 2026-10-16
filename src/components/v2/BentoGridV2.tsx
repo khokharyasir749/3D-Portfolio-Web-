@@ -42,7 +42,151 @@ export interface BentoProject {
   githubUrl?: string;
 }
 
-export const BentoGridV2: React.FC = () => {
+// STRICT 1 to 7 sequential projects matching images currently in public/
+export const bentoProjects: BentoProject[] = [
+  {
+    number: '01',
+    id: 'bithub-system',
+    title: 'Bite-Hub — Zero-G Fast Food & Order System',
+    tagline: 'Cyberpunk-themed fast-food ordering web app with state persistence & admin portal',
+    category: 'Full-Stack Web App / Food Tech',
+    description:
+      'An immersive, futuristic cyber-themed food ordering application featuring interactive neon food menus, live cart calculations, item customization options, and an administrative order management dashboard.',
+    tags: ['React', 'Vite', 'Tailwind CSS', 'Node.js', 'LocalStorage', 'Context API'],
+    features: [
+      'Vibrant cyberpunk neon dark UI with fluid motion design & interactive menus',
+      'Real-time food customization with modifiers, combos, and spice level selection',
+      'Persistent order cart with live discount code & tax calculation engine',
+      'Dedicated administrative dashboard for menu adjustments and live order tracking',
+    ],
+    metrics: 'Zero-latency local state persistence with smooth 60 FPS transitions',
+    image: '/BITHUB 1.jfif',
+    altImage: '/RAG SYSTEM 1.jfif',
+    demoUrl: 'https://bite-hub-demo.netlify.app',
+    githubUrl: 'https://github.com/khokharyasir749/bite-hub',
+  },
+  {
+    number: '02',
+    id: 'netflix-clone',
+    title: 'Netflix Clone — Video Streaming Platform',
+    tagline: 'Video streaming platform UI & dynamic media catalog',
+    category: 'Frontend Architecture / Media Streaming',
+    description:
+      'A full-featured Netflix web interface clone built with modern frontend architecture, movie categorization, dynamic search, and responsive streaming media layouts.',
+    tags: ['React', 'Tailwind CSS', 'JavaScript', 'REST APIs', 'Vite'],
+    features: [
+      'Dynamic movie & TV show catalog categorization with horizontal scrolling carousels',
+      'Instant real-time search query filtering and genre browsing engine',
+      'Responsive video media player interface with interactive preview trailers',
+      'Pixel-perfect dark streaming layout with fluid micro-interactions and modal overlays',
+    ],
+    metrics: 'Sub-50ms catalog interaction latency with optimized responsive media grids',
+    image: '/NETFLIX CLONE 2.png',
+    githubUrl: 'https://github.com/khokharyasir749',
+  },
+  {
+    number: '03',
+    id: 'silage-fragrance',
+    title: 'SILLAGE — Haute Parfumerie Paris',
+    tagline: 'Luxury fragrance atelier & cinematic web experience',
+    category: 'Luxury Brand / 3D Web Experience',
+    description:
+      'A cinematic digital atelier for bespoke haute perfumery featuring immersive dark-mode aesthetics, olfactory note pyramid breakdowns, and seamless bespoke ordering architecture.',
+    tags: ['React', 'WebGL', 'Framer Motion', 'Tailwind CSS', 'TypeScript'],
+    features: [
+      'Cinematic dark-mode digital atelier showcasing artisanal haute perfumery',
+      'Interactive olfactory note breakdowns with real-time visual feedback',
+      'Seamless ordering architecture and luxury bespoke perfume configuration',
+      'High-performance WebGL transitions and fluid Framer Motion choreography',
+    ],
+    metrics: 'High-fidelity WebGL graphics with seamless 60 FPS spatial interactions',
+    image: '/SILAGE 3.png',
+    githubUrl: 'https://github.com/khokharyasir749',
+  },
+  {
+    number: '04',
+    id: 'lonetex-wholesale',
+    title: 'Lonetex Pakistan — Wholesale Supply & Catalog',
+    tagline: 'Commercial cleaning equipment e-commerce & wholesale catalog',
+    category: 'Wholesale E-Commerce / Supply Chain',
+    description:
+      'A comprehensive digital commerce & industrial equipment catalog built for high-volume wholesale distribution across Pakistan & Saudi Arabia. Features multi-category product filtering, instant WhatsApp inquiry dispatch, and persistent cart state.',
+    tags: ['React', 'Vite', 'Tailwind CSS', 'LocalStorage v30', 'JavaScript'],
+    features: [
+      'Dynamic equipment catalog with category & brand filtering',
+      'Persistent cart drawer with LocalStorage state synchronization',
+      'Instant one-click WhatsApp quotation generator with pre-filled SKU details',
+      'High-definition product visual showcase and responsive specification tabs',
+    ],
+    metrics: 'Streamlined wholesale buyer inquiries with instant WhatsApp order generation',
+    image: '/lonetex 4.jfif',
+    demoUrl: 'https://lonetexpakistan.com',
+    githubUrl: 'https://github.com/khokharyasir749/lonetex-pakistan',
+  },
+  {
+    number: '05',
+    id: 'inventory-system',
+    title: 'Multi-Business Inventory & POS Platform',
+    tagline: 'Enterprise cross-industry inventory & stock management platform',
+    category: 'Enterprise SaaS / Inventory & POS',
+    description:
+      'An enterprise-grade SaaS inventory management dashboard and POS platform featuring stock movement tracking, automated ledger logging, multi-shop catalog controls, and real-time business analytics grids.',
+    tags: ['React', 'Node.js', 'MongoDB', 'Express', 'Tailwind CSS'],
+    features: [
+      'Real-time stock movement tracking and automated inventory ledger logging',
+      'Multi-warehouse catalog controls with category sorting and SKU management',
+      'Interactive analytics dashboard with restock warnings and supply chain KPIs',
+      'Audit trail logs and fast exportable transaction records',
+    ],
+    metrics: 'Real-time ledger updates with persistent database synchronization',
+    image: '/INVENTORY SYSTEM 5.jfif',
+    githubUrl: 'https://github.com/khokharyasir749/Lonetex-inventory',
+  },
+  {
+    number: '06',
+    id: 'pharmacy-management',
+    title: 'PharmaCare — Pharmacy Management & FEFO POS',
+    tagline: 'Enterprise drug inventory, FEFO dispensing & healthcare POS',
+    category: 'Healthcare Tech / Inventory & POS',
+    description:
+      'An enterprise healthcare pharmacy management system featuring batch expiry tracking, FEFO dispensing, prescription validation, automated inventory reordering, and integrated point-of-sale operations.',
+    tags: ['React', 'Node.js', 'TypeScript', 'PostgreSQL', 'Tailwind CSS', 'Express'],
+    features: [
+      'Automated batch expiry alerting and FEFO inventory tracking for pharmaceutical stocks',
+      'Integrated digital point-of-sale (POS) terminal with instant barcode scanning and invoice generation',
+      'Prescription logging with dosage auditing, patient history records, and regulatory compliance logs',
+      'Real-time revenue metrics, inventory turnover insights, and supplier procurement workflows',
+    ],
+    metrics: 'Real-time drug stock auditing with sub-100ms checkout and dispensing flows',
+    image: '/Pharmacy 6.jfif',
+    githubUrl: 'https://github.com/khokharyasir749',
+  },
+  {
+    number: '07',
+    id: 'flight-one-travel',
+    title: 'FlightOne — Web & Mobile Travel Platform',
+    tagline: 'Unified web & mobile custom tour booking ecosystem',
+    category: 'Cross-Platform Web & Mobile App',
+    description:
+      'A comprehensive cross-platform digital booking ecosystem featuring responsive web interfaces and mobile application flows for custom tour packages, real-time ticket booking, and interactive destination itineraries.',
+    tags: ['React', 'React Native', 'Next.js', 'Tailwind CSS', 'TypeScript', 'Node.js'],
+    features: [
+      'Unified web portal and mobile app architecture tailored for domestic and international travel bookings',
+      'Custom tour package builder with dynamic itinerary planning and fare estimates',
+      'Cross-device synchronized booking state with real-time seat and schedule availability',
+      'Responsive mobile-first UI with offline-capable itinerary caching and fast checkout',
+    ],
+    metrics: 'Cross-platform Web & Mobile architecture with sub-second responsive interaction',
+    image: '/flight one 7.png',
+    githubUrl: 'https://github.com/khokharyasir749',
+  },
+];
+
+export interface BentoGridV2Props {
+  onOpenAllProjects?: () => void;
+}
+
+export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) => {
   const [activeProject, setActiveProject] = useState<BentoProject | null>(null);
   const [bithubVariant, setBithubVariant] = useState<'bithub' | 'rag'>('bithub');
   const [copiedEmail, setCopiedEmail] = useState(false);
@@ -52,146 +196,6 @@ export const BentoGridV2: React.FC = () => {
     setCopiedEmail(true);
     setTimeout(() => setCopiedEmail(false), 2000);
   };
-
-  // STRICT 1 to 7 sequential projects matching images currently in public/
-  const bentoProjects: BentoProject[] = [
-    {
-      number: '01',
-      id: 'bithub-system',
-      title: 'Bite-Hub — Zero-G Fast Food & Order System',
-      tagline: 'Cyberpunk-themed fast-food ordering web app with state persistence & admin portal',
-      category: 'Full-Stack Web App / Food Tech',
-      description:
-        'An immersive, futuristic cyber-themed food ordering application featuring interactive neon food menus, live cart calculations, item customization options, and an administrative order management dashboard.',
-      tags: ['React', 'Vite', 'Tailwind CSS', 'Node.js', 'LocalStorage', 'Context API'],
-      features: [
-        'Vibrant cyberpunk neon dark UI with fluid motion design & interactive menus',
-        'Real-time food customization with modifiers, combos, and spice level selection',
-        'Persistent order cart with live discount code & tax calculation engine',
-        'Dedicated administrative dashboard for menu adjustments and live order tracking',
-      ],
-      metrics: 'Zero-latency local state persistence with smooth 60 FPS transitions',
-      image: '/BITHUB 1.jfif',
-      altImage: '/RAG SYSTEM 1.jfif',
-      demoUrl: 'https://bite-hub-demo.netlify.app',
-      githubUrl: 'https://github.com/khokharyasir749/bite-hub',
-    },
-    {
-      number: '02',
-      id: 'netflix-clone',
-      title: 'Netflix Clone — Video Streaming Platform',
-      tagline: 'Video streaming platform UI & dynamic media catalog',
-      category: 'Frontend Architecture / Media Streaming',
-      description:
-        'A full-featured Netflix web interface clone built with modern frontend architecture, movie categorization, dynamic search, and responsive streaming media layouts.',
-      tags: ['React', 'Tailwind CSS', 'JavaScript', 'REST APIs', 'Vite'],
-      features: [
-        'Dynamic movie & TV show catalog categorization with horizontal scrolling carousels',
-        'Instant real-time search query filtering and genre browsing engine',
-        'Responsive video media player interface with interactive preview trailers',
-        'Pixel-perfect dark streaming layout with fluid micro-interactions and modal overlays',
-      ],
-      metrics: 'Sub-50ms catalog interaction latency with optimized responsive media grids',
-      image: '/NETFLIX CLONE 2.png',
-      githubUrl: 'https://github.com/khokharyasir749',
-    },
-    {
-      number: '03',
-      id: 'silage-fragrance',
-      title: 'SILLAGE — Haute Parfumerie Paris',
-      tagline: 'Luxury fragrance atelier & cinematic web experience',
-      category: 'Luxury Brand / 3D Web Experience',
-      description:
-        'A cinematic digital atelier for bespoke haute perfumery featuring immersive dark-mode aesthetics, olfactory note pyramid breakdowns, and seamless bespoke ordering architecture.',
-      tags: ['React', 'WebGL', 'Framer Motion', 'Tailwind CSS', 'TypeScript'],
-      features: [
-        'Cinematic dark-mode digital atelier showcasing artisanal haute perfumery',
-        'Interactive olfactory note breakdowns with real-time visual feedback',
-        'Seamless ordering architecture and luxury bespoke perfume configuration',
-        'High-performance WebGL transitions and fluid Framer Motion choreography',
-      ],
-      metrics: 'High-fidelity WebGL graphics with seamless 60 FPS spatial interactions',
-      image: '/SILAGE 3.png',
-      githubUrl: 'https://github.com/khokharyasir749',
-    },
-    {
-      number: '04',
-      id: 'lonetex-wholesale',
-      title: 'Lonetex Pakistan — Wholesale Supply & Catalog',
-      tagline: 'Commercial cleaning equipment e-commerce & wholesale catalog',
-      category: 'Wholesale E-Commerce / Supply Chain',
-      description:
-        'A comprehensive digital commerce & industrial equipment catalog built for high-volume wholesale distribution across Pakistan & Saudi Arabia. Features multi-category product filtering, instant WhatsApp inquiry dispatch, and persistent cart state.',
-      tags: ['React', 'Vite', 'Tailwind CSS', 'LocalStorage v30', 'JavaScript'],
-      features: [
-        'Dynamic equipment catalog with category & brand filtering',
-        'Persistent cart drawer with LocalStorage state synchronization',
-        'Instant one-click WhatsApp quotation generator with pre-filled SKU details',
-        'High-definition product visual showcase and responsive specification tabs',
-      ],
-      metrics: 'Streamlined wholesale buyer inquiries with instant WhatsApp order generation',
-      image: '/lonetex 4.jfif',
-      demoUrl: 'https://lonetexpakistan.com',
-      githubUrl: 'https://github.com/khokharyasir749/lonetex-pakistan',
-    },
-    {
-      number: '05',
-      id: 'inventory-system',
-      title: 'Multi-Business Inventory & POS Platform',
-      tagline: 'Enterprise cross-industry inventory & stock management platform',
-      category: 'Enterprise SaaS / Inventory & POS',
-      description:
-        'An enterprise-grade SaaS inventory management dashboard and POS platform featuring stock movement tracking, automated ledger logging, multi-shop catalog controls, and real-time business analytics grids.',
-      tags: ['React', 'Node.js', 'MongoDB', 'Express', 'Tailwind CSS'],
-      features: [
-        'Real-time stock movement tracking and automated inventory ledger logging',
-        'Multi-warehouse catalog controls with category sorting and SKU management',
-        'Interactive analytics dashboard with restock warnings and supply chain KPIs',
-        'Audit trail logs and fast exportable transaction records',
-      ],
-      metrics: 'Real-time ledger updates with persistent database synchronization',
-      image: '/INVENTORY SYSTEM 5.jfif',
-      githubUrl: 'https://github.com/khokharyasir749/Lonetex-inventory',
-    },
-    {
-      number: '06',
-      id: 'pharmacy-management',
-      title: 'PharmaCare — Pharmacy Management & FEFO POS',
-      tagline: 'Enterprise drug inventory, FEFO dispensing & healthcare POS',
-      category: 'Healthcare Tech / Inventory & POS',
-      description:
-        'An enterprise healthcare pharmacy management system featuring batch expiry tracking, FEFO dispensing, prescription validation, automated inventory reordering, and integrated point-of-sale operations.',
-      tags: ['React', 'Node.js', 'TypeScript', 'PostgreSQL', 'Tailwind CSS', 'Express'],
-      features: [
-        'Automated batch expiry alerting and FEFO inventory tracking for pharmaceutical stocks',
-        'Integrated digital point-of-sale (POS) terminal with instant barcode scanning and invoice generation',
-        'Prescription logging with dosage auditing, patient history records, and regulatory compliance logs',
-        'Real-time revenue metrics, inventory turnover insights, and supplier procurement workflows',
-      ],
-      metrics: 'Real-time drug stock auditing with sub-100ms checkout and dispensing flows',
-      image: '/Pharmacy 6.jfif',
-      githubUrl: 'https://github.com/khokharyasir749',
-    },
-    {
-      number: '07',
-      id: 'flight-one-travel',
-      title: 'FlightOne — Web & Mobile Travel Platform',
-      tagline: 'Unified web & mobile custom tour booking ecosystem',
-      category: 'Cross-Platform Web & Mobile App',
-      description:
-        'A comprehensive cross-platform digital booking ecosystem featuring responsive web interfaces and mobile application flows for custom tour packages, real-time ticket booking, and interactive destination itineraries.',
-      tags: ['React', 'React Native', 'Next.js', 'Tailwind CSS', 'TypeScript', 'Node.js'],
-      features: [
-        'Unified web portal and mobile app architecture tailored for domestic and international travel bookings',
-        'Custom tour package builder with dynamic itinerary planning and fare estimates',
-        'Cross-device synchronized booking state with real-time seat and schedule availability',
-        'Responsive mobile-first UI with offline-capable itinerary caching and fast checkout',
-      ],
-      metrics: 'Cross-platform Web & Mobile architecture with sub-second responsive interaction',
-      image: '/flight one 7.png',
-      githubUrl: 'https://github.com/khokharyasir749',
-    },
-  ];
 
   return (
     <section id="projects" className="space-y-16 pt-10 select-none">
@@ -210,9 +214,20 @@ export const BentoGridV2: React.FC = () => {
           </p>
         </div>
 
-        <div className="text-xs font-mono px-3.5 py-1.5 rounded-xl bg-[#141418] border border-white/10 text-neutral-300">
-          3 Featured • 7 in Archive
-        </div>
+        {onOpenAllProjects ? (
+          <button
+            onClick={onOpenAllProjects}
+            className="group text-xs font-mono px-3.5 py-1.5 rounded-xl bg-[#141418] hover:bg-[#1c1c24] border border-white/10 hover:border-orange-500/30 text-neutral-300 hover:text-white transition-all cursor-pointer flex items-center gap-2"
+            title="Open complete projects directory"
+          >
+            <span>3 Featured • 7 in Directory</span>
+            <ArrowUpRight className="w-3.5 h-3.5 text-orange-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+          </button>
+        ) : (
+          <div className="text-xs font-mono px-3.5 py-1.5 rounded-xl bg-[#141418] border border-white/10 text-neutral-300">
+            3 Featured • 7 in Archive
+          </div>
+        )}
       </div>
 
       {/* ========================================================
@@ -597,86 +612,21 @@ export const BentoGridV2: React.FC = () => {
         </div>
       </div>
 
-      {/* ========================================================
-          3. SEPARATE "ALL PROJECTS / ARCHIVE" SECTION
-         ======================================================== */}
-      <div className="pt-20 border-t border-white/5 space-y-8">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-          <div className="space-y-1">
-            <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-orange-400 font-bold">
-              <Sparkles className="w-3.5 h-3.5 text-orange-400" />
-              <span>COMPLETE ARCHIVE (01 — 07)</span>
-            </div>
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
-              All Projects & Specialized Works
-            </h3>
-            <p className="text-sm text-neutral-400 font-light">
-              Full directory of verified client deliverables, enterprise dashboards, and creative 3D web applications.
-            </p>
-          </div>
-          <span className="text-xs font-mono px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-neutral-300 w-fit">
-            7 Verified Systems
-          </span>
+      {/* Optional Directory Showcase Trigger Button */}
+      {onOpenAllProjects && (
+        <div className="pt-12 pb-4 flex flex-col items-center justify-center text-center space-y-3">
+          <p className="text-xs font-mono text-neutral-400">
+            Looking for all client systems, streaming engines, and commercial platforms?
+          </p>
+          <button
+            onClick={onOpenAllProjects}
+            className="group inline-flex items-center gap-3 px-6 py-3.5 rounded-full bg-white/5 hover:bg-orange-500/10 border border-white/10 hover:border-orange-500/30 text-white font-mono text-xs uppercase tracking-wider transition-all duration-300 shadow-xl cursor-pointer hover:scale-105 active:scale-95"
+          >
+            <span>View All 7 Systems in Dedicated Directory</span>
+            <ArrowRight className="w-4 h-4 text-orange-400 group-hover:translate-x-1 transition-transform" />
+          </button>
         </div>
-
-        {/* Secondary Compact Card Grid for All 7 Projects */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {bentoProjects.map((project, idx) => (
-            <motion.div
-              key={idx}
-              whileHover={{ y: -4 }}
-              transition={{ duration: 0.2 }}
-              onClick={() => setActiveProject(project)}
-              className="group relative rounded-3xl bg-[#0e0e12]/90 border border-white/10 hover:border-orange-500/40 p-5 sm:p-6 backdrop-blur-xl transition-all duration-300 flex flex-col justify-between overflow-hidden cursor-pointer shadow-xl"
-            >
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <span className="font-mono text-xs px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-neutral-300 font-bold">
-                    PROJECT {project.number}
-                  </span>
-                  <span className="text-[11px] font-mono px-2.5 py-0.5 rounded-full bg-orange-500/10 text-orange-400 border border-orange-500/20">
-                    {project.category}
-                  </span>
-                </div>
-
-                <div className="relative w-full h-44 sm:h-48 rounded-2xl overflow-hidden bg-black/60 border border-white/10 group-hover:border-orange-500/30 transition-colors">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
-                  <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] font-mono text-neutral-300">
-                    <span className="truncate pr-2">{project.metrics}</span>
-                    <ArrowUpRight className="w-4 h-4 text-orange-400 shrink-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                  </div>
-                </div>
-
-                <div>
-                  <h4 className="text-lg font-bold text-white group-hover:text-orange-300 transition-colors line-clamp-1">
-                    {project.title}
-                  </h4>
-                  <p className="text-xs text-neutral-400 mt-1 line-clamp-2 font-light">
-                    {project.description}
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex flex-wrap gap-1.5 pt-4 border-t border-white/5 mt-4">
-                {project.tags.slice(0, 4).map((tag, tIdx) => (
-                  <span
-                    key={tIdx}
-                    className="text-[11px] font-mono px-2 py-0.5 rounded-md bg-white/5 text-neutral-300"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
+      )}
 
       {/* ========================================================
           EXPERIENCE & CAREER JOURNEY SECTION

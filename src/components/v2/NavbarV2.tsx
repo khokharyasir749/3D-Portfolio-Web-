@@ -3,9 +3,10 @@ import { ArrowUpRight } from 'lucide-react';
 
 interface NavbarV2Props {
   onContactClick?: () => void;
+  onProjectsClick?: () => void;
 }
 
-export const NavbarV2: React.FC<NavbarV2Props> = ({ onContactClick }) => {
+export const NavbarV2: React.FC<NavbarV2Props> = ({ onContactClick, onProjectsClick }) => {
   const [scrolled, setScrolled] = useState(false);
   const [activeItem, setActiveItem] = useState('Home');
 
@@ -51,8 +52,16 @@ export const NavbarV2: React.FC<NavbarV2Props> = ({ onContactClick }) => {
               <a
                 key={link.name}
                 href={link.href}
-                onClick={() => setActiveItem(link.name)}
-                className={`relative px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 ${
+                onClick={(e) => {
+                  if (link.name === 'Projects' && onProjectsClick) {
+                    e.preventDefault();
+                    setActiveItem(link.name);
+                    onProjectsClick();
+                    return;
+                  }
+                  setActiveItem(link.name);
+                }}
+                className={`relative px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 cursor-pointer ${
                   isActive
                     ? 'text-white bg-white/10 shadow-inner'
                     : 'text-neutral-400 hover:text-white hover:bg-white/5'

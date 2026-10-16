@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { NavbarV2 } from './NavbarV2';
 import { HeroV2 } from './HeroV2';
 import { BentoGridV2 } from './BentoGridV2';
+import { ProjectsDirectoryModal } from './ProjectsDirectoryModal';
 import { ArrowUpRight, Mail, Phone, X, Check, FileText } from 'lucide-react';
 import { portfolioData } from '../../data/portfolioData';
 
 export const PortfolioV2: React.FC = () => {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const [isProjectsModalOpen, setIsProjectsModalOpen] = useState(false);
   const [copiedEmail, setCopiedEmail] = useState(false);
   const { contacts } = portfolioData;
 
@@ -32,7 +34,10 @@ export const PortfolioV2: React.FC = () => {
       </div>
 
       {/* Floating Pill Navbar */}
-      <NavbarV2 onContactClick={() => setIsContactModalOpen(true)} />
+      <NavbarV2
+        onContactClick={() => setIsContactModalOpen(true)}
+        onProjectsClick={() => setIsProjectsModalOpen(true)}
+      />
 
       {/* Main Content Area */}
       <main className="relative z-10 flex-1 pt-24 sm:pt-28 lg:pt-32 pb-24 px-4 sm:px-8 lg:px-12 max-w-7xl mx-auto w-full space-y-16">
@@ -40,7 +45,7 @@ export const PortfolioV2: React.FC = () => {
         <HeroV2 onCtaClick={() => setIsContactModalOpen(true)} />
 
         {/* Step 2: Bento Grid Layout & Featured Projects / Services */}
-        <BentoGridV2 />
+        <BentoGridV2 onOpenAllProjects={() => setIsProjectsModalOpen(true)} />
       </main>
 
       {/* Floating Quick Action / Switcher Controls (Bottom-Right) */}
@@ -160,6 +165,12 @@ export const PortfolioV2: React.FC = () => {
           </div>
         </div>
       )}
+
+      {/* Dedicated Full-Screen Projects Directory / Showcase Modal */}
+      <ProjectsDirectoryModal
+        isOpen={isProjectsModalOpen}
+        onClose={() => setIsProjectsModalOpen(false)}
+      />
 
       {/* Sleek Minimalist Footer */}
       <footer className="relative z-10 border-t border-white/5 bg-[#09090c]/80 backdrop-blur-xl py-10 px-4 sm:px-8 lg:px-12 text-xs font-mono text-neutral-400">
