@@ -761,13 +761,13 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
       </section>
 
       {/* ========================================================
-          TECHNICAL SKILLS SECTION (MINIMALIST CATEGORY GRID)
+          TECHNICAL SKILLS SECTION (OPEN EDITORIAL CATEGORY GRID)
          ======================================================== */}
-      <section id="skills" className="space-y-10 pt-16 sm:pt-24 relative">
+      <section id="skills" className="space-y-12 pt-16 sm:pt-24 relative select-none">
         <span id="services" className="absolute -top-24" />
 
-        {/* Ambient Warm Amber Glow */}
-        <div className="absolute left-1/2 -top-12 -translate-x-1/2 w-full max-w-4xl h-64 bg-orange-500/[0.03] blur-[140px] pointer-events-none -z-10" />
+        {/* Ambient Warm Amber Glow (Shining uninterrupted through open canvas) */}
+        <div className="absolute left-1/2 -top-12 -translate-x-1/2 w-full max-w-5xl h-72 bg-orange-500/[0.035] blur-[150px] pointer-events-none -z-10" />
 
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-2">
@@ -788,39 +788,40 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
           </div>
         </div>
 
-        {/* Minimalist 6-Category Grid (Like Reference Video) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+        {/* Open Editorial Category Grid (Zero Boxed Containers / Direct on Canvas) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 items-start">
           {portfolioData.skills.map((cat, cIdx) => (
             <div
               key={cIdx}
-              className="p-6 sm:p-7 rounded-2xl bg-white/[0.015] hover:bg-white/[0.03] border border-white/[0.06] hover:border-orange-500/25 transition-all duration-300 space-y-4 backdrop-blur-sm group"
+              className="space-y-4 group"
             >
-              {/* Category Header */}
-              <div className="flex items-center justify-between pb-3 border-b border-white/[0.05]">
+              {/* Category Header: Crisp title with small icon, index, and thin separator line */}
+              <div className="flex items-center justify-between pb-3 border-b border-white/[0.06]">
                 <div className="flex items-center gap-2.5">
-                  <div className="p-2 rounded-xl bg-orange-500/10 border border-orange-500/20 group-hover:border-orange-500/30 transition-colors">
+                  <div className="p-1.5 rounded-lg bg-orange-500/10 border border-orange-500/20 text-orange-400">
                     {getCategoryIcon(cat.category)}
                   </div>
-                  <h3 className="text-sm sm:text-base font-bold text-white tracking-wider uppercase font-mono">
-                    {cat.category}
+                  <h3 className="text-xs sm:text-sm font-bold text-white tracking-wider uppercase font-mono flex items-center gap-2">
+                    <span className="text-orange-400/80 font-normal">0{cIdx + 1} //</span>
+                    <span>{cat.category}</span>
                   </h3>
                 </div>
-                <span className="text-[11px] font-mono text-neutral-500 group-hover:text-orange-400/80 transition-colors">
-                  0{cIdx + 1}
+                <span className="text-[10px] font-mono text-neutral-500 group-hover:text-orange-400/70 transition-colors uppercase">
+                  {cat.skills.length} tools
                 </span>
               </div>
 
-              {/* Technologies Badges / Minimalist Clickable Pill Buttons */}
+              {/* Skill Nodes: Floating Interactive Pill Buttons directly on open canvas */}
               <div className="flex flex-wrap gap-2 pt-1">
                 {cat.skills.map((skill, sIdx) => (
                   <button
                     key={sIdx}
                     onClick={() => handleOpenSkill(skill.name, cat.category)}
-                    className="group/pill inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-white/[0.03] hover:bg-orange-500/10 hover:text-orange-300 border border-white/[0.06] hover:border-orange-500/40 text-xs sm:text-[13px] font-mono text-neutral-300 hover:shadow-[0_0_20px_rgba(249,115,22,0.2)] hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer select-none"
+                    className="group/pill inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] hover:text-orange-300 border border-white/[0.06] hover:border-orange-500/40 text-xs sm:text-sm font-mono text-neutral-300 hover:shadow-[0_0_20px_rgba(249,115,22,0.18)] hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer select-none"
                     title={`Inspect ${skill.name} architecture & projects`}
                   >
                     <span>{skill.name}</span>
-                    <span className="w-1 h-1 rounded-full bg-white/20 group-hover/pill:bg-orange-400 group-hover/pill:shadow-[0_0_6px_rgba(249,115,22,0.8)] transition-all" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-white/20 group-hover/pill:bg-orange-400 group-hover/pill:shadow-[0_0_6px_rgba(249,115,22,0.8)] transition-all" />
                   </button>
                 ))}
               </div>
