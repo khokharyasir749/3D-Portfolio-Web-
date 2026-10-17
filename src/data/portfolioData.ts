@@ -38,8 +38,8 @@ export interface TimelineEntry {
 
 export interface SkillItem {
   name: string;
-  level: number;
-  note: string;
+  level?: number;
+  note?: string;
   tag?: string;
 }
 
@@ -520,68 +520,83 @@ export const portfolioData = {
     "TypeScript",
     "Tailwind CSS",
     "Three.js",
-    "React Three Fiber",
-    "WebGL",
-    "Framer Motion",
+    "GSAP",
     "Node.js",
     "Express",
-    "REST APIs",
     "WebSockets",
     "MongoDB",
-    "Git / GitHub",
-    "Vite",
-    "Postman",
-    "CI/CD",
-    "Docker"
+    "PostgreSQL",
+    "Docker",
+    "Git",
+    "Python"
   ],
 
   skills: [
     {
-      category: "Frontend Engineering",
+      category: "Frontend",
       iconName: "Layout",
-      description: "Modern component-driven web architectures built for sub-second paint times, strict type safety, and seamless state persistence.",
       skills: [
-        { name: "React", level: 96, note: "Concurrent features, custom hooks, Server/Client components & memoization patterns", tag: "Core UI" },
-        { name: "Next.js", level: 94, note: "App Router, SSR, SSG, dynamic image optimization & Edge API routing", tag: "Framework" },
-        { name: "TypeScript", level: 95, note: "Strict compile-time type-safety, generics, discriminated unions & contracts", tag: "Language" },
-        { name: "Tailwind CSS", level: 97, note: "Design system tokenization, dark mode glassmorphism & responsive fluid layouts", tag: "Styling" },
-        { name: "State Management", level: 92, note: "Zustand, Context API, Redux Toolkit & persistent client-side cache stores", tag: "State Arch" }
+        { name: "React", level: 95 },
+        { name: "Next.js", level: 95 },
+        { name: "TypeScript", level: 95 },
+        { name: "Tailwind CSS", level: 96 },
+        { name: "Three.js", level: 92 },
+        { name: "GSAP", level: 90 }
       ]
     },
     {
-      category: "Creative 3D & Spatial Web",
-      iconName: "Box",
-      description: "Hardware-accelerated WebGL experiences and physics-driven interactive graphics operating at native 60 FPS.",
-      skills: [
-        { name: "Three.js", level: 92, note: "Custom buffer geometries, PBR materials, scene graph hierarchies & raycasting", tag: "3D Engine" },
-        { name: "React Three Fiber", level: 90, note: "Declarative Three.js scene trees, Drei helpers & canvas lifecycle orchestration", tag: "Spatial UI" },
-        { name: "WebGL & Canvas", level: 88, note: "Hardware-accelerated viewport rendering, post-processing pipelines & bloom", tag: "Graphics" },
-        { name: "Framer Motion", level: 95, note: "Spring physics, layout animations, scroll triggers & fluid micro-interactions", tag: "Motion" },
-        { name: "Shaders & GLSL", level: 86, note: "Custom vertex/fragment shaders, procedural noise generators & material effects", tag: "Shaders" }
-      ]
-    },
-    {
-      category: "Backend & Distributed Systems",
+      category: "Backend",
       iconName: "Server",
-      description: "Resilient server architectures, transactional persistence, secure API gateways, and low-latency real-time streams.",
       skills: [
-        { name: "Node.js", level: 93, note: "Non-blocking event-driven runtime, worker threads & asynchronous stream processing", tag: "Runtime" },
-        { name: "Express", level: 92, note: "Modular route controllers, JWT authentication middleware & centralized error handling", tag: "Server" },
-        { name: "REST APIs", level: 95, note: "Idempotent resource endpoints, rate limiting, OpenAPI specifications & CORS", tag: "Protocols" },
-        { name: "WebSockets / Socket.io", level: 94, note: "Bi-directional event channels, presence detection & real-time synchronization", tag: "Real-Time" },
-        { name: "MongoDB", level: 90, note: "Mongoose ODM schemas, compound indexes, aggregation pipelines & replica sets", tag: "Database" }
+        { name: "Node.js", level: 93 },
+        { name: "Express", level: 92 },
+        { name: "REST APIs", level: 95 },
+        { name: "WebSockets", level: 94 },
+        { name: "Socket.io", level: 92 }
       ]
     },
     {
-      category: "Tooling & Production",
-      iconName: "Terminal",
-      description: "Modern developer toolchains, containerized deployment workflows, automated CI/CD, and API verification.",
+      category: "Creative 3D & Graphics",
+      iconName: "Box",
       skills: [
-        { name: "Git / GitHub", level: 95, note: "Branching strategies, atomic commits, pull request workflows & version control", tag: "VCS" },
-        { name: "Vite", level: 96, note: "Rollup bundling, instant ESM hot-module replacement & production code splitting", tag: "Build Tool" },
-        { name: "Postman", level: 93, note: "Automated API endpoint testing, environment variables & payload validation", tag: "Testing" },
-        { name: "CI/CD", level: 89, note: "GitHub Actions automation, build checks, lint verification & preview deploys", tag: "Automation" },
-        { name: "Docker", level: 87, note: "Multi-stage Dockerfiles, isolated development containers & microservices orchestration", tag: "Containers" }
+        { name: "Three.js", level: 92 },
+        { name: "React Three Fiber", level: 90 },
+        { name: "WebGL", level: 88 },
+        { name: "Canvas", level: 90 },
+        { name: "Shaders", level: 86 }
+      ]
+    },
+    {
+      category: "Databases & Cloud",
+      iconName: "Database",
+      skills: [
+        { name: "MongoDB", level: 90 },
+        { name: "PostgreSQL", level: 88 },
+        { name: "Redis", level: 86 }
+      ]
+    },
+    {
+      category: "Dev Tools",
+      iconName: "Terminal",
+      skills: [
+        { name: "Git", level: 95 },
+        { name: "GitHub", level: 95 },
+        { name: "Vite", level: 96 },
+        { name: "Postman", level: 93 },
+        { name: "Docker", level: 88 },
+        { name: "Linux", level: 88 }
+      ]
+    },
+    {
+      category: "Languages",
+      iconName: "Code2",
+      skills: [
+        { name: "JavaScript", level: 96 },
+        { name: "TypeScript", level: 95 },
+        { name: "Python", level: 88 },
+        { name: "HTML5", level: 98 },
+        { name: "CSS3", level: 96 },
+        { name: "SQL", level: 88 }
       ]
     }
   ] as SkillCategory[],
