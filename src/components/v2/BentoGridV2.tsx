@@ -21,6 +21,16 @@ import {
   Terminal,
   User,
   Compass,
+  Code2,
+  Box,
+  Server,
+  Database,
+  GitBranch,
+  Zap,
+  Radio,
+  Workflow,
+  Globe,
+  Boxes,
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { portfolioData } from '../../data/portfolioData';
@@ -190,6 +200,42 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
   const [activeProject, setActiveProject] = useState<BentoProject | null>(null);
   const [bithubVariant, setBithubVariant] = useState<'bithub' | 'rag'>('bithub');
   const [copiedEmail, setCopiedEmail] = useState(false);
+  const [activeTechCategory, setActiveTechCategory] = useState<string>('all');
+  const [highlightedTech, setHighlightedTech] = useState<string | null>(null);
+
+  const getTechIcon = (name: string) => {
+    const n = name.toLowerCase();
+    if (n.includes('react three') || n.includes('r3f')) return <Layers className="w-4 h-4" />;
+    if (n.includes('react')) return <Code2 className="w-4 h-4" />;
+    if (n.includes('next')) return <Globe className="w-4 h-4" />;
+    if (n.includes('typescript') || n.includes('type')) return <Terminal className="w-4 h-4" />;
+    if (n.includes('tailwind') || n.includes('css')) return <Sparkles className="w-4 h-4" />;
+    if (n.includes('state') || n.includes('architecture')) return <Workflow className="w-4 h-4" />;
+    if (n.includes('three')) return <Box className="w-4 h-4" />;
+    if (n.includes('webgl') || n.includes('canvas')) return <Compass className="w-4 h-4" />;
+    if (n.includes('motion')) return <TrendingUp className="w-4 h-4" />;
+    if (n.includes('shader') || n.includes('glsl')) return <Cpu className="w-4 h-4" />;
+    if (n.includes('node')) return <Server className="w-4 h-4" />;
+    if (n.includes('express')) return <Workflow className="w-4 h-4" />;
+    if (n.includes('rest') || n.includes('api')) return <Boxes className="w-4 h-4" />;
+    if (n.includes('socket') || n.includes('websocket')) return <Radio className="w-4 h-4" />;
+    if (n.includes('mongo') || n.includes('database')) return <Database className="w-4 h-4" />;
+    if (n.includes('git') || n.includes('github')) return <GitBranch className="w-4 h-4" />;
+    if (n.includes('vite')) return <Zap className="w-4 h-4" />;
+    if (n.includes('postman')) return <Terminal className="w-4 h-4" />;
+    if (n.includes('ci/cd') || n.includes('automation')) return <Workflow className="w-4 h-4" />;
+    if (n.includes('docker') || n.includes('container')) return <Boxes className="w-4 h-4" />;
+    return <Cpu className="w-4 h-4" />;
+  };
+
+  const getCategoryIcon = (category: string) => {
+    const c = category.toLowerCase();
+    if (c.includes('frontend')) return <Layers className="w-4 h-4" />;
+    if (c.includes('3d') || c.includes('spatial')) return <Box className="w-4 h-4" />;
+    if (c.includes('backend') || c.includes('distributed')) return <Server className="w-4 h-4" />;
+    if (c.includes('tooling') || c.includes('production')) return <Terminal className="w-4 h-4" />;
+    return <Cpu className="w-4 h-4" />;
+  };
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText('khokharyasir749@gmail.com');
@@ -727,93 +773,217 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
       </section>
 
       {/* ========================================================
-          TECHNICAL SKILLS & CORE STACK SECTION
+          TECHNICAL SKILLS & CORE ARCHITECTURE SECTION
          ======================================================== */}
       <section id="skills" className="space-y-10 pt-16 sm:pt-24 relative">
         <span id="services" className="absolute -top-24" />
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-4">
+
+        {/* Ambient Warm Amber & Cyber Glow on Unified Canvas */}
+        <div className="absolute left-1/2 -top-12 -translate-x-1/2 w-full max-w-5xl h-72 bg-gradient-to-r from-orange-500/5 via-amber-500/10 to-transparent blur-[140px] pointer-events-none -z-10" />
+
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-2">
           <div className="space-y-2">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 font-mono text-xs">
               <Cpu className="w-3.5 h-3.5 text-orange-400" />
               <span>CAPABILITIES & ARSENAL</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white">
-              Technical Skills & Stack
+              Technical Skills & Architecture
             </h2>
             <p className="text-sm sm:text-base text-neutral-400 max-w-2xl font-light">
-              Modern full-stack toolchain calibrated for 60 FPS fluidity, strict TypeScript typing, and resilient high-throughput architectures.
+              Categorized by functional engineering layers — built for 60 FPS spatial fluidity, strict TypeScript contracts, and distributed high-throughput backends.
             </p>
           </div>
-          <div className="text-xs font-mono px-3.5 py-1.5 rounded-xl bg-white/[0.04] border border-white/10 text-neutral-300">
-            {portfolioData.techStack.length} Technologies Indexed
+          <div className="flex items-center gap-2">
+            <div className="text-xs font-mono px-3.5 py-1.5 rounded-xl bg-white/[0.03] border border-white/10 text-neutral-300 flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span>4 Engineering Layers</span>
+              <span className="text-neutral-500">•</span>
+              <span className="text-orange-400">{portfolioData.techStack.length} Technologies</span>
+            </div>
           </div>
         </div>
 
-        {/* Core Stack Pills Strip */}
-        <div className="flex flex-wrap items-center gap-2.5 p-4 rounded-3xl bg-white/[0.03] border border-white/[0.08] backdrop-blur-xl">
-          <span className="text-xs font-mono uppercase tracking-wider text-neutral-400 font-semibold px-2">
-            CORE STACK:
-          </span>
-          {portfolioData.techStack.map((tech, idx) => (
-            <span
-              key={idx}
-              className="px-3.5 py-1.5 rounded-xl bg-white/5 hover:bg-orange-500/15 border border-white/10 hover:border-orange-500/40 text-xs font-mono font-medium text-neutral-200 hover:text-orange-300 transition-all cursor-default"
+        {/* Interactive Layer Filter Strip & Live Search/Highlight */}
+        <div className="flex flex-wrap items-center justify-between gap-3 p-2 rounded-2xl bg-white/[0.02] border border-white/[0.06] backdrop-blur-md">
+          {/* Layer Filter Tabs */}
+          <div className="flex flex-wrap items-center gap-1.5">
+            <button
+              onClick={() => setActiveTechCategory('all')}
+              className={`px-3.5 py-1.5 rounded-xl text-xs font-mono transition-all duration-200 cursor-pointer flex items-center gap-2 ${
+                activeTechCategory === 'all'
+                  ? 'bg-orange-500/20 text-orange-300 border border-orange-500/40 shadow-[0_0_15px_rgba(249,115,22,0.15)] font-semibold'
+                  : 'text-neutral-400 hover:text-white hover:bg-white/5 border border-transparent'
+              }`}
             >
-              {tech}
-            </span>
-          ))}
+              <span>All Layers</span>
+              <span className="text-[10px] opacity-60">
+                ({portfolioData.skills.reduce((acc, cat) => acc + cat.skills.length, 0)})
+              </span>
+            </button>
+
+            {portfolioData.skills.map((cat, idx) => {
+              const isActive = activeTechCategory === cat.category;
+              return (
+                <button
+                  key={idx}
+                  onClick={() => setActiveTechCategory(cat.category)}
+                  className={`px-3.5 py-1.5 rounded-xl text-xs font-mono transition-all duration-200 cursor-pointer flex items-center gap-2 ${
+                    isActive
+                      ? 'bg-orange-500/20 text-orange-300 border border-orange-500/40 shadow-[0_0_15px_rgba(249,115,22,0.15)] font-semibold'
+                      : 'text-neutral-400 hover:text-white hover:bg-white/5 border border-transparent'
+                  }`}
+                >
+                  {getCategoryIcon(cat.category)}
+                  <span>{cat.category}</span>
+                  <span className="text-[10px] opacity-60">({cat.skills.length})</span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Quick Clear Filter if selected */}
+          {activeTechCategory !== 'all' && (
+            <button
+              onClick={() => setActiveTechCategory('all')}
+              className="text-[11px] font-mono text-orange-400/80 hover:text-orange-300 px-3 py-1 flex items-center gap-1 transition-colors cursor-pointer"
+            >
+              <span>View All Layers</span>
+              <span>↗</span>
+            </button>
+          )}
         </div>
 
-        {/* 3 Skill Categorized Bento Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {portfolioData.skills.map((cat, cIdx) => (
-            <motion.div
-              key={cIdx}
-              whileHover={{ y: -4 }}
-              transition={{ duration: 0.2 }}
-              className="rounded-3xl bg-white/[0.03] hover:bg-white/[0.06] border border-white/[0.08] hover:border-orange-500/40 p-6 sm:p-7 backdrop-blur-xl transition-all duration-300 flex flex-col justify-between shadow-xl"
+        {/* Quick Tech Highlight Pills Strip */}
+        <div className="flex flex-wrap items-center gap-2 p-3.5 rounded-2xl bg-white/[0.015] border border-white/[0.05]">
+          <span className="text-[11px] font-mono uppercase tracking-wider text-neutral-500 font-semibold px-2 flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-orange-500/60" />
+            CORE ARSENAL:
+          </span>
+          {portfolioData.techStack.map((tech, idx) => {
+            const isHighlighted = highlightedTech === tech;
+            return (
+              <button
+                key={idx}
+                onClick={() => setHighlightedTech(isHighlighted ? null : tech)}
+                className={`px-2.5 py-1 rounded-lg text-xs font-mono transition-all duration-200 cursor-pointer ${
+                  isHighlighted
+                    ? 'bg-orange-500 text-black font-bold shadow-[0_0_18px_rgba(249,115,22,0.5)] border border-orange-400 scale-105'
+                    : 'bg-white/[0.03] hover:bg-white/[0.07] border border-white/5 hover:border-orange-500/30 text-neutral-300 hover:text-orange-300'
+                }`}
+              >
+                {tech}
+              </button>
+            );
+          })}
+          {highlightedTech && (
+            <button
+              onClick={() => setHighlightedTech(null)}
+              className="text-[10px] font-mono text-neutral-400 hover:text-white px-2 py-0.5 rounded border border-white/10 hover:border-white/20 transition-colors ml-auto"
             >
-              <div className="space-y-5">
-                <div className="flex items-center justify-between pb-3 border-b border-white/5">
+              Reset highlight ×
+            </button>
+          )}
+        </div>
+
+        {/* UNIFIED CONTINUOUS CANVAS: Functional Engineering Layers */}
+        <div className="space-y-12">
+          {portfolioData.skills
+            .filter((cat) => activeTechCategory === 'all' || activeTechCategory === cat.category)
+            .map((cat, cIdx) => (
+              <div key={cIdx} className="space-y-5">
+                {/* Architectural Layer Header directly on canvas (no heavy box) */}
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-white/[0.06]">
                   <div className="flex items-center gap-3">
-                    <div className="p-2.5 rounded-xl bg-orange-500/10 text-orange-400 border border-orange-500/20">
-                      {cIdx === 0 && <Layers className="w-5 h-5" />}
-                      {cIdx === 1 && <Sparkles className="w-5 h-5" />}
-                      {cIdx === 2 && <Terminal className="w-5 h-5" />}
+                    <div className="p-2 rounded-xl bg-orange-500/10 text-orange-400 border border-orange-500/20">
+                      {getCategoryIcon(cat.category)}
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-white">
-                        {cat.category}
-                      </h3>
-                      <span className="text-[11px] font-mono text-neutral-400">
-                        {cat.skills.length} Specializations
-                      </span>
+                      <div className="flex items-center gap-2">
+                        <span className="text-[10px] font-mono text-orange-400 font-bold uppercase tracking-widest">
+                          LAYER 0{cIdx + 1}
+                        </span>
+                        <span className="text-neutral-600">•</span>
+                        <h3 className="text-lg sm:text-xl font-extrabold text-white tracking-tight">
+                          {cat.category}
+                        </h3>
+                      </div>
+                      <p className="text-xs text-neutral-400 font-light mt-0.5 max-w-xl">
+                        {cat.description}
+                      </p>
                     </div>
+                  </div>
+
+                  <div className="flex items-center gap-2 sm:self-center">
+                    <span className="text-[11px] font-mono px-2.5 py-1 rounded-lg bg-white/[0.02] border border-white/5 text-neutral-400">
+                      {cat.skills.length} Capabilities
+                    </span>
                   </div>
                 </div>
 
-                <div className="space-y-3.5">
-                  {cat.skills.map((skill, sIdx) => (
-                    <div key={sIdx} className="space-y-1.5">
-                      <div className="flex items-center justify-between text-xs font-mono">
-                        <span className="text-neutral-200 font-medium">{skill.name}</span>
-                        <span className="text-orange-400 font-semibold">{skill.level}%</span>
-                      </div>
-                      <div className="w-full h-1.5 rounded-full bg-white/5 overflow-hidden">
-                        <div
-                          className="h-full rounded-full bg-gradient-to-r from-orange-500 to-amber-400 transition-all duration-700"
-                          style={{ width: `${skill.level}%` }}
-                        />
-                      </div>
-                      <p className="text-[11px] text-neutral-400 font-sans line-clamp-1">
-                        {skill.note}
-                      </p>
-                    </div>
-                  ))}
+                {/* Sleek Interactive Tech Grid (Micro-Bento Nodes) */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3.5">
+                  {cat.skills.map((skill, sIdx) => {
+                    const isMatched = highlightedTech
+                      ? skill.name.toLowerCase().includes(highlightedTech.toLowerCase()) ||
+                        highlightedTech.toLowerCase().includes(skill.name.toLowerCase())
+                      : false;
+
+                    return (
+                      <motion.div
+                        key={sIdx}
+                        whileHover={{ y: -3 }}
+                        transition={{ duration: 0.2 }}
+                        className={`relative group p-4 sm:p-5 rounded-2xl transition-all duration-300 flex flex-col justify-between overflow-hidden cursor-default ${
+                          isMatched
+                            ? 'bg-orange-500/10 border-orange-500/60 shadow-[0_0_30px_rgba(249,115,22,0.25)] ring-1 ring-orange-500/50'
+                            : 'bg-white/[0.02] hover:bg-white/[0.04] border border-white/[0.06] hover:border-orange-500/40 hover:shadow-[0_0_25px_rgba(249,115,22,0.12)]'
+                        } backdrop-blur-md`}
+                      >
+                        {/* Subtle top-right warm glow on hover */}
+                        <div className="absolute top-0 right-0 w-28 h-28 bg-gradient-to-bl from-orange-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+
+                        <div className="space-y-3 relative z-10">
+                          {/* Top Row: Icon + Name + Tag */}
+                          <div className="flex items-start justify-between gap-2">
+                            <div className="flex items-center gap-2.5 min-w-0">
+                              <div className="p-2 rounded-xl bg-white/[0.03] group-hover:bg-orange-500/10 border border-white/5 group-hover:border-orange-500/30 text-neutral-400 group-hover:text-orange-400 transition-all duration-300 shrink-0">
+                                {getTechIcon(skill.name)}
+                              </div>
+                              <div className="min-w-0">
+                                <h4 className="text-sm font-bold text-white group-hover:text-orange-200 transition-colors truncate">
+                                  {skill.name}
+                                </h4>
+                              </div>
+                            </div>
+
+                            {skill.tag && (
+                              <span className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/[0.04] text-neutral-400 border border-white/5 group-hover:border-orange-500/30 group-hover:text-orange-300 transition-colors shrink-0">
+                                {skill.tag}
+                              </span>
+                            )}
+                          </div>
+
+                          {/* 1-Line Architectural Description */}
+                          <p className="text-xs text-neutral-400 group-hover:text-neutral-300 font-sans leading-relaxed transition-colors">
+                            {skill.note}
+                          </p>
+                        </div>
+
+                        {/* Bottom Micro-Status indicator */}
+                        <div className="flex items-center justify-between pt-3 mt-3 border-t border-white/[0.04] text-[10px] font-mono text-neutral-500 group-hover:text-neutral-400 transition-colors relative z-10">
+                          <span className="group-hover:text-orange-400/90 transition-colors">
+                            Architecture Verified
+                          </span>
+                          <span className="w-1.5 h-1.5 rounded-full bg-orange-500/40 group-hover:bg-orange-400 group-hover:shadow-[0_0_8px_rgba(249,115,22,0.9)] transition-all" />
+                        </div>
+                      </motion.div>
+                    );
+                  })}
                 </div>
               </div>
-            </motion.div>
-          ))}
+            ))}
         </div>
       </section>
 

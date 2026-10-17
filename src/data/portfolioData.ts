@@ -36,10 +36,18 @@ export interface TimelineEntry {
   current?: boolean;
 }
 
+export interface SkillItem {
+  name: string;
+  level: number;
+  note: string;
+  tag?: string;
+}
+
 export interface SkillCategory {
   category: string;
   iconName: string;
-  skills: { name: string; level: number; note: string }[];
+  description?: string;
+  skills: SkillItem[];
 }
 
 export interface AboutData {
@@ -508,47 +516,72 @@ export const portfolioData = {
 
   techStack: [
     "React",
-    "JavaScript",
-    "HTML5",
-    "CSS3",
-    "Tailwind CSS",
-    "Git",
-    "Node.js",
-    "Vite",
-    "Three.js",
+    "Next.js",
     "TypeScript",
-    "Next.js"
+    "Tailwind CSS",
+    "Three.js",
+    "React Three Fiber",
+    "WebGL",
+    "Framer Motion",
+    "Node.js",
+    "Express",
+    "REST APIs",
+    "WebSockets",
+    "MongoDB",
+    "Git / GitHub",
+    "Vite",
+    "Postman",
+    "CI/CD",
+    "Docker"
   ],
 
   skills: [
     {
       category: "Frontend Engineering",
       iconName: "Layout",
+      description: "Modern component-driven web architectures built for sub-second paint times, strict type safety, and seamless state persistence.",
       skills: [
-        { name: "React / Next.js", level: 95, note: "App Router, Hooks, Redux, State Architecture" },
-        { name: "JavaScript & TypeScript", level: 94, note: "ESNext, Async, Strict typing, Clean patterns" },
-        { name: "Tailwind CSS & CSS3", level: 96, note: "Responsive layouts, custom design systems, animations" },
-        { name: "HTML5 & Semantic Web", level: 98, note: "Accessibility, SEO standards, Web APIs" }
+        { name: "React", level: 96, note: "Concurrent features, custom hooks, Server/Client components & memoization patterns", tag: "Core UI" },
+        { name: "Next.js", level: 94, note: "App Router, SSR, SSG, dynamic image optimization & Edge API routing", tag: "Framework" },
+        { name: "TypeScript", level: 95, note: "Strict compile-time type-safety, generics, discriminated unions & contracts", tag: "Language" },
+        { name: "Tailwind CSS", level: 97, note: "Design system tokenization, dark mode glassmorphism & responsive fluid layouts", tag: "Styling" },
+        { name: "State Management", level: 92, note: "Zustand, Context API, Redux Toolkit & persistent client-side cache stores", tag: "State Arch" }
       ]
     },
     {
-      category: "Creative 3D & WebGL",
+      category: "Creative 3D & Spatial Web",
       iconName: "Box",
+      description: "Hardware-accelerated WebGL experiences and physics-driven interactive graphics operating at native 60 FPS.",
       skills: [
-        { name: "Three.js & R3F", level: 90, note: "React Three Fiber, Drei, Scene Graph optimization" },
-        { name: "Framer Motion", level: 94, note: "Spring physics, scroll-linked animations, micro-interactions" },
-        { name: "Vite & Tooling", level: 95, note: "Fast HMR, optimized production bundlers, PostCSS" },
-        { name: "Git & GitHub", level: 94, note: "Version control, branching workflows, CI/CD pipelines" }
+        { name: "Three.js", level: 92, note: "Custom buffer geometries, PBR materials, scene graph hierarchies & raycasting", tag: "3D Engine" },
+        { name: "React Three Fiber", level: 90, note: "Declarative Three.js scene trees, Drei helpers & canvas lifecycle orchestration", tag: "Spatial UI" },
+        { name: "WebGL & Canvas", level: 88, note: "Hardware-accelerated viewport rendering, post-processing pipelines & bloom", tag: "Graphics" },
+        { name: "Framer Motion", level: 95, note: "Spring physics, layout animations, scroll triggers & fluid micro-interactions", tag: "Motion" },
+        { name: "Shaders & GLSL", level: 86, note: "Custom vertex/fragment shaders, procedural noise generators & material effects", tag: "Shaders" }
       ]
     },
     {
-      category: "Backend & Real-Time",
+      category: "Backend & Distributed Systems",
       iconName: "Server",
+      description: "Resilient server architectures, transactional persistence, secure API gateways, and low-latency real-time streams.",
       skills: [
-        { name: "Node.js & Express", level: 90, note: "RESTful APIs, routing, JWT auth, middleware" },
-        { name: "Socket.io / WebSockets", level: 92, note: "Bi-directional real-time chat & live event pipelines" },
-        { name: "MongoDB & Databases", level: 88, note: "Document schemas, aggregation pipelines, indexing" },
-        { name: "Full-Stack Security", level: 86, note: "CORS, token authentication, sanitized inputs" }
+        { name: "Node.js", level: 93, note: "Non-blocking event-driven runtime, worker threads & asynchronous stream processing", tag: "Runtime" },
+        { name: "Express", level: 92, note: "Modular route controllers, JWT authentication middleware & centralized error handling", tag: "Server" },
+        { name: "REST APIs", level: 95, note: "Idempotent resource endpoints, rate limiting, OpenAPI specifications & CORS", tag: "Protocols" },
+        { name: "WebSockets / Socket.io", level: 94, note: "Bi-directional event channels, presence detection & real-time synchronization", tag: "Real-Time" },
+        { name: "MongoDB", level: 90, note: "Mongoose ODM schemas, compound indexes, aggregation pipelines & replica sets", tag: "Database" }
+      ]
+    },
+    {
+      category: "Tooling & Production",
+      iconName: "Terminal",
+      description: "Modern developer toolchains, containerized deployment workflows, automated CI/CD, and API verification.",
+      skills: [
+        { name: "Git / GitHub", level: 95, note: "Branching strategies, atomic commits, pull request workflows & version control", tag: "VCS" },
+        { name: "Vite", level: 96, note: "Rollup bundling, instant ESM hot-module replacement & production code splitting", tag: "Build Tool" },
+        { name: "Postman", level: 93, note: "Automated API endpoint testing, environment variables & payload validation", tag: "Testing" },
+        { name: "CI/CD", level: 89, note: "GitHub Actions automation, build checks, lint verification & preview deploys", tag: "Automation" },
+        { name: "Docker", level: 87, note: "Multi-stage Dockerfiles, isolated development containers & microservices orchestration", tag: "Containers" }
       ]
     }
   ] as SkillCategory[],
