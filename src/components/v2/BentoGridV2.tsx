@@ -830,10 +830,15 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
       </section>
 
       {/* ========================================================
-          PERSONAL PROFILE & ABOUT SECTION
+          PERSONAL PROFILE & ABOUT SECTION (BORDERLESS EDITORIAL CANVAS)
          ======================================================== */}
-      <section id="about" className="space-y-10 pt-16 sm:pt-24">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-4">
+      <section id="about" className="space-y-12 pt-16 sm:pt-24 relative select-none">
+        {/* Warm Studio Ambient Glow Behind Text (No clipping boundaries) */}
+        <div className="absolute left-1/4 -top-16 w-96 h-96 bg-orange-500/[0.04] blur-[160px] pointer-events-none -z-10" />
+        <div className="absolute right-10 bottom-0 w-80 h-80 bg-amber-600/[0.03] blur-[140px] pointer-events-none -z-10" />
+
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-2">
           <div className="space-y-2">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 font-mono text-xs">
               <User className="w-3.5 h-3.5 text-orange-400" />
@@ -846,19 +851,22 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
               Creative technologist, spatial web specialist, and full-stack software engineer dedicated to crafting transformative digital products.
             </p>
           </div>
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span>{portfolioData.about.status}</span>
+          <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono shrink-0">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
+            </span>
+            <span className="tracking-wider uppercase font-semibold">{portfolioData.about.status}</span>
           </div>
         </div>
 
-        {/* Profile Card & Stats Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Main Bio Card (2-Cols) */}
-          <div className="lg:col-span-2 rounded-3xl bg-white/[0.03] border border-white/[0.08] p-6 sm:p-8 backdrop-blur-xl space-y-6 shadow-xl">
-            {/* Profile Header */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pb-6 border-b border-white/5">
-              <div className="w-16 h-16 rounded-2xl overflow-hidden border border-white/15 bg-neutral-900 shrink-0 shadow-lg">
+        {/* Editorial 2-Column Open Layout (Zero Box Boundaries) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start pt-4">
+          {/* Left Column: Bio & Identity Narrative */}
+          <div className="lg:col-span-7 space-y-8">
+            {/* Clean Moniker & Profile Identity (Zero card background) */}
+            <div className="flex items-center gap-4">
+              <div className="w-14 h-14 rounded-2xl overflow-hidden border border-white/10 shrink-0 bg-neutral-900 shadow-md">
                 <img
                   src={profilePic}
                   alt={portfolioData.about.name}
@@ -866,65 +874,79 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
                 />
               </div>
               <div>
-                <h3 className="text-2xl font-extrabold text-white flex items-center gap-2">
+                <h3 className="text-xl sm:text-2xl font-extrabold text-white flex items-center gap-2 tracking-tight">
                   <span>{portfolioData.about.name}</span>
-                  <span className="text-xs font-mono text-orange-400">
+                  <span className="text-xs font-mono text-orange-400/90 font-normal">
                     [@{portfolioData.about.handle}]
                   </span>
                 </h3>
                 <p className="text-xs sm:text-sm font-mono text-neutral-400 mt-0.5">
                   {portfolioData.about.role}
                 </p>
-                <div className="flex items-center gap-1.5 text-xs text-neutral-400 font-sans mt-1">
-                  <MapPin className="w-3.5 h-3.5 text-orange-400" />
+                <div className="flex items-center gap-1.5 text-xs text-neutral-500 font-sans mt-0.5">
+                  <MapPin className="w-3.5 h-3.5 text-orange-400/80" />
                   <span>{portfolioData.about.location}</span>
                 </div>
               </div>
             </div>
 
-            {/* Bio Paragraphs */}
-            <div className="space-y-3.5 text-sm sm:text-base text-neutral-300 font-light leading-relaxed">
+            {/* Editorial Lead Quote */}
+            <div className="border-l-2 border-orange-500/60 pl-4 py-1">
+              <p className="text-base sm:text-lg font-medium text-white/90 leading-snug italic font-sans">
+                "{portfolioData.about.tagline}"
+              </p>
+            </div>
+
+            {/* Narrative Bio Paragraphs with ample line-height */}
+            <div className="space-y-4 text-sm sm:text-base text-zinc-300 font-light leading-relaxed">
               {portfolioData.about.bio.map((paragraph, pIdx) => (
-                <p key={pIdx}>{paragraph}</p>
+                <p key={pIdx} className="text-zinc-300/90 leading-relaxed">
+                  {paragraph}
+                </p>
               ))}
+            </div>
+
+            {/* Core Engineering Philosophies List (Border-free editorial thoughts) */}
+            <div className="space-y-3 pt-2">
+              <div className="text-xs font-mono uppercase tracking-widest text-orange-400 font-semibold flex items-center gap-2">
+                <Compass className="w-3.5 h-3.5 text-orange-400" />
+                <span>Core Architectural Principles</span>
+              </div>
+              <div className="space-y-3 pt-1">
+                {portfolioData.about.philosophies.map((phil, pIdx) => (
+                  <div key={pIdx} className="flex items-start gap-3 text-xs sm:text-sm text-neutral-300/90 font-light leading-relaxed">
+                    <span className="text-orange-400 font-mono text-xs mt-0.5 shrink-0">0{pIdx + 1}.</span>
+                    <span>{phil}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
-          {/* Stats Matrix (1-Col) */}
-          <div className="grid grid-cols-2 lg:grid-cols-1 gap-4">
+          {/* Right Column: High-Impact Minimalist Stat Matrix (Border-free typographic list) */}
+          <div className="lg:col-span-5 divide-y divide-white/[0.06] border-y border-white/[0.06]">
             {portfolioData.about.stats.map((stat, sIdx) => (
               <div
                 key={sIdx}
-                className="rounded-3xl bg-white/[0.03] hover:bg-white/[0.06] border border-white/[0.08] hover:border-orange-500/30 p-5 sm:p-6 backdrop-blur-xl flex flex-col justify-center space-y-1.5 transition-all shadow-lg"
+                className="py-6 sm:py-7 first:pt-4 last:pb-4 flex flex-col justify-center space-y-1.5 group"
               >
-                <span className="text-[11px] font-mono uppercase tracking-wider text-neutral-400">
+                <span className="text-xs uppercase tracking-widest text-zinc-500 font-mono font-medium">
                   {stat.label}
                 </span>
-                <span className="text-2xl sm:text-3xl font-black text-white">
-                  {stat.value}
-                </span>
-                <span className="text-xs font-sans text-neutral-400">
+                <div className="flex items-baseline justify-between gap-4">
+                  <span className="text-4xl sm:text-5xl font-black text-white tracking-tight group-hover:text-orange-200 transition-colors">
+                    {stat.value}
+                  </span>
+                  {sIdx === 3 && (
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[11px] font-mono">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                      Open for Contracts
+                    </span>
+                  )}
+                </div>
+                <span className="text-sm text-zinc-400 font-sans font-light">
                   {stat.sub}
                 </span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Engineering Philosophies Strip */}
-        <div className="rounded-3xl bg-white/[0.03] border border-white/[0.08] p-6 sm:p-8 backdrop-blur-xl space-y-4 shadow-xl">
-          <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-orange-400 font-bold">
-            <Compass className="w-4 h-4 text-orange-400" />
-            <span>CORE ARCHITECTURAL PHILOSOPHIES</span>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {portfolioData.about.philosophies.map((phil, pIdx) => (
-              <div
-                key={pIdx}
-                className="flex items-start gap-3 p-4 rounded-2xl bg-white/5 border border-white/5 text-xs sm:text-sm text-neutral-300 font-light"
-              >
-                <CheckCircle2 className="w-4 h-4 text-orange-400 shrink-0 mt-0.5" />
-                <span>{phil}</span>
               </div>
             ))}
           </div>
