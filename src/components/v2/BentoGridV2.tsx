@@ -955,10 +955,15 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
       </section>
 
       {/* ========================================================
-          CONTACT, SOCIAL & RESUME SECTION
+          CONTACT, SOCIAL & RESUME SECTION (BORDERLESS EDITORIAL CANVAS)
          ======================================================== */}
-      <section id="contact" className="space-y-10 pt-16 sm:pt-24">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-4">
+      <section id="contact" className="space-y-12 pt-16 sm:pt-24 relative select-none">
+        {/* Warm Amber Ambient Glow (Smoothly washes behind canvas without clipping) */}
+        <div className="absolute left-1/4 -top-16 w-96 h-96 bg-orange-500/[0.04] blur-[160px] pointer-events-none -z-10" />
+        <div className="absolute right-10 bottom-0 w-80 h-80 bg-amber-600/[0.03] blur-[140px] pointer-events-none -z-10" />
+
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-2">
           <div className="space-y-2">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 font-mono text-xs">
               <Mail className="w-3.5 h-3.5 text-orange-400" />
@@ -971,140 +976,177 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
               Reach out directly for freelance contracts, full-time engineering inquiries, or spatial web collaborations.
             </p>
           </div>
-          <div className="text-xs font-mono px-3.5 py-1.5 rounded-xl bg-white/[0.04] border border-white/10 text-neutral-300">
-            Fast Response Within 24h
+          <div className="inline-flex items-center gap-2 text-xs font-mono px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 shrink-0">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span>Fast Response Within 24h</span>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {/* Card 1: Direct Email */}
-          <div className="rounded-3xl bg-white/[0.03] hover:bg-white/[0.06] border border-white/[0.08] hover:border-orange-500/40 p-6 backdrop-blur-xl flex flex-col justify-between space-y-4 shadow-xl transition-all">
+        {/* Open Editorial 2-Column Canvas Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start pt-4">
+          {/* Left Column: Bold Direct Communication & Big Email */}
+          <div className="lg:col-span-7 space-y-8">
             <div className="space-y-3">
-              <div className="p-3 rounded-2xl bg-orange-500/10 text-orange-400 w-fit">
-                <Mail className="w-5 h-5" />
-              </div>
-              <h3 className="text-lg font-bold text-white">Email Direct</h3>
-              <p className="text-xs text-neutral-400 font-mono break-all">
-                khokharyasir749@gmail.com
+              <span className="text-xs font-mono uppercase tracking-widest text-zinc-500 font-medium block">
+                Direct Inquiries & Briefs
+              </span>
+              <p className="text-sm sm:text-base text-neutral-300 font-light leading-relaxed">
+                Have a project in mind, need technical architecture leadership, or looking to integrate high-performance web experiences? Send a note directly or reach out on WhatsApp.
               </p>
             </div>
-            <div className="flex items-center gap-2 pt-2">
-              <button
-                onClick={handleCopyEmail}
-                className="flex-1 flex items-center justify-center gap-1.5 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-mono font-medium text-white transition-colors"
-              >
-                {copiedEmail ? (
-                  <>
-                    <Check className="w-3.5 h-3.5 text-emerald-400" />
-                    <span>Copied!</span>
-                  </>
-                ) : (
-                  <>
-                    <Copy className="w-3.5 h-3.5 text-neutral-400" />
-                    <span>Copy Email</span>
-                  </>
-                )}
-              </button>
+
+            {/* Big Direct Email Link & Copy Action */}
+            <div className="space-y-3 pt-2">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-3">
+                <a
+                  href="mailto:khokharyasir749@gmail.com"
+                  className="text-2xl sm:text-3xl font-semibold text-white hover:text-orange-400 transition-colors tracking-tight font-sans inline-flex items-center gap-2 group"
+                  title="Send email directly"
+                >
+                  <span className="break-all sm:break-normal">khokharyasir749@gmail.com</span>
+                  <ArrowUpRight className="w-6 h-6 text-neutral-500 group-hover:text-orange-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform shrink-0" />
+                </a>
+              </div>
+
+              {/* Inline Copy Button with status feedback */}
+              <div className="flex items-center gap-3">
+                <button
+                  onClick={handleCopyEmail}
+                  className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] hover:border-orange-500/30 text-xs font-mono text-neutral-300 hover:text-white transition-all cursor-pointer active:scale-95"
+                  title="Copy email to clipboard"
+                >
+                  {copiedEmail ? (
+                    <>
+                      <Check className="w-3.5 h-3.5 text-emerald-400" />
+                      <span className="text-emerald-400 font-medium">Copied to clipboard!</span>
+                    </>
+                  ) : (
+                    <>
+                      <Copy className="w-3.5 h-3.5 text-neutral-400" />
+                      <span>Copy Email</span>
+                    </>
+                  )}
+                </button>
+                <span className="text-[11px] font-mono text-neutral-500">
+                  Primary inbox • Checked daily
+                </span>
+              </div>
+            </div>
+
+            {/* Direct WhatsApp Action Row */}
+            <div className="pt-2">
               <a
-                href="mailto:khokharyasir749@gmail.com"
-                className="p-2.5 rounded-xl bg-orange-500 hover:bg-orange-600 text-black transition-colors"
-                title="Send Email"
+                href="https://wa.me/923280790704"
+                target="_blank"
+                rel="noreferrer"
+                className="group flex items-center justify-between py-4 border-b border-white/[0.06] hover:border-emerald-500/40 transition-colors"
               >
-                <ArrowUpRight className="w-4 h-4" />
+                <div className="flex items-center gap-3.5">
+                  <div className="p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 group-hover:bg-emerald-500/20 transition-colors">
+                    <Phone className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <div className="text-sm font-semibold text-white group-hover:text-emerald-300 transition-colors flex items-center gap-2">
+                      <span>WhatsApp Direct</span>
+                      <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 font-normal">
+                        Online
+                      </span>
+                    </div>
+                    <div className="text-xs text-neutral-400 font-mono mt-0.5">
+                      +92 328 0790704 • Instant Messaging & Discussion
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-1.5 text-xs font-mono text-emerald-400 shrink-0">
+                  <span className="hidden sm:inline">Message Now</span>
+                  <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </div>
               </a>
             </div>
           </div>
 
-          {/* Card 2: WhatsApp Direct */}
-          <a
-            href="https://wa.me/923280790704"
-            target="_blank"
-            rel="noreferrer"
-            className="group rounded-3xl bg-white/[0.03] hover:bg-white/[0.06] border border-white/[0.08] hover:border-emerald-500/40 p-6 backdrop-blur-xl flex flex-col justify-between space-y-4 shadow-xl transition-all"
-          >
-            <div className="space-y-3">
-              <div className="p-3 rounded-2xl bg-emerald-500/10 text-emerald-400 w-fit">
-                <Phone className="w-5 h-5" />
-              </div>
-              <h3 className="text-lg font-bold text-white group-hover:text-emerald-300 transition-colors">
-                WhatsApp Chat
+          {/* Right Side: Profiles & Resume Hub */}
+          <div className="lg:col-span-5 space-y-6">
+            <div className="space-y-1">
+              <span className="text-xs font-mono uppercase tracking-widest text-zinc-500 font-medium block">
+                Profiles & Documentation
+              </span>
+              <h3 className="text-lg font-bold text-white tracking-tight">
+                Digital Presence & Dossier
               </h3>
-              <p className="text-xs text-neutral-400 font-mono">
-                +92 328 0790704
-              </p>
             </div>
-            <div className="flex items-center justify-between text-xs font-mono text-emerald-400 pt-2 border-t border-white/5">
-              <span>Open Direct Chat</span>
-              <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-            </div>
-          </a>
 
-          {/* Card 3: Social & Repositories */}
-          <div className="rounded-3xl bg-white/[0.03] border border-white/[0.08] p-6 backdrop-blur-xl flex flex-col justify-between space-y-4 shadow-xl">
-            <div className="space-y-3">
-              <div className="p-3 rounded-2xl bg-white/5 text-neutral-300 w-fit">
-                <Github className="w-5 h-5" />
-              </div>
-              <h3 className="text-lg font-bold text-white">Social Profiles</h3>
-              <p className="text-xs text-neutral-400 font-sans">
-                Explore source repositories and professional connections.
-              </p>
-            </div>
-            <div className="space-y-2 pt-2 border-t border-white/5">
+            {/* Social Links Rows */}
+            <div className="divide-y divide-white/[0.06] border-y border-white/[0.06]">
+              {/* GitHub */}
               <a
                 href="https://github.com/khokharyasir749"
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center justify-between p-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/5 text-xs font-mono text-neutral-200 transition-colors"
+                className="flex items-center justify-between py-4 group hover:pl-1 transition-all"
               >
-                <div className="flex items-center gap-2">
-                  <Github className="w-3.5 h-3.5 text-neutral-400" />
-                  <span>GitHub @khokharyasir749</span>
+                <div className="flex items-center gap-3">
+                  <div className="p-2 rounded-lg bg-white/[0.04] text-neutral-400 group-hover:text-white group-hover:bg-white/[0.08] transition-colors">
+                    <Github className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <div className="text-sm font-medium text-white group-hover:text-orange-200 transition-colors">
+                      GitHub
+                    </div>
+                    <div className="text-xs text-neutral-500 font-mono">
+                      @khokharyasir749 • Open-source projects & codebases
+                    </div>
+                  </div>
                 </div>
-                <ArrowUpRight className="w-3.5 h-3.5 text-neutral-400" />
+                <ArrowUpRight className="w-4 h-4 text-neutral-500 group-hover:text-orange-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
               </a>
+
+              {/* LinkedIn */}
               <a
                 href="https://linkedin.com/in/yasirkhokhar"
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center justify-between p-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/5 text-xs font-mono text-neutral-200 transition-colors"
+                className="flex items-center justify-between py-4 group hover:pl-1 transition-all"
               >
-                <div className="flex items-center gap-2">
-                  <Linkedin className="w-3.5 h-3.5 text-sky-400" />
-                  <span>LinkedIn /yasirkhokhar</span>
+                <div className="flex items-center gap-3">
+                  <div className="p-2 rounded-lg bg-sky-500/10 text-sky-400 group-hover:bg-sky-500/20 transition-colors">
+                    <Linkedin className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <div className="text-sm font-medium text-white group-hover:text-sky-200 transition-colors">
+                      LinkedIn
+                    </div>
+                    <div className="text-xs text-neutral-500 font-mono">
+                      /yasirkhokhar • Career milestones & recommendations
+                    </div>
+                  </div>
                 </div>
-                <ArrowUpRight className="w-3.5 h-3.5 text-neutral-400" />
+                <ArrowUpRight className="w-4 h-4 text-neutral-500 group-hover:text-sky-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
               </a>
             </div>
-          </div>
 
-          {/* Card 4: Official CV & Resume Link */}
-          <div className="relative rounded-3xl bg-gradient-to-b from-orange-500/10 via-white/[0.03] to-white/[0.02] border border-orange-500/40 p-6 backdrop-blur-xl flex flex-col justify-between space-y-4 shadow-xl shadow-orange-950/20 overflow-hidden">
-            <div className="absolute top-0 right-0 w-48 h-48 bg-orange-600/15 rounded-full blur-[60px] pointer-events-none" />
-            <div className="space-y-3 relative z-10">
-              <div className="p-3 rounded-2xl bg-orange-500/20 text-orange-400 w-fit border border-orange-500/30">
-                <FileText className="w-5 h-5" />
+            {/* Official Dossier / Resume Glowing CTA Block */}
+            <div className="pt-2">
+              <div className="p-6 rounded-2xl bg-gradient-to-r from-orange-500/10 via-amber-500/[0.05] to-transparent border border-orange-500/30 flex flex-col sm:flex-row sm:items-center justify-between gap-4 relative overflow-hidden group">
+                <div className="space-y-1 relative z-10">
+                  <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-orange-400 font-semibold">
+                    <FileText className="w-3.5 h-3.5" />
+                    <span>Official Dossier</span>
+                  </div>
+                  <p className="text-xs text-neutral-300 font-light max-w-sm">
+                    Verified credentials, architecture cases, and engineering CV.
+                  </p>
+                </div>
+                <a
+                  href={portfolioData.about.resumeUrl}
+                  className="relative z-10 shrink-0 inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-orange-500 hover:bg-orange-400 text-black font-semibold text-xs font-mono transition-all duration-200 shadow-[0_0_25px_rgba(249,115,22,0.35)] hover:shadow-[0_0_35px_rgba(249,115,22,0.5)] hover:scale-105 active:scale-95"
+                  title="Request Yasir Khokhar's Resume"
+                >
+                  <span>Request Resume</span>
+                  <ArrowUpRight className="w-4 h-4 text-black" />
+                </a>
               </div>
-              <div>
-                <span className="text-[10px] font-mono text-orange-400 uppercase tracking-wider block font-bold">
-                  OFFICIAL DOSSIER
-                </span>
-                <h3 className="text-lg font-bold text-white mt-0.5">
-                  Resume / CV
-                </h3>
-              </div>
-              <p className="text-xs text-neutral-300 font-light">
-                Verified enterprise credentials, client references, and technical stack.
-              </p>
             </div>
-            <a
-              href="mailto:khokharyasir749@gmail.com?subject=Resume%20Request%20-%20Yasir%20Khokhar"
-              className="relative z-10 flex items-center justify-center gap-2 py-3 rounded-2xl bg-white hover:bg-neutral-100 text-black font-semibold text-xs transition-all shadow-[0_0_25px_rgba(249,115,22,0.4)] hover:scale-[1.02] active:scale-95"
-              title="Request Yasir Khokhar's Resume"
-            >
-              <span>Request Resume</span>
-              <ArrowUpRight className="w-4 h-4 text-black" />
-            </a>
           </div>
         </div>
       </section>
