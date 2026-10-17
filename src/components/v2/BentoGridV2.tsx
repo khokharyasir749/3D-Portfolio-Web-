@@ -28,6 +28,8 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { portfolioData } from '../../data/portfolioData';
+import { SKILL_DETAILS, SkillDetail } from '../../data/skillsData';
+import { SkillDetailModal } from '../modals/SkillDetailModal';
 import profilePic from '../../assets/profile.jpg';
 
 export interface BentoProject {
@@ -192,8 +194,25 @@ export interface BentoGridV2Props {
 
 export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) => {
   const [activeProject, setActiveProject] = useState<BentoProject | null>(null);
+  const [selectedSkill, setSelectedSkill] = useState<SkillDetail | null>(null);
   const [bithubVariant, setBithubVariant] = useState<'bithub' | 'rag'>('bithub');
   const [copiedEmail, setCopiedEmail] = useState(false);
+
+  const handleOpenSkill = (skillName: string, category: string) => {
+    const detail = SKILL_DETAILS[skillName] || {
+      name: skillName,
+      category: category,
+      tagline: `Modern engineering capability utilized across production web architecture.`,
+      capabilities: [
+        `Standardized ${skillName} architecture with type-safe patterns`,
+        `Performance-optimized integration within the application lifecycle`,
+        `Scalable component and service abstraction with clean contracts`,
+      ],
+      ecosystem: ['TypeScript', 'React', 'Node.js'],
+      relatedProjects: [{ title: 'All Production Projects', role: 'Full-Stack Ecosystem' }],
+    };
+    setSelectedSkill(detail);
+  };
 
   const getCategoryIcon = (category: string) => {
     const c = category.toLowerCase();
@@ -791,15 +810,18 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
                 </span>
               </div>
 
-              {/* Technologies Badges / Minimalist Pill Tags */}
+              {/* Technologies Badges / Minimalist Clickable Pill Buttons */}
               <div className="flex flex-wrap gap-2 pt-1">
                 {cat.skills.map((skill, sIdx) => (
-                  <span
+                  <button
                     key={sIdx}
-                    className="px-3.5 py-1.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] hover:text-orange-400 border border-white/[0.06] hover:border-orange-500/30 text-xs sm:text-[13px] font-mono text-neutral-300 hover:shadow-[0_0_15px_rgba(249,115,22,0.15)] transition-all duration-200 cursor-default select-none"
+                    onClick={() => handleOpenSkill(skill.name, cat.category)}
+                    className="group/pill inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-white/[0.03] hover:bg-orange-500/10 hover:text-orange-300 border border-white/[0.06] hover:border-orange-500/40 text-xs sm:text-[13px] font-mono text-neutral-300 hover:shadow-[0_0_20px_rgba(249,115,22,0.2)] hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer select-none"
+                    title={`Inspect ${skill.name} architecture & projects`}
                   >
-                    {skill.name}
-                  </span>
+                    <span>{skill.name}</span>
+                    <span className="w-1 h-1 rounded-full bg-white/20 group-hover/pill:bg-orange-400 group-hover/pill:shadow-[0_0_6px_rgba(249,115,22,0.8)] transition-all" />
+                  </button>
                 ))}
               </div>
             </div>
@@ -1167,6 +1189,18 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
           </div>
         )}
       </AnimatePresence>
+
+      {/* Dedicated Interactive Skill Detail Modal */}
+      <SkillDetailModal
+        skill={selectedSkill}
+        onClose={() => setSelectedSkill(null)}
+        onSelectProject={(projectId) => {
+          const found = bentoProjects.find((p) => p.id === projectId);
+          if (found) {
+            setActiveProject(found);
+          }
+        }}
+      />
     </section>
   );
 };
