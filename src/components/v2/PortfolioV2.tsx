@@ -3,14 +3,12 @@ import { NavbarV2 } from './NavbarV2';
 import { HeroV2 } from './HeroV2';
 import { BentoGridV2 } from './BentoGridV2';
 import { ProjectsDirectoryModal } from './ProjectsDirectoryModal';
-import { ArrowUpRight, Mail, Phone, X, Check, FileText } from 'lucide-react';
+import { ContactExperienceModal } from './ContactExperienceModal';
 import { portfolioData } from '../../data/portfolioData';
 
 export const PortfolioV2: React.FC = () => {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [isProjectsModalOpen, setIsProjectsModalOpen] = useState(false);
-  const [copiedEmail, setCopiedEmail] = useState(false);
-  const { contacts } = portfolioData;
 
   useEffect(() => {
     document.title = 'YASIR KHOKHAR — Modern Bento Portfolio (V2)';
@@ -22,12 +20,6 @@ export const PortfolioV2: React.FC = () => {
       document.body.style.backgroundColor = '';
     };
   }, []);
-
-  const handleCopyEmail = () => {
-    navigator.clipboard.writeText('khokharyasir749@gmail.com');
-    setCopiedEmail(true);
-    setTimeout(() => setCopiedEmail(false), 2000);
-  };
 
   return (
     <div className="min-h-screen bg-[#140a06] text-[#fafafa] selection:bg-orange-500/30 selection:text-orange-200 font-sans antialiased relative overflow-x-hidden flex flex-col justify-between">
@@ -79,111 +71,11 @@ export const PortfolioV2: React.FC = () => {
         </a>
       </div>
 
-      {/* Lightweight Quick Contact Modal for "Book a free call" / "Get in Touch" */}
-      {isContactModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
-          <div className="relative w-full max-w-lg rounded-3xl bg-[#111115] border border-white/10 p-6 sm:p-8 shadow-2xl space-y-6">
-            {/* Close Button */}
-            <button
-              onClick={() => setIsContactModalOpen(false)}
-              className="absolute top-5 right-5 p-2 rounded-full bg-white/5 hover:bg-white/10 text-neutral-400 hover:text-white border border-white/10 transition-colors"
-              title="Close modal"
-            >
-              <X className="w-4 h-4" />
-            </button>
-
-            {/* Modal Header */}
-            <div>
-              <span className="text-xs font-mono uppercase tracking-wider text-orange-400 font-bold block mb-1">
-                LET'S TALK
-              </span>
-              <h3 className="text-2xl font-bold text-white">Book a Call & Get in Touch</h3>
-              <p className="text-sm text-neutral-400 mt-1">
-                Reach out directly via WhatsApp, Email, or request verified credentials.
-              </p>
-            </div>
-
-            {/* Contact Channels */}
-            <div className="space-y-3">
-              <a
-                href="https://wa.me/923280790704"
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center justify-between p-4 rounded-2xl bg-white/5 hover:bg-orange-500/10 border border-white/10 hover:border-orange-500/30 transition-all group"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="p-2.5 rounded-xl bg-orange-500/10 text-orange-400">
-                    <Phone className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <div className="text-sm font-semibold text-white">WhatsApp Direct</div>
-                    <div className="text-xs text-neutral-400">+92 328 0790704</div>
-                  </div>
-                </div>
-                <ArrowUpRight className="w-4 h-4 text-neutral-400 group-hover:text-orange-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </a>
-
-              <div className="flex items-center justify-between p-4 rounded-2xl bg-white/5 border border-white/10">
-                <div className="flex items-center gap-3">
-                  <div className="p-2.5 rounded-xl bg-orange-500/10 text-orange-400">
-                    <Mail className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <div className="text-sm font-semibold text-white">Email Address</div>
-                    <div className="text-xs text-neutral-400">khokharyasir749@gmail.com</div>
-                  </div>
-                </div>
-                <button
-                  onClick={handleCopyEmail}
-                  className="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-xs font-medium text-white transition-colors flex items-center gap-1.5"
-                >
-                  {copiedEmail ? (
-                    <>
-                      <Check className="w-3.5 h-3.5 text-emerald-400" />
-                      <span>Copied!</span>
-                    </>
-                  ) : (
-                    <span>Copy</span>
-                  )}
-                </button>
-              </div>
-
-              <a
-                href={portfolioData.about.resumeUrl}
-                className="flex items-center justify-between p-4 rounded-2xl bg-white/5 hover:bg-orange-500/10 border border-white/10 hover:border-orange-500/30 transition-all group"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="p-2.5 rounded-xl bg-orange-500/10 text-orange-400">
-                    <FileText className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <div className="text-sm font-semibold text-white">Direct Resume Request</div>
-                    <div className="text-xs text-neutral-400">Official technical dossier & CV</div>
-                  </div>
-                </div>
-                <ArrowUpRight className="w-4 h-4 text-neutral-400 group-hover:text-orange-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </a>
-
-              <div className="flex items-center gap-3 pt-2">
-                {contacts
-                  .filter((c) => c.type === 'github' || c.type === 'linkedin')
-                  .map((c, idx) => (
-                    <a
-                      key={idx}
-                      href={c.link}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-medium text-neutral-200 hover:text-white transition-colors"
-                    >
-                      <span>{c.name}</span>
-                      <ArrowUpRight className="w-3.5 h-3.5 text-neutral-400" />
-                    </a>
-                  ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+      {/* Full Dedicated, Immersive Contact Experience / Fullscreen View */}
+      <ContactExperienceModal
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
+      />
 
       {/* Dedicated Full-Screen Projects Directory / Showcase Modal */}
       <ProjectsDirectoryModal
