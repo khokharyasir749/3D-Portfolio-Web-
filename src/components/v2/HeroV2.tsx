@@ -62,11 +62,13 @@ export const HeroV2: React.FC<HeroV2Props> = ({ onCtaClick }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-md space-y-4"
+          className="max-w-md space-y-5 sm:space-y-6"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 font-mono text-xs tracking-wider">
-            <span className="w-1.5 h-1.5 rounded-full bg-orange-500 animate-pulse" />
-            FULL-STACK & SPATIAL WEB
+          {/* Editorial Luxury Glass Eyebrow Lead-in */}
+          <div className="inline-flex items-center px-3.5 py-1 rounded-xl bg-white/[0.03] backdrop-blur-md border border-white/[0.06] shadow-[0_4px_24px_rgba(0,0,0,0.2)]">
+            <span className="text-sm sm:text-base font-mono font-semibold uppercase tracking-[0.25em] bg-clip-text text-transparent bg-gradient-to-r from-orange-400/90 via-amber-200/80 to-white/70 drop-shadow-[0_2px_12px_rgba(255,255,255,0.1)] select-none">
+              FULL-STACK & SPATIAL WEB
+            </span>
           </div>
 
           <p className="text-xl sm:text-2xl lg:text-[1.7rem] font-light text-neutral-200 leading-[1.35] tracking-wide drop-shadow-md">
