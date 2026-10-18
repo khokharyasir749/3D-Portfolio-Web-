@@ -76,22 +76,30 @@ export const ContactExperienceModal: React.FC<ContactExperienceModalProps> = ({
             }}
           />
 
-          {/* Large Luxury Glass Watermark Typography */}
-          <div className="absolute inset-x-0 top-8 sm:top-12 flex justify-center pointer-events-none select-none z-0 px-4">
-            <h1 className="text-[3rem] sm:text-7xl md:text-8xl lg:text-[10vw] xl:text-[9rem] font-black uppercase tracking-tight text-white/[0.08] sm:text-white/[0.12] leading-none whitespace-nowrap font-sans drop-shadow-2xl text-center">
+          {/* Refined Glass Watermark Typography */}
+          <div className="absolute inset-x-0 top-12 sm:top-16 lg:top-20 flex justify-center pointer-events-none select-none z-0 px-4">
+            <h1 className="text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[8.5vw] xl:text-[8rem] text-white/[0.07] font-black tracking-widest uppercase select-none pointer-events-none leading-none whitespace-nowrap font-sans drop-shadow-2xl text-center">
               YASIR KHOKHAR
             </h1>
           </div>
 
-          {/* Natural Cutout Portrait Grounded with Bottom Gradient */}
-          <div className="absolute inset-0 flex items-end justify-center pointer-events-none z-0 overflow-hidden opacity-30 sm:opacity-40 lg:opacity-50">
-            <div className="relative flex items-end justify-center h-full max-h-[580px] sm:max-h-[680px] lg:max-h-[780px]">
+          {/* Subtle, soft-lit studio backdrop layer with smooth radial mask falloff towards the waist */}
+          <div className="absolute inset-0 flex items-end justify-center pointer-events-none z-0 overflow-hidden opacity-90">
+            <div
+              className="relative flex items-end justify-center h-full max-h-[500px] sm:max-h-[580px] lg:max-h-[660px]"
+              style={{
+                maskImage:
+                  'radial-gradient(ellipse 75% 70% at 50% 32%, black 25%, rgba(0,0,0,0.5) 60%, transparent 88%)',
+                WebkitMaskImage:
+                  'radial-gradient(ellipse 75% 70% at 50% 32%, black 25%, rgba(0,0,0,0.5) 60%, transparent 88%)',
+              }}
+            >
               <img
                 src="/yasir-hero-cutout.png"
                 alt="Yasir Khokhar Portrait"
-                className="h-[88%] sm:h-[94%] w-auto object-contain object-bottom filter contrast-[1.05] drop-shadow-[0_25px_60px_rgba(0,0,0,0.95)]"
+                className="h-[80%] sm:h-[86%] w-auto object-contain object-bottom filter contrast-[1.03] brightness-95 drop-shadow-[0_20px_50px_rgba(0,0,0,0.8)]"
               />
-              <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-[#140a06] via-[#140a06]/85 to-transparent pointer-events-none" />
+              <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[#140a06] via-[#140a06]/85 to-transparent pointer-events-none" />
             </div>
           </div>
 
@@ -103,8 +111,11 @@ export const ContactExperienceModal: React.FC<ContactExperienceModalProps> = ({
             TOP FLOATING CONTROLS
            ======================================================== */}
         <header className="sticky top-0 z-30 flex items-center justify-between px-6 sm:px-12 py-6 max-w-7xl mx-auto w-full pointer-events-none">
-          <div className="pointer-events-auto flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+          <div className="pointer-events-auto flex items-center gap-2.5">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
+            </span>
             <span className="text-xs font-mono tracking-widest text-neutral-400 uppercase">
               STATUS: <strong className="text-white font-medium">AVAILABLE FOR CONTRACTS</strong>
             </span>
@@ -113,11 +124,11 @@ export const ContactExperienceModal: React.FC<ContactExperienceModalProps> = ({
           {/* Floating Back to Portfolio / Close Button */}
           <button
             onClick={onClose}
-            className="pointer-events-auto group inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 hover:border-orange-500/40 text-white text-xs sm:text-sm font-mono backdrop-blur-xl transition-all duration-200 hover:scale-105 active:scale-95 shadow-xl cursor-pointer"
+            className="pointer-events-auto group inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 hover:border-white/20 text-white text-xs sm:text-sm font-mono backdrop-blur-xl transition-all duration-200 hover:scale-[1.02] active:scale-95 shadow-lg cursor-pointer"
             title="Return to Portfolio (ESC)"
           >
             <span>Back to Portfolio</span>
-            <X className="w-4 h-4 text-neutral-400 group-hover:text-white transition-colors" />
+            <X className="w-3.5 h-3.5 text-neutral-400 group-hover:text-white transition-colors" />
           </button>
         </header>
 
@@ -130,27 +141,27 @@ export const ContactExperienceModal: React.FC<ContactExperienceModalProps> = ({
             {/* ----------------------------------------------------
                 LEFT COLUMN: DIRECT COMMUNICATION & CALL
                ---------------------------------------------------- */}
-            <div className="lg:col-span-7 space-y-8">
+            <div className="lg:col-span-7 space-y-10 sm:space-y-12">
               {/* Category Tag & Bold Headline */}
               <div className="space-y-4">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 font-mono text-xs">
                   <Sparkles className="w-3.5 h-3.5 text-orange-400" />
                   <span>LET'S TALK // INITIATE</span>
                 </div>
-                <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight uppercase leading-[1.06]">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight uppercase leading-tight">
                   Let's build something{' '}
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-amber-300 to-amber-100">
                     extraordinary
                   </span>{' '}
                   together.
                 </h2>
-                <p className="text-base sm:text-lg text-neutral-300 font-light max-w-xl leading-relaxed">
+                <p className="text-sm sm:text-base text-neutral-300 font-light max-w-xl leading-relaxed">
                   Open for technical architecture contracts, creative 3D web systems, and high-performance engineering collaborations worldwide.
                 </p>
               </div>
 
               {/* Direct Email Link & Copy Interaction */}
-              <div className="space-y-3 pt-6 border-t border-white/[0.06]">
+              <div className="space-y-4 pt-8 sm:pt-10 border-t border-white/[0.06]">
                 <span className="text-xs font-mono uppercase tracking-widest text-zinc-500 font-medium flex items-center gap-2">
                   <Mail className="w-3.5 h-3.5 text-orange-400" />
                   <span>Direct Electronic Mail</span>
@@ -162,7 +173,7 @@ export const ContactExperienceModal: React.FC<ContactExperienceModalProps> = ({
                     title="Send an email directly to Yasir Khokhar"
                   >
                     <span className="break-all sm:break-normal">khokharyasir749@gmail.com</span>
-                    <ArrowUpRight className="w-6 h-6 text-neutral-500 group-hover:text-orange-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform shrink-0" />
+                    <ArrowUpRight className="w-6 h-6 text-neutral-500 group-hover:text-amber-400 group-hover:drop-shadow-[0_0_8px_rgba(251,191,36,0.6)] group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-all shrink-0" />
                   </a>
                 </div>
 
@@ -192,7 +203,7 @@ export const ContactExperienceModal: React.FC<ContactExperienceModalProps> = ({
               </div>
 
               {/* WhatsApp Direct Action Row */}
-              <div className="pt-6 border-t border-white/[0.06]">
+              <div className="pt-8 sm:pt-10 border-t border-white/[0.06]">
                 <a
                   href="https://wa.me/923280790704"
                   target="_blank"
@@ -217,7 +228,7 @@ export const ContactExperienceModal: React.FC<ContactExperienceModalProps> = ({
                   </div>
                   <div className="flex items-center gap-2 text-xs font-mono text-emerald-400 shrink-0">
                     <span className="hidden sm:inline">Message Now</span>
-                    <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform" />
                   </div>
                 </a>
               </div>
@@ -245,85 +256,84 @@ export const ContactExperienceModal: React.FC<ContactExperienceModalProps> = ({
                 </p>
               </div>
 
-              {/* Resume / Official Dossier High-Impact CTA Row */}
-              <div className="py-4 border-y border-white/[0.06]">
+              {/* Uniform Editorial Rows: Dossier, GitHub, and LinkedIn */}
+              <div className="border-t border-white/[0.06]">
+                {/* 1. Request Official Dossier / CV */}
                 <a
                   href={portfolioData.about.resumeUrl}
-                  className="group flex items-center justify-between py-3 hover:pl-2 transition-all duration-200"
+                  className="group flex items-center justify-between py-4 border-b border-white/[0.06] transition-all duration-200"
                   title="Request Yasir Khokhar's Official Resume / CV"
                 >
                   <div className="flex items-center gap-3.5">
-                    <div className="p-2.5 rounded-xl bg-orange-500/10 border border-orange-500/20 text-orange-400 group-hover:bg-orange-500/20 transition-colors">
-                      <FileText className="w-5 h-5" />
+                    <div className="p-2.5 rounded-xl bg-orange-500/10 border border-orange-500/20 text-orange-400 group-hover:bg-orange-500/20 group-hover:border-orange-500/30 transition-colors">
+                      <FileText className="w-4 h-4 sm:w-5 sm:h-5" />
                     </div>
                     <div>
-                      <div className="text-base font-semibold text-white group-hover:text-orange-300 transition-colors flex items-center gap-2">
-                        <span>Request Official Dossier / CV</span>
-                        <ArrowUpRight className="w-4 h-4 text-orange-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                      <div className="text-sm sm:text-base font-semibold text-white group-hover:text-amber-200 transition-colors">
+                        Request Official Dossier / CV
                       </div>
                       <div className="text-xs text-neutral-400 font-mono mt-0.5">
                         Enterprise architecture, stack verification & references
                       </div>
                     </div>
                   </div>
-                  <span className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-orange-500/10 border border-orange-500/30 text-orange-400 text-xs font-mono group-hover:bg-orange-500 group-hover:text-black font-semibold transition-all shadow-[0_0_20px_rgba(249,115,22,0.2)]">
-                    Request ↗
+                  <span className="bg-white/[0.05] hover:bg-orange-500 hover:text-black border border-white/10 transition-all px-3 py-1.5 text-xs rounded-full font-mono text-neutral-300 inline-flex items-center gap-1.5 shrink-0 group-hover:bg-orange-500 group-hover:text-black group-hover:border-orange-400">
+                    <span>Request</span>
+                    <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
                   </span>
                 </a>
-              </div>
 
-              {/* Social Channels List (Minimalist text links with NO surrounding box plates) */}
-              <div className="space-y-4 pt-2">
-                <span className="text-xs font-mono uppercase tracking-widest text-zinc-500 font-medium block">
-                  Verified Digital Ecosystems
-                </span>
-                <div className="divide-y divide-white/[0.06] border-y border-white/[0.06]">
-                  {/* GitHub */}
-                  <a
-                    href="https://github.com/khokharyasir749"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex items-center justify-between py-4 group hover:pl-1 transition-all duration-200"
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className="p-2 rounded-lg bg-white/[0.04] text-neutral-400 group-hover:text-white group-hover:bg-white/[0.08] transition-colors">
-                        <Github className="w-4 h-4" />
+                {/* 2. GitHub Source Repositories */}
+                <a
+                  href="https://github.com/khokharyasir749"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group flex items-center justify-between py-4 border-b border-white/[0.06] transition-all duration-200"
+                  title="View GitHub Source Repositories"
+                >
+                  <div className="flex items-center gap-3.5">
+                    <div className="p-2.5 rounded-xl bg-white/[0.04] border border-white/[0.08] text-neutral-400 group-hover:text-white group-hover:bg-white/[0.08] group-hover:border-white/20 transition-colors">
+                      <Github className="w-4 h-4 sm:w-5 sm:h-5" />
+                    </div>
+                    <div>
+                      <div className="text-sm sm:text-base font-semibold text-white group-hover:text-amber-200 transition-colors">
+                        GitHub Source Repositories
                       </div>
-                      <div>
-                        <div className="text-sm font-medium text-white group-hover:text-orange-300 transition-colors">
-                          GitHub Source Repositories
-                        </div>
-                        <div className="text-xs text-neutral-500 font-mono">
-                          @khokharyasir749 ↗
-                        </div>
+                      <div className="text-xs text-neutral-500 font-mono mt-0.5">
+                        @khokharyasir749
                       </div>
                     </div>
-                    <ArrowUpRight className="w-4 h-4 text-neutral-500 group-hover:text-orange-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
-                  </a>
+                  </div>
+                  <div className="p-2">
+                    <ArrowUpRight className="w-4 h-4 text-neutral-500 group-hover:text-amber-400 group-hover:drop-shadow-[0_0_8px_rgba(251,191,36,0.6)] group-hover:translate-x-1 transition-all duration-200 shrink-0" />
+                  </div>
+                </a>
 
-                  {/* LinkedIn */}
-                  <a
-                    href="https://linkedin.com/in/yasirkhokhar"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex items-center justify-between py-4 group hover:pl-1 transition-all duration-200"
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className="p-2 rounded-lg bg-sky-500/10 text-sky-400 group-hover:bg-sky-500/20 transition-colors">
-                        <Linkedin className="w-4 h-4" />
+                {/* 3. LinkedIn Professional Network */}
+                <a
+                  href="https://linkedin.com/in/yasirkhokhar"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group flex items-center justify-between py-4 border-b border-white/[0.06] transition-all duration-200"
+                  title="Connect on LinkedIn"
+                >
+                  <div className="flex items-center gap-3.5">
+                    <div className="p-2.5 rounded-xl bg-sky-500/10 border border-sky-500/20 text-sky-400 group-hover:bg-sky-500/20 group-hover:border-sky-500/30 transition-colors">
+                      <Linkedin className="w-4 h-4 sm:w-5 sm:h-5" />
+                    </div>
+                    <div>
+                      <div className="text-sm sm:text-base font-semibold text-white group-hover:text-amber-200 transition-colors">
+                        LinkedIn Professional Network
                       </div>
-                      <div>
-                        <div className="text-sm font-medium text-white group-hover:text-sky-300 transition-colors">
-                          LinkedIn Professional Network
-                        </div>
-                        <div className="text-xs text-neutral-500 font-mono">
-                          /yasirkhokhar ↗
-                        </div>
+                      <div className="text-xs text-neutral-500 font-mono mt-0.5">
+                        /yasirkhokhar
                       </div>
                     </div>
-                    <ArrowUpRight className="w-4 h-4 text-neutral-500 group-hover:text-sky-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
-                  </a>
-                </div>
+                  </div>
+                  <div className="p-2">
+                    <ArrowUpRight className="w-4 h-4 text-neutral-500 group-hover:text-amber-400 group-hover:drop-shadow-[0_0_8px_rgba(251,191,36,0.6)] group-hover:translate-x-1 transition-all duration-200 shrink-0" />
+                  </div>
+                </a>
               </div>
 
               {/* Direct Booking Call Note */}
