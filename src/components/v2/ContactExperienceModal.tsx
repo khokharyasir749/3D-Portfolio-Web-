@@ -59,7 +59,7 @@ export const ContactExperienceModal: React.FC<ContactExperienceModalProps> = ({
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.25 }}
-        className="fixed inset-0 z-[80] overflow-y-auto bg-[#140a06]/95 backdrop-blur-2xl text-[#fafafa] selection:bg-orange-500/30 selection:text-orange-200"
+        className="fixed inset-0 z-[80] overflow-y-auto bg-[#140a06]/96 backdrop-blur-md text-[#fafafa] selection:bg-orange-500/30 selection:text-orange-200 transform-gpu"
       >
         {/* ========================================================
             HERO CANVAS BACKGROUND WITH PORTRAIT & GLASS WATERMARK
@@ -125,7 +125,7 @@ export const ContactExperienceModal: React.FC<ContactExperienceModalProps> = ({
           {/* Floating Back to Portfolio / Close Button */}
           <button
             onClick={onClose}
-            className="pointer-events-auto group inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 hover:border-white/20 text-white text-xs sm:text-sm font-mono backdrop-blur-xl transition-all duration-200 hover:scale-[1.02] active:scale-95 shadow-lg cursor-pointer"
+            className="pointer-events-auto group inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.05] hover:bg-white/[0.08] border border-white/10 hover:border-white/20 text-white text-xs sm:text-sm font-mono backdrop-blur-md transition-all duration-200 hover:scale-[1.02] active:scale-95 shadow-lg cursor-pointer transform-gpu"
             title="Return to Portfolio (ESC)"
           >
             <span>Back to Portfolio</span>

@@ -62,7 +62,7 @@ export const SkillDetailModal: React.FC<SkillDetailModalProps> = ({
     <AnimatePresence>
       {skill && (
         <div
-          className="fixed inset-0 z-[80] flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-xl"
+          className="fixed inset-0 z-[80] flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-md transform-gpu"
           onClick={onClose}
         >
           <motion.div
@@ -71,7 +71,7 @@ export const SkillDetailModal: React.FC<SkillDetailModalProps> = ({
             exit={{ opacity: 0, scale: 0.95, y: 15 }}
             transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
             onClick={(e) => e.stopPropagation()}
-            className="relative w-full max-w-xl max-h-[90vh] overflow-y-auto rounded-3xl bg-[#120804]/95 border border-white/10 p-6 sm:p-8 shadow-2xl space-y-6 text-white custom-scrollbar select-none"
+            className="relative w-full max-w-xl max-h-[90vh] overflow-y-auto rounded-3xl bg-[#120804]/95 border border-white/10 p-6 sm:p-8 shadow-2xl space-y-6 text-white custom-scrollbar select-none transform-gpu"
           >
             {/* Ambient Warm Amber Corner Glow */}
             <div className="absolute top-0 right-0 w-72 h-72 bg-gradient-to-bl from-orange-500/10 via-transparent to-transparent pointer-events-none rounded-3xl" />

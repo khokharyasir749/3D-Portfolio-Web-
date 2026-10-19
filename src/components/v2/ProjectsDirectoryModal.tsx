@@ -84,16 +84,16 @@ export const ProjectsDirectoryModal: React.FC<ProjectsDirectoryModalProps> = ({
   });
 
   return createPortal(
-    <div className="fixed inset-0 z-[80] bg-[#120805]/95 backdrop-blur-2xl overflow-y-auto selection:bg-orange-500/30 selection:text-orange-200">
+    <div className="fixed inset-0 z-[80] bg-[#120805]/96 backdrop-blur-md overflow-y-auto selection:bg-orange-500/30 selection:text-orange-200 transform-gpu">
       {/* Background ambient lighting */}
       <div className="fixed inset-0 pointer-events-none z-0">
-        <div className="absolute -top-[10%] left-1/2 -translate-x-1/2 w-[800px] h-[450px] bg-gradient-to-b from-orange-600/10 via-amber-700/5 to-transparent blur-[140px] rounded-full" />
+        <div className="absolute -top-[10%] left-1/2 -translate-x-1/2 w-[800px] h-[450px] bg-gradient-to-b from-orange-600/10 via-amber-700/5 to-transparent blur-[70px] rounded-full pointer-events-none transform-gpu" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,#ffffff07_1px,transparent_0)] [background-size:24px_24px] opacity-70" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-8 sm:py-12 space-y-12">
         {/* Top Floating Control Bar */}
-        <div className="flex items-center justify-between pb-6 border-b border-white/10 sticky top-0 bg-[#120805]/85 backdrop-blur-xl z-30 pt-2 -mt-2">
+        <div className="flex items-center justify-between pb-6 border-b border-white/10 sticky top-0 bg-[#120805]/95 backdrop-blur-md z-30 pt-2 -mt-2 transform-gpu">
           <button
             type="button"
             onClick={onClose}
@@ -173,7 +173,7 @@ export const ProjectsDirectoryModal: React.FC<ProjectsDirectoryModalProps> = ({
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.25, delay: idx * 0.04 }}
               onClick={() => setSelectedCaseStudy(project)}
-              className="group relative py-7 sm:py-9 px-4 sm:px-8 -mx-4 sm:-mx-8 transition-all duration-300 cursor-pointer border-l-2 border-transparent hover:border-orange-500 hover:bg-gradient-to-r hover:from-orange-500/[0.08] hover:via-amber-500/[0.03] hover:to-transparent select-none"
+              className="group relative py-7 sm:py-9 px-4 sm:px-8 -mx-4 sm:-mx-8 transition-all duration-300 cursor-pointer border-l-2 border-transparent hover:border-orange-500 hover:bg-gradient-to-r hover:from-orange-500/[0.08] hover:via-amber-500/[0.03] hover:to-transparent select-none will-change-transform transform-gpu"
             >
               <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 lg:gap-10">
                 {/* Left: Index + Project Core Architecture & Narrative */}

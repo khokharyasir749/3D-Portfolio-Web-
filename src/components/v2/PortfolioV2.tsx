@@ -63,7 +63,7 @@ export const PortfolioV2: React.FC = () => {
       <div className="fixed bottom-5 right-5 z-40 flex items-center gap-3">
         <a
           href="/v1"
-          className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#121216]/90 hover:bg-[#1a1a22] text-neutral-300 hover:text-white border border-white/10 hover:border-white/20 backdrop-blur-xl shadow-2xl text-xs font-mono transition-all duration-200 hover:scale-105 active:scale-95"
+          className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#121216]/95 hover:bg-[#1a1a22] text-neutral-300 hover:text-white border border-white/10 hover:border-white/20 backdrop-blur-md shadow-2xl text-xs font-mono transition-all duration-200 hover:scale-105 active:scale-95 transform-gpu"
           title="Return to the original 3D Portfolio version"
         >
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />

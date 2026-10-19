@@ -728,7 +728,7 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
             <div
               key={project.id}
               onClick={() => setActiveProject(project)}
-              className="group relative py-6 sm:py-8 px-4 sm:px-6 -mx-4 sm:-mx-6 transition-all duration-300 cursor-pointer border-l-2 border-transparent hover:border-orange-500 hover:bg-gradient-to-r hover:from-orange-500/[0.08] hover:via-amber-500/[0.03] hover:to-transparent select-none"
+              className="group relative py-6 sm:py-8 px-4 sm:px-6 -mx-4 sm:-mx-6 transition-all duration-300 cursor-pointer border-l-2 border-transparent hover:border-orange-500 hover:bg-gradient-to-r hover:from-orange-500/[0.08] hover:via-amber-500/[0.03] hover:to-transparent select-none will-change-transform transform-gpu"
             >
               <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 lg:gap-8">
                 {/* Left: Index + Project Details */}
@@ -770,11 +770,11 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
 
                 {/* Right: Visual Reveal Preview & Action */}
                 <div className="flex items-center gap-5 sm:gap-7 shrink-0 lg:self-center">
-                  <div className="relative w-36 sm:w-48 lg:w-56 aspect-[16/10] rounded-2xl overflow-hidden bg-black/60 border border-white/10 group-hover:border-orange-500/40 shadow-2xl transition-all duration-500 group-hover:scale-105 shrink-0 hidden md:block">
+                  <div className="relative w-36 sm:w-48 lg:w-56 aspect-[16/10] rounded-2xl overflow-hidden bg-black/60 border border-white/10 group-hover:border-orange-500/40 shadow-2xl transition-all duration-500 group-hover:scale-105 shrink-0 hidden md:block transform-gpu">
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
+                      className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110 transform-gpu"
                       loading="lazy"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
@@ -820,7 +820,7 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
       {/* ========================================================
           EXPERIENCE & CAREER JOURNEY SECTION: EDITORIAL TIMELINE
          ======================================================== */}
-      <section id="experience" className="space-y-10 pt-16 sm:pt-24 select-none">
+      <section id="experience" className="space-y-10 pt-16 sm:pt-24 select-none content-visibility-auto contain-paint">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-4">
           <div className="space-y-2">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 font-mono text-xs">
@@ -918,11 +918,11 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
       {/* ========================================================
           TECHNICAL SKILLS SECTION (OPEN EDITORIAL CATEGORY GRID)
          ======================================================== */}
-      <section id="skills" className="space-y-12 pt-16 sm:pt-24 relative select-none">
+      <section id="skills" className="space-y-12 pt-16 sm:pt-24 relative select-none content-visibility-auto contain-paint">
         <span id="services" className="absolute -top-24" />
 
         {/* Ambient Warm Amber Glow (Shining uninterrupted through open canvas) */}
-        <div className="absolute left-1/2 -top-12 -translate-x-1/2 w-full max-w-5xl h-72 bg-orange-500/[0.035] blur-[150px] pointer-events-none -z-10" />
+        <div className="absolute left-1/2 -top-12 -translate-x-1/2 w-full max-w-5xl h-72 bg-orange-500/[0.035] blur-[75px] pointer-events-none -z-10 transform-gpu" />
 
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-2">
@@ -988,10 +988,10 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
       {/* ========================================================
           PERSONAL PROFILE & ABOUT SECTION (BORDERLESS EDITORIAL CANVAS)
          ======================================================== */}
-      <section id="about" className="space-y-12 pt-16 sm:pt-24 relative select-none">
+      <section id="about" className="space-y-12 pt-16 sm:pt-24 relative select-none content-visibility-auto contain-paint">
         {/* Warm Studio Ambient Glow Behind Text (No clipping boundaries) */}
-        <div className="absolute left-1/4 -top-16 w-96 h-96 bg-orange-500/[0.04] blur-[160px] pointer-events-none -z-10" />
-        <div className="absolute right-10 bottom-0 w-80 h-80 bg-amber-600/[0.03] blur-[140px] pointer-events-none -z-10" />
+        <div className="absolute left-1/4 -top-16 w-96 h-96 bg-orange-500/[0.04] blur-[75px] pointer-events-none -z-10 transform-gpu" />
+        <div className="absolute right-10 bottom-0 w-80 h-80 bg-amber-600/[0.03] blur-[70px] pointer-events-none -z-10 transform-gpu" />
 
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-2">
@@ -1112,10 +1112,10 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
       {/* ========================================================
           CONTACT, SOCIAL & RESUME SECTION (BORDERLESS EDITORIAL CANVAS)
          ======================================================== */}
-      <section id="contact" className="space-y-12 pt-16 sm:pt-24 relative select-none">
+      <section id="contact" className="space-y-12 pt-16 sm:pt-24 relative select-none content-visibility-auto contain-paint">
         {/* Warm Amber Ambient Glow (Smoothly washes behind canvas without clipping) */}
-        <div className="absolute left-1/4 -top-16 w-96 h-96 bg-orange-500/[0.04] blur-[160px] pointer-events-none -z-10" />
-        <div className="absolute right-10 bottom-0 w-80 h-80 bg-amber-600/[0.03] blur-[140px] pointer-events-none -z-10" />
+        <div className="absolute left-1/4 -top-16 w-96 h-96 bg-orange-500/[0.04] blur-[75px] pointer-events-none -z-10 transform-gpu" />
+        <div className="absolute right-10 bottom-0 w-80 h-80 bg-amber-600/[0.03] blur-[70px] pointer-events-none -z-10 transform-gpu" />
 
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-2">

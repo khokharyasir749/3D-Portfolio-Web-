@@ -119,8 +119,8 @@ export const HeroV2: React.FC<HeroV2Props> = ({ onCtaClick }) => {
         <div className="absolute left-0 inset-y-0 w-12 sm:w-20 bg-gradient-to-r from-[#140a06] to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 inset-y-0 w-12 sm:w-20 bg-gradient-to-l from-[#140a06] to-transparent z-10 pointer-events-none" />
 
-        {/* Continuous Infinite Marquee Track with Hover Pause */}
-        <div className="flex w-max animate-marquee hover:[animation-play-state:paused] py-2 cursor-pointer">
+        {/* Continuous Infinite Marquee Track with Hover Pause (Hardware-Accelerated) */}
+        <div className="flex w-max animate-marquee hover:[animation-play-state:paused] py-2 cursor-pointer will-change-transform transform-gpu">
           {/* Track 1 */}
           <div className="flex items-center gap-3 sm:gap-4 shrink-0 pr-3 sm:pr-4">
             {servicePills.map((pill, idx) => {
@@ -130,10 +130,10 @@ export const HeroV2: React.FC<HeroV2Props> = ({ onCtaClick }) => {
                 <div
                   key={`track1-${idx}`}
                   onClick={() => setActivePill(pill.name)}
-                  className={`group flex items-center gap-3 px-5 py-3 rounded-2xl border text-xs sm:text-sm font-medium backdrop-blur-xl transition-all duration-200 whitespace-nowrap cursor-pointer select-none ${
+                  className={`group flex items-center gap-3 px-5 py-3 rounded-2xl border text-xs sm:text-sm font-medium transition-colors duration-150 whitespace-nowrap cursor-pointer select-none ${
                     isActive
-                      ? 'bg-white/10 border-orange-500/50 text-white shadow-[0_0_25px_rgba(249,115,22,0.18)]'
-                      : 'bg-white/[0.04] hover:bg-white/[0.08] border-white/10 hover:border-white/20 text-neutral-300 hover:text-white hover:scale-[1.02]'
+                      ? 'bg-[#24130d] border-orange-500/50 text-white shadow-[0_0_20px_rgba(249,115,22,0.18)]'
+                      : 'bg-[#180d08]/90 hover:bg-[#22120b] border-white/10 hover:border-white/20 text-neutral-300 hover:text-white hover:scale-[1.02]'
                   }`}
                 >
                   <div
@@ -158,10 +158,10 @@ export const HeroV2: React.FC<HeroV2Props> = ({ onCtaClick }) => {
                 <div
                   key={`track2-${idx}`}
                   onClick={() => setActivePill(pill.name)}
-                  className={`group flex items-center gap-3 px-5 py-3 rounded-2xl border text-xs sm:text-sm font-medium backdrop-blur-xl transition-all duration-200 whitespace-nowrap cursor-pointer select-none ${
+                  className={`group flex items-center gap-3 px-5 py-3 rounded-2xl border text-xs sm:text-sm font-medium transition-colors duration-150 whitespace-nowrap cursor-pointer select-none ${
                     isActive
-                      ? 'bg-white/10 border-orange-500/50 text-white shadow-[0_0_25px_rgba(249,115,22,0.18)]'
-                      : 'bg-white/[0.04] hover:bg-white/[0.08] border-white/10 hover:border-white/20 text-neutral-300 hover:text-white hover:scale-[1.02]'
+                      ? 'bg-[#24130d] border-orange-500/50 text-white shadow-[0_0_20px_rgba(249,115,22,0.18)]'
+                      : 'bg-[#180d08]/90 hover:bg-[#22120b] border-white/10 hover:border-white/20 text-neutral-300 hover:text-white hover:scale-[1.02]'
                   }`}
                 >
                   <div

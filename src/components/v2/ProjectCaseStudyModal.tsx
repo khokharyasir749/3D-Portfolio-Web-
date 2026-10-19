@@ -59,7 +59,7 @@ export const ProjectCaseStudyModal: React.FC<ProjectCaseStudyModalProps> = ({
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
             onClick={onClose}
-            className="fixed inset-0 z-[90] bg-black/80 backdrop-blur-md cursor-pointer"
+            className="fixed inset-0 z-[90] bg-black/80 backdrop-blur-md cursor-pointer transform-gpu"
           />
 
           {/* Modal scroll & centering wrapper */}
@@ -78,10 +78,10 @@ export const ProjectCaseStudyModal: React.FC<ProjectCaseStudyModalProps> = ({
               exit={{ opacity: 0, scale: 0.95, y: 15 }}
               transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
               onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-3xl bg-[#111116] border border-white/15 p-6 sm:p-8 shadow-2xl space-y-6 my-auto custom-scrollbar"
+              className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-3xl bg-[#111116] border border-white/15 p-6 sm:p-8 shadow-2xl space-y-6 my-auto custom-scrollbar transform-gpu"
             >
               {/* Top Control Bar with Back button, ESC hint, and Close button */}
-              <div className="flex items-center justify-between pb-4 border-b border-white/10 sticky -top-6 sm:-top-8 -mt-6 sm:-mt-8 pt-6 sm:pt-8 bg-[#111116]/95 backdrop-blur-xl z-30">
+              <div className="flex items-center justify-between pb-4 border-b border-white/10 sticky -top-6 sm:-top-8 -mt-6 sm:-mt-8 pt-6 sm:pt-8 bg-[#111116]/96 backdrop-blur-md z-30 transform-gpu">
                 <button
                   type="button"
                   onClick={onClose}
