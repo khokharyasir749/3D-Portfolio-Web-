@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   X,
@@ -26,16 +27,24 @@ export const SkillDetailModal: React.FC<SkillDetailModalProps> = ({
   onClose,
   onSelectProject,
 }) => {
-  // Close on Escape key
+  // Close on Escape key & lock body scroll
   useEffect(() => {
+    if (!skill) return;
+
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         onClose();
       }
     };
     window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [onClose]);
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = originalOverflow;
+    };
+  }, [skill, onClose]);
 
   const getHeaderIcon = (category: string) => {
     const c = category.toLowerCase();
@@ -47,11 +56,13 @@ export const SkillDetailModal: React.FC<SkillDetailModalProps> = ({
     return <Code2 className="w-6 h-6 text-orange-400" />;
   };
 
-  return (
+  if (typeof document === 'undefined') return null;
+
+  return createPortal(
     <AnimatePresence>
       {skill && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-xl"
+          className="fixed inset-0 z-[80] flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-xl"
           onClick={onClose}
         >
           <motion.div
@@ -172,6 +183,7 @@ export const SkillDetailModal: React.FC<SkillDetailModalProps> = ({
           </motion.div>
         </div>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body
   );
 };

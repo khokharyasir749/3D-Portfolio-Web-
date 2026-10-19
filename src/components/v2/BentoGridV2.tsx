@@ -5,8 +5,6 @@ import {
   Sparkles,
   ExternalLink,
   Github,
-  CheckCircle2,
-  X,
   TrendingUp,
   Briefcase,
   Cpu,
@@ -26,10 +24,11 @@ import {
   Server,
   Database,
 } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { portfolioData } from '../../data/portfolioData';
 import { SKILL_DETAILS, SkillDetail } from '../../data/skillsData';
 import { SkillDetailModal } from '../modals/SkillDetailModal';
+import { ProjectCaseStudyModal } from './ProjectCaseStudyModal';
 import profilePic from '../../assets/profile.jpg';
 
 export interface BentoProject {
@@ -1152,108 +1151,12 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
       </section>
 
       {/* Interactive Case Study Modal for All 7 Projects */}
-      <AnimatePresence>
-        {activeProject && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-xl">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 15 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 15 }}
-              transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-              className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-3xl bg-[#111116] border border-white/15 p-6 sm:p-8 shadow-2xl space-y-6"
-            >
-              {/* Close Button */}
-              <button
-                onClick={() => setActiveProject(null)}
-                className="absolute top-5 right-5 p-2 rounded-full bg-white/10 hover:bg-white/20 text-neutral-300 hover:text-white border border-white/10 transition-colors z-20"
-                title="Close case study"
-              >
-                <X className="w-5 h-5" />
-              </button>
-
-              {/* Modal Header */}
-              <div className="space-y-2 pr-12">
-                <div className="flex items-center gap-2">
-                  <span className="font-mono text-xs px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-neutral-300 font-bold">
-                    PROJECT {activeProject.number}
-                  </span>
-                  <span className="text-xs font-mono text-orange-400 px-2.5 py-1 rounded-full bg-orange-500/10 border border-orange-500/20">
-                    {activeProject.category}
-                  </span>
-                </div>
-                <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
-                  {activeProject.title}
-                </h3>
-                <p className="text-sm sm:text-base text-neutral-300 font-light">
-                  {activeProject.description}
-                </p>
-              </div>
-
-              {/* Primary Image Preview */}
-              <div className="relative w-full h-72 sm:h-96 rounded-2xl overflow-hidden bg-black border border-white/10">
-                <img
-                  src={activeProject.image}
-                  alt={activeProject.title}
-                  className="w-full h-full object-cover object-top"
-                />
-              </div>
-
-              {/* Key Features Checklist */}
-              {activeProject.features && (
-                <div className="space-y-3 pt-2 border-t border-white/10">
-                  <h4 className="text-xs font-mono uppercase tracking-wider text-neutral-400 font-bold">
-                    ARCHITECTURAL CAPABILITIES & HIGHLIGHTS
-                  </h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {activeProject.features.map((feature, fIdx) => (
-                      <div key={fIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-neutral-300">
-                        <CheckCircle2 className="w-4 h-4 text-orange-400 shrink-0 mt-0.5" />
-                        <span>{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* Tech Stack Pills & Action Links */}
-              <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-white/10">
-                <div className="flex flex-wrap gap-1.5">
-                  {activeProject.tags.map((tag, tIdx) => (
-                    <span key={tIdx} className="text-xs font-mono px-2.5 py-1 rounded-lg bg-white/5 text-neutral-300 border border-white/5">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="flex items-center gap-3">
-                  {activeProject.githubUrl && (
-                    <a
-                      href={activeProject.githubUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs sm:text-sm font-medium text-white transition-colors"
-                    >
-                      <Github className="w-4 h-4" />
-                      <span>Source Code</span>
-                    </a>
-                  )}
-                  {activeProject.demoUrl && (
-                    <a
-                      href={activeProject.demoUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-2 px-5 py-2 rounded-xl bg-orange-500/20 hover:bg-orange-500/30 border border-orange-500/40 text-xs sm:text-sm font-medium text-orange-300 transition-colors"
-                    >
-                      <span>Live Preview</span>
-                      <ExternalLink className="w-4 h-4" />
-                    </a>
-                  )}
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        )}
-      </AnimatePresence>
+      <ProjectCaseStudyModal
+        project={activeProject}
+        isOpen={!!activeProject}
+        onClose={() => setActiveProject(null)}
+        backLabel="Back to Home"
+      />
 
       {/* Dedicated Interactive Skill Detail Modal */}
       <SkillDetailModal

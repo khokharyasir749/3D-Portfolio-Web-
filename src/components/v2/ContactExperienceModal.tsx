@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import {
   X,
   Mail,
@@ -49,16 +50,16 @@ export const ContactExperienceModal: React.FC<ContactExperienceModalProps> = ({
     setTimeout(() => setCopiedEmail(false), 2000);
   };
 
-  if (!isOpen) return null;
+  if (!isOpen || typeof document === 'undefined') return null;
 
-  return (
+  return createPortal(
     <AnimatePresence>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.25 }}
-        className="fixed inset-0 z-50 overflow-y-auto bg-[#140a06]/95 backdrop-blur-2xl text-[#fafafa] selection:bg-orange-500/30 selection:text-orange-200"
+        className="fixed inset-0 z-[80] overflow-y-auto bg-[#140a06]/95 backdrop-blur-2xl text-[#fafafa] selection:bg-orange-500/30 selection:text-orange-200"
       >
         {/* ========================================================
             HERO CANVAS BACKGROUND WITH PORTRAIT & GLASS WATERMARK
@@ -351,6 +352,7 @@ export const ContactExperienceModal: React.FC<ContactExperienceModalProps> = ({
           </div>
         </main>
       </motion.div>
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body
   );
 };
