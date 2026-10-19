@@ -196,6 +196,26 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
   const [selectedSkill, setSelectedSkill] = useState<SkillDetail | null>(null);
   const [bithubVariant, setBithubVariant] = useState<'bithub' | 'rag'>('bithub');
   const [copiedEmail, setCopiedEmail] = useState(false);
+  const [activeCategory, setActiveCategory] = useState<string>('All');
+
+  const categories = ['All', 'Full-Stack', 'Enterprise SaaS', 'Media & 3D', 'Travel & Mobile'];
+
+  const filteredArchiveProjects = bentoProjects.filter((project) => {
+    if (activeCategory === 'All') return true;
+    if (activeCategory === 'Full-Stack') {
+      return project.category.includes('Full-Stack') || project.category.includes('Food Tech') || project.category.includes('Wholesale');
+    }
+    if (activeCategory === 'Enterprise SaaS') {
+      return project.category.includes('Enterprise') || project.category.includes('POS') || project.category.includes('Healthcare');
+    }
+    if (activeCategory === 'Media & 3D') {
+      return project.category.includes('Streaming') || project.category.includes('Luxury') || project.category.includes('3D');
+    }
+    if (activeCategory === 'Travel & Mobile') {
+      return project.category.includes('Travel') || project.category.includes('Mobile');
+    }
+    return true;
+  });
 
   const handleOpenSkill = (skillName: string, category: string) => {
     const detail = SKILL_DETAILS[skillName] || {
@@ -645,21 +665,157 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
         </div>
       </div>
 
-      {/* Optional Directory Showcase Trigger Button */}
-      {onOpenAllProjects && (
-        <div className="pt-12 pb-4 flex flex-col items-center justify-center text-center space-y-3">
-          <p className="text-xs font-mono text-neutral-400">
-            Looking for all client systems, streaming engines, and commercial platforms?
-          </p>
-          <button
-            onClick={onOpenAllProjects}
-            className="group inline-flex items-center gap-3 px-6 py-3.5 rounded-full bg-white/5 hover:bg-orange-500/10 border border-white/10 hover:border-orange-500/30 text-white font-mono text-xs uppercase tracking-wider transition-all duration-300 shadow-xl cursor-pointer hover:scale-105 active:scale-95"
-          >
-            <span>View All 7 Systems in Dedicated Directory</span>
-            <ArrowRight className="w-4 h-4 text-orange-400 group-hover:translate-x-1 transition-transform" />
-          </button>
+      {/* ========================================================
+          FULL PRODUCTION ARCHITECTURE ARCHIVE (01 — 07)
+          Studio-Grade Interactive Editorial Showcase with Hover Reveal
+         ======================================================== */}
+      <div className="pt-16 sm:pt-20 space-y-10">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-2">
+          <div className="space-y-2">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 font-mono text-xs">
+              <Sparkles className="w-3.5 h-3.5 text-orange-400" />
+              <span>FULL PRODUCTION ARCHIVE // 01 — 07</span>
+            </div>
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-tight text-white">
+              All Architectural Systems
+            </h3>
+            <p className="text-sm text-neutral-400 max-w-xl font-light">
+              Index of verified production systems, streaming pipelines, and distributed commercial platforms.
+            </p>
+          </div>
+
+          {/* Minimalist Glass Category Filters */}
+          <div className="flex flex-wrap items-center gap-2">
+            {categories.map((category) => {
+              const count = category === 'All'
+                ? bentoProjects.length
+                : bentoProjects.filter((p) => {
+                    if (category === 'Full-Stack') return p.category.includes('Full-Stack') || p.category.includes('Food Tech') || p.category.includes('Wholesale');
+                    if (category === 'Enterprise SaaS') return p.category.includes('Enterprise') || p.category.includes('POS') || p.category.includes('Healthcare');
+                    if (category === 'Media & 3D') return p.category.includes('Streaming') || p.category.includes('Luxury') || p.category.includes('3D');
+                    if (category === 'Travel & Mobile') return p.category.includes('Travel') || p.category.includes('Mobile');
+                    return true;
+                  }).length;
+              const isActive = activeCategory === category;
+              return (
+                <button
+                  key={category}
+                  type="button"
+                  onClick={() => setActiveCategory(category)}
+                  className={`group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-mono transition-all duration-200 cursor-pointer ${
+                    isActive
+                      ? 'bg-orange-500 text-black font-bold shadow-[0_0_20px_rgba(249,115,22,0.45)] border border-orange-400'
+                      : 'bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.08] text-neutral-400 hover:text-white'
+                  }`}
+                >
+                  <span>{category}</span>
+                  <span
+                    className={`text-[10px] px-1.5 py-0.2 rounded-full font-bold ${
+                      isActive ? 'bg-black/25 text-black' : 'bg-white/10 text-neutral-400 group-hover:text-white'
+                    }`}
+                  >
+                    {count}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
         </div>
-      )}
+
+        {/* Editorial Project Rows */}
+        <div className="divide-y divide-white/[0.06] border-y border-white/[0.06]">
+          {filteredArchiveProjects.map((project) => (
+            <div
+              key={project.id}
+              onClick={() => setActiveProject(project)}
+              className="group relative py-6 sm:py-8 px-4 sm:px-6 -mx-4 sm:-mx-6 transition-all duration-300 cursor-pointer border-l-2 border-transparent hover:border-orange-500 hover:bg-gradient-to-r hover:from-orange-500/[0.08] hover:via-amber-500/[0.03] hover:to-transparent select-none"
+            >
+              <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 lg:gap-8">
+                {/* Left: Index + Project Details */}
+                <div className="flex items-start gap-4 sm:gap-6 flex-1 min-w-0">
+                  <span className="font-mono text-lg sm:text-2xl font-black text-neutral-500 group-hover:text-orange-400 transition-colors shrink-0 pt-0.5">
+                    {project.number}
+                  </span>
+
+                  <div className="space-y-2 flex-1 min-w-0">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="text-[11px] font-mono px-2.5 py-0.5 rounded-full bg-white/[0.04] text-orange-400 border border-orange-500/20 group-hover:border-orange-500/40 group-hover:bg-orange-500/10 transition-colors">
+                        {project.category}
+                      </span>
+                      <span className="text-[11px] font-mono text-neutral-500 hidden sm:inline-block">
+                        • {project.metrics}
+                      </span>
+                    </div>
+
+                    <h4 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white tracking-tight group-hover:text-orange-200 group-hover:translate-x-1.5 transition-all duration-300">
+                      {project.title}
+                    </h4>
+
+                    <p className="text-xs sm:text-sm text-neutral-400 font-light leading-relaxed line-clamp-1 sm:line-clamp-2 max-w-2xl">
+                      {project.description}
+                    </p>
+
+                    <div className="flex flex-wrap items-center gap-1.5 pt-1">
+                      {project.tags.map((tag, tIdx) => (
+                        <span
+                          key={tIdx}
+                          className="text-[11px] font-mono px-2.5 py-0.5 rounded-lg bg-white/[0.02] group-hover:bg-white/[0.05] text-zinc-400 group-hover:text-zinc-200 border border-white/[0.04] transition-colors"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right: Visual Reveal Preview & Action */}
+                <div className="flex items-center gap-5 sm:gap-7 shrink-0 lg:self-center">
+                  <div className="relative w-36 sm:w-48 lg:w-56 aspect-[16/10] rounded-2xl overflow-hidden bg-black/60 border border-white/10 group-hover:border-orange-500/40 shadow-2xl transition-all duration-500 group-hover:scale-105 shrink-0 hidden md:block">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
+                    <div className="absolute bottom-2 left-2.5 right-2.5 flex items-center justify-between text-[10px] font-mono text-neutral-300">
+                      <span className="text-orange-400 font-bold">SYSTEM {project.number}</span>
+                      <span className="text-neutral-400">GUI ↗</span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-3">
+                    <div className="hidden xl:flex flex-col items-end text-right">
+                      <span className="text-xs font-mono font-semibold text-neutral-300 group-hover:text-white transition-colors">
+                        CASE STUDY
+                      </span>
+                      <span className="text-[10px] font-mono text-orange-400/80">
+                        View Details
+                      </span>
+                    </div>
+                    <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/[0.04] group-hover:bg-orange-500 border border-white/10 group-hover:border-orange-400 text-neutral-400 group-hover:text-black flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(249,115,22,0.45)]">
+                      <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Dedicated Fullscreen Trigger */}
+        {onOpenAllProjects && (
+          <div className="pt-4 flex justify-center">
+            <button
+              onClick={onOpenAllProjects}
+              className="group inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/[0.03] hover:bg-orange-500/10 border border-white/10 hover:border-orange-500/30 text-white font-mono text-xs uppercase tracking-wider transition-all duration-300 cursor-pointer hover:scale-105 active:scale-95"
+            >
+              <span>Open Dedicated Fullscreen Showcase</span>
+              <ArrowRight className="w-4 h-4 text-orange-400 group-hover:translate-x-1 transition-transform" />
+            </button>
+          </div>
+        )}
+      </div>
 
       {/* ========================================================
           EXPERIENCE & CAREER JOURNEY SECTION: EDITORIAL TIMELINE
