@@ -63,14 +63,11 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               Building high-performance web applications, interactive 3D WebGL experiences, and scalable full-stack architectures.
             </p>
 
-            {/* Live Status Badge */}
+            {/* Availability Note */}
             <div className="pt-2 flex items-center">
-              <div className="flex items-center px-3 py-1.5 rounded-lg bg-white dark:bg-[#132B27] border border-zinc-200 dark:border-[#25524B] shadow-sm">
-                <span className="w-2 h-2 rounded-full bg-[#C58A55] mr-2 shrink-0 animate-pulse" />
-                <span className="text-xs sm:text-sm font-mono text-zinc-800 dark:text-[#E6F4F1] font-medium tracking-wide">
-                  Available for Freelance & Full-time Roles
-                </span>
-              </div>
+              <span className="text-xs sm:text-sm font-mono text-zinc-500 dark:text-[#9FB8B2]">
+                Available for contract projects
+              </span>
             </div>
           </div>
 

@@ -45,7 +45,7 @@ const RootRouter: React.FC = () => {
             className="flex items-center gap-2 px-3.5 py-2 rounded-full bg-black/85 hover:bg-black text-white/90 hover:text-white border border-orange-500/30 backdrop-blur-md shadow-2xl text-xs font-mono transition-all hover:scale-105 active:scale-95 group transform-gpu"
             title="Preview Bento Grid design (V2)"
           >
-            <span className="w-2 h-2 rounded-full bg-orange-500 group-hover:animate-ping" />
+            <span className="w-2 h-2 rounded-full bg-orange-500" />
             <span>⚡ Modern Bento Portfolio (V2)</span>
           </a>
         </div>

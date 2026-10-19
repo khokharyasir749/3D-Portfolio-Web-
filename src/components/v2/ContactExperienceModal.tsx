@@ -112,13 +112,9 @@ export const ContactExperienceModal: React.FC<ContactExperienceModalProps> = ({
             TOP FLOATING CONTROLS
            ======================================================== */}
         <header className="sticky top-0 z-30 flex items-center justify-between px-6 sm:px-12 py-6 max-w-7xl mx-auto w-full pointer-events-none">
-          <div className="pointer-events-auto flex items-center gap-2.5">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
-            </span>
-            <span className="text-xs font-mono tracking-widest text-neutral-400 uppercase">
-              STATUS: <strong className="text-white font-medium">AVAILABLE FOR CONTRACTS</strong>
+          <div className="pointer-events-auto flex items-center">
+            <span className="text-xs font-mono text-zinc-400">
+              Available for contract projects
             </span>
           </div>
 
@@ -187,8 +183,8 @@ export const ContactExperienceModal: React.FC<ContactExperienceModalProps> = ({
                   >
                     {copiedEmail ? (
                       <>
-                        <Check className="w-3.5 h-3.5 text-emerald-400" />
-                        <span className="text-emerald-400 font-medium">Copied to clipboard!</span>
+                        <Check className="w-3.5 h-3.5 text-orange-400" />
+                        <span className="text-orange-400 font-medium">Copied to clipboard!</span>
                       </>
                     ) : (
                       <>
@@ -197,8 +193,8 @@ export const ContactExperienceModal: React.FC<ContactExperienceModalProps> = ({
                       </>
                     )}
                   </button>
-                  <span className="text-xs font-mono text-neutral-500">
-                    Primary inbox • Fast response within 24h
+                  <span className="text-xs font-mono text-zinc-500">
+                    Primary inbox • Response within 24 hours
                   </span>
                 </div>
               </div>
@@ -209,25 +205,22 @@ export const ContactExperienceModal: React.FC<ContactExperienceModalProps> = ({
                   href="https://wa.me/923280790704"
                   target="_blank"
                   rel="noreferrer"
-                  className="group flex items-center justify-between py-4 border-b border-white/[0.06] hover:border-emerald-500/40 transition-colors"
+                  className="group flex items-center justify-between py-4 border-b border-white/[0.06] hover:border-orange-500/30 transition-colors"
                 >
                   <div className="flex items-center gap-4">
-                    <div className="p-3 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 group-hover:bg-emerald-500/20 transition-colors">
+                    <div className="p-3 rounded-2xl bg-white/[0.04] border border-white/10 text-neutral-300 group-hover:bg-white/[0.08] group-hover:text-white transition-colors">
                       <Phone className="w-5 h-5" />
                     </div>
                     <div>
-                      <div className="text-base font-semibold text-white group-hover:text-emerald-300 transition-colors flex items-center gap-2">
+                      <div className="text-base font-semibold text-white group-hover:text-orange-200 transition-colors flex items-center gap-2">
                         <span>WhatsApp Direct Call & Chat</span>
-                        <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 font-normal">
-                          Online
-                        </span>
                       </div>
                       <div className="text-sm text-neutral-400 font-mono mt-0.5">
                         +92 328 0790704 • Instant Messaging & Discussion
                       </div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2 text-xs font-mono text-emerald-400 shrink-0">
+                  <div className="flex items-center gap-2 text-xs font-mono text-neutral-400 group-hover:text-white shrink-0">
                     <span className="hidden sm:inline">Message Now</span>
                     <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform" />
                   </div>

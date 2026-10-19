@@ -199,7 +199,7 @@ export const AboutSection: React.FC = () => {
               >
                 <div className="flex items-center min-w-0">
                   {stat.label === 'STATUS' && (
-                    <span className="w-2 h-2 rounded-full bg-[#C58A55] mr-1.5 shrink-0 animate-pulse" />
+                    <span className="w-2 h-2 rounded-full bg-[#C58A55] mr-1.5 shrink-0" />
                   )}
                   <span
                     className={`font-black tracking-tight text-[#0F2420] dark:text-[#E6F4F1] truncate ${

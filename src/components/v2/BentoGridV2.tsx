@@ -347,9 +347,8 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
               <span className="font-mono text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-neutral-300 font-bold">
                 01 / AI & FULL-STACK
               </span>
-              <span className="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded-full">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                COMPLETED
+              <span className="text-xs font-mono text-zinc-400">
+                Shipped
               </span>
             </div>
 
@@ -383,7 +382,7 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
               </div>
 
               <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/[0.06] backdrop-blur-sm space-y-1">
-                <span className="text-[11px] font-mono uppercase tracking-wider text-emerald-400 font-bold block">
+                <span className="text-[11px] font-mono uppercase tracking-wider text-amber-200/90 font-bold block">
                   THE SOLUTION & IMPACT
                 </span>
                 <p className="text-xs sm:text-sm text-neutral-300 font-light leading-relaxed">
@@ -447,9 +446,8 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
               <span className="font-mono text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-neutral-300 font-bold">
                 02 / ENTERPRISE SAAS & POS
               </span>
-              <span className="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded-full">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                COMPLETED
+              <span className="text-xs font-mono text-zinc-400">
+                Shipped
               </span>
             </div>
 
@@ -483,7 +481,7 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
               </div>
 
               <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/[0.06] backdrop-blur-sm space-y-1">
-                <span className="text-[11px] font-mono uppercase tracking-wider text-emerald-400 font-bold block">
+                <span className="text-[11px] font-mono uppercase tracking-wider text-amber-200/90 font-bold block">
                   THE SOLUTION & IMPACT
                 </span>
                 <p className="text-xs sm:text-sm text-neutral-300 font-light leading-relaxed">
@@ -586,9 +584,8 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
               <span className="font-mono text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-neutral-300 font-bold">
                 03 / CROSS-PLATFORM & TRAVEL TECH
               </span>
-              <span className="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded-full">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                COMPLETED
+              <span className="text-xs font-mono text-zinc-400">
+                Shipped
               </span>
             </div>
 
@@ -622,7 +619,7 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
               </div>
 
               <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/[0.06] backdrop-blur-sm space-y-1">
-                <span className="text-[11px] font-mono uppercase tracking-wider text-emerald-400 font-bold block">
+                <span className="text-[11px] font-mono uppercase tracking-wider text-amber-200/90 font-bold block">
                   THE SOLUTION & IMPACT
                 </span>
                 <p className="text-xs sm:text-sm text-neutral-300 font-light leading-relaxed">
@@ -873,13 +870,12 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
                       {item.year}
                     </span>
                     {item.current ? (
-                      <span className="inline-flex items-center gap-1.5 text-[11px] font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded-full font-bold">
-                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                        ACTIVE FOCUS
+                      <span className="text-[11px] font-mono text-zinc-400">
+                        Present / Active focus
                       </span>
                     ) : (
-                      <span className="text-[11px] font-mono text-neutral-400 px-2.5 py-0.5 rounded-full bg-white/[0.04]">
-                        MILESTONE
+                      <span className="text-[11px] font-mono text-zinc-500">
+                        Milestone
                       </span>
                     )}
                   </div>
@@ -1007,12 +1003,8 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
               Creative technologist, spatial web specialist, and full-stack software engineer dedicated to crafting transformative digital products.
             </p>
           </div>
-          <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono shrink-0">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
-            </span>
-            <span className="tracking-wider uppercase font-semibold">{portfolioData.about.status}</span>
+          <div className="text-xs font-mono text-zinc-400 shrink-0">
+            Available for contract projects
           </div>
         </div>
 
@@ -1094,9 +1086,8 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
                     {stat.value}
                   </span>
                   {sIdx === 3 && (
-                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[11px] font-mono">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                      Open for Contracts
+                    <span className="text-[11px] font-mono text-zinc-400">
+                      Open for contracts
                     </span>
                   )}
                 </div>
@@ -1131,9 +1122,8 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
               Reach out directly for freelance contracts, full-time engineering inquiries, or spatial web collaborations.
             </p>
           </div>
-          <div className="inline-flex items-center gap-2 text-xs font-mono px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 shrink-0">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span>Fast Response Within 24h</span>
+          <div className="text-xs font-mono text-zinc-500 shrink-0">
+            Response within 24 hours
           </div>
         </div>
 
@@ -1172,8 +1162,8 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
                 >
                   {copiedEmail ? (
                     <>
-                      <Check className="w-3.5 h-3.5 text-emerald-400" />
-                      <span className="text-emerald-400 font-medium">Copied to clipboard!</span>
+                      <Check className="w-3.5 h-3.5 text-orange-400" />
+                      <span className="text-orange-400 font-medium">Copied to clipboard!</span>
                     </>
                   ) : (
                     <>
@@ -1194,25 +1184,22 @@ export const BentoGridV2: React.FC<BentoGridV2Props> = ({ onOpenAllProjects }) =
                 href="https://wa.me/923280790704"
                 target="_blank"
                 rel="noreferrer"
-                className="group flex items-center justify-between py-4 border-b border-white/[0.06] hover:border-emerald-500/40 transition-colors"
+                className="group flex items-center justify-between py-4 border-b border-white/[0.06] hover:border-orange-500/30 transition-colors"
               >
                 <div className="flex items-center gap-3.5">
-                  <div className="p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 group-hover:bg-emerald-500/20 transition-colors">
+                  <div className="p-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-neutral-300 group-hover:bg-white/[0.08] group-hover:text-white transition-colors">
                     <Phone className="w-4 h-4" />
                   </div>
                   <div>
-                    <div className="text-sm font-semibold text-white group-hover:text-emerald-300 transition-colors flex items-center gap-2">
+                    <div className="text-sm font-semibold text-white group-hover:text-orange-200 transition-colors flex items-center gap-2">
                       <span>WhatsApp Direct</span>
-                      <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 font-normal">
-                        Online
-                      </span>
                     </div>
                     <div className="text-xs text-neutral-400 font-mono mt-0.5">
                       +92 328 0790704 • Instant Messaging & Discussion
                     </div>
                   </div>
                 </div>
-                <div className="flex items-center gap-1.5 text-xs font-mono text-emerald-400 shrink-0">
+                <div className="flex items-center gap-1.5 text-xs font-mono text-neutral-400 group-hover:text-white shrink-0">
                   <span className="hidden sm:inline">Message Now</span>
                   <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </div>

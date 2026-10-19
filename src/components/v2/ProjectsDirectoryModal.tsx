@@ -189,9 +189,8 @@ export const ProjectsDirectoryModal: React.FC<ProjectsDirectoryModalProps> = ({
                       <span className="text-[11px] font-mono px-3 py-1 rounded-full bg-white/[0.04] text-orange-400 border border-orange-500/20 group-hover:border-orange-500/40 group-hover:bg-orange-500/10 transition-colors">
                         {project.category}
                       </span>
-                      <span className="inline-flex items-center gap-1.5 text-[11px] font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded-full font-bold">
-                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                        COMPLETED
+                      <span className="text-[11px] font-mono text-zinc-400">
+                        Shipped
                       </span>
                     </div>
 
